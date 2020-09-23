@@ -1,0 +1,1 @@
+ALTER TABLE `reservation_series` ADD `mode` VARCHAR(255) NULL AFTER `last_action_by`;

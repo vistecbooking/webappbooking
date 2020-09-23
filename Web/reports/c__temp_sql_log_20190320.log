@@ -1,0 +1,1 @@
+2019-03-20T17:00:45+07:00 [11577] DEBUG sql - [User=Admin A. (notice.gotitth@gmail.com)] MySql Query: SELECT * FROM saved_reports WHERE user_id = '2' ORDER BY report_name, date_created;

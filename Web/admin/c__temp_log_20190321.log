@@ -1,0 +1,112 @@
+2019-03-21T10:52:10+07:00 [11548] DEBUG default - [User=Admin A. (Thassanant.a@vistec.ac.th)] Loading validators for permissions [File=/var/www/html/booking/Presenters/Admin/ManageUsersPresenter.php,Line=418]
+2019-03-21T10:52:10+07:00 [11548] DEBUG default - [User=Admin A. (Thassanant.a@vistec.ac.th)] Action passed all validations [File=/var/www/html/booking/Pages/ActionPage.php,Line=108]
+2019-03-21T10:52:10+07:00 [11548] DEBUG default - [User=Admin A. (Thassanant.a@vistec.ac.th)] Processing page action. Action permissions [File=/var/www/html/booking/Presenters/ActionPresenter.php,Line=88]
+2019-03-21T10:52:30+07:00 [11577] DEBUG default - [User=Admin A. (Thassanant.a@vistec.ac.th)] Loading validators for permissions [File=/var/www/html/booking/Presenters/Admin/ManageUsersPresenter.php,Line=418]
+2019-03-21T10:52:30+07:00 [11577] DEBUG default - [User=Admin A. (Thassanant.a@vistec.ac.th)] Action passed all validations [File=/var/www/html/booking/Pages/ActionPage.php,Line=108]
+2019-03-21T10:52:30+07:00 [11577] DEBUG default - [User=Admin A. (Thassanant.a@vistec.ac.th)] Processing page action. Action permissions [File=/var/www/html/booking/Presenters/ActionPresenter.php,Line=88]
+2019-03-21T11:16:27+07:00 [11577] DEBUG default - [User=Admin A. (ratchawan.j@vistec.ac.th)] Action passed all validations [File=/var/www/html/booking/Pages/ActionPage.php,Line=108]
+2019-03-21T11:16:27+07:00 [11577] DEBUG default - [User=Admin A. (ratchawan.j@vistec.ac.th)] Processing page action. Action addUserPermission [File=/var/www/html/booking/Presenters/ActionPresenter.php,Line=88]
+2019-03-21T11:16:46+07:00 [11577] DEBUG default - [User=Admin A. (ratchawan.j@vistec.ac.th)] Action passed all validations [File=/var/www/html/booking/Pages/ActionPage.php,Line=108]
+2019-03-21T11:16:46+07:00 [11577] DEBUG default - [User=Admin A. (ratchawan.j@vistec.ac.th)] Processing page action. Action addUserPermission [File=/var/www/html/booking/Presenters/ActionPresenter.php,Line=88]
+2019-03-21T11:16:53+07:00 [11548] DEBUG default - [User=Admin A. (ratchawan.j@vistec.ac.th)] Action passed all validations [File=/var/www/html/booking/Pages/ActionPage.php,Line=108]
+2019-03-21T11:16:53+07:00 [11548] DEBUG default - [User=Admin A. (ratchawan.j@vistec.ac.th)] Processing page action. Action addUserPermission [File=/var/www/html/booking/Presenters/ActionPresenter.php,Line=88]
+2019-03-21T14:58:01+07:00 [4808] DEBUG default - [User=Admin A. (meshaya.p@vistec.ac.th)] Action passed all validations [File=/var/www/html/booking/Pages/ActionPage.php,Line=108]
+2019-03-21T14:58:01+07:00 [4808] DEBUG default - [User=Admin A. (meshaya.p@vistec.ac.th)] Processing page action. Action addUserPermission [File=/var/www/html/booking/Presenters/ActionPresenter.php,Line=88]
+2019-03-21T14:59:52+07:00 [4808] DEBUG default - [User=Admin A. (meshaya.p@vistec.ac.th)] Loading validators for addUser [File=/var/www/html/booking/Presenters/Admin/ManageUsersPresenter.php,Line=418]
+2019-03-21T14:59:52+07:00 [4808] DEBUG default - [User=Admin A. (meshaya.p@vistec.ac.th)] Action passed all validations [File=/var/www/html/booking/Pages/ActionPage.php,Line=108]
+2019-03-21T14:59:52+07:00 [4808] DEBUG default - [User=Admin A. (meshaya.p@vistec.ac.th)] Processing page action. Action addUser [File=/var/www/html/booking/Presenters/ActionPresenter.php,Line=88]
+2019-03-21T14:59:52+07:00 [4808] DEBUG default - [User=Admin A. (meshaya.p@vistec.ac.th)] Sending AccountCreationForUserEmail email to: kunjaasal@hotmail.com from: Frc.booking@vistec.ac.th [File=/var/www/html/booking/lib/Email/EmailService.php,Line=93]
+2019-03-21T14:59:55+07:00 [4808] DEBUG default - [User=Admin A. (meshaya.p@vistec.ac.th)] Email send success: 1.  [File=/var/www/html/booking/lib/Email/EmailService.php,Line=105]
+2019-03-21T15:00:35+07:00 [4800] DEBUG default - [User=Admin A. (meshaya.p@vistec.ac.th)] Loading validators for permissions [File=/var/www/html/booking/Presenters/Admin/ManageUsersPresenter.php,Line=418]
+2019-03-21T15:00:35+07:00 [4800] DEBUG default - [User=Admin A. (meshaya.p@vistec.ac.th)] Action passed all validations [File=/var/www/html/booking/Pages/ActionPage.php,Line=108]
+2019-03-21T15:00:35+07:00 [4800] DEBUG default - [User=Admin A. (meshaya.p@vistec.ac.th)] Processing page action. Action permissions [File=/var/www/html/booking/Presenters/ActionPresenter.php,Line=88]
+2019-03-21T15:00:41+07:00 [14862] DEBUG default - [User=Admin A. (meshaya.p@vistec.ac.th)] Action passed all validations [File=/var/www/html/booking/Pages/ActionPage.php,Line=108]
+2019-03-21T15:00:41+07:00 [14862] DEBUG default - [User=Admin A. (meshaya.p@vistec.ac.th)] Processing page action. Action addUser [File=/var/www/html/booking/Presenters/ActionPresenter.php,Line=88]
+2019-03-21T15:00:41+07:00 [14862] DEBUG default - [User=Admin A. (meshaya.p@vistec.ac.th)] Adding userId: 552 to groupId: 27 [File=/var/www/html/booking/Presenters/Admin/ManageGroupsPresenter.php,Line=164]
+2019-03-21T15:03:04+07:00 [4800] DEBUG default - [User=Admin A. (meshaya.p@vistec.ac.th)] Action passed all validations [File=/var/www/html/booking/Pages/ActionPage.php,Line=108]
+2019-03-21T15:03:04+07:00 [4800] DEBUG default - [User=Admin A. (meshaya.p@vistec.ac.th)] Processing page action. Action addQuota [File=/var/www/html/booking/Presenters/ActionPresenter.php,Line=88]
+2019-03-21T15:03:04+07:00 [4800] DEBUG default - [User=Admin A. (meshaya.p@vistec.ac.th)] Adding new quota. Duration day, Limit 24, Unit hours, Resource 8, Group , Schedule 1, All Day 1, Start Time , End Time , Every Day 1, Days , Scope ExcludeCompleted [File=/var/www/html/booking/Presenters/Admin/ManageQuotasPresenter.php,Line=139]
+2019-03-21T15:47:04+07:00 [14862] DEBUG default - [User=Admin A. (ratchawan.j@vistec.ac.th)] Action passed all validations [File=/var/www/html/booking/Pages/ActionPage.php,Line=108]
+2019-03-21T15:47:04+07:00 [14862] DEBUG default - [User=Admin A. (ratchawan.j@vistec.ac.th)] Processing page action. Action addUserPermission [File=/var/www/html/booking/Presenters/ActionPresenter.php,Line=88]
+2019-03-21T16:25:09+07:00 [4808] DEBUG default - [User=Admin A. (ratchawan.j@vistec.ac.th)] Action passed all validations [File=/var/www/html/booking/Pages/ActionPage.php,Line=108]
+2019-03-21T16:25:09+07:00 [4808] DEBUG default - [User=Admin A. (ratchawan.j@vistec.ac.th)] Processing page action. Action updateAttribute [File=/var/www/html/booking/Presenters/ActionPresenter.php,Line=88]
+2019-03-21T16:25:09+07:00 [4808] DEBUG default - [User=Admin A. (ratchawan.j@vistec.ac.th)] Updating attribute with id: 39 [File=/var/www/html/booking/Presenters/Admin/ManageAttributesPresenter.php,Line=98]
+2019-03-21T16:26:50+07:00 [14862] DEBUG default - [User=Admin A. (ratchawan.j@vistec.ac.th)] Action passed all validations [File=/var/www/html/booking/Pages/ActionPage.php,Line=108]
+2019-03-21T16:26:50+07:00 [14862] DEBUG default - [User=Admin A. (ratchawan.j@vistec.ac.th)] Processing page action. Action addAttribute [File=/var/www/html/booking/Presenters/ActionPresenter.php,Line=88]
+2019-03-21T16:26:50+07:00 [14862] DEBUG default - [User=Admin A. (ratchawan.j@vistec.ac.th)] Adding new attribute named: Mode [File=/var/www/html/booking/Presenters/Admin/ManageAttributesPresenter.php,Line=71]
+2019-03-21T16:28:19+07:00 [14862] DEBUG default - [User=Admin A. (ratchawan.j@vistec.ac.th)] Action passed all validations [File=/var/www/html/booking/Pages/ActionPage.php,Line=108]
+2019-03-21T16:28:19+07:00 [14862] DEBUG default - [User=Admin A. (ratchawan.j@vistec.ac.th)] Processing page action. Action addAttribute [File=/var/www/html/booking/Presenters/ActionPresenter.php,Line=88]
+2019-03-21T16:28:19+07:00 [14862] DEBUG default - [User=Admin A. (ratchawan.j@vistec.ac.th)] Adding new attribute named: Type of sample (ex. liquid, powder, film, other.....) [File=/var/www/html/booking/Presenters/Admin/ManageAttributesPresenter.php,Line=71]
+2019-03-21T16:28:19+07:00 [14862] ERROR default - [User=Admin A. (ratchawan.j@vistec.ac.th)] Error executing MySQL query Data too long for column 'display_label' at row 1 [File=/var/www/html/booking/lib/Database/MySQL/MySqlConnection.php,Line=132]
+2019-03-21T16:28:19+07:00 [14862] ERROR default - [User=Admin A. (ratchawan.j@vistec.ac.th)] ProcessAction Error. Action addAttribute, Error exception 'Exception' with message 'There was an error executing your query\nData too long for column 'display_label' at row 1' in /var/www/html/booking/lib/Database/MySQL/MySqlConnection.php:134
+Stack trace:
+#0 /var/www/html/booking/lib/Database/MySQL/MySqlConnection.php(115): MySqlConnection->_handleError(false)
+#1 /var/www/html/booking/lib/Database/Database.php(97): MySqlConnection->Execute(Object(AddAttributeCommand))
+#2 /var/www/html/booking/Domain/Access/AttributeRepository.php(87): Database->ExecuteInsert(Object(AddAttributeCommand))
+#3 /var/www/html/booking/Presenters/Admin/ManageAttributesPresenter.php(77): AttributeRepository->Add(Object(CustomAttribute))
+#4 /var/www/html/booking/Presenters/ActionPresenter.php(89): ManageAttributesPresenter->AddAttribute()
+#5 /var/www/html/booking/Pages/Admin/ManageAttributesPage.php(150): ActionPresenter->ProcessAction()
+#6 /var/www/html/booking/Pages/ActionPage.php(47): ManageAttributesPage->ProcessAction()
+#7 /var/www/html/booking/Pages/Admin/ManageAttributesPage.php(139): ActionPage->PageLoad()
+#8 /var/www/html/booking/Pages/Admin/AdminPage.php(46): ManageAttributesPage->PageLoad()
+#9 /var/www/html/booking/Web/admin/manage_attributes.php(26): AdminPageDecorator->PageLoad()
+#10 {main} [File=/var/www/html/booking/Presenters/ActionPresenter.php,Line=94]
+2019-03-21T16:28:56+07:00 [14862] DEBUG default - [User=Admin A. (ratchawan.j@vistec.ac.th)] Action passed all validations [File=/var/www/html/booking/Pages/ActionPage.php,Line=108]
+2019-03-21T16:28:56+07:00 [14862] DEBUG default - [User=Admin A. (ratchawan.j@vistec.ac.th)] Processing page action. Action updateAttribute [File=/var/www/html/booking/Presenters/ActionPresenter.php,Line=88]
+2019-03-21T16:28:56+07:00 [14862] DEBUG default - [User=Admin A. (ratchawan.j@vistec.ac.th)] Updating attribute with id: 42 [File=/var/www/html/booking/Presenters/Admin/ManageAttributesPresenter.php,Line=98]
+2019-03-21T16:29:24+07:00 [14862] DEBUG default - [User=Admin A. (ratchawan.j@vistec.ac.th)] Action passed all validations [File=/var/www/html/booking/Pages/ActionPage.php,Line=108]
+2019-03-21T16:29:24+07:00 [14862] DEBUG default - [User=Admin A. (ratchawan.j@vistec.ac.th)] Processing page action. Action updateAttribute [File=/var/www/html/booking/Presenters/ActionPresenter.php,Line=88]
+2019-03-21T16:29:24+07:00 [14862] DEBUG default - [User=Admin A. (ratchawan.j@vistec.ac.th)] Updating attribute with id: 39 [File=/var/www/html/booking/Presenters/Admin/ManageAttributesPresenter.php,Line=98]
+2019-03-21T16:29:47+07:00 [4808] DEBUG default - [User=Admin A. (ratchawan.j@vistec.ac.th)] Action passed all validations [File=/var/www/html/booking/Pages/ActionPage.php,Line=108]
+2019-03-21T16:29:47+07:00 [4808] DEBUG default - [User=Admin A. (ratchawan.j@vistec.ac.th)] Processing page action. Action addAttribute [File=/var/www/html/booking/Presenters/ActionPresenter.php,Line=88]
+2019-03-21T16:29:47+07:00 [4808] DEBUG default - [User=Admin A. (ratchawan.j@vistec.ac.th)] Adding new attribute named: Number of sample [File=/var/www/html/booking/Presenters/Admin/ManageAttributesPresenter.php,Line=71]
+2019-03-21T16:31:05+07:00 [4800] DEBUG default - [User=Admin A. (ratchawan.j@vistec.ac.th)] Action passed all validations [File=/var/www/html/booking/Pages/ActionPage.php,Line=108]
+2019-03-21T16:31:05+07:00 [4800] DEBUG default - [User=Admin A. (ratchawan.j@vistec.ac.th)] Processing page action. Action addAttribute [File=/var/www/html/booking/Presenters/ActionPresenter.php,Line=88]
+2019-03-21T16:31:05+07:00 [4800] DEBUG default - [User=Admin A. (ratchawan.j@vistec.ac.th)] Adding new attribute named: Type of sample (ex. liquid, powder, film, other...) [File=/var/www/html/booking/Presenters/Admin/ManageAttributesPresenter.php,Line=71]
+2019-03-21T16:31:05+07:00 [4800] ERROR default - [User=Admin A. (ratchawan.j@vistec.ac.th)] Error executing MySQL query Data too long for column 'display_label' at row 1 [File=/var/www/html/booking/lib/Database/MySQL/MySqlConnection.php,Line=132]
+2019-03-21T16:31:05+07:00 [4800] ERROR default - [User=Admin A. (ratchawan.j@vistec.ac.th)] ProcessAction Error. Action addAttribute, Error exception 'Exception' with message 'There was an error executing your query\nData too long for column 'display_label' at row 1' in /var/www/html/booking/lib/Database/MySQL/MySqlConnection.php:134
+Stack trace:
+#0 /var/www/html/booking/lib/Database/MySQL/MySqlConnection.php(115): MySqlConnection->_handleError(false)
+#1 /var/www/html/booking/lib/Database/Database.php(97): MySqlConnection->Execute(Object(AddAttributeCommand))
+#2 /var/www/html/booking/Domain/Access/AttributeRepository.php(87): Database->ExecuteInsert(Object(AddAttributeCommand))
+#3 /var/www/html/booking/Presenters/Admin/ManageAttributesPresenter.php(77): AttributeRepository->Add(Object(CustomAttribute))
+#4 /var/www/html/booking/Presenters/ActionPresenter.php(89): ManageAttributesPresenter->AddAttribute()
+#5 /var/www/html/booking/Pages/Admin/ManageAttributesPage.php(150): ActionPresenter->ProcessAction()
+#6 /var/www/html/booking/Pages/ActionPage.php(47): ManageAttributesPage->ProcessAction()
+#7 /var/www/html/booking/Pages/Admin/ManageAttributesPage.php(139): ActionPage->PageLoad()
+#8 /var/www/html/booking/Pages/Admin/AdminPage.php(46): ManageAttributesPage->PageLoad()
+#9 /var/www/html/booking/Web/admin/manage_attributes.php(26): AdminPageDecorator->PageLoad()
+#10 {main} [File=/var/www/html/booking/Presenters/ActionPresenter.php,Line=94]
+2019-03-21T16:31:31+07:00 [14862] DEBUG default - [User=Admin A. (ratchawan.j@vistec.ac.th)] Action passed all validations [File=/var/www/html/booking/Pages/ActionPage.php,Line=108]
+2019-03-21T16:31:31+07:00 [14862] DEBUG default - [User=Admin A. (ratchawan.j@vistec.ac.th)] Processing page action. Action updateAttribute [File=/var/www/html/booking/Presenters/ActionPresenter.php,Line=88]
+2019-03-21T16:31:31+07:00 [14862] DEBUG default - [User=Admin A. (ratchawan.j@vistec.ac.th)] Updating attribute with id: 39 [File=/var/www/html/booking/Presenters/Admin/ManageAttributesPresenter.php,Line=98]
+2019-03-21T16:32:50+07:00 [14862] DEBUG default - [User=Admin A. (ratchawan.j@vistec.ac.th)] Action passed all validations [File=/var/www/html/booking/Pages/ActionPage.php,Line=108]
+2019-03-21T16:32:50+07:00 [14862] DEBUG default - [User=Admin A. (ratchawan.j@vistec.ac.th)] Processing page action. Action updateAttribute [File=/var/www/html/booking/Presenters/ActionPresenter.php,Line=88]
+2019-03-21T16:32:50+07:00 [14862] DEBUG default - [User=Admin A. (ratchawan.j@vistec.ac.th)] Updating attribute with id: 42 [File=/var/www/html/booking/Presenters/Admin/ManageAttributesPresenter.php,Line=98]
+2019-03-21T16:36:21+07:00 [14862] DEBUG default - [User=Admin A. (ratchawan.j@vistec.ac.th)] Action passed all validations [File=/var/www/html/booking/Pages/ActionPage.php,Line=108]
+2019-03-21T16:36:21+07:00 [14862] DEBUG default - [User=Admin A. (ratchawan.j@vistec.ac.th)] Processing page action. Action addAttribute [File=/var/www/html/booking/Presenters/ActionPresenter.php,Line=88]
+2019-03-21T16:36:21+07:00 [14862] DEBUG default - [User=Admin A. (ratchawan.j@vistec.ac.th)] Adding new attribute named: Type of sample [File=/var/www/html/booking/Presenters/Admin/ManageAttributesPresenter.php,Line=71]
+2019-03-21T16:36:47+07:00 [4808] DEBUG default - [User=Admin A. (ratchawan.j@vistec.ac.th)] Action passed all validations [File=/var/www/html/booking/Pages/ActionPage.php,Line=108]
+2019-03-21T16:36:47+07:00 [4808] DEBUG default - [User=Admin A. (ratchawan.j@vistec.ac.th)] Processing page action. Action updateAttribute [File=/var/www/html/booking/Presenters/ActionPresenter.php,Line=88]
+2019-03-21T16:36:47+07:00 [4808] DEBUG default - [User=Admin A. (ratchawan.j@vistec.ac.th)] Updating attribute with id: 42 [File=/var/www/html/booking/Presenters/Admin/ManageAttributesPresenter.php,Line=98]
+2019-03-21T16:38:02+07:00 [4808] DEBUG default - [User=Admin A. (ratchawan.j@vistec.ac.th)] Action passed all validations [File=/var/www/html/booking/Pages/ActionPage.php,Line=108]
+2019-03-21T16:38:02+07:00 [4808] DEBUG default - [User=Admin A. (ratchawan.j@vistec.ac.th)] Processing page action. Action addAttribute [File=/var/www/html/booking/Presenters/ActionPresenter.php,Line=88]
+2019-03-21T16:38:02+07:00 [4808] DEBUG default - [User=Admin A. (ratchawan.j@vistec.ac.th)] Adding new attribute named: Remark(s), if any [File=/var/www/html/booking/Presenters/Admin/ManageAttributesPresenter.php,Line=71]
+2019-03-21T16:38:28+07:00 [14862] DEBUG default - [User=Admin A. (ratchawan.j@vistec.ac.th)] Action passed all validations [File=/var/www/html/booking/Pages/ActionPage.php,Line=108]
+2019-03-21T16:38:28+07:00 [14862] DEBUG default - [User=Admin A. (ratchawan.j@vistec.ac.th)] Processing page action. Action updateAttribute [File=/var/www/html/booking/Presenters/ActionPresenter.php,Line=88]
+2019-03-21T16:38:28+07:00 [14862] DEBUG default - [User=Admin A. (ratchawan.j@vistec.ac.th)] Updating attribute with id: 40 [File=/var/www/html/booking/Presenters/Admin/ManageAttributesPresenter.php,Line=98]
+2019-03-21T16:40:19+07:00 [4808] DEBUG default - [User=Admin A. (ratchawan.j@vistec.ac.th)] Action passed all validations [File=/var/www/html/booking/Pages/ActionPage.php,Line=108]
+2019-03-21T16:40:19+07:00 [4808] DEBUG default - [User=Admin A. (ratchawan.j@vistec.ac.th)] Processing page action. Action addAttribute [File=/var/www/html/booking/Presenters/ActionPresenter.php,Line=88]
+2019-03-21T16:40:19+07:00 [4808] DEBUG default - [User=Admin A. (ratchawan.j@vistec.ac.th)] Adding new attribute named: FRC items to be borrowed [File=/var/www/html/booking/Presenters/Admin/ManageAttributesPresenter.php,Line=71]
+2019-03-21T16:40:24+07:00 [14862] DEBUG default - [User=Admin A. (ratchawan.j@vistec.ac.th)] Action passed all validations [File=/var/www/html/booking/Pages/ActionPage.php,Line=108]
+2019-03-21T16:40:24+07:00 [14862] DEBUG default - [User=Admin A. (ratchawan.j@vistec.ac.th)] Processing page action. Action updateAttribute [File=/var/www/html/booking/Presenters/ActionPresenter.php,Line=88]
+2019-03-21T16:40:24+07:00 [14862] DEBUG default - [User=Admin A. (ratchawan.j@vistec.ac.th)] Updating attribute with id: 28 [File=/var/www/html/booking/Presenters/Admin/ManageAttributesPresenter.php,Line=98]
+2019-03-21T16:40:53+07:00 [14862] DEBUG default - [User=Admin A. (ratchawan.j@vistec.ac.th)] Action passed all validations [File=/var/www/html/booking/Pages/ActionPage.php,Line=108]
+2019-03-21T16:40:53+07:00 [14862] DEBUG default - [User=Admin A. (ratchawan.j@vistec.ac.th)] Processing page action. Action addAttribute [File=/var/www/html/booking/Presenters/ActionPresenter.php,Line=88]
+2019-03-21T16:40:53+07:00 [14862] DEBUG default - [User=Admin A. (ratchawan.j@vistec.ac.th)] Adding new attribute named: Number of sample [File=/var/www/html/booking/Presenters/Admin/ManageAttributesPresenter.php,Line=71]
+2019-03-21T16:41:28+07:00 [4800] DEBUG default - [User=Admin A. (ratchawan.j@vistec.ac.th)] Action passed all validations [File=/var/www/html/booking/Pages/ActionPage.php,Line=108]
+2019-03-21T16:41:28+07:00 [4800] DEBUG default - [User=Admin A. (ratchawan.j@vistec.ac.th)] Processing page action. Action addAttribute [File=/var/www/html/booking/Presenters/ActionPresenter.php,Line=88]
+2019-03-21T16:41:28+07:00 [4800] DEBUG default - [User=Admin A. (ratchawan.j@vistec.ac.th)] Adding new attribute named: Remark(s), if any [File=/var/www/html/booking/Presenters/Admin/ManageAttributesPresenter.php,Line=71]
+2019-03-21T16:42:51+07:00 [4800] DEBUG default - [User=Admin A. (ratchawan.j@vistec.ac.th)] Action passed all validations [File=/var/www/html/booking/Pages/ActionPage.php,Line=108]
+2019-03-21T16:42:51+07:00 [4800] DEBUG default - [User=Admin A. (ratchawan.j@vistec.ac.th)] Processing page action. Action deleteAttribute [File=/var/www/html/booking/Presenters/ActionPresenter.php,Line=88]
+2019-03-21T16:42:51+07:00 [4800] DEBUG default - [User=Admin A. (ratchawan.j@vistec.ac.th)] Deleting attribute with id: 46 [File=/var/www/html/booking/Presenters/Admin/ManageAttributesPresenter.php,Line=83]

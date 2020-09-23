@@ -1,0 +1,7 @@
+2019-02-27T00:55:29+07:00 [23029] DEBUG default - [User=  ()] Using CaptchaService [File=/var/www/html/booking/lib/Application/Authentication/CaptchaService.php,Line=96]
+2019-02-27T01:22:06+07:00 [29457] DEBUG default - [User=  ()] Using CaptchaService [File=/var/www/html/booking/lib/Application/Authentication/CaptchaService.php,Line=96]
+2019-02-27T07:58:01+07:00 [29323] DEBUG default - [User=  ()] Using CaptchaService [File=/var/www/html/booking/lib/Application/Authentication/CaptchaService.php,Line=96]
+2019-02-27T08:00:10+07:00 [29457] DEBUG default - [User=  ()] Using CaptchaService [File=/var/www/html/booking/lib/Application/Authentication/CaptchaService.php,Line=96]
+2019-02-27T08:00:10+07:00 [29457] DEBUG default - [User=  ()] Trying to log in as: root [File=/var/www/html/booking/lib/Application/Authentication/Authentication.php,Line=95]
+2019-02-27T08:00:10+07:00 [29457] DEBUG default - [User=  ()] User: root, was validated: 0 [File=/var/www/html/booking/lib/Application/Authentication/Authentication.php,Line=115]
+2019-02-27T13:38:58+07:00 [7512] DEBUG default - [User=  ()] Using CaptchaService [File=/var/www/html/booking/lib/Application/Authentication/CaptchaService.php,Line=96]

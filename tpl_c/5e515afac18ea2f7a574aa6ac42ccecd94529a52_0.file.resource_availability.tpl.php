@@ -1,0 +1,60 @@
+<?php
+/* Smarty version 3.1.30, created on 2019-06-14 13:01:58
+  from "/var/www/html/booking/tpl/Dashboard/resource_availability.tpl" */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.30',
+  'unifunc' => 'content_5d0338563e2d17_56518700',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '5e515afac18ea2f7a574aa6ac42ccecd94529a52' => 
+    array (
+      0 => '/var/www/html/booking/tpl/Dashboard/resource_availability.tpl',
+      1 => 1551196423,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+    'file:Dashboard/calendar-page-base.tpl' => 1,
+  ),
+),false)) {
+function content_5d0338563e2d17_56518700 (Smarty_Internal_Template $_smarty_tpl) {
+?>
+
+<style>
+td.fc-today {
+    background: #fcf8e3;
+}
+</style>
+<div class="dashboard dashboard availabilityDashboard" id="availabilityDashboard">
+	<div class="dashboardHeader">
+		<div class="pull-left">My calendar</div>
+		<div class="pull-right">
+			<a href="#" title="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'ShowHide'),$_smarty_tpl);?>
+ <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"ResourceAvailability"),$_smarty_tpl);?>
+">
+				<i class="glyphicon"></i>
+			</a>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+	<div class="dashboardContents" style="display: block;">
+		<?php ob_start();
+echo Pages::MY_CALENDAR;
+$_prefixVariable1=ob_get_clean();
+$_smarty_tpl->_assignInScope('pageUrl', $_prefixVariable1);
+?>
+		<?php $_smarty_tpl->_assignInScope('pageIdSuffix', "calendar");
+?>
+		<?php $_smarty_tpl->_assignInScope('subscriptionTpl', "calendar.subscription.tpl");
+?>
+		<?php $_smarty_tpl->_subTemplateRender("file:Dashboard/calendar-page-base.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
+
+	</div>
+</div>
+</div><?php }
+}

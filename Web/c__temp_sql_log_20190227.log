@@ -1,0 +1,3 @@
+2019-02-27T08:00:10+07:00 [29457] DEBUG sql - [User=  ()] MySql Query: SELECT user_id, password, salt, legacypassword
+		FROM users
+		WHERE (username = 'root' OR email = 'root') AND status_id = 1;

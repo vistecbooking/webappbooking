@@ -1,0 +1,20 @@
+2019-11-06T09:20:48+07:00 [786] DEBUG default - [User=Surapoj Sanram (surapoj.s@vistec.ac.th)] Action passed all validations [File=/var/www/html/booking/Pages/ActionPage.php,Line=108]
+2019-11-06T09:20:48+07:00 [786] DEBUG default - [User=Surapoj Sanram (surapoj.s@vistec.ac.th)] Processing page action. Action addUserPermission [File=/var/www/html/booking/Presenters/ActionPresenter.php,Line=88]
+2019-11-06T10:16:54+07:00 [8831] DEBUG default - [User=Admin A. (meshaya.p@vistec.ac.th)] Loading validators for addUser [File=/var/www/html/booking/Presenters/Admin/ManageUsersPresenter.php,Line=424]
+2019-11-06T10:16:54+07:00 [8831] DEBUG default - [User=Admin A. (meshaya.p@vistec.ac.th)] Action passed all validations [File=/var/www/html/booking/Pages/ActionPage.php,Line=108]
+2019-11-06T10:16:54+07:00 [8831] DEBUG default - [User=Admin A. (meshaya.p@vistec.ac.th)] Processing page action. Action addUser [File=/var/www/html/booking/Presenters/ActionPresenter.php,Line=88]
+2019-11-06T10:16:54+07:00 [8831] ERROR default - [User=Admin A. (meshaya.p@vistec.ac.th)] Error executing MySQL query Cannot add or update a child row: a foreign key constraint fails (`gotit_booking`.`users`, CONSTRAINT `users_positions` FOREIGN KEY (`position_id`) REFERENCES `positions` (`position_id`) ON UPDATE CASCADE) [File=/var/www/html/booking/lib/Database/MySQL/MySqlConnection.php,Line=132]
+2019-11-06T10:16:54+07:00 [8831] ERROR default - [User=Admin A. (meshaya.p@vistec.ac.th)] ProcessAction Error. Action addUser, Error exception 'Exception' with message 'There was an error executing your query\nCannot add or update a child row: a foreign key constraint fails (`gotit_booking`.`users`, CONSTRAINT `users_positions` FOREIGN KEY (`position_id`) REFERENCES `positions` (`position_id`) ON UPDATE CASCADE)' in /var/www/html/booking/lib/Database/MySQL/MySqlConnection.php:134
+Stack trace:
+#0 /var/www/html/booking/lib/Database/MySQL/MySqlConnection.php(115): MySqlConnection->_handleError(false)
+#1 /var/www/html/booking/lib/Database/Database.php(97): MySqlConnection->Execute(Object(RegisterUserCommand))
+#2 /var/www/html/booking/Domain/Access/UserRepository.php(408): Database->ExecuteInsert(Object(RegisterUserCommand))
+#3 /var/www/html/booking/lib/Application/Authentication/Registration.php(130): UserRepository->Add(Object(User))
+#4 /var/www/html/booking/lib/Application/User/ManageUsersService.php(168): Registration->Register('qazwsx', 'kunjaasal@hotma...', 'Jarinya', 'Sittiwong', '123456', NULL, 'en_us', 1, Array, Array, NULL, '', '', '', '', 0)
+#5 /var/www/html/booking/Presenters/Admin/ManageUsersPresenter.php(272): ManageUsersService->AddUser('qazwsx', 'kunjaasal@hotma...', 'Jarinya', 'Sittiwong', '123456', NULL, 'en_us', 1, Array, Array, '', '', '', '', 0)
+#6 /var/www/html/booking/Presenters/ActionPresenter.php(89): ManageUsersPresenter->AddUser()
+#7 /var/www/html/booking/Pages/Admin/ManageUsersPage.php(316): ActionPresenter->ProcessAction()
+#8 /var/www/html/booking/Pages/ActionPage.php(47): ManageUsersPage->ProcessAction()
+#9 /var/www/html/booking/Pages/Admin/AdminPage.php(46): ActionPage->PageLoad()
+#10 /var/www/html/booking/Web/admin/manage_users.php(26): AdminPageDecorator->PageLoad()
+#11 {main} [File=/var/www/html/booking/Presenters/ActionPresenter.php,Line=94]

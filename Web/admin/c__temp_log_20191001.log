@@ -1,0 +1,4 @@
+2019-10-01T09:56:35+07:00 [2796] DEBUG default - [User=Admin A. (somlak.i@vistec.ac.th)] Action passed all validations [File=/var/www/html/booking/Pages/ActionPage.php,Line=108]
+2019-10-01T09:56:35+07:00 [2796] DEBUG default - [User=Admin A. (somlak.i@vistec.ac.th)] Processing page action. Action addUserPermission [File=/var/www/html/booking/Presenters/ActionPresenter.php,Line=88]
+2019-10-01T09:56:42+07:00 [10019] DEBUG default - [User=Admin A. (somlak.i@vistec.ac.th)] Action passed all validations [File=/var/www/html/booking/Pages/ActionPage.php,Line=108]
+2019-10-01T09:56:42+07:00 [10019] DEBUG default - [User=Admin A. (somlak.i@vistec.ac.th)] Processing page action. Action addUserPermission [File=/var/www/html/booking/Presenters/ActionPresenter.php,Line=88]

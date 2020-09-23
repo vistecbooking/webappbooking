@@ -1,0 +1,88 @@
+2019-02-18T07:06:01+07:00 [6114] DEBUG default - [User=  ()] Using CaptchaService [File=/var/www/html/booking/lib/Application/Authentication/CaptchaService.php,Line=96]
+2019-02-18T07:06:19+07:00 [6114] DEBUG default - [User=  ()] Using CaptchaService [File=/var/www/html/booking/lib/Application/Authentication/CaptchaService.php,Line=96]
+2019-02-18T07:06:23+07:00 [10118] DEBUG default - [User=  ()] Using CaptchaService [File=/var/www/html/booking/lib/Application/Authentication/CaptchaService.php,Line=96]
+2019-02-18T07:06:41+07:00 [6274] DEBUG default - [User=  ()] Using CaptchaService [File=/var/www/html/booking/lib/Application/Authentication/CaptchaService.php,Line=96]
+2019-02-18T07:59:00+07:00 [6109] DEBUG default - [User=  ()] Using CaptchaService [File=/var/www/html/booking/lib/Application/Authentication/CaptchaService.php,Line=96]
+2019-02-18T07:59:06+07:00 [6274] DEBUG default - [User=  ()] Using CaptchaService [File=/var/www/html/booking/lib/Application/Authentication/CaptchaService.php,Line=96]
+2019-02-18T09:11:18+07:00 [6114] DEBUG default - [User=  ()] Using CaptchaService [File=/var/www/html/booking/lib/Application/Authentication/CaptchaService.php,Line=96]
+2019-02-18T09:11:28+07:00 [30534] DEBUG default - [User=  ()] Using CaptchaService [File=/var/www/html/booking/lib/Application/Authentication/CaptchaService.php,Line=96]
+2019-02-18T09:11:37+07:00 [23629] DEBUG default - [User=  ()] Using CaptchaService [File=/var/www/html/booking/lib/Application/Authentication/CaptchaService.php,Line=96]
+2019-02-18T09:11:37+07:00 [23629] DEBUG default - [User=  ()] Trying to log in as: admin [File=/var/www/html/booking/lib/Application/Authentication/Authentication.php,Line=95]
+2019-02-18T09:11:37+07:00 [23629] ERROR default - [User=  ()] Error executing MySQL query Table 'frc_booking.users' doesn't exist [File=/var/www/html/booking/lib/Database/MySQL/MySqlConnection.php,Line=132]
+2019-02-18T09:11:37+07:00 [23629] ERROR default - [User=  ()] Uncaught exception: Exception: There was an error executing your query\nTable 'frc_booking.users' doesn't exist in /var/www/html/booking/lib/Database/MySQL/MySqlConnection.php:134
+Stack trace:
+#0 /var/www/html/booking/lib/Database/MySQL/MySqlConnection.php(91): MySqlConnection->_handleError(false)
+#1 /var/www/html/booking/lib/Database/Database.php(45): MySqlConnection->Query(Object(AuthorizationCommand))
+#2 /var/www/html/booking/lib/Application/Authentication/Authentication.php(98): Database->Query(Object(AuthorizationCommand))
+#3 /var/www/html/booking/lib/Application/Authentication/WebAuthentication.php(106): Authentication->Validate('admin', '123456')
+#4 /var/www/html/booking/Presenters/LoginPresenter.php(137): WebAuthentication->Validate('admin', '123456')
+#5 /var/www/html/booking/Pages/LoginPage.php(212): LoginPresenter->Login()
+#6 /var/www/html/booking/Web/index.php(35): LoginPage->Login()
+#7 {main} [File=/var/www/html/booking/lib/Common/Logging/ExceptionHandler.php,Line=33]
+2019-02-18T09:11:45+07:00 [30597] DEBUG default - [User=  ()] Using CaptchaService [File=/var/www/html/booking/lib/Application/Authentication/CaptchaService.php,Line=96]
+2019-02-18T09:14:41+07:00 [31204] DEBUG default - [User=  ()] Using CaptchaService [File=/var/www/html/booking/lib/Application/Authentication/CaptchaService.php,Line=96]
+2019-02-18T09:14:41+07:00 [31204] DEBUG default - [User=  ()] Trying to log in as: admin [File=/var/www/html/booking/lib/Application/Authentication/Authentication.php,Line=95]
+2019-02-18T09:14:41+07:00 [31204] ERROR default - [User=  ()] Error executing MySQL query Table 'frc_booking.users' doesn't exist [File=/var/www/html/booking/lib/Database/MySQL/MySqlConnection.php,Line=132]
+2019-02-18T09:14:41+07:00 [31204] ERROR default - [User=  ()] Uncaught exception: Exception: There was an error executing your query\nTable 'frc_booking.users' doesn't exist in /var/www/html/booking/lib/Database/MySQL/MySqlConnection.php:134
+Stack trace:
+#0 /var/www/html/booking/lib/Database/MySQL/MySqlConnection.php(91): MySqlConnection->_handleError(false)
+#1 /var/www/html/booking/lib/Database/Database.php(45): MySqlConnection->Query(Object(AuthorizationCommand))
+#2 /var/www/html/booking/lib/Application/Authentication/Authentication.php(98): Database->Query(Object(AuthorizationCommand))
+#3 /var/www/html/booking/lib/Application/Authentication/WebAuthentication.php(106): Authentication->Validate('admin', 'passsword')
+#4 /var/www/html/booking/Presenters/LoginPresenter.php(137): WebAuthentication->Validate('admin', 'passsword')
+#5 /var/www/html/booking/Pages/LoginPage.php(212): LoginPresenter->Login()
+#6 /var/www/html/booking/Web/index.php(35): LoginPage->Login()
+#7 {main} [File=/var/www/html/booking/lib/Common/Logging/ExceptionHandler.php,Line=33]
+2019-02-18T09:14:50+07:00 [23629] DEBUG default - [User=  ()] Using CaptchaService [File=/var/www/html/booking/lib/Application/Authentication/CaptchaService.php,Line=96]
+2019-02-18T09:14:50+07:00 [23629] DEBUG default - [User=  ()] Trying to log in as: admin [File=/var/www/html/booking/lib/Application/Authentication/Authentication.php,Line=95]
+2019-02-18T09:14:50+07:00 [23629] ERROR default - [User=  ()] Error executing MySQL query Table 'frc_booking.users' doesn't exist [File=/var/www/html/booking/lib/Database/MySQL/MySqlConnection.php,Line=132]
+2019-02-18T09:14:50+07:00 [23629] ERROR default - [User=  ()] Uncaught exception: Exception: There was an error executing your query\nTable 'frc_booking.users' doesn't exist in /var/www/html/booking/lib/Database/MySQL/MySqlConnection.php:134
+Stack trace:
+#0 /var/www/html/booking/lib/Database/MySQL/MySqlConnection.php(91): MySqlConnection->_handleError(false)
+#1 /var/www/html/booking/lib/Database/Database.php(45): MySqlConnection->Query(Object(AuthorizationCommand))
+#2 /var/www/html/booking/lib/Application/Authentication/Authentication.php(98): Database->Query(Object(AuthorizationCommand))
+#3 /var/www/html/booking/lib/Application/Authentication/WebAuthentication.php(106): Authentication->Validate('admin', 'passsword')
+#4 /var/www/html/booking/Presenters/LoginPresenter.php(137): WebAuthentication->Validate('admin', 'passsword')
+#5 /var/www/html/booking/Pages/LoginPage.php(212): LoginPresenter->Login()
+#6 /var/www/html/booking/Web/index.php(35): LoginPage->Login()
+#7 {main} [File=/var/www/html/booking/lib/Common/Logging/ExceptionHandler.php,Line=33]
+2019-02-18T09:14:56+07:00 [30597] DEBUG default - [User=  ()] Using CaptchaService [File=/var/www/html/booking/lib/Application/Authentication/CaptchaService.php,Line=96]
+2019-02-18T16:53:34+07:00 [9873] DEBUG default - [User=  ()] Using CaptchaService [File=/var/www/html/booking/lib/Application/Authentication/CaptchaService.php,Line=96]
+2019-02-18T20:19:00+07:00 [15585] DEBUG default - [User=  ()] Using CaptchaService [File=/var/www/html/booking/lib/Application/Authentication/CaptchaService.php,Line=96]
+2019-02-18T20:19:05+07:00 [5213] DEBUG default - [User=  ()] Using CaptchaService [File=/var/www/html/booking/lib/Application/Authentication/CaptchaService.php,Line=96]
+2019-02-18T23:14:51+07:00 [5213] DEBUG default - [User=  ()] Using CaptchaService [File=/var/www/html/booking/lib/Application/Authentication/CaptchaService.php,Line=96]
+2019-02-18T23:14:56+07:00 [5213] DEBUG default - [User=  ()] Using CaptchaService [File=/var/www/html/booking/lib/Application/Authentication/CaptchaService.php,Line=96]
+2019-02-18T23:14:56+07:00 [5213] DEBUG default - [User=  ()] Trying to log in as: admin [File=/var/www/html/booking/lib/Application/Authentication/Authentication.php,Line=95]
+2019-02-18T23:14:56+07:00 [5213] ERROR default - [User=  ()] Error executing MySQL query Table 'frc_booking.users' doesn't exist [File=/var/www/html/booking/lib/Database/MySQL/MySqlConnection.php,Line=132]
+2019-02-18T23:14:56+07:00 [5213] ERROR default - [User=  ()] Uncaught exception: Exception: There was an error executing your query\nTable 'frc_booking.users' doesn't exist in /var/www/html/booking/lib/Database/MySQL/MySqlConnection.php:134
+Stack trace:
+#0 /var/www/html/booking/lib/Database/MySQL/MySqlConnection.php(91): MySqlConnection->_handleError(false)
+#1 /var/www/html/booking/lib/Database/Database.php(45): MySqlConnection->Query(Object(AuthorizationCommand))
+#2 /var/www/html/booking/lib/Application/Authentication/Authentication.php(98): Database->Query(Object(AuthorizationCommand))
+#3 /var/www/html/booking/lib/Application/Authentication/WebAuthentication.php(106): Authentication->Validate('admin', 'passsword')
+#4 /var/www/html/booking/Presenters/LoginPresenter.php(137): WebAuthentication->Validate('admin', 'passsword')
+#5 /var/www/html/booking/Pages/LoginPage.php(212): LoginPresenter->Login()
+#6 /var/www/html/booking/Web/index.php(35): LoginPage->Login()
+#7 {main} [File=/var/www/html/booking/lib/Common/Logging/ExceptionHandler.php,Line=33]
+2019-02-18T23:50:47+07:00 [5213] DEBUG default - [User=  ()] Using CaptchaService [File=/var/www/html/booking/lib/Application/Authentication/CaptchaService.php,Line=96]
+2019-02-18T23:50:49+07:00 [5213] DEBUG default - [User=  ()] Using CaptchaService [File=/var/www/html/booking/lib/Application/Authentication/CaptchaService.php,Line=96]
+2019-02-18T23:50:49+07:00 [5213] DEBUG default - [User=  ()] Trying to log in as: admin [File=/var/www/html/booking/lib/Application/Authentication/Authentication.php,Line=95]
+2019-02-18T23:50:49+07:00 [5213] DEBUG default - [User=  ()] User: admin, was validated: 0 [File=/var/www/html/booking/lib/Application/Authentication/Authentication.php,Line=115]
+2019-02-18T23:50:58+07:00 [14921] DEBUG default - [User=  ()] Using CaptchaService [File=/var/www/html/booking/lib/Application/Authentication/CaptchaService.php,Line=96]
+2019-02-18T23:50:58+07:00 [14921] DEBUG default - [User=  ()] Trying to log in as: admin [File=/var/www/html/booking/lib/Application/Authentication/Authentication.php,Line=95]
+2019-02-18T23:50:58+07:00 [14921] DEBUG default - [User=  ()] User: admin, was validated: 0 [File=/var/www/html/booking/lib/Application/Authentication/Authentication.php,Line=115]
+2019-02-18T23:51:07+07:00 [21039] DEBUG default - [User=  ()] Using CaptchaService [File=/var/www/html/booking/lib/Application/Authentication/CaptchaService.php,Line=96]
+2019-02-18T23:51:07+07:00 [21039] DEBUG default - [User=  ()] Trying to log in as: admin [File=/var/www/html/booking/lib/Application/Authentication/Authentication.php,Line=95]
+2019-02-18T23:51:07+07:00 [21039] DEBUG default - [User=  ()] User: admin, was validated: 0 [File=/var/www/html/booking/lib/Application/Authentication/Authentication.php,Line=115]
+2019-02-18T23:51:22+07:00 [24167] DEBUG default - [User=  ()] Using CaptchaService [File=/var/www/html/booking/lib/Application/Authentication/CaptchaService.php,Line=96]
+2019-02-18T23:51:22+07:00 [24167] DEBUG default - [User=  ()] Trying to log in as: myadmin [File=/var/www/html/booking/lib/Application/Authentication/Authentication.php,Line=95]
+2019-02-18T23:51:22+07:00 [24167] DEBUG default - [User=  ()] User: myadmin, was validated: 0 [File=/var/www/html/booking/lib/Application/Authentication/Authentication.php,Line=115]
+2019-02-18T23:51:34+07:00 [27257] DEBUG default - [User=  ()] Using CaptchaService [File=/var/www/html/booking/lib/Application/Authentication/CaptchaService.php,Line=96]
+2019-02-18T23:51:34+07:00 [27257] DEBUG default - [User=  ()] Trying to log in as: myadmin [File=/var/www/html/booking/lib/Application/Authentication/Authentication.php,Line=95]
+2019-02-18T23:51:34+07:00 [27257] DEBUG default - [User=  ()] User: myadmin, was validated: 0 [File=/var/www/html/booking/lib/Application/Authentication/Authentication.php,Line=115]
+2019-02-18T23:53:03+07:00 [27257] DEBUG default - [User=  ()] Using CaptchaService [File=/var/www/html/booking/lib/Application/Authentication/CaptchaService.php,Line=96]
+2019-02-18T23:53:03+07:00 [27257] DEBUG default - [User=  ()] Trying to log in as: admin [File=/var/www/html/booking/lib/Application/Authentication/Authentication.php,Line=95]
+2019-02-18T23:53:03+07:00 [27257] DEBUG default - [User=  ()] User: admin, was validated: 0 [File=/var/www/html/booking/lib/Application/Authentication/Authentication.php,Line=115]
+2019-02-18T23:53:10+07:00 [14921] DEBUG default - [User=  ()] Using CaptchaService [File=/var/www/html/booking/lib/Application/Authentication/CaptchaService.php,Line=96]
+2019-02-18T23:53:10+07:00 [14921] DEBUG default - [User=  ()] Trying to log in as: admin [File=/var/www/html/booking/lib/Application/Authentication/Authentication.php,Line=95]
+2019-02-18T23:53:10+07:00 [14921] DEBUG default - [User=  ()] User: admin, was validated: 0 [File=/var/www/html/booking/lib/Application/Authentication/Authentication.php,Line=115]

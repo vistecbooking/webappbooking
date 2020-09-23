@@ -1,0 +1,39 @@
+2019-05-03T23:23:42+07:00 [6290] DEBUG sql - [User=Narongchai Kanhanond (1730304@vistec.ac.th)] MySql Query: SELECT ri.*, rs.*, rr.*, u.user_id, u.fname, u.lname, u.email, u.phone, r.schedule_id, r.name, rs.status_id as status_id,g.group_id,g.name AS name_group
+		FROM reservation_instances ri
+		INNER JOIN reservation_series rs ON rs.series_id = ri.series_id
+		INNER JOIN users u ON u.user_id = rs.owner_id
+		LEFT JOIN user_groups ug ON u.user_id = ug.user_id
+		LEFT JOIN groups g ON g.group_id = ug.group_id
+		INNER JOIN reservation_resources rr ON rs.series_id = rr.series_id AND rr.resource_level_id = '1'
+		INNER JOIN resources r ON r.resource_id = rr.resource_id
+		WHERE
+			reference_number = '5ccc6ae7c583c136781178' AND
+			rs.status_id <> 2;
+2019-05-03T23:23:42+07:00 [6290] DEBUG sql - [User=Narongchai Kanhanond (1730304@vistec.ac.th)] MySql Query: SELECT r.*, rr.resource_level_id, s.admin_group_id as s_admin_group_id
+		FROM reservation_resources rr
+		INNER JOIN resources r ON rr.resource_id = r.resource_id
+		INNER JOIN schedules s ON r.schedule_id = s.schedule_id
+		WHERE rr.series_id = '1608'
+		ORDER BY resource_level_id, r.name;
+2019-05-03T23:23:42+07:00 [6290] DEBUG sql - [User=Narongchai Kanhanond (1730304@vistec.ac.th)] MySql Query: SELECT
+			u.user_id,
+			u.fname,
+			u.lname,
+			u.email,
+			ru.*
+		FROM reservation_users ru
+		INNER JOIN users u ON ru.user_id = u.user_id
+		WHERE reservation_instance_id = '1602';
+2019-05-03T23:23:42+07:00 [6290] DEBUG sql - [User=Narongchai Kanhanond (1730304@vistec.ac.th)] MySql Query: SELECT *
+		FROM reservation_accessories ra
+		INNER JOIN accessories a ON ra.accessory_id = a.accessory_id
+		WHERE ra.series_id = '1608';
+2019-05-03T23:23:42+07:00 [6290] DEBUG sql - [User=Narongchai Kanhanond (1730304@vistec.ac.th)] MySql Query: SELECT cav.*, ca.display_label
+		FROM custom_attribute_values cav
+		INNER JOIN custom_attributes ca ON ca.custom_attribute_id = cav.custom_attribute_id
+		WHERE cav.attribute_category = '1' AND cav.entity_id = '1608';
+2019-05-03T23:23:42+07:00 [6290] DEBUG sql - [User=Narongchai Kanhanond (1730304@vistec.ac.th)] MySql Query: SELECT * FROM reservation_files WHERE series_id = '1608';
+2019-05-03T23:23:42+07:00 [6290] DEBUG sql - [User=Narongchai Kanhanond (1730304@vistec.ac.th)] MySql Query: SELECT * FROM reservation_reminders WHERE series_id = '1608';
+2019-05-03T23:23:42+07:00 [6290] DEBUG sql - [User=Narongchai Kanhanond (1730304@vistec.ac.th)] MySql Query: SELECT	rg.*
+		FROM reservation_guests rg
+		WHERE reservation_instance_id = '1602';

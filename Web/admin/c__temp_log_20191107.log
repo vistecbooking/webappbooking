@@ -1,0 +1,5 @@
+2019-11-07T08:44:18+07:00 [786] DEBUG default - [User=Surapoj Sanram (surapoj.s@vistec.ac.th)] Action passed all validations [File=/var/www/html/booking/Pages/ActionPage.php,Line=108]
+2019-11-07T08:44:18+07:00 [786] DEBUG default - [User=Surapoj Sanram (surapoj.s@vistec.ac.th)] Processing page action. Action updateAttribute [File=/var/www/html/booking/Presenters/ActionPresenter.php,Line=88]
+2019-11-07T08:44:18+07:00 [786] DEBUG default - [User=Surapoj Sanram (surapoj.s@vistec.ac.th)] Updating attribute with id: 60 [File=/var/www/html/booking/Presenters/Admin/ManageAttributesPresenter.php,Line=98]
+2019-11-07T17:06:53+07:00 [8831] DEBUG default - [User=Admin A. (somlak.i@vistec.ac.th)] Action passed all validations [File=/var/www/html/booking/Pages/ActionPage.php,Line=108]
+2019-11-07T17:06:53+07:00 [8831] DEBUG default - [User=Admin A. (somlak.i@vistec.ac.th)] Processing page action. Action addUserPermission [File=/var/www/html/booking/Presenters/ActionPresenter.php,Line=88]

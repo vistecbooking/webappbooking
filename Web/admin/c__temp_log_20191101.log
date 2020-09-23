@@ -1,0 +1,2 @@
+2019-11-01T15:12:26+07:00 [8833] DEBUG default - [User=Admin A. (somlak.i@vistec.ac.th)] Action passed all validations [File=/var/www/html/booking/Pages/ActionPage.php,Line=108]
+2019-11-01T15:12:26+07:00 [8833] DEBUG default - [User=Admin A. (somlak.i@vistec.ac.th)] Processing page action. Action addUserPermission [File=/var/www/html/booking/Presenters/ActionPresenter.php,Line=88]

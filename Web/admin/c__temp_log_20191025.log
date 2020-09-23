@@ -1,0 +1,3 @@
+2019-10-25T08:49:04+07:00 [13609] DEBUG default - [User=Surapoj Sanram (surapoj.s@vistec.ac.th)] Action passed all validations [File=/var/www/html/booking/Pages/ActionPage.php,Line=108]
+2019-10-25T08:49:04+07:00 [13609] DEBUG default - [User=Surapoj Sanram (surapoj.s@vistec.ac.th)] Processing page action. Action addQuota [File=/var/www/html/booking/Presenters/ActionPresenter.php,Line=88]
+2019-10-25T08:49:04+07:00 [13609] DEBUG default - [User=Surapoj Sanram (surapoj.s@vistec.ac.th)] Adding new quota. Duration day, Limit 120, Unit hours, Resource 30, Group , Schedule , All Day 1, Start Time , End Time , Every Day 1, Days , Scope ExcludeCompleted [File=/var/www/html/booking/Presenters/Admin/ManageQuotasPresenter.php,Line=139]

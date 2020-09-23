@@ -1,0 +1,6 @@
+2019-06-19T14:59:23+07:00 [3863] DEBUG default - [User=Thassanat Atithep (Thassanant.a@vistec.ac.th)] Action passed all validations [File=/var/www/html/booking/Pages/ActionPage.php,Line=108]
+2019-06-19T14:59:23+07:00 [3863] DEBUG default - [User=Thassanat Atithep (Thassanant.a@vistec.ac.th)] Processing page action. Action load [File=/var/www/html/booking/Presenters/ActionPresenter.php,Line=88]
+2019-06-19T14:59:23+07:00 [3863] DEBUG default - [User=Thassanat Atithep (Thassanant.a@vistec.ac.th)] Loading blackout for editing. Id=54 [File=/var/www/html/booking/Presenters/Admin/ManageBlackoutsPresenter.php,Line=254]
+2019-06-19T15:00:18+07:00 [29889] DEBUG default - [User=Thassanat Atithep (Thassanant.a@vistec.ac.th)] Action passed all validations [File=/var/www/html/booking/Pages/ActionPage.php,Line=108]
+2019-06-19T15:00:18+07:00 [29889] DEBUG default - [User=Thassanat Atithep (Thassanant.a@vistec.ac.th)] Processing page action. Action delete [File=/var/www/html/booking/Presenters/ActionPresenter.php,Line=88]
+2019-06-19T15:00:18+07:00 [29889] DEBUG default - [User=Thassanat Atithep (Thassanant.a@vistec.ac.th)] Deleting blackout. BlackoutId=54, DeleteScope=full [File=/var/www/html/booking/Presenters/Admin/ManageBlackoutsPresenter.php,Line=244]

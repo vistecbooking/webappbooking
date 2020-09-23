@@ -1,0 +1,33 @@
+2019-02-18T09:11:37+07:00 [23629] DEBUG sql - [User=  ()] MySql Query: SELECT user_id, password, salt, legacypassword
+		FROM users
+		WHERE (username = 'admin' OR email = 'admin') AND status_id = 1;
+2019-02-18T09:14:41+07:00 [31204] DEBUG sql - [User=  ()] MySql Query: SELECT user_id, password, salt, legacypassword
+		FROM users
+		WHERE (username = 'admin' OR email = 'admin') AND status_id = 1;
+2019-02-18T09:14:50+07:00 [23629] DEBUG sql - [User=  ()] MySql Query: SELECT user_id, password, salt, legacypassword
+		FROM users
+		WHERE (username = 'admin' OR email = 'admin') AND status_id = 1;
+2019-02-18T23:14:56+07:00 [5213] DEBUG sql - [User=  ()] MySql Query: SELECT user_id, password, salt, legacypassword
+		FROM users
+		WHERE (username = 'admin' OR email = 'admin') AND status_id = 1;
+2019-02-18T23:50:49+07:00 [5213] DEBUG sql - [User=  ()] MySql Query: SELECT user_id, password, salt, legacypassword
+		FROM users
+		WHERE (username = 'admin' OR email = 'admin') AND status_id = 1;
+2019-02-18T23:50:58+07:00 [14921] DEBUG sql - [User=  ()] MySql Query: SELECT user_id, password, salt, legacypassword
+		FROM users
+		WHERE (username = 'admin' OR email = 'admin') AND status_id = 1;
+2019-02-18T23:51:07+07:00 [21039] DEBUG sql - [User=  ()] MySql Query: SELECT user_id, password, salt, legacypassword
+		FROM users
+		WHERE (username = 'admin' OR email = 'admin') AND status_id = 1;
+2019-02-18T23:51:22+07:00 [24167] DEBUG sql - [User=  ()] MySql Query: SELECT user_id, password, salt, legacypassword
+		FROM users
+		WHERE (username = 'myadmin' OR email = 'myadmin') AND status_id = 1;
+2019-02-18T23:51:34+07:00 [27257] DEBUG sql - [User=  ()] MySql Query: SELECT user_id, password, salt, legacypassword
+		FROM users
+		WHERE (username = 'myadmin' OR email = 'myadmin') AND status_id = 1;
+2019-02-18T23:53:03+07:00 [27257] DEBUG sql - [User=  ()] MySql Query: SELECT user_id, password, salt, legacypassword
+		FROM users
+		WHERE (username = 'admin' OR email = 'admin') AND status_id = 1;
+2019-02-18T23:53:10+07:00 [14921] DEBUG sql - [User=  ()] MySql Query: SELECT user_id, password, salt, legacypassword
+		FROM users
+		WHERE (username = 'admin' OR email = 'admin') AND status_id = 1;

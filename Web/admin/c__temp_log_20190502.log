@@ -1,0 +1,7 @@
+2019-05-02T13:27:46+07:00 [23803] DEBUG default - [User=Admin A. (ratchawan.j@vistec.ac.th)] Action passed all validations [File=/var/www/html/booking/Pages/ActionPage.php,Line=108]
+2019-05-02T13:27:46+07:00 [23803] DEBUG default - [User=Admin A. (ratchawan.j@vistec.ac.th)] Processing page action. Action load [File=/var/www/html/booking/Presenters/ActionPresenter.php,Line=88]
+2019-05-02T13:27:46+07:00 [23803] DEBUG default - [User=Admin A. (ratchawan.j@vistec.ac.th)] Loading blackout for editing. Id=20 [File=/var/www/html/booking/Presenters/Admin/ManageBlackoutsPresenter.php,Line=254]
+2019-05-02T14:06:31+07:00 [6290] DEBUG default - [User=Admin A. (meshaya.p@vistec.ac.th)] Action passed all validations [File=/var/www/html/booking/Pages/ActionPage.php,Line=108]
+2019-05-02T14:06:31+07:00 [6290] DEBUG default - [User=Admin A. (meshaya.p@vistec.ac.th)] Processing page action. Action addUserPermission [File=/var/www/html/booking/Presenters/ActionPresenter.php,Line=88]
+2019-05-02T14:06:45+07:00 [6290] DEBUG default - [User=Admin A. (meshaya.p@vistec.ac.th)] Action passed all validations [File=/var/www/html/booking/Pages/ActionPage.php,Line=108]
+2019-05-02T14:06:45+07:00 [6290] DEBUG default - [User=Admin A. (meshaya.p@vistec.ac.th)] Processing page action. Action addUserPermission [File=/var/www/html/booking/Presenters/ActionPresenter.php,Line=88]

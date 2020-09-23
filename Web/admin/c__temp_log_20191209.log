@@ -1,0 +1,5 @@
+2019-12-09T09:52:52+07:00 [8833] DEBUG default - [User=Admin A. (meshaya.p@vistec.ac.th)] Action passed all validations [File=/var/www/html/booking/Pages/ActionPage.php,Line=108]
+2019-12-09T09:52:52+07:00 [8833] DEBUG default - [User=Admin A. (meshaya.p@vistec.ac.th)] Processing page action. Action delete [File=/var/www/html/booking/Presenters/ActionPresenter.php,Line=88]
+2019-12-09T09:52:52+07:00 [8833] DEBUG default - [User=Admin A. (meshaya.p@vistec.ac.th)] Deleting blackout. BlackoutId=139, DeleteScope=full [File=/var/www/html/booking/Presenters/Admin/ManageBlackoutsPresenter.php,Line=244]
+2019-12-09T12:07:08+07:00 [8833] DEBUG default - [User=Admin A. (meshaya.p@vistec.ac.th)] Action passed all validations [File=/var/www/html/booking/Pages/ActionPage.php,Line=108]
+2019-12-09T12:07:08+07:00 [8833] DEBUG default - [User=Admin A. (meshaya.p@vistec.ac.th)] Processing page action. Action add [File=/var/www/html/booking/Presenters/ActionPresenter.php,Line=88]

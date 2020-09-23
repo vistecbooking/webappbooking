@@ -1,0 +1,6 @@
+2019-07-18T17:01:51+07:00 [3863] DEBUG default - [User=Admin A. (jarinya.s@vistec.ac.th)] Action passed all validations [File=/var/www/html/booking/Pages/ActionPage.php,Line=108]
+2019-07-18T17:01:51+07:00 [3863] DEBUG default - [User=Admin A. (jarinya.s@vistec.ac.th)] Processing page action. Action load [File=/var/www/html/booking/Presenters/ActionPresenter.php,Line=88]
+2019-07-18T17:01:51+07:00 [3863] DEBUG default - [User=Admin A. (jarinya.s@vistec.ac.th)] Loading blackout for editing. Id=83 [File=/var/www/html/booking/Presenters/Admin/ManageBlackoutsPresenter.php,Line=254]
+2019-07-18T17:02:19+07:00 [12231] DEBUG default - [User=Admin A. (jarinya.s@vistec.ac.th)] Action passed all validations [File=/var/www/html/booking/Pages/ActionPage.php,Line=108]
+2019-07-18T17:02:19+07:00 [12231] DEBUG default - [User=Admin A. (jarinya.s@vistec.ac.th)] Processing page action. Action update [File=/var/www/html/booking/Presenters/ActionPresenter.php,Line=88]
+2019-07-18T17:02:19+07:00 [12231] DEBUG default - [User=Admin A. (jarinya.s@vistec.ac.th)] Updating blackout. BlackoutId=83, UpdateScope=full [File=/var/www/html/booking/Presenters/Admin/ManageBlackoutsPresenter.php,Line=325]

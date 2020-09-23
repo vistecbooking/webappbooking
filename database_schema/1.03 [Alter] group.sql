@@ -1,0 +1,1 @@
+ALTER TABLE `groups` ADD `color` VARCHAR(10) NULL AFTER `legacyid`;

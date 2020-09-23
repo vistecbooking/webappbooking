@@ -1,0 +1,138 @@
+2019-09-03T14:45:43+07:00 [24915] DEBUG sql - [User=Admin A. (meshaya.p@vistec.ac.th)] MySql Query: SELECT a.*,
+				(SELECT GROUP_CONCAT(e.entity_id SEPARATOR "!sep!")
+							FROM custom_attribute_entities e WHERE e.custom_attribute_id = a.custom_attribute_id ORDER BY e.entity_id) as entity_ids,
+				CASE
+				WHEN a.attribute_category = 2 THEN (SELECT GROUP_CONCAT(CONCAT(u.fname, " ", u.lname) SEPARATOR "!sep!")
+													FROM users u INNER JOIN custom_attribute_entities e
+													WHERE e.custom_attribute_id = a.custom_attribute_id AND u.user_id = e.entity_id ORDER BY e.entity_id)
+				WHEN a.attribute_category = 4 THEN (SELECT GROUP_CONCAT(r.name SEPARATOR "!sep!")
+													FROM resources r INNER JOIN custom_attribute_entities e
+													WHERE e.custom_attribute_id = a.custom_attribute_id AND r.resource_id = e.entity_id ORDER BY e.entity_id)
+				WHEN a.attribute_category = 5  THEN (SELECT GROUP_CONCAT(rt.resource_type_name SEPARATOR "!sep!")
+													FROM resource_types rt INNER JOIN custom_attribute_entities e
+													WHERE e.custom_attribute_id = a.custom_attribute_id AND rt.resource_type_id = e.entity_id ORDER BY e.entity_id)
+				ELSE null
+				END as entity_descriptions,
+				CASE
+				WHEN a.secondary_category = 2 THEN (SELECT GROUP_CONCAT(CONCAT( fname, " ", lname ) SEPARATOR  "!sep!" ) FROM users WHERE FIND_IN_SET( user_id, a.secondary_entity_ids ))
+				WHEN a.secondary_category = 4 THEN (SELECT GROUP_CONCAT(name SEPARATOR  "!sep!" ) FROM resources WHERE FIND_IN_SET( resource_id, a.secondary_entity_ids ))
+				WHEN a.secondary_category = 5 THEN (SELECT GROUP_CONCAT(resource_type_name SEPARATOR  "!sep!" ) FROM resource_types WHERE FIND_IN_SET( resource_type_id, a.secondary_entity_ids ))
+				ELSE null
+				END as secondary_entity_descriptions
+				FROM custom_attributes a WHERE a.attribute_category = '4' ORDER BY a.sort_order, a.display_label;
+2019-09-03T14:45:43+07:00 [24915] DEBUG sql - [User=Admin A. (meshaya.p@vistec.ac.th)] MySql Query: SELECT COUNT(*) as total FROM (SELECT r.*, s.admin_group_id as s_admin_group_id,
+		(SELECT GROUP_CONCAT(CONCAT(cav.custom_attribute_id, '=', cav.attribute_value) SEPARATOR "!sep!")
+						FROM custom_attribute_values cav WHERE cav.entity_id = r.resource_id AND cav.attribute_category = 4) as attribute_list,
+		(SELECT GROUP_CONCAT(rga.resource_group_id SEPARATOR "!sep!") FROM resource_group_assignment rga WHERE rga.resource_id = r.resource_id) AS group_list
+		FROM resources r
+		INNER JOIN schedules s ON r.schedule_id = s.schedule_id
+		 WHERE 1=1 ORDER BY COALESCE(r.sort_order,0), r.name) results;
+2019-09-03T14:45:43+07:00 [24915] DEBUG sql - [User=Admin A. (meshaya.p@vistec.ac.th)] MySql Query: SELECT r.*, s.admin_group_id as s_admin_group_id,
+		(SELECT GROUP_CONCAT(CONCAT(cav.custom_attribute_id, '=', cav.attribute_value) SEPARATOR "!sep!")
+						FROM custom_attribute_values cav WHERE cav.entity_id = r.resource_id AND cav.attribute_category = 4) as attribute_list,
+		(SELECT GROUP_CONCAT(rga.resource_group_id SEPARATOR "!sep!") FROM resource_group_assignment rga WHERE rga.resource_id = r.resource_id) AS group_list
+		FROM resources r
+		INNER JOIN schedules s ON r.schedule_id = s.schedule_id
+		 WHERE 1=1 ORDER BY COALESCE(r.sort_order,0), r.name LIMIT 10 OFFSET 0;
+2019-09-03T14:45:43+07:00 [24915] DEBUG sql - [User=Admin A. (meshaya.p@vistec.ac.th)] MySql Query: SELECT s.*, l.timezone FROM schedules s INNER JOIN layouts l ON s.layout_id = l.layout_id ORDER BY s.name;
+2019-09-03T14:45:43+07:00 [24915] DEBUG sql - [User=Admin A. (meshaya.p@vistec.ac.th)] MySql Query: SELECT *,
+			(SELECT GROUP_CONCAT(CONCAT(cav.custom_attribute_id, '=', cav.attribute_value) SEPARATOR "!sep!")
+							FROM custom_attribute_values cav INNER JOIN custom_attribute_entities cae on cav.custom_attribute_id = cae.custom_attribute_id
+							WHERE cav.entity_id = r.resource_type_id AND cav.attribute_category = 5) as attribute_list
+							FROM resource_types r;
+2019-09-03T14:45:43+07:00 [24915] DEBUG sql - [User=Admin A. (meshaya.p@vistec.ac.th)] MySql Query: SELECT * FROM resource_status_reasons;
+2019-09-03T14:45:43+07:00 [24915] DEBUG sql - [User=Admin A. (meshaya.p@vistec.ac.th)] MySql Query: SELECT g.*
+		FROM groups g
+		INNER JOIN group_roles gr ON g.group_id = gr.group_id
+		INNER JOIN roles r ON r.role_id = gr.role_id
+		WHERE r.role_level = '3'
+		ORDER BY g.name;
+2019-09-03T14:45:43+07:00 [24915] DEBUG sql - [User=Admin A. (meshaya.p@vistec.ac.th)] MySql Query: SELECT * FROM resource_groups ORDER BY parent_id, resource_group_name;
+2019-09-03T14:45:43+07:00 [24915] DEBUG sql - [User=Admin A. (meshaya.p@vistec.ac.th)] MySql Query: SELECT r.*, a.resource_group_id
+		FROM resource_group_assignment a
+		INNER JOIN resources r ON r.resource_id = a.resource_id
+		WHERE (-1 = '-1' OR r.schedule_id = '-1')
+		ORDER BY COALESCE(r.sort_order,0), r.name;
+2019-09-03T14:45:43+07:00 [24915] DEBUG sql - [User=Admin A. (meshaya.p@vistec.ac.th)] MySql Query: SELECT r.*, s.admin_group_id as s_admin_group_id,
+		(SELECT GROUP_CONCAT(CONCAT(cav.custom_attribute_id, '=', cav.attribute_value) SEPARATOR "!sep!")
+						FROM custom_attribute_values cav WHERE cav.entity_id = r.resource_id AND cav.attribute_category = 4) as attribute_list,
+		(SELECT GROUP_CONCAT(rga.resource_group_id SEPARATOR "!sep!") FROM resource_group_assignment rga WHERE rga.resource_id = r.resource_id) AS group_list
+		FROM resources r
+		INNER JOIN schedules s ON r.schedule_id = s.schedule_id
+		 WHERE 1=1 ORDER BY COALESCE(r.sort_order,0), r.name;
+2019-09-03T14:45:49+07:00 [24679] DEBUG sql - [User=Admin A. (meshaya.p@vistec.ac.th)] MySql Query: SELECT a.*,
+				(SELECT GROUP_CONCAT(e.entity_id SEPARATOR "!sep!")
+							FROM custom_attribute_entities e WHERE e.custom_attribute_id = a.custom_attribute_id ORDER BY e.entity_id) as entity_ids,
+				CASE
+				WHEN a.attribute_category = 2 THEN (SELECT GROUP_CONCAT(CONCAT(u.fname, " ", u.lname) SEPARATOR "!sep!")
+													FROM users u INNER JOIN custom_attribute_entities e
+													WHERE e.custom_attribute_id = a.custom_attribute_id AND u.user_id = e.entity_id ORDER BY e.entity_id)
+				WHEN a.attribute_category = 4 THEN (SELECT GROUP_CONCAT(r.name SEPARATOR "!sep!")
+													FROM resources r INNER JOIN custom_attribute_entities e
+													WHERE e.custom_attribute_id = a.custom_attribute_id AND r.resource_id = e.entity_id ORDER BY e.entity_id)
+				WHEN a.attribute_category = 5  THEN (SELECT GROUP_CONCAT(rt.resource_type_name SEPARATOR "!sep!")
+													FROM resource_types rt INNER JOIN custom_attribute_entities e
+													WHERE e.custom_attribute_id = a.custom_attribute_id AND rt.resource_type_id = e.entity_id ORDER BY e.entity_id)
+				ELSE null
+				END as entity_descriptions,
+				CASE
+				WHEN a.secondary_category = 2 THEN (SELECT GROUP_CONCAT(CONCAT( fname, " ", lname ) SEPARATOR  "!sep!" ) FROM users WHERE FIND_IN_SET( user_id, a.secondary_entity_ids ))
+				WHEN a.secondary_category = 4 THEN (SELECT GROUP_CONCAT(name SEPARATOR  "!sep!" ) FROM resources WHERE FIND_IN_SET( resource_id, a.secondary_entity_ids ))
+				WHEN a.secondary_category = 5 THEN (SELECT GROUP_CONCAT(resource_type_name SEPARATOR  "!sep!" ) FROM resource_types WHERE FIND_IN_SET( resource_type_id, a.secondary_entity_ids ))
+				ELSE null
+				END as secondary_entity_descriptions
+				FROM custom_attributes a WHERE a.attribute_category = '4' ORDER BY a.sort_order, a.display_label;
+2019-09-03T14:45:49+07:00 [24679] DEBUG sql - [User=Admin A. (meshaya.p@vistec.ac.th)] MySql Query: SELECT COUNT(*) as total FROM (SELECT r.*, s.admin_group_id as s_admin_group_id,
+		(SELECT GROUP_CONCAT(CONCAT(cav.custom_attribute_id, '=', cav.attribute_value) SEPARATOR "!sep!")
+						FROM custom_attribute_values cav WHERE cav.entity_id = r.resource_id AND cav.attribute_category = 4) as attribute_list,
+		(SELECT GROUP_CONCAT(rga.resource_group_id SEPARATOR "!sep!") FROM resource_group_assignment rga WHERE rga.resource_id = r.resource_id) AS group_list
+		FROM resources r
+		INNER JOIN schedules s ON r.schedule_id = s.schedule_id
+		 WHERE 1=1 ORDER BY COALESCE(r.sort_order,0), r.name) results;
+2019-09-03T14:45:49+07:00 [24679] DEBUG sql - [User=Admin A. (meshaya.p@vistec.ac.th)] MySql Query: SELECT r.*, s.admin_group_id as s_admin_group_id,
+		(SELECT GROUP_CONCAT(CONCAT(cav.custom_attribute_id, '=', cav.attribute_value) SEPARATOR "!sep!")
+						FROM custom_attribute_values cav WHERE cav.entity_id = r.resource_id AND cav.attribute_category = 4) as attribute_list,
+		(SELECT GROUP_CONCAT(rga.resource_group_id SEPARATOR "!sep!") FROM resource_group_assignment rga WHERE rga.resource_id = r.resource_id) AS group_list
+		FROM resources r
+		INNER JOIN schedules s ON r.schedule_id = s.schedule_id
+		 WHERE 1=1 ORDER BY COALESCE(r.sort_order,0), r.name LIMIT 10 OFFSET 10;
+2019-09-03T14:45:49+07:00 [24679] DEBUG sql - [User=Admin A. (meshaya.p@vistec.ac.th)] MySql Query: SELECT s.*, l.timezone FROM schedules s INNER JOIN layouts l ON s.layout_id = l.layout_id ORDER BY s.name;
+2019-09-03T14:45:49+07:00 [24679] DEBUG sql - [User=Admin A. (meshaya.p@vistec.ac.th)] MySql Query: SELECT *,
+			(SELECT GROUP_CONCAT(CONCAT(cav.custom_attribute_id, '=', cav.attribute_value) SEPARATOR "!sep!")
+							FROM custom_attribute_values cav INNER JOIN custom_attribute_entities cae on cav.custom_attribute_id = cae.custom_attribute_id
+							WHERE cav.entity_id = r.resource_type_id AND cav.attribute_category = 5) as attribute_list
+							FROM resource_types r;
+2019-09-03T14:45:49+07:00 [24679] DEBUG sql - [User=Admin A. (meshaya.p@vistec.ac.th)] MySql Query: SELECT * FROM resource_status_reasons;
+2019-09-03T14:45:49+07:00 [24679] DEBUG sql - [User=Admin A. (meshaya.p@vistec.ac.th)] MySql Query: SELECT g.*
+		FROM groups g
+		INNER JOIN group_roles gr ON g.group_id = gr.group_id
+		INNER JOIN roles r ON r.role_id = gr.role_id
+		WHERE r.role_level = '3'
+		ORDER BY g.name;
+2019-09-03T14:45:49+07:00 [24679] DEBUG sql - [User=Admin A. (meshaya.p@vistec.ac.th)] MySql Query: SELECT * FROM resource_groups ORDER BY parent_id, resource_group_name;
+2019-09-03T14:45:49+07:00 [24679] DEBUG sql - [User=Admin A. (meshaya.p@vistec.ac.th)] MySql Query: SELECT r.*, a.resource_group_id
+		FROM resource_group_assignment a
+		INNER JOIN resources r ON r.resource_id = a.resource_id
+		WHERE (-1 = '-1' OR r.schedule_id = '-1')
+		ORDER BY COALESCE(r.sort_order,0), r.name;
+2019-09-03T14:45:49+07:00 [24679] DEBUG sql - [User=Admin A. (meshaya.p@vistec.ac.th)] MySql Query: SELECT r.*, s.admin_group_id as s_admin_group_id,
+		(SELECT GROUP_CONCAT(CONCAT(cav.custom_attribute_id, '=', cav.attribute_value) SEPARATOR "!sep!")
+						FROM custom_attribute_values cav WHERE cav.entity_id = r.resource_id AND cav.attribute_category = 4) as attribute_list,
+		(SELECT GROUP_CONCAT(rga.resource_group_id SEPARATOR "!sep!") FROM resource_group_assignment rga WHERE rga.resource_id = r.resource_id) AS group_list
+		FROM resources r
+		INNER JOIN schedules s ON r.schedule_id = s.schedule_id
+		 WHERE 1=1 ORDER BY COALESCE(r.sort_order,0), r.name;
+2019-09-03T14:45:55+07:00 [25700] DEBUG sql - [User=Admin A. (meshaya.p@vistec.ac.th)] MySql Query: SELECT
+				u.*
+			FROM
+				user_resource_permissions urp, resources r, users u
+			WHERE
+				r.resource_id = '8' AND r.resource_id = urp.resource_id AND u.user_id = urp.user_id AND u.status_id = '1';
+2019-09-03T14:46:06+07:00 [24679] DEBUG sql - [User=Admin A. (meshaya.p@vistec.ac.th)] MySql Execute: INSERT IGNORE INTO user_resource_permissions (user_id, resource_id)
+		VALUES ('483', '8');
+2019-09-03T14:46:06+07:00 [25700] DEBUG sql - [User=Admin A. (meshaya.p@vistec.ac.th)] MySql Query: SELECT
+				u.*
+			FROM
+				user_resource_permissions urp, resources r, users u
+			WHERE
+				r.resource_id = '8' AND r.resource_id = urp.resource_id AND u.user_id = urp.user_id AND u.status_id = '1';

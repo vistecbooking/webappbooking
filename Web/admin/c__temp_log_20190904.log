@@ -1,0 +1,6 @@
+2019-09-04T10:25:41+07:00 [25700] DEBUG default - [User=Admin A. (jarinya.s@vistec.ac.th)] Action passed all validations [File=/var/www/html/booking/Pages/ActionPage.php,Line=108]
+2019-09-04T10:25:41+07:00 [25700] DEBUG default - [User=Admin A. (jarinya.s@vistec.ac.th)] Processing page action. Action removeUserPermission [File=/var/www/html/booking/Presenters/ActionPresenter.php,Line=88]
+2019-09-04T10:25:48+07:00 [25700] DEBUG default - [User=Admin A. (jarinya.s@vistec.ac.th)] Action passed all validations [File=/var/www/html/booking/Pages/ActionPage.php,Line=108]
+2019-09-04T10:25:48+07:00 [25700] DEBUG default - [User=Admin A. (jarinya.s@vistec.ac.th)] Processing page action. Action addUserPermission [File=/var/www/html/booking/Presenters/ActionPresenter.php,Line=88]
+2019-09-04T15:00:15+07:00 [24915] DEBUG default - [User=Admin A. (jarinya.s@vistec.ac.th)] Action passed all validations [File=/var/www/html/booking/Pages/ActionPage.php,Line=108]
+2019-09-04T15:00:15+07:00 [24915] DEBUG default - [User=Admin A. (jarinya.s@vistec.ac.th)] Processing page action. Action addUserPermission [File=/var/www/html/booking/Presenters/ActionPresenter.php,Line=88]
