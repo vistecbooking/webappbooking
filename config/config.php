@@ -74,11 +74,17 @@ $conf['settings']['uploads']['reservation.attachment.extensions'] = 'txt,jpg,gif
 // $conf['settings']['database']['name'] = 'gotit_booking';
 
 
+// $conf['settings']['database']['type'] = 'mysql';
+// $conf['settings']['database']['user'] = 'root';
+// $conf['settings']['database']['password'] = 'YFAeGHac123as3!';
+// $conf['settings']['database']['hostspec'] = '128.199.225.22';
+// $conf['settings']['database']['name'] = 'booking_dev';
+
 $conf['settings']['database']['type'] = 'mysql';
-$conf['settings']['database']['user'] = 'root';
-$conf['settings']['database']['password'] = 'YFAeGHac123as3!';
-$conf['settings']['database']['hostspec'] = '128.199.225.22';
-$conf['settings']['database']['name'] = 'booking_dev';
+$conf['settings']['database']['user'] = 'AJL7g9cPtS';
+$conf['settings']['database']['password'] = 'diflc3qCec!';
+$conf['settings']['database']['hostspec'] = 'remotemysql.com';
+$conf['settings']['database']['name'] = 'AJL7g9cPtS';
 
 
 $conf['settings']['phpmailer']['mailer'] = 'smtp';
