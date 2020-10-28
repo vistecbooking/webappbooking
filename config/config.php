@@ -83,7 +83,7 @@ $conf['settings']['uploads']['reservation.attachment.extensions'] = 'txt,jpg,gif
 $conf['settings']['database']['type'] = 'mysql';
 $conf['settings']['database']['user'] = 'AJL7g9cPtS';
 $conf['settings']['database']['password'] = 'diflc3qCec!';
-$conf['settings']['database']['hostspec'] = 'remotemysql.com';
+$conf['settings']['database']['hostspec'] = '37.59.55.185';
 $conf['settings']['database']['name'] = 'AJL7g9cPtS';
 
 
