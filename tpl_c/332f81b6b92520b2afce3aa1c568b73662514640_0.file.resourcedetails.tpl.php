@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2019-12-13 15:11:54
+/* Smarty version 3.1.30, created on 2020-10-20 20:12:57
   from "/var/www/html/booking/tpl/Ajax/resourcedetails.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5df347ca605f87_20475495',
+  'unifunc' => 'content_5f8ee2592df855_46755930',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '332f81b6b92520b2afce3aa1c568b73662514640' => 
     array (
       0 => '/var/www/html/booking/tpl/Ajax/resourcedetails.tpl',
-      1 => 1551196419,
+      1 => 1600849228,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5df347ca605f87_20475495 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f8ee2592df855_46755930 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 <div id="resourceDetailsPopup">

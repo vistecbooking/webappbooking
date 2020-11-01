@@ -1,0 +1,5 @@
+2020-10-20T20:12:55+07:00 [26] DEBUG default - [User=Tanut Choksatchawathi (tanut.cho@gmail.com)] Adding custom attribute value for entityId=10, attributeId=29 [File=/var/www/html/booking/lib/Application/Attributes/AttributeList.php,Line=122]
+2020-10-20T20:12:55+07:00 [26] DEBUG default - [User=Tanut Choksatchawathi (tanut.cho@gmail.com)] Took 0 seconds to load custom attributes for category 4 [File=/var/www/html/booking/lib/Application/Attributes/AttributeService.php,Line=154]
+2020-10-20T20:12:55+07:00 [26] DEBUG default - [User=Tanut Choksatchawathi (tanut.cho@gmail.com)] Found 1 attributes for entityId 10 [File=/var/www/html/booking/lib/Application/Attributes/AttributeList.php,Line=165]
+2020-10-20T20:12:56+07:00 [26] DEBUG default - [User=Tanut Choksatchawathi (tanut.cho@gmail.com)] Took 0 seconds to load custom attributes for category 5 [File=/var/www/html/booking/lib/Application/Attributes/AttributeService.php,Line=154]
+2020-10-20T20:12:56+07:00 [26] DEBUG default - [User=Tanut Choksatchawathi (tanut.cho@gmail.com)] Found 0 attributes for entityId 1 [File=/var/www/html/booking/lib/Application/Attributes/AttributeList.php,Line=165]

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2019-12-13 15:11:45
+/* Smarty version 3.1.30, created on 2020-10-05 18:46:36
   from "/var/www/html/booking/tpl/Calendar/calendar-page-base.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5df347c1e6b800_82533467',
+  'unifunc' => 'content_5f7b079c1e7ab9_93850282',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd1bbacfc789b9345e3dda44af9ac06f747658eaf' => 
     array (
       0 => '/var/www/html/booking/tpl/Calendar/calendar-page-base.tpl',
-      1 => 1551196422,
+      1 => 1600849228,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:globalfooter.tpl' => 1,
   ),
 ),false)) {
-function content_5df347c1e6b800_82533467 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f7b079c1e7ab9_93850282 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 <?php $_smarty_tpl->_subTemplateRender("file:globalheader.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('Select2'=>true,'Qtip'=>true,'Fullcalendar'=>true,'cssFiles'=>'scripts/css/jqtree.css'), 0, false);

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2019-12-11 15:33:35
+/* Smarty version 3.1.30, created on 2020-10-05 18:43:15
   from "/var/www/html/booking/tpl/Controls/Attributes/SingleLineTextbox.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5df0a9dfc7d381_92697084',
+  'unifunc' => 'content_5f7b06d336a042_08503243',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2f69983327163b5ad509bea5ec78faaf6b927ddf' => 
     array (
       0 => '/var/www/html/booking/tpl/Controls/Attributes/SingleLineTextbox.tpl',
-      1 => 1551196421,
+      1 => 1600849228,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5df0a9dfc7d381_92697084 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f7b06d336a042_08503243 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 <div class="form-group <?php if (!$_smarty_tpl->tpl_vars['searchmode']->value && $_smarty_tpl->tpl_vars['attribute']->value->Required()) {?>has-feedback<?php }?> <?php echo $_smarty_tpl->tpl_vars['class']->value;?>

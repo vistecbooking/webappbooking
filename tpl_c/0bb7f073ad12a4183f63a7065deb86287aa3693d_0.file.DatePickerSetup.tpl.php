@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2019-12-13 16:38:16
+/* Smarty version 3.1.30, created on 2020-10-20 20:17:43
   from "/var/www/html/booking/tpl/Controls/DatePickerSetup.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5df35c0861eaa8_11057731',
+  'unifunc' => 'content_5f8ee377d9df70_63305807',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0bb7f073ad12a4183f63a7065deb86287aa3693d' => 
     array (
       0 => '/var/www/html/booking/tpl/Controls/DatePickerSetup.tpl',
-      1 => 1551196421,
+      1 => 1600849228,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5df35c0861eaa8_11057731 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f8ee377d9df70_63305807 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 <?php echo '<script'; ?>

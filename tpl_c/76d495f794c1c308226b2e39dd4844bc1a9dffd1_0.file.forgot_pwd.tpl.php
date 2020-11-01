@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2019-12-09 19:00:00
+/* Smarty version 3.1.30, created on 2020-10-24 18:38:01
   from "/var/www/html/booking/tpl/forgot_pwd.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5dee3740417938_88116737',
+  'unifunc' => 'content_5f941219318eb7_11313987',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '76d495f794c1c308226b2e39dd4844bc1a9dffd1' => 
     array (
       0 => '/var/www/html/booking/tpl/forgot_pwd.tpl',
-      1 => 1551196418,
+      1 => 1600849228,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:globalfooter.tpl' => 1,
   ),
 ),false)) {
-function content_5dee3740417938_88116737 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f941219318eb7_11313987 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 <?php $_smarty_tpl->_subTemplateRender("file:globalheader.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
