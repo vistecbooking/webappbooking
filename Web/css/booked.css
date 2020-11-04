@@ -72,8 +72,7 @@ body {
 .adjust-nav-bar-static {
   margin-top: -70px;
 }
-a,
-a:visited {
+a {
   color: #669999;
 }
 a:hover {
