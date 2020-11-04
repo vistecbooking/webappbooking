@@ -307,20 +307,22 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
                 {/if}
             </ul>
             <ul class="navbar-nav">
-                <li class="nav-item dropdown" id="navMyAccountDropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">{translate key="MyAccount"}</a>
-                    <div class="dropdown-menu dropdown-menu-right">
-                        <a class="dropdown-item" href="{$Path}{Pages::PROFILE}">{translate key="Profile"}</a>
-                        <a class="dropdown-item" href="{$Path}{Pages::PASSWORD}">{translate key="ChangePassword"}</a>
-                        <a class="dropdown-item" href="{$Path}{Pages::NOTIFICATION_PREFERENCES}">{translate key="NotificationPreferences"}</a>
-                        <div class="dropdown-divider"></div>
-                        {if $LoggedIn}
+                {if $LoggedIn}
+                    <li class="nav-item dropdown" id="navMyAccountDropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">{translate key="MyAccount"}</a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a class="dropdown-item" href="{$Path}{Pages::PROFILE}">{translate key="Profile"}</a>
+                            <a class="dropdown-item" href="{$Path}{Pages::PASSWORD}">{translate key="ChangePassword"}</a>
+                            <a class="dropdown-item" href="{$Path}{Pages::NOTIFICATION_PREFERENCES}">{translate key="NotificationPreferences"}</a>
+                            <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="{$Path}logout.php">{translate key="SignOut"}</a>
-                        {else}
-                            <a class="dropdown-item" href="{$Path}index.php">{translate key="LogIn"}</a>
-                        {/if}
-                    </div>
-                </li>
+                        </div>
+                    </li>
+                {else}
+                    <li class="nav-item" id="navLogin">
+                        <a class="nav-link" href="{$Path}index.php">{translate key="LogIn"}</a>
+                    </li>
+                {/if}
             </ul>
         </div>
     </nav>

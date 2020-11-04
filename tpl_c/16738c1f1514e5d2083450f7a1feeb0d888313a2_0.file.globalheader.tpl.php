@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-11-05 03:11:23
+/* Smarty version 3.1.30, created on 2020-11-05 03:16:03
   from "/var/www/html/booking/tpl/globalheader.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5fa30aeb3acb48_75562257',
+  'unifunc' => 'content_5fa30c033aa3e5_90621082',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '16738c1f1514e5d2083450f7a1feeb0d888313a2' => 
     array (
       0 => '/var/www/html/booking/tpl/globalheader.tpl',
-      1 => 1604520370,
+      1 => 1604520942,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5fa30aeb3acb48_75562257 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fa30c033aa3e5_90621082 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 
@@ -431,34 +431,36 @@ reports/<?php echo Pages::REPORTS_COMMON;?>
                 <?php }?>
             </ul>
             <ul class="navbar-nav">
-                <li class="nav-item dropdown" id="navMyAccountDropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"MyAccount"),$_smarty_tpl);?>
+                <?php if ($_smarty_tpl->tpl_vars['LoggedIn']->value) {?>
+                    <li class="nav-item dropdown" id="navMyAccountDropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"MyAccount"),$_smarty_tpl);?>
 </a>
-                    <div class="dropdown-menu dropdown-menu-right">
-                        <a class="dropdown-item" href="<?php echo $_smarty_tpl->tpl_vars['Path']->value;
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a class="dropdown-item" href="<?php echo $_smarty_tpl->tpl_vars['Path']->value;
 echo Pages::PROFILE;?>
 "><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"Profile"),$_smarty_tpl);?>
 </a>
-                        <a class="dropdown-item" href="<?php echo $_smarty_tpl->tpl_vars['Path']->value;
+                            <a class="dropdown-item" href="<?php echo $_smarty_tpl->tpl_vars['Path']->value;
 echo Pages::PASSWORD;?>
 "><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"ChangePassword"),$_smarty_tpl);?>
 </a>
-                        <a class="dropdown-item" href="<?php echo $_smarty_tpl->tpl_vars['Path']->value;
+                            <a class="dropdown-item" href="<?php echo $_smarty_tpl->tpl_vars['Path']->value;
 echo Pages::NOTIFICATION_PREFERENCES;?>
 "><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"NotificationPreferences"),$_smarty_tpl);?>
 </a>
-                        <div class="dropdown-divider"></div>
-                        <?php if ($_smarty_tpl->tpl_vars['LoggedIn']->value) {?>
+                            <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="<?php echo $_smarty_tpl->tpl_vars['Path']->value;?>
 logout.php"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"SignOut"),$_smarty_tpl);?>
 </a>
-                        <?php } else { ?>
-                            <a class="dropdown-item" href="<?php echo $_smarty_tpl->tpl_vars['Path']->value;?>
+                        </div>
+                    </li>
+                <?php } else { ?>
+                    <li class="nav-item" id="navLogin">
+                        <a class="nav-link" href="<?php echo $_smarty_tpl->tpl_vars['Path']->value;?>
 index.php"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"LogIn"),$_smarty_tpl);?>
 </a>
-                        <?php }?>
-                    </div>
-                </li>
+                    </li>
+                <?php }?>
             </ul>
         </div>
     </nav>
