@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2019-11-28 17:26:26
+/* Smarty version 3.1.30, created on 2020-11-05 20:16:58
   from "/var/www/html/booking/tpl/Admin/manage_schedules.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5ddfa0d2552a20_06187554',
+  'unifunc' => 'content_5fa3fb4a9b32f4_14366757',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1ec0bee1cf9d18be61db3dcb5f1090c36fcd95a5' => 
     array (
       0 => '/var/www/html/booking/tpl/Admin/manage_schedules.tpl',
-      1 => 1551196424,
+      1 => 1600849228,
       2 => 'file',
     ),
   ),
@@ -23,19 +23,19 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:globalfooter.tpl' => 1,
   ),
 ),false)) {
-function content_5ddfa0d2552a20_06187554 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fa3fb4a9b32f4_14366757 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->ext->_tplFunction->registerTplFunctions($_smarty_tpl, array (
   'display_periods' => 
   array (
     'compiled_filepath' => '/var/www/html/booking/tpl_c/1ec0bee1cf9d18be61db3dcb5f1090c36fcd95a5_0.file.manage_schedules.tpl.php',
     'uid' => '1ec0bee1cf9d18be61db3dcb5f1090c36fcd95a5',
-    'call_name' => 'smarty_template_function_display_periods_5584866495ddfa0d21cec80_81043684',
+    'call_name' => 'smarty_template_function_display_periods_8343561115fa3fb49266091_76102266',
   ),
   'display_slot_inputs' => 
   array (
     'compiled_filepath' => '/var/www/html/booking/tpl_c/1ec0bee1cf9d18be61db3dcb5f1090c36fcd95a5_0.file.manage_schedules.tpl.php',
     'uid' => '1ec0bee1cf9d18be61db3dcb5f1090c36fcd95a5',
-    'call_name' => 'smarty_template_function_display_slot_inputs_5584866495ddfa0d21cec80_81043684',
+    'call_name' => 'smarty_template_function_display_slot_inputs_8343561115fa3fb49266091_76102266',
   ),
 ));
 if (!is_callable('smarty_function_html_options')) require_once '/var/www/html/booking/lib/external/Smarty/plugins/function.html_options.php';
@@ -958,9 +958,9 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 ?>
 
 <?php }
-/* smarty_template_function_display_periods_5584866495ddfa0d21cec80_81043684 */
-if (!function_exists('smarty_template_function_display_periods_5584866495ddfa0d21cec80_81043684')) {
-function smarty_template_function_display_periods_5584866495ddfa0d21cec80_81043684($_smarty_tpl,$params) {
+/* smarty_template_function_display_periods_8343561115fa3fb49266091_76102266 */
+if (!function_exists('smarty_template_function_display_periods_8343561115fa3fb49266091_76102266')) {
+function smarty_template_function_display_periods_8343561115fa3fb49266091_76102266($_smarty_tpl,$params) {
 foreach ($params as $key => $value) {
 $_smarty_tpl->tpl_vars[$key] = new Smarty_Variable($value, $_smarty_tpl->isRenderingCache);
 }?>
@@ -999,10 +999,10 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 
                         <?php
 }}
-/*/ smarty_template_function_display_periods_5584866495ddfa0d21cec80_81043684 */
-/* smarty_template_function_display_slot_inputs_5584866495ddfa0d21cec80_81043684 */
-if (!function_exists('smarty_template_function_display_slot_inputs_5584866495ddfa0d21cec80_81043684')) {
-function smarty_template_function_display_slot_inputs_5584866495ddfa0d21cec80_81043684($_smarty_tpl,$params) {
+/*/ smarty_template_function_display_periods_8343561115fa3fb49266091_76102266 */
+/* smarty_template_function_display_slot_inputs_8343561115fa3fb49266091_76102266 */
+if (!function_exists('smarty_template_function_display_slot_inputs_8343561115fa3fb49266091_76102266')) {
+function smarty_template_function_display_slot_inputs_8343561115fa3fb49266091_76102266($_smarty_tpl,$params) {
 foreach ($params as $key => $value) {
 $_smarty_tpl->tpl_vars[$key] = new Smarty_Variable($value, $_smarty_tpl->isRenderingCache);
 }?>
@@ -1040,5 +1040,5 @@ echo $_smarty_tpl->tpl_vars['suffix']->value;?>
                             </div>
                         <?php
 }}
-/*/ smarty_template_function_display_slot_inputs_5584866495ddfa0d21cec80_81043684 */
+/*/ smarty_template_function_display_slot_inputs_8343561115fa3fb49266091_76102266 */
 }

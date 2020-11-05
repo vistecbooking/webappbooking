@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2019-12-11 09:03:18
+/* Smarty version 3.1.30, created on 2020-11-06 02:18:48
   from "/var/www/html/booking/tpl/Admin/manage_announcements.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5df04e66534d92_57322775',
+  'unifunc' => 'content_5fa45018d2d9b4_79686081',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '57b71c23afa0351387ffef69ea433f5676f33601' => 
     array (
       0 => '/var/www/html/booking/tpl/Admin/manage_announcements.tpl',
-      1 => 1551196424,
+      1 => 1604603120,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:globalfooter.tpl' => 1,
   ),
 ),false)) {
-function content_5df04e66534d92_57322775 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fa45018d2d9b4_79686081 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_function_cycle')) require_once '/var/www/html/booking/lib/external/Smarty/plugins/function.cycle.php';
 if (!is_callable('smarty_modifier_regex_replace')) require_once '/var/www/html/booking/lib/external/Smarty/plugins/modifier.regex_replace.php';
 ?>
@@ -31,112 +31,134 @@ if (!is_callable('smarty_modifier_regex_replace')) require_once '/var/www/html/b
 ?>
 
 
-<div id="page-manage-announcements" class="admin-page">
+<div class="container">
+<div class="box box-lg mb-3">
 	<h1><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'ManageAnnouncements'),$_smarty_tpl);?>
 </h1>
-
-	<form id="addForm" class="form-inline" role="form" method="post">
-		<div class="panel panel-default" id="add-announcement-panel">
-			<div class="panel-heading"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"AddAnnouncement"),$_smarty_tpl);?>
+	<div class="box box-bordered">
+	<h2><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"AddAnnouncement"),$_smarty_tpl);?>
  <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['showhide_icon'][0][0]->ShowHideIcon(array(),$_smarty_tpl);?>
-</div>
-			<div class='row'>
-				<div class="panel-body add-contents col-md-12">
-					<div id="addResults" class="error no-show col-md-12"></div>
-					<div class="form-group has-feedback col-md-12" >
-						<label for="addAnnouncement" style="float: left;"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Announcement'),$_smarty_tpl);?>
-</label>
-						<i style="float: left;top: -5px;right: auto;position: inherit;" class="glyphicon glyphicon-asterisk form-control-feedback" data-bv-icon-for="addAnnouncement"></i>
-						<textarea id="txtareaAnnouncement" class="form-control required" rows="5" <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'ANNOUNCEMENT_TEXT'),$_smarty_tpl);?>
+</h2>
+	<div id="addResults" class="error no-show col-md-12"></div>
+	<form id="addForm" role="form" method="post">
+		<div class="form-group">
+			<label for="announcement-txtarea"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Announcement'),$_smarty_tpl);?>
+
+				<span class="text-danger"> *required</span>
+			</label>
+			<textarea id="txtareaAnnouncement" class="form-control required" rows="5" <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'ANNOUNCEMENT_TEXT'),$_smarty_tpl);?>
  id="addAnnouncement"></textarea>
-						
-					</div>
-					<div class="form-group col-md-2">
+		</div>
+		<div class="row no-gutters">
+			<div class="col-12 col-md-6">
+				<div class="form-row">
+					<div class="col-sm form-group">
 						<label for="BeginDate"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'BeginDate'),$_smarty_tpl);?>
 </label>
-						<input type="text" id="BeginDate" class="form-control" <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'ANNOUNCEMENT_START'),$_smarty_tpl);?>
+						<div class="input-with-icon">
+							<input type="text" class="form-control" id="BeginDate"
+								placeholder="Date" <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'ANNOUNCEMENT_START'),$_smarty_tpl);?>
+>
+							<span class="input-icon"><i
+								class="material-icons">calendar_today</i></span>
+							<input type="hidden" id="formattedBeginDate" <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'ANNOUNCEMENT_START'),$_smarty_tpl);?>
  />
-						<input type="hidden" id="formattedBeginDate" <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'ANNOUNCEMENT_START'),$_smarty_tpl);?>
- />
+						</div>
 					</div>
-					<div class="form-group col-md-2">
-						<label for="TimeBeginDate"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'TimeBeginDate'),$_smarty_tpl);?>
-(12 hrs.)</label>
-						<input type="time" id="TimeBeginDate" placeholder="hh:mm" class="form-control" <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'ANNOUNCEMENT_TIME_START'),$_smarty_tpl);?>
+					<div class="col-sm form-group align-self-end">
+						<div class="input-with-icon">
+							<input type="time" id="TimeBeginDate"
+								placeholder="hh:mm" class="form-control" <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'ANNOUNCEMENT_TIME_START'),$_smarty_tpl);?>
  />
+							<span class="input-icon"><i
+								class="material-icons">query_builder</i></span>
+						</div>
 					</div>
-					<div class="form-group col-md-2" >
+				</div>
+				<div class="form-row">
+					<div class="col-sm form-group">
 						<label for="EndDate"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'EndDate'),$_smarty_tpl);?>
 </label>
-						<input type="text" id="EndDate" class="form-control" <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'ANNOUNCEMENT_END'),$_smarty_tpl);?>
+						<div class="input-with-icon">
+							<input type="text" id="EndDate" class="form-control"
+								placeholder="Date" <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'ANNOUNCEMENT_END'),$_smarty_tpl);?>
  />
-						<input type="hidden" id="formattedEndDate" <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'ANNOUNCEMENT_END'),$_smarty_tpl);?>
+							<span class="input-icon"><i
+								class="material-icons">calendar_today</i></span>
+							<input type="hidden" id="formattedEndDate" <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'ANNOUNCEMENT_END'),$_smarty_tpl);?>
  />
+						</div>
 					</div>
-					<div class="form-group col-md-2" >
-						<label for="TimeEndDate"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'TimeEndDate'),$_smarty_tpl);?>
-(12 hrs.)</label>
-						<input type="time" id="TimeEndDate" class="form-control" placeholder="hh:mm" <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'ANNOUNCEMENT_TIME_END'),$_smarty_tpl);?>
+					<div class="col-sm form-group align-self-end">
+						<div class="input-with-icon">
+							<input type="time" id="TimeEndDate" class="form-control"
+								placeholder="hh:mm" <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'ANNOUNCEMENT_TIME_END'),$_smarty_tpl);?>
  />
+							<span class="input-icon"><i
+								class="material-icons">query_builder</i></span>
+						</div>
 					</div>
-					<!-- <div class="form-group">
-						<label for="addPriority"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Priority'),$_smarty_tpl);?>
+				</div>
+				<!-- <div class="form-group">
+					<label for="addPriority"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Priority'),$_smarty_tpl);?>
 </label>
-						<input type="number" min="0" step="1" class="form-control" <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'ANNOUNCEMENT_PRIORITY'),$_smarty_tpl);?>
+					<input type="number" min="0" step="1" class="form-control" <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'ANNOUNCEMENT_PRIORITY'),$_smarty_tpl);?>
  id="addPriority" value="0" />
-					</div> -->
-
-					<div id="" class="">
-						<div class="form-group col-xs-12 col-md-6">
-							<label for="announcementGroups" class=""><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'ChooseUsersInGroups'),$_smarty_tpl);?>
+				</div> -->
+				<div class="form-group">
+					<label for="announcementGroups" class=""><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'ChooseUsersInGroups'),$_smarty_tpl);?>
 </label>
-							<select id="announcementGroups" class="form-control" multiple="multiple" style="width:100%" <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>FormKeys::GROUP_ID,'multi'=>true),$_smarty_tpl);?>
+					<select id="announcementGroups" class="form-control" multiple="multiple" style="width:100%" <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>FormKeys::GROUP_ID,'multi'=>true),$_smarty_tpl);?>
 >
-								<?php
+						<?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['Groups']->value, 'group');
 if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['group']->value) {
 ?>
-									<option value="<?php echo $_smarty_tpl->tpl_vars['group']->value->Id;?>
+							<option value="<?php echo $_smarty_tpl->tpl_vars['group']->value->Id;?>
 "><?php echo $_smarty_tpl->tpl_vars['group']->value->Name;?>
 </option>
-								<?php
+						<?php
 }
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 ?>
 
-							</select>
-						</div>
-						<div class="form-group col-xs-12">
-							<label for="sendAsEmail" class=""><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'ChooseSendAsEmail'),$_smarty_tpl);?>
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="sendAsEmail"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'ChooseSendAsEmail'),$_smarty_tpl);?>
 </label><br/>
-							<div class="checkbox no-padding-left" >
-								<input type="checkbox" id="sendAsEmail" <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>FormKeys::SEND_AS_EMAIL),$_smarty_tpl);?>
+					<div class="checkbox no-padding-left" >
+						<input type="checkbox" id="sendAsEmail" <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>FormKeys::SEND_AS_EMAIL),$_smarty_tpl);?>
  />
-								<label for="sendAsEmail"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'SendAsEmail'),$_smarty_tpl);?>
+						<label for="sendAsEmail"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'SendAsEmail'),$_smarty_tpl);?>
 </label>
-							</div>
-						</div>
 					</div>
 				</div>
 			</div>
-			<div class="panel-footer">
-			 	<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['add_button'][0][0]->AddButton(array('class'=>"btn-sm"),$_smarty_tpl);?>
-
-				<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['reset_button'][0][0]->ResetButton(array('class'=>"btn-sm"),$_smarty_tpl);?>
-
-				<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['indicator'][0][0]->DisplayIndicator(array(),$_smarty_tpl);?>
+		</div>
+		<div class="row no-gutters">
+			<div class="col-sm col-md-auto mr-sm-2">
+				<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['add_button'][0][0]->AddButton(array(),$_smarty_tpl);?>
 
 			</div>
+			<div class="col-sm col-md-auto mr-sm-2">
+				<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['reset_button'][0][0]->ResetButton(array(),$_smarty_tpl);?>
+
+			</div>
+			<!-- <div class="col-sm col-md-auto">
+				<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['indicator'][0][0]->DisplayIndicator(array(),$_smarty_tpl);?>
+
+			</div> -->
 		</div>
 	</form>
-
-	<table class="table" id="announcementList">
+	</div>
+</div>
+<div class="table-responsive table-shadow mb-3">
+	<table class="table table-md table-vistec table-highlight" id="announcementList">
 		<thead>
 		<tr>
-			<th class="action"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Actions'),$_smarty_tpl);?>
-</th>
 			<th><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['sort_column'][0][0]->SortColumn(array('key'=>'Announcement','field'=>ColumnNames::ANNOUNCEMENT_TEXT),$_smarty_tpl);?>
 </th>
 			<th><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['sort_column'][0][0]->SortColumn(array('key'=>'BeginDate','field'=>ColumnNames::ANNOUNCEMENT_START),$_smarty_tpl);?>
@@ -147,6 +169,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 </th>
 			<!-- <th><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Resources'),$_smarty_tpl);?>
 </th> --!>
+			<th class="action"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Actions'),$_smarty_tpl);?>
+</th>
 		</tr>
 		</thead>
 		<tbody>
@@ -160,14 +184,6 @@ foreach ($_from as $_smarty_tpl->tpl_vars['announcement']->value) {
 			<tr class="<?php echo $_smarty_tpl->tpl_vars['rowCss']->value;?>
 " data-announcement-id="<?php echo $_smarty_tpl->tpl_vars['announcement']->value->Id();?>
 ">
-				<td class="action announcementActions">
-					<a href="#" title="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Edit'),$_smarty_tpl);?>
-" class="update edit"><span class="fa fa-pencil-square-o icon"></a> |
-					<a href="#" title="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Email'),$_smarty_tpl);?>
-" class="update sendEmail"><span class="fa fa-envelope-o icon"></a> |
-					<a href="#" title="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Delete'),$_smarty_tpl);?>
-" class="update delete"><span class="fa fa-trash icon remove"></span></a>
-				</td>
 				<td class="announcementText"><?php echo nl2br($_smarty_tpl->tpl_vars['announcement']->value->Text());?>
 </td>
 				<td class="announcementStart"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formatdate'][0][0]->FormatDate(array('date'=>$_smarty_tpl->tpl_vars['announcement']->value->Start(),'format'=>'m/d/Y'),$_smarty_tpl);?>
@@ -198,6 +214,14 @@ echo $_smarty_tpl->tpl_vars['Resources']->value[$_smarty_tpl->tpl_vars['resource
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 ?>
 .</td> --!>
+				<td class="action announcementActions">
+					<a href="#" title="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Email'),$_smarty_tpl);?>
+" class="update sendEmail link-edit mr-1">Send email</a>
+					<a href="#" title="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Edit'),$_smarty_tpl);?>
+" class="update edit mr-1"><span class="custom-icon icon-edit"></span></a>
+					<a href="#" title="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Delete'),$_smarty_tpl);?>
+" class="update delete"><span class="custom-icon icon-delete"></span></a>
+				</td>
 			</tr>
 		<?php
 }
@@ -207,6 +231,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 
 		</tbody>
 	</table>
+</div>
+<div>
 
 	<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['pagination'][0][0]->CreatePagination(array('pageInfo'=>$_smarty_tpl->tpl_vars['PageInfo']->value),$_smarty_tpl);?>
 
@@ -227,7 +253,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 </label><br/>
 						<textarea style="width: 100%;margin-bottom: 15px;" id="CancelReason" class="form-control required" <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'ANNOUNCEMENT_CANCEL_REASON'),$_smarty_tpl);?>
 ></textarea>
-						
+
 						<div class="alert alert-warning">
 							<div><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'DeleteWarning'),$_smarty_tpl);?>
 </div>
@@ -492,21 +518,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 	<?php echo '</script'; ?>
 >
 </div>
-<style type="text/css">
-	.row {
-	     margin-right: 0; 
-	     margin-left: 0; 
-	}
-	#txtareaAnnouncement{
-		width: 100%;
-	}
-	.form-group {
-		margin: 12px;
-	}
-	.form-inline .form-control {
-	    width: 100%;
-	}
-</style>
+</div>
 <?php $_smarty_tpl->_subTemplateRender("file:globalfooter.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 

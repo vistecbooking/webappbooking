@@ -547,25 +547,26 @@ class SmartyPage extends Smarty
             $sb->Append(": {$pageInfo->ResultsStart} - {$pageInfo->ResultsEnd} ({$pageInfo->Total})");
             $sb->Append('<span>&nbsp;</span>');
             if ($pageInfo->TotalPages != 1) {
-                $sb->Append($this->CreatePageLink(array('page' => 1, 'size' => '-1', 'text' => $viewAllText), $smarty));
+                $sb->Append($this->CreateViewAllPageLink(array('page' => 1, 'size' => '-1', 'text' => $viewAllText), $smarty));
             }
             $sb->Append('</div>');
         }
         $size = $pageInfo->PageSize;
         $currentPage = $pageInfo->CurrentPage;
 
-        $sb->Append('<ul class="pagination">');
-        $sb->Append('<li>');
+        $sb->Append('<nav>');
+        $sb->Append('<ul class="pagination justify-content-center">');
+        $sb->Append('<li class="page-item">');
         $sb->Append($this->CreatePageLink(array('page' => max(1,
-            $currentPage - 1), 'size' => $size, 'text' => '&laquo;'),
-            $smarty));
+        $currentPage - 1), 'size' => $size, 'text' => 'Previous'),
+        $smarty));
         $sb->Append('</li>');
 
         for ($i = 1; $i <= $pageInfo->TotalPages; $i++) {
             $isCurrent = ($i == $currentPage);
 
             if ($isCurrent) {
-                $sb->Append('<li class="active">');
+                $sb->Append('<li class="page-item active">');
             }
             else {
                 $sb->Append('<li>');
@@ -573,12 +574,13 @@ class SmartyPage extends Smarty
             $sb->Append($this->CreatePageLink(array('page' => $i, 'size' => $size), $smarty));
             $sb->Append('</li>');
         }
-        $sb->Append('<li>');
+        $sb->Append('<li class="page-item">');
         $sb->Append($this->CreatePageLink(array('page' => min($pageInfo->TotalPages,
-            $currentPage + 1), 'size' => $size, 'text' => '&raquo;'),
+            $currentPage + 1), 'size' => $size, 'text' => 'Next'),
             $smarty));
         $sb->Append('</li>');
         $sb->Append('</ul>');
+        $sb->Append('</nav>');
 
         return $sb->ToString();
     }
@@ -588,15 +590,25 @@ class SmartyPage extends Smarty
         $url = ServiceLocator::GetServer()->GetUrl();
         $page = $params['page'];
         $pageSize = $params['size'];
-        $iscurrent = $params['iscurrent'];
         $text = isset($params['text']) ? $params['text'] : $page;
 
         $newUrl = $this->ReplaceQueryString($url, QueryStringKeys::PAGE, $page);
         $newUrl = $this->ReplaceQueryString($newUrl, QueryStringKeys::PAGE_SIZE, $pageSize);
 
-        $class = $iscurrent ? "page current" : "page";
+        return sprintf('<a class="page-link" href="%s">%s</a>', $newUrl, $text);
+    }
 
-        return sprintf('<a class="%s" href="%s">%s</a>', $class, $newUrl, $text);
+    public function CreateViewAllPageLink($params, &$smarty)
+    {
+        $url = ServiceLocator::GetServer()->GetUrl();
+        $page = $params['page'];
+        $pageSize = $params['size'];
+        $text = isset($params['text']) ? $params['text'] : $page;
+
+        $newUrl = $this->ReplaceQueryString($url, QueryStringKeys::PAGE, $page);
+        $newUrl = $this->ReplaceQueryString($newUrl, QueryStringKeys::PAGE_SIZE, $pageSize);
+
+        return sprintf('<a href="%s">%s</a>', $newUrl, $text);
     }
 
     function ReplaceQueryString($url, $key, $value)
@@ -782,7 +794,7 @@ class SmartyPage extends Smarty
             $type = 'submit';
         }
 
-        echo '<button type="' . $type . '" class="btn btn-success save ' . $class . '" ' . $this->GetButtonAttributes($params) . '><span class="glyphicon glyphicon-ok-circle"></span> ' . Resources::GetInstance()
+        echo '<button type="' . $type . '" class="btn btn-block btn-success mb-3 mb-sm-0 ' . $class . '" ' . $this->GetButtonAttributes($params) . '><span class="glyphicon glyphicon-ok-circle"></span> ' . Resources::GetInstance()
                 ->GetString($key) . '</button>';
     }
 
@@ -797,7 +809,7 @@ class SmartyPage extends Smarty
     {
         $key = isset($params['key']) ? $params['key'] : 'Reset';
         $class = isset($params['class']) ? $params['class'] : '';
-        echo '<button type="reset" class="btn btn-default ' . $class . '"" ' . $this->GetButtonAttributes($params) . '>' . Resources::GetInstance()->GetString($key) . '</button>';
+        echo '<button type="reset" class="btn btn-block btn-secondary ' . $class . '"" ' . $this->GetButtonAttributes($params) . '>' . Resources::GetInstance()->GetString($key) . '</button>';
     }
 
     public function FilterButton($params, &$smarty)
