@@ -189,7 +189,7 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
         {jsfile src="js/fullcalendarLang/$HtmlLang.js"}
     {/if}
     {cssfile src="scripts/css/jquery-ui-timepicker-addon.css"}
-    {cssfile src="booked.css"}
+    {* cssfile src="booked.css" *}
     {if $cssFiles neq ''}
         {assign var='CssFileList' value=','|explode:$cssFiles}
         {foreach from=$CssFileList item=cssFile}
@@ -211,7 +211,7 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
     {/if}
     <!-- End CSS -->
 </head>
-<body>
+<body class="body-fixed-navbar">
 
 {if $HideNavBar == false}
     <nav class="navbar fixed-top navbar-expand-lg navbar-light" role="navigation">
