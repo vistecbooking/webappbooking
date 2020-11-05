@@ -72,12 +72,6 @@ body {
 .adjust-nav-bar-static {
   margin-top: -70px;
 }
-a {
-  color: #669999;
-}
-a:hover {
-  color: #428181;
-}
 .footer {
   text-align: center;
   border-top: solid 1px #3e3d3b;

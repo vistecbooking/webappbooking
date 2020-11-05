@@ -18,100 +18,128 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
 *}
 {include file='globalheader.tpl' Select2=true}
 
-<div id="page-manage-announcements" class="admin-page">
+<div class="container">
+<div class="box box-lg mb-3">
 	<h1>{translate key=ManageAnnouncements}</h1>
-
-	<form id="addForm" class="form-inline" role="form" method="post">
-		<div class="panel panel-default" id="add-announcement-panel">
-			<div class="panel-heading">{translate key="AddAnnouncement"} {showhide_icon}</div>
-			<div class='row'>
-				<div class="panel-body add-contents col-md-12">
-					<div id="addResults" class="error no-show col-md-12"></div>
-					<div class="form-group has-feedback col-md-12" >
-						<label for="addAnnouncement" style="float: left;">{translate key='Announcement'}</label>
-						<i style="float: left;top: -5px;right: auto;position: inherit;" class="glyphicon glyphicon-asterisk form-control-feedback" data-bv-icon-for="addAnnouncement"></i>
-						<textarea id="txtareaAnnouncement" class="form-control required" rows="5" {formname key=ANNOUNCEMENT_TEXT} id="addAnnouncement"></textarea>
-						
-					</div>
-					<div class="form-group col-md-2">
+	<div class="box box-bordered">
+	<h2>{translate key="AddAnnouncement"} {showhide_icon}</h2>
+	<div id="addResults" class="error no-show col-md-12"></div>
+	<form id="addForm" role="form" method="post">
+		<div class="form-group">
+			<label for="announcement-txtarea">{translate key='Announcement'}
+				<span class="text-danger"> *required</span>
+			</label>
+			<textarea id="txtareaAnnouncement" class="form-control required" rows="5" {formname key=ANNOUNCEMENT_TEXT} id="addAnnouncement"></textarea>
+		</div>
+		<div class="row no-gutters">
+			<div class="col-12 col-md-6">
+				<div class="form-row">
+					<div class="col-sm form-group">
 						<label for="BeginDate">{translate key='BeginDate'}</label>
-						<input type="text" id="BeginDate" class="form-control" {formname key=ANNOUNCEMENT_START} />
-						<input type="hidden" id="formattedBeginDate" {formname key=ANNOUNCEMENT_START} />
-					</div>
-					<div class="form-group col-md-2">
-						<label for="TimeBeginDate">{translate key='TimeBeginDate'}(12 hrs.)</label>
-						<input type="time" id="TimeBeginDate" placeholder="hh:mm" class="form-control" {formname key=ANNOUNCEMENT_TIME_START} />
-					</div>
-					<div class="form-group col-md-2" >
-						<label for="EndDate">{translate key='EndDate'}</label>
-						<input type="text" id="EndDate" class="form-control" {formname key=ANNOUNCEMENT_END} />
-						<input type="hidden" id="formattedEndDate" {formname key=ANNOUNCEMENT_END} />
-					</div>
-					<div class="form-group col-md-2" >
-						<label for="TimeEndDate">{translate key='TimeEndDate'}(12 hrs.)</label>
-						<input type="time" id="TimeEndDate" class="form-control" placeholder="hh:mm" {formname key=ANNOUNCEMENT_TIME_END} />
-					</div>
-					<!-- <div class="form-group">
-						<label for="addPriority">{translate key='Priority'}</label>
-						<input type="number" min="0" step="1" class="form-control" {formname key=ANNOUNCEMENT_PRIORITY} id="addPriority" value="0" />
-					</div> -->
-
-					<div id="" class="">
-						<div class="form-group col-xs-12 col-md-6">
-							<label for="announcementGroups" class="">{translate key=ChooseUsersInGroups}</label>
-							<select id="announcementGroups" class="form-control" multiple="multiple" style="width:100%" {formname key=FormKeys::GROUP_ID multi=true}>
-								{foreach from=$Groups item=group}
-									<option value="{$group->Id}">{$group->Name}</option>
-								{/foreach}
-							</select>
+						<div class="input-with-icon">
+							<input type="text" class="form-control" id="BeginDate"
+								placeholder="Date" {formname key=ANNOUNCEMENT_START}>
+							<span class="input-icon"><i
+								class="material-icons">calendar_today</i></span>
+							<input type="hidden" id="formattedBeginDate" {formname key=ANNOUNCEMENT_START} />
 						</div>
-						<div class="form-group col-xs-12">
-							<label for="sendAsEmail" class="">{translate key=ChooseSendAsEmail}</label><br/>
-							<div class="checkbox no-padding-left" >
-								<input type="checkbox" id="sendAsEmail" {formname key=FormKeys::SEND_AS_EMAIL} />
-								<label for="sendAsEmail">{translate key=SendAsEmail}</label>
-							</div>
+					</div>
+					<div class="col-sm form-group align-self-end">
+						<div class="input-with-icon">
+							<input type="time" id="TimeBeginDate"
+								placeholder="hh:mm" class="form-control" {formname key=ANNOUNCEMENT_TIME_START} />
+							<span class="input-icon"><i
+								class="material-icons">query_builder</i></span>
 						</div>
 					</div>
 				</div>
-			</div>
-			<div class="panel-footer">
-			 	{add_button class="btn-sm"}
-				{reset_button class="btn-sm"}
-				{indicator}
+				<div class="form-row">
+					<div class="col-sm form-group">
+						<label for="EndDate">{translate key='EndDate'}</label>
+						<div class="input-with-icon">
+							<input type="text" id="EndDate" class="form-control"
+								placeholder="Date" {formname key=ANNOUNCEMENT_END} />
+							<span class="input-icon"><i
+								class="material-icons">calendar_today</i></span>
+							<input type="hidden" id="formattedEndDate" {formname key=ANNOUNCEMENT_END} />
+						</div>
+					</div>
+					<div class="col-sm form-group align-self-end">
+						<div class="input-with-icon">
+							<input type="time" id="TimeEndDate" class="form-control"
+								placeholder="hh:mm" {formname key=ANNOUNCEMENT_TIME_END} />
+							<span class="input-icon"><i
+								class="material-icons">query_builder</i></span>
+						</div>
+					</div>
+				</div>
+				<!-- <div class="form-group">
+					<label for="addPriority">{translate key='Priority'}</label>
+					<input type="number" min="0" step="1" class="form-control" {formname key=ANNOUNCEMENT_PRIORITY} id="addPriority" value="0" />
+				</div> -->
+				<div class="form-group">
+					<label for="announcementGroups" class="">{translate key=ChooseUsersInGroups}</label>
+					<select id="announcementGroups" class="form-control" multiple="multiple" style="width:100%" {formname key=FormKeys::GROUP_ID multi=true}>
+						{foreach from=$Groups item=group}
+							<option value="{$group->Id}">{$group->Name}</option>
+						{/foreach}
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="sendAsEmail">{translate key=ChooseSendAsEmail}</label><br/>
+					<div class="checkbox no-padding-left" >
+						<input type="checkbox" id="sendAsEmail" {formname key=FormKeys::SEND_AS_EMAIL} />
+						<label for="sendAsEmail">{translate key=SendAsEmail}</label>
+					</div>
+				</div>
 			</div>
 		</div>
+		<div class="row no-gutters">
+			<div class="col-sm col-md-auto mr-sm-2">
+				{add_button}
+			</div>
+			<div class="col-sm col-md-auto mr-sm-2">
+				{reset_button}
+			</div>
+			<!-- <div class="col-sm col-md-auto">
+				{indicator}
+			</div> -->
+		</div>
 	</form>
-
-	<table class="table" id="announcementList">
+	</div>
+</div>
+<div class="table-responsive table-shadow mb-3">
+	<table class="table table-md table-vistec table-highlight" id="announcementList">
 		<thead>
 		<tr>
-			<th class="action">{translate key='Actions'}</th>
 			<th>{sort_column key=Announcement field=ColumnNames::ANNOUNCEMENT_TEXT}</th>
 			<th>{sort_column key=BeginDate field=ColumnNames::ANNOUNCEMENT_START}</th>
 			<th>{sort_column key=EndDate field=ColumnNames::ANNOUNCEMENT_END}</th>
 			<th>{translate key='Groups'}</th>
 			<!-- <th>{translate key='Resources'}</th> --!>
+			<th class="action">{translate key='Actions'}</th>
 		</tr>
 		</thead>
 		<tbody>
 		{foreach from=$announcements item=announcement}
 			{cycle values='row0,row1' assign=rowCss}
 			<tr class="{$rowCss}" data-announcement-id="{$announcement->Id()}">
-				<td class="action announcementActions">
-					<a href="#" title="{translate key=Edit}" class="update edit"><span class="fa fa-pencil-square-o icon"></a> |
-					<a href="#" title="{translate key=Email}" class="update sendEmail"><span class="fa fa-envelope-o icon"></a> |
-					<a href="#" title="{translate key=Delete}" class="update delete"><span class="fa fa-trash icon remove"></span></a>
-				</td>
 				<td class="announcementText">{$announcement->Text()|nl2br}</td>
 				<td class="announcementStart">{formatdate date=$announcement->Start() format='m/d/Y'} {date('h:i A', strtotime($announcement->timeStart()))}</td>
 				<td class="announcementEnd">{formatdate date=$announcement->End() format='m/d/Y'} {date('h:i A', strtotime($announcement->timeend()))}</td>
 				<td class="announcementGroups">{foreach from=$announcement->GroupIds() item=groupId}{$Groups[$groupId]->Name}, {/foreach}</td>
 				<!-- <td class="announcementResources">{foreach from=$announcement->ResourceIds() item=resourceId}{$Resources[$resourceId]->GetName()}, {/foreach}.</td> --!>
+				<td class="action announcementActions">
+					<a href="#" title="{translate key=Email}" class="update sendEmail link-edit mr-1">Send email</a>
+					<a href="#" title="{translate key=Edit}" class="update edit mr-1"><span class="custom-icon icon-edit"></span></a>
+					<a href="#" title="{translate key=Delete}" class="update delete"><span class="custom-icon icon-delete"></span></a>
+				</td>
 			</tr>
 		{/foreach}
 		</tbody>
 	</table>
+</div>
+<div>
 
 	{pagination pageInfo=$PageInfo}
 
@@ -128,7 +156,7 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
 					<div class="modal-body">
 						<label for="CancelReason">{translate key=AnnouncementCancelReason}</label><br/>
 						<textarea style="width: 100%;margin-bottom: 15px;" id="CancelReason" class="form-control required" {formname key=ANNOUNCEMENT_CANCEL_REASON}></textarea>
-						
+
 						<div class="alert alert-warning">
 							<div>{translate key=DeleteWarning}</div>
 						</div>
@@ -286,19 +314,5 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
 		});
 	</script>
 </div>
-<style type="text/css">
-	.row {
-	     margin-right: 0; 
-	     margin-left: 0; 
-	}
-	#txtareaAnnouncement{
-		width: 100%;
-	}
-	.form-group {
-		margin: 12px;
-	}
-	.form-inline .form-control {
-	    width: 100%;
-	}
-</style>
+</div>
 {include file='globalfooter.tpl'}

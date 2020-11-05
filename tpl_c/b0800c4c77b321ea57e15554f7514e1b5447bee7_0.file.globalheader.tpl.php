@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-11-05 01:56:40
+/* Smarty version 3.1.30, created on 2020-11-06 02:19:06
   from "/var/www/html/booking/tpl/globalheader.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5fa2f96823cda0_41443425',
+  'unifunc' => 'content_5fa4502a949d28_06480801',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b0800c4c77b321ea57e15554f7514e1b5447bee7' => 
     array (
       0 => '/var/www/html/booking/tpl/globalheader.tpl',
-      1 => 1604516193,
+      1 => 1604602433,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5fa2f96823cda0_41443425 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fa4502a949d28_06480801 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 
@@ -166,9 +166,10 @@ favicon.ico"/>
     <!-- CSS -->
     
 
-    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"
-            type="text/css"/>
-    
+    <!-- <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"
+            type="text/css"/> -->
+    <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['cssfile'][0][0]->IncludeCssFile(array('src'=>"scripts/newcss/style.css",'rel'=>"stylesheet"),$_smarty_tpl);?>
+
     <link rel="stylesheet"
             href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.0/themes/smoothness/jquery-ui.css"
             type="text/css"/>
@@ -214,8 +215,7 @@ favicon.ico"/>
     <?php }?>
     <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['cssfile'][0][0]->IncludeCssFile(array('src'=>"scripts/css/jquery-ui-timepicker-addon.css"),$_smarty_tpl);?>
 
-    <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['cssfile'][0][0]->IncludeCssFile(array('src'=>"booked.css"),$_smarty_tpl);?>
-
+    
     <?php if ($_smarty_tpl->tpl_vars['cssFiles']->value != '') {?>
         <?php $_smarty_tpl->_assignInScope('CssFileList', explode(',',$_smarty_tpl->tpl_vars['cssFiles']->value));
 ?>
@@ -262,259 +262,205 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
     <?php }?>
     <!-- End CSS -->
 </head>
-<body>
+<body class="body-fixed-navbar">
 
 <?php if ($_smarty_tpl->tpl_vars['HideNavBar']->value == false) {?>
-    <nav class="navbar navbar-default <?php if ($_smarty_tpl->tpl_vars['IsDesktop']->value) {?>navbar-fixed-top<?php } else { ?>navbar-static-top adjust-nav-bar-static<?php }?>"
-         role="navigation">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#booked-navigation">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light" role="navigation">
+        <a class="navbar-brand" href="<?php echo $_smarty_tpl->tpl_vars['HomeUrl']->value;?>
+">
+            <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['html_image'][0][0]->PrintImage(array('src'=>((string)$_smarty_tpl->tpl_vars['LogoUrl']->value)."?2.6",'style'=>"height:30px",'alt'=>((string)$_smarty_tpl->tpl_vars['Title']->value)),$_smarty_tpl);?>
 
-                <a class="navbar-brand" href="<?php echo $_smarty_tpl->tpl_vars['HomeUrl']->value;?>
-"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['html_image'][0][0]->PrintImage(array('src'=>((string)$_smarty_tpl->tpl_vars['LogoUrl']->value)."?2.6",'alt'=>((string)$_smarty_tpl->tpl_vars['Title']->value),'style'=>"height: 50px"),$_smarty_tpl);?>
-</a>
-            </div>
-            <div class="collapse navbar-collapse" id="booked-navigation">
-                <ul class="nav navbar-nav">
-                    <?php if ($_smarty_tpl->tpl_vars['LoggedIn']->value) {?>
-                        <li id="navDashboard"><a href="<?php echo $_smarty_tpl->tpl_vars['Path']->value;
+        </a>
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <?php if ($_smarty_tpl->tpl_vars['LoggedIn']->value) {?>
+                    <li class="nav-item" id="navDashboard">
+                        <a class="nav-link" href="<?php echo $_smarty_tpl->tpl_vars['Path']->value;
 echo Pages::DASHBOARD;?>
 "><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"Dashboard"),$_smarty_tpl);?>
-</a></li>
-                        <li class="dropdown" id="navMyAccountDropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"MyAccount"),$_smarty_tpl);?>
- <b
-                                        class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li id="navProfile"><a href="<?php echo $_smarty_tpl->tpl_vars['Path']->value;
-echo Pages::PROFILE;?>
-"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"Profile"),$_smarty_tpl);?>
-</a></li>
-                                <li id="navPassword"><a
-                                            href="<?php echo $_smarty_tpl->tpl_vars['Path']->value;
-echo Pages::PASSWORD;?>
-"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"ChangePassword"),$_smarty_tpl);?>
-</a></li>
-                                <li id="navNotification">
-                                    <a href="<?php echo $_smarty_tpl->tpl_vars['Path']->value;
-echo Pages::NOTIFICATION_PREFERENCES;?>
-"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"NotificationPreferences"),$_smarty_tpl);?>
 </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="dropdown" id="navScheduleDropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"Schedule"),$_smarty_tpl);?>
- <b
-                                        class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li id="navBookings"><a href="<?php echo $_smarty_tpl->tpl_vars['Path']->value;
+                    </li>
+                    <li class="nav-item dropdown" id="navScheduleDropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"Schedule"),$_smarty_tpl);?>
+</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="<?php echo $_smarty_tpl->tpl_vars['Path']->value;
 echo Pages::SCHEDULE;?>
 "><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"Bookings"),$_smarty_tpl);?>
 </a>
-                                </li>
-                                <li id="navMyCalendar"><a
-                                            href="<?php echo $_smarty_tpl->tpl_vars['Path']->value;
+                            <a class="dropdown-item" href="<?php echo $_smarty_tpl->tpl_vars['Path']->value;
 echo Pages::MY_CALENDAR;?>
 "><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"MyCalendar"),$_smarty_tpl);?>
-</a></li>
-                                <li id="navResourceCalendar"><a
-                                            href="<?php echo $_smarty_tpl->tpl_vars['Path']->value;
+</a>
+                            <a class="dropdown-item" href="<?php echo $_smarty_tpl->tpl_vars['Path']->value;
 echo Pages::CALENDAR;?>
 "><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"ResourceCalendar"),$_smarty_tpl);?>
-</a></li>
-                                <!--<li class="menuitem"><a href="#"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"Current Status"),$_smarty_tpl);?>
-</a></li>-->
-                                <li id="navFindATime"><a href="<?php echo $_smarty_tpl->tpl_vars['Path']->value;
+</a>
+                            <!--<a class="dropdown-item" href="#"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"Current Status"),$_smarty_tpl);?>
+</a>-->
+                            <a class="dropdown-item" href="<?php echo $_smarty_tpl->tpl_vars['Path']->value;
 echo Pages::OPENINGS;?>
 "><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"FindATime"),$_smarty_tpl);?>
-</a></li>
-                                <li id="navFindATime"><a href="<?php echo $_smarty_tpl->tpl_vars['Path']->value;
+</a>
+                            <a class="dropdown-item" href="<?php echo $_smarty_tpl->tpl_vars['Path']->value;
 echo Pages::SEARCH_RESERVATIONS;?>
 "><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"SearchReservations"),$_smarty_tpl);?>
-</a></li>
-                            </ul>
-                        </li>
-                        <?php if ($_smarty_tpl->tpl_vars['CanViewAdmin']->value) {?>
-                            <li class="dropdown" id="navApplicationManagementDropdown">
-                                <a href="#" class="dropdown-toggle"
-                                   data-toggle="dropdown"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"ApplicationManagement"),$_smarty_tpl);?>
+</a>
+                        </div>
+                    </li>
+                    <?php if ($_smarty_tpl->tpl_vars['CanViewAdmin']->value) {?>
+                        <li class="nav-item dropdown" id="navApplicationManagementDropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                                <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"ApplicationManagement"),$_smarty_tpl);?>
 
-                                    <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li id="navManageReservations"><a
-                                                href="<?php echo $_smarty_tpl->tpl_vars['Path']->value;?>
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="<?php echo $_smarty_tpl->tpl_vars['Path']->value;?>
 admin/manage_reservations.php"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"ManageReservations"),$_smarty_tpl);?>
 </a>
-                                    </li>
-                                    <li id="navManageBlackouts"><a
-                                                href="<?php echo $_smarty_tpl->tpl_vars['Path']->value;?>
+                                <a class="dropdown-item" href="<?php echo $_smarty_tpl->tpl_vars['Path']->value;?>
 admin/manage_blackouts.php"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"ManageBlackouts"),$_smarty_tpl);?>
 </a>
-                                    </li>
-                                    <li id="navManageQuotas"><a
-                                                href="<?php echo $_smarty_tpl->tpl_vars['Path']->value;?>
+                                <a class="dropdown-item" href="<?php echo $_smarty_tpl->tpl_vars['Path']->value;?>
 admin/manage_quotas.php"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"ManageQuotas"),$_smarty_tpl);?>
 </a>
-                                    </li>
-                                    <li class="divider"></li>
-                                    <li id="navManageSchedules"><a
-                                                href="<?php echo $_smarty_tpl->tpl_vars['Path']->value;?>
-admin/manage_schedules.php"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"ManageSchedules"),$_smarty_tpl);?>
-</a>
-                                    <li id="navManageResources"><a
-                                                href="<?php echo $_smarty_tpl->tpl_vars['Path']->value;?>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="<?php echo $_smarty_tpl->tpl_vars['Path']->value;?>
 admin/manage_resources.php"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"ManageResources"),$_smarty_tpl);?>
 </a>
-                                    </li>
-                                    <li id="navManageAccessories"><a
-                                                href="<?php echo $_smarty_tpl->tpl_vars['Path']->value;?>
+                                <a class="dropdown-item" href="<?php echo $_smarty_tpl->tpl_vars['Path']->value;?>
 admin/manage_accessories.php"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"ManageAccessories"),$_smarty_tpl);?>
 </a>
-                                    </li>
-
-                                    <li class="divider"></li>
-                                    <li id="navManagePositions"><a
-                                                href="<?php echo $_smarty_tpl->tpl_vars['Path']->value;?>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="<?php echo $_smarty_tpl->tpl_vars['Path']->value;?>
 admin/manage_positions.php"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"ManagePositions"),$_smarty_tpl);?>
 </a>
-                                    </li>
-                                    <li id="navManageUsers"><a
-                                                href="<?php echo $_smarty_tpl->tpl_vars['Path']->value;?>
+                                <a class="dropdown-item" href="<?php echo $_smarty_tpl->tpl_vars['Path']->value;?>
 admin/manage_users.php"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"ManageUsers"),$_smarty_tpl);?>
 </a>
-                                    </li>
-                                    <li id="navManageGroups"><a
-                                                href="<?php echo $_smarty_tpl->tpl_vars['Path']->value;?>
+                                <a class="dropdown-item" href="<?php echo $_smarty_tpl->tpl_vars['Path']->value;?>
 admin/manage_groups.php"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"ManageGroups"),$_smarty_tpl);?>
 </a>
-                                    </li>
-
-                                    <li id="navManageAnnouncements"><a
-                                                href="<?php echo $_smarty_tpl->tpl_vars['Path']->value;?>
+                                <a class="dropdown-item" href="<?php echo $_smarty_tpl->tpl_vars['Path']->value;?>
 admin/manage_announcements.php"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"ManageAnnouncements"),$_smarty_tpl);?>
 </a>
-                                    </li>
-                                    <li class="divider"></li>
-                                    
-                                    <li id="navManageAttributes"><a
-                                                href="<?php echo $_smarty_tpl->tpl_vars['Path']->value;?>
+                                <div class="dropdown-divider"></div>
+                                
+                                <a class="dropdown-item" href="<?php echo $_smarty_tpl->tpl_vars['Path']->value;?>
 admin/manage_attributes.php"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"CustomAttributes"),$_smarty_tpl);?>
 </a>
-                                    </li>
-                                </ul>
-                            </li>
-                        <?php }?>
-                        <?php if ($_smarty_tpl->tpl_vars['CanViewResponsibilities']->value) {?>
-                            <li class="dropdown" id="navResponsibilitiesDropdown">
-                                <a href="#" class="dropdown-toggle"
-                                   data-toggle="dropdown"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"Responsibilities"),$_smarty_tpl);?>
- <b
-                                            class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <?php if ($_smarty_tpl->tpl_vars['CanViewGroupAdmin']->value) {?>
-                                        <li id="navResponsibilitiesGAUsers"><a
-                                                    href="<?php echo $_smarty_tpl->tpl_vars['Path']->value;?>
+                            </div>
+                        </li>
+                    <?php }?>
+                    <?php if ($_smarty_tpl->tpl_vars['CanViewResponsibilities']->value) {?>
+                        <li class="nav-item dropdown" id="navResponsibilitiesDropdown">
+                            <a href="#" class="nav-link dropdown-toggle"
+                                data-toggle="dropdown"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"Responsibilities"),$_smarty_tpl);?>
+</a>
+                            <div class="dropdown-menu">
+                                <?php if ($_smarty_tpl->tpl_vars['CanViewGroupAdmin']->value) {?>
+                                    <a class="dropdown-item" href="<?php echo $_smarty_tpl->tpl_vars['Path']->value;?>
 admin/manage_group_users.php"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"ManageUsers"),$_smarty_tpl);?>
 </a>
-                                        </li>
-                                        <li id="navResponsibilitiesGAReservations"><a
-                                                    href="<?php echo $_smarty_tpl->tpl_vars['Path']->value;?>
+                                    <a class="dropdown-item" href="<?php echo $_smarty_tpl->tpl_vars['Path']->value;?>
 admin/manage_group_reservations.php"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"GroupReservations"),$_smarty_tpl);?>
 </a>
-                                        </li>
-                                        <li id="navResponsibilitiesGAGroups"><a
-                                                    href="<?php echo $_smarty_tpl->tpl_vars['Path']->value;?>
+                                    <a class="dropdown-item" href="<?php echo $_smarty_tpl->tpl_vars['Path']->value;?>
 admin/manage_admin_groups.php"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"ManageGroups"),$_smarty_tpl);?>
 </a>
-                                        </li>
-                                    <?php }?>
-                                    <?php if ($_smarty_tpl->tpl_vars['CanViewResourceAdmin']->value || $_smarty_tpl->tpl_vars['CanViewScheduleAdmin']->value) {?>
-                                        <li id="navResponsibilitiesRAResources"><a
-                                                    href="<?php echo $_smarty_tpl->tpl_vars['Path']->value;?>
+                                <?php }?>
+                                <?php if ($_smarty_tpl->tpl_vars['CanViewResourceAdmin']->value || $_smarty_tpl->tpl_vars['CanViewScheduleAdmin']->value) {?>
+                                    <a class="dropdown-item" href="<?php echo $_smarty_tpl->tpl_vars['Path']->value;?>
 admin/manage_admin_resources.php"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"ManageResources"),$_smarty_tpl);?>
 </a>
-                                        </li>
-                                        <li id="navResponsibilitiesRABlackouts"><a
-                                                    href="<?php echo $_smarty_tpl->tpl_vars['Path']->value;?>
+                                    <a class="dropdown-item" href="<?php echo $_smarty_tpl->tpl_vars['Path']->value;?>
 admin/manage_blackouts.php"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"ManageBlackouts"),$_smarty_tpl);?>
 </a>
-                                        </li>
-                                    <?php }?>
-                                    <?php if ($_smarty_tpl->tpl_vars['CanViewResourceAdmin']->value) {?>
-                                        <li id="navResponsibilitiesRAReservations">
-                                            <a href="<?php echo $_smarty_tpl->tpl_vars['Path']->value;?>
+                                <?php }?>
+                                <?php if ($_smarty_tpl->tpl_vars['CanViewResourceAdmin']->value) {?>
+                                    <a class="dropdown-item" href="<?php echo $_smarty_tpl->tpl_vars['Path']->value;?>
 admin/manage_resource_reservations.php"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"ResourceReservations"),$_smarty_tpl);?>
 </a>
-                                        </li>
-                                    <?php }?>
-                                    <?php if ($_smarty_tpl->tpl_vars['CanViewScheduleAdmin']->value) {?>
-                                        <li id="navResponsibilitiesSASchedules">
-                                            <a href="<?php echo $_smarty_tpl->tpl_vars['Path']->value;?>
+                                <?php }?>
+                                <?php if ($_smarty_tpl->tpl_vars['CanViewScheduleAdmin']->value) {?>
+                                    <a class="dropdown-item" href="<?php echo $_smarty_tpl->tpl_vars['Path']->value;?>
 admin/manage_admin_schedules.php"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"ManageSchedules"),$_smarty_tpl);?>
 </a>
-                                        </li>
-                                        <li id="navResponsibilitiesSAReservations">
-                                            <a href="<?php echo $_smarty_tpl->tpl_vars['Path']->value;?>
+                                    <a class="dropdown-item" href="<?php echo $_smarty_tpl->tpl_vars['Path']->value;?>
 admin/manage_schedule_reservations.php"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"ScheduleReservations"),$_smarty_tpl);?>
 </a>
-                                        </li>
-                                    <?php }?>
-                                    <li id="navResponsibilitiesAnnouncements">
-                                        <a href="<?php echo $_smarty_tpl->tpl_vars['Path']->value;?>
+                                <?php }?>
+                                <a class="dropdown-item" href="<?php echo $_smarty_tpl->tpl_vars['Path']->value;?>
 admin/manage_announcements.php"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"ManageAnnouncements"),$_smarty_tpl);?>
 </a>
-                                    </li>
-                                </ul>
-                            </li>
-                        <?php }?>
-                        <?php if ($_smarty_tpl->tpl_vars['CanViewReports']->value) {?>
-                            <li class="dropdown" id="navReportsDropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"Reports"),$_smarty_tpl);?>
- <b
-                                            class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li id="navGenerateReport">
-                                        <a href="<?php echo $_smarty_tpl->tpl_vars['Path']->value;?>
+                            </div>
+                        </li>
+                    <?php }?>
+                    <?php if ($_smarty_tpl->tpl_vars['CanViewReports']->value) {?>
+                        <li class="nav-item dropdown" id="navReportsDropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"Reports"),$_smarty_tpl);?>
+</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="<?php echo $_smarty_tpl->tpl_vars['Path']->value;?>
 reports/<?php echo Pages::REPORTS_GENERATE;?>
 "><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'GenerateReport'),$_smarty_tpl);?>
 </a>
-                                    </li>
-                                    <li id="navSavedReports">
-                                        <a href="<?php echo $_smarty_tpl->tpl_vars['Path']->value;?>
+                                <a class="dropdown-item" href="<?php echo $_smarty_tpl->tpl_vars['Path']->value;?>
 reports/<?php echo Pages::REPORTS_SAVED;?>
 "><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'MySavedReports'),$_smarty_tpl);?>
 </a>
-                                    </li>
-                                    <li id="navCommonReports">
-                                        <a href="<?php echo $_smarty_tpl->tpl_vars['Path']->value;?>
+                                <a class="dropdown-item" href="<?php echo $_smarty_tpl->tpl_vars['Path']->value;?>
 reports/<?php echo Pages::REPORTS_COMMON;?>
 "><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'CommonReports'),$_smarty_tpl);?>
 </a>
-                                    </li>
-                                </ul>
-                            </li>
-                        <?php }?>
+                            </div>
+                        </li>
                     <?php }?>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <?php if ($_smarty_tpl->tpl_vars['LoggedIn']->value) {?>
-                        <li id="navSignOut"><a href="<?php echo $_smarty_tpl->tpl_vars['Path']->value;?>
+                <?php }?>
+            </ul>
+            <ul class="navbar-nav">
+                <?php if ($_smarty_tpl->tpl_vars['LoggedIn']->value) {?>
+                    <li class="nav-item dropdown" id="navMyAccountDropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"MyAccount"),$_smarty_tpl);?>
+</a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a class="dropdown-item" href="<?php echo $_smarty_tpl->tpl_vars['Path']->value;
+echo Pages::PROFILE;?>
+"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"Profile"),$_smarty_tpl);?>
+</a>
+                            <a class="dropdown-item" href="<?php echo $_smarty_tpl->tpl_vars['Path']->value;
+echo Pages::PASSWORD;?>
+"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"ChangePassword"),$_smarty_tpl);?>
+</a>
+                            <a class="dropdown-item" href="<?php echo $_smarty_tpl->tpl_vars['Path']->value;
+echo Pages::NOTIFICATION_PREFERENCES;?>
+"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"NotificationPreferences"),$_smarty_tpl);?>
+</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="<?php echo $_smarty_tpl->tpl_vars['Path']->value;?>
 logout.php"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"SignOut"),$_smarty_tpl);?>
-</a></li>
-                    <?php } else { ?>
-                        <li id="navLogIn"><a href="<?php echo $_smarty_tpl->tpl_vars['Path']->value;?>
+</a>
+                        </div>
+                    </li>
+                <?php } else { ?>
+                    <li class="nav-item" id="navLogin">
+                        <a class="nav-link" href="<?php echo $_smarty_tpl->tpl_vars['Path']->value;?>
 index.php"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"LogIn"),$_smarty_tpl);?>
-</a></li>
-                    <?php }?>
-                </ul>
-            </div>
+</a>
+                    </li>
+                <?php }?>
+            </ul>
         </div>
     </nav>
 <?php }?>
