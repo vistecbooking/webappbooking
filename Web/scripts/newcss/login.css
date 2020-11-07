@@ -1,1 +1,56 @@
-.login-background{background-image:url(/assets/vistec_bg.png);background-size:cover;background-position:50% 50%;width:100vw;height:100vh;display:-ms-flexbox;display:flex;-ms-flex-pack:center;justify-content:center;-ms-flex-align:center;align-items:center}.login-box{text-align:center;height:20.3125rem;width:29.6875rem;padding-top:2.1875rem;padding-left:3.75rem;padding-right:3.75rem}@media (max-width:576px){.login-box{width:90vw;padding-left:1.875rem;padding-right:1.875rem}}.login-box input{font-size:.875rem;text-indent:.625rem;background-color:#f6f6f6;border:0;border-bottom:1px solid #5d3085;width:100%;height:1.875rem;margin-bottom:.9375rem}.login-box input:focus{outline:0}.login-box input[type=password]::-ms-clear,.login-box input[type=password]::-ms-reveal{display:none}.login-box>a{float:left;font-size:.75rem}.login-box>button{float:right;border:0;background-color:#5d3085;color:#fff;font-size:.875rem;padding:.1875rem 1.25rem}
+.login-background {
+  background-size: cover;
+  background-position: 50% 50%;
+  width: 100vw;
+  height: 100vh;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.login-box {
+  text-align: center;
+  height: 20.3125rem;
+  width: 29.6875rem;
+  padding-top: 2.1875rem;
+  padding-left: 3.75rem;
+  padding-right: 3.75rem;
+}
+@media (max-width: 576px) {
+  .login-box {
+    width: 90vw;
+    padding-left: 1.875rem;
+    padding-right: 1.875rem;
+  }
+}
+.login-box input {
+  font-size: 0.875rem;
+  text-indent: 0.625rem;
+  background-color: #f6f6f6;
+  border: 0;
+  border-bottom: 1px solid #5d3085;
+  width: 100%;
+  height: 1.875rem;
+  margin-bottom: 0.9375rem;
+}
+.login-box input:focus {
+  outline: 0;
+}
+.login-box input[type="password"]::-ms-clear,
+.login-box input[type="password"]::-ms-reveal {
+  display: none;
+}
+.login-box > a {
+  float: left;
+  font-size: 0.75rem;
+}
+.login-box > button {
+  float: right;
+  border: 0;
+  background-color: #5d3085;
+  color: #fff;
+  font-size: 0.875rem;
+  padding: 0.1875rem 1.25rem;
+}

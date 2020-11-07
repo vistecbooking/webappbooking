@@ -150,7 +150,6 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
     <!-- <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"
             type="text/css"/> -->
     {cssfile src="scripts/newcss/style.css" rel="stylesheet"}
-
     <link rel="stylesheet"
             href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.0/themes/smoothness/jquery-ui.css"
             type="text/css"/>

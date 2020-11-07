@@ -1,0 +1,90 @@
+2020-11-07T16:22:19+07:00 [22] DEBUG sql - [User=Tanut Choksatchawathi (tanut.cho@gmail.com)] MySql Query: SELECT a.*, c.num_resources,
+			(SELECT GROUP_CONCAT(CONCAT(ra.resource_id, ",", COALESCE(ra.minimum_quantity,""), ",",  COALESCE(ra.maximum_quantity,"")) SEPARATOR "!sep!")
+				FROM resource_accessories ra WHERE ra.accessory_id = a.accessory_id) as resource_accessory_list
+ 			FROM accessories a
+			LEFT JOIN (
+				SELECT accessory_id, COUNT(*) AS num_resources
+				FROM resource_accessories ra
+				GROUP BY ra.accessory_id
+				) AS c ON a.accessory_id = c.accessory_id
+
+ 			ORDER BY accessory_name;
+2020-11-07T16:22:20+07:00 [22] DEBUG sql - [User=Tanut Choksatchawathi (tanut.cho@gmail.com)] MySql Query: SELECT r.*, s.admin_group_id as s_admin_group_id,
+		(SELECT GROUP_CONCAT(CONCAT(cav.custom_attribute_id, '=', cav.attribute_value) SEPARATOR "!sep!")
+						FROM custom_attribute_values cav WHERE cav.entity_id = r.resource_id AND cav.attribute_category = 4) as attribute_list,
+		(SELECT GROUP_CONCAT(rga.resource_group_id SEPARATOR "!sep!") FROM resource_group_assignment rga WHERE rga.resource_id = r.resource_id) AS group_list
+		FROM resources r
+		INNER JOIN schedules s ON r.schedule_id = s.schedule_id
+		ORDER BY COALESCE(r.sort_order,0), r.name;
+2020-11-07T16:24:29+07:00 [17] DEBUG sql - [User=Tanut Choksatchawathi (tanut.cho@gmail.com)] MySql Query: SELECT a.*, c.num_resources,
+			(SELECT GROUP_CONCAT(CONCAT(ra.resource_id, ",", COALESCE(ra.minimum_quantity,""), ",",  COALESCE(ra.maximum_quantity,"")) SEPARATOR "!sep!")
+				FROM resource_accessories ra WHERE ra.accessory_id = a.accessory_id) as resource_accessory_list
+ 			FROM accessories a
+			LEFT JOIN (
+				SELECT accessory_id, COUNT(*) AS num_resources
+				FROM resource_accessories ra
+				GROUP BY ra.accessory_id
+				) AS c ON a.accessory_id = c.accessory_id
+
+ 			ORDER BY accessory_name;
+2020-11-07T16:24:29+07:00 [17] DEBUG sql - [User=Tanut Choksatchawathi (tanut.cho@gmail.com)] MySql Query: SELECT r.*, s.admin_group_id as s_admin_group_id,
+		(SELECT GROUP_CONCAT(CONCAT(cav.custom_attribute_id, '=', cav.attribute_value) SEPARATOR "!sep!")
+						FROM custom_attribute_values cav WHERE cav.entity_id = r.resource_id AND cav.attribute_category = 4) as attribute_list,
+		(SELECT GROUP_CONCAT(rga.resource_group_id SEPARATOR "!sep!") FROM resource_group_assignment rga WHERE rga.resource_id = r.resource_id) AS group_list
+		FROM resources r
+		INNER JOIN schedules s ON r.schedule_id = s.schedule_id
+		ORDER BY COALESCE(r.sort_order,0), r.name;
+2020-11-07T16:25:37+07:00 [16] DEBUG sql - [User=Tanut Choksatchawathi (tanut.cho@gmail.com)] MySql Query: SELECT a.*, c.num_resources,
+			(SELECT GROUP_CONCAT(CONCAT(ra.resource_id, ",", COALESCE(ra.minimum_quantity,""), ",",  COALESCE(ra.maximum_quantity,"")) SEPARATOR "!sep!")
+				FROM resource_accessories ra WHERE ra.accessory_id = a.accessory_id) as resource_accessory_list
+ 			FROM accessories a
+			LEFT JOIN (
+				SELECT accessory_id, COUNT(*) AS num_resources
+				FROM resource_accessories ra
+				GROUP BY ra.accessory_id
+				) AS c ON a.accessory_id = c.accessory_id
+
+ 			ORDER BY accessory_name;
+2020-11-07T16:25:37+07:00 [16] DEBUG sql - [User=Tanut Choksatchawathi (tanut.cho@gmail.com)] MySql Query: SELECT r.*, s.admin_group_id as s_admin_group_id,
+		(SELECT GROUP_CONCAT(CONCAT(cav.custom_attribute_id, '=', cav.attribute_value) SEPARATOR "!sep!")
+						FROM custom_attribute_values cav WHERE cav.entity_id = r.resource_id AND cav.attribute_category = 4) as attribute_list,
+		(SELECT GROUP_CONCAT(rga.resource_group_id SEPARATOR "!sep!") FROM resource_group_assignment rga WHERE rga.resource_id = r.resource_id) AS group_list
+		FROM resources r
+		INNER JOIN schedules s ON r.schedule_id = s.schedule_id
+		ORDER BY COALESCE(r.sort_order,0), r.name;
+2020-11-07T16:26:07+07:00 [19] DEBUG sql - [User=Tanut Choksatchawathi (tanut.cho@gmail.com)] MySql Query: SELECT a.*, c.num_resources,
+			(SELECT GROUP_CONCAT(CONCAT(ra.resource_id, ",", COALESCE(ra.minimum_quantity,""), ",",  COALESCE(ra.maximum_quantity,"")) SEPARATOR "!sep!")
+				FROM resource_accessories ra WHERE ra.accessory_id = a.accessory_id) as resource_accessory_list
+ 			FROM accessories a
+			LEFT JOIN (
+				SELECT accessory_id, COUNT(*) AS num_resources
+				FROM resource_accessories ra
+				GROUP BY ra.accessory_id
+				) AS c ON a.accessory_id = c.accessory_id
+
+ 			ORDER BY accessory_name;
+2020-11-07T16:26:08+07:00 [19] DEBUG sql - [User=Tanut Choksatchawathi (tanut.cho@gmail.com)] MySql Query: SELECT r.*, s.admin_group_id as s_admin_group_id,
+		(SELECT GROUP_CONCAT(CONCAT(cav.custom_attribute_id, '=', cav.attribute_value) SEPARATOR "!sep!")
+						FROM custom_attribute_values cav WHERE cav.entity_id = r.resource_id AND cav.attribute_category = 4) as attribute_list,
+		(SELECT GROUP_CONCAT(rga.resource_group_id SEPARATOR "!sep!") FROM resource_group_assignment rga WHERE rga.resource_id = r.resource_id) AS group_list
+		FROM resources r
+		INNER JOIN schedules s ON r.schedule_id = s.schedule_id
+		ORDER BY COALESCE(r.sort_order,0), r.name;
+2020-11-07T16:26:46+07:00 [23] DEBUG sql - [User=Tanut Choksatchawathi (tanut.cho@gmail.com)] MySql Query: SELECT a.*, c.num_resources,
+			(SELECT GROUP_CONCAT(CONCAT(ra.resource_id, ",", COALESCE(ra.minimum_quantity,""), ",",  COALESCE(ra.maximum_quantity,"")) SEPARATOR "!sep!")
+				FROM resource_accessories ra WHERE ra.accessory_id = a.accessory_id) as resource_accessory_list
+ 			FROM accessories a
+			LEFT JOIN (
+				SELECT accessory_id, COUNT(*) AS num_resources
+				FROM resource_accessories ra
+				GROUP BY ra.accessory_id
+				) AS c ON a.accessory_id = c.accessory_id
+
+ 			ORDER BY accessory_name;
+2020-11-07T16:26:48+07:00 [23] DEBUG sql - [User=Tanut Choksatchawathi (tanut.cho@gmail.com)] MySql Query: SELECT r.*, s.admin_group_id as s_admin_group_id,
+		(SELECT GROUP_CONCAT(CONCAT(cav.custom_attribute_id, '=', cav.attribute_value) SEPARATOR "!sep!")
+						FROM custom_attribute_values cav WHERE cav.entity_id = r.resource_id AND cav.attribute_category = 4) as attribute_list,
+		(SELECT GROUP_CONCAT(rga.resource_group_id SEPARATOR "!sep!") FROM resource_group_assignment rga WHERE rga.resource_id = r.resource_id) AS group_list
+		FROM resources r
+		INNER JOIN schedules s ON r.schedule_id = s.schedule_id
+		ORDER BY COALESCE(r.sort_order,0), r.name;

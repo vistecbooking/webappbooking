@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-11-06 00:50:41
+/* Smarty version 3.1.30, created on 2020-11-07 16:21:42
   from "/var/www/html/booking/tpl/globalheader.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5fa43b71713a44_67436172',
+  'unifunc' => 'content_5fa66726b21786_75568252',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '16738c1f1514e5d2083450f7a1feeb0d888313a2' => 
     array (
       0 => '/var/www/html/booking/tpl/globalheader.tpl',
-      1 => 1604520942,
+      1 => 1604740759,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5fa43b71713a44_67436172 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fa66726b21786_75568252 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 
@@ -215,8 +215,7 @@ favicon.ico"/>
     <?php }?>
     <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['cssfile'][0][0]->IncludeCssFile(array('src'=>"scripts/css/jquery-ui-timepicker-addon.css"),$_smarty_tpl);?>
 
-    <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['cssfile'][0][0]->IncludeCssFile(array('src'=>"booked.css"),$_smarty_tpl);?>
-
+    
     <?php if ($_smarty_tpl->tpl_vars['cssFiles']->value != '') {?>
         <?php $_smarty_tpl->_assignInScope('CssFileList', explode(',',$_smarty_tpl->tpl_vars['cssFiles']->value));
 ?>
@@ -263,7 +262,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
     <?php }?>
     <!-- End CSS -->
 </head>
-<body>
+<body class="body-fixed-navbar">
 
 <?php if ($_smarty_tpl->tpl_vars['HideNavBar']->value == false) {?>
     <nav class="navbar fixed-top navbar-expand-lg navbar-light" role="navigation">

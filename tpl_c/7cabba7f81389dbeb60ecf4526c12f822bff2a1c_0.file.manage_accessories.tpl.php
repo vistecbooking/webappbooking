@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-11-06 02:18:12
+/* Smarty version 3.1.30, created on 2020-11-07 16:26:49
   from "/var/www/html/booking/tpl/Admin/manage_accessories.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5fa44ff4d8a630_62836073',
+  'unifunc' => 'content_5fa66859e8bb23_19824793',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '7cabba7f81389dbeb60ecf4526c12f822bff2a1c' => 
     array (
       0 => '/var/www/html/booking/tpl/Admin/manage_accessories.tpl',
-      1 => 1600849228,
+      1 => 1604741200,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:globalfooter.tpl' => 1,
   ),
 ),false)) {
-function content_5fa44ff4d8a630_62836073 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fa66859e8bb23_19824793 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_function_cycle')) require_once '/var/www/html/booking/lib/external/Smarty/plugins/function.cycle.php';
 ?>
 
@@ -30,47 +30,50 @@ if (!is_callable('smarty_function_cycle')) require_once '/var/www/html/booking/l
 ?>
 
 
-<div id="page-manage-accessories" class="admin-page">
-	<h1><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'ManageAccessories'),$_smarty_tpl);?>
+<div class="container">
+	<div class="box box-lg mb-3">
+		<h1><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'ManageAccessories'),$_smarty_tpl);?>
 </h1>
-
-	<form id="addForm" class="form-inline" role="form" method="post">
-		<div class="panel panel-default" id="add-accessory-panel">
-			<div class="panel-heading"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"AddAccessory"),$_smarty_tpl);?>
+			<div class="box box-bordered">
+			<h2 class="panel-heading"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"AddAccessory"),$_smarty_tpl);?>
  <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['showhide_icon'][0][0]->ShowHideIcon(array(),$_smarty_tpl);?>
-</div>
-			<div class="panel-body add-contents">
-				<div class="col-xs-5">
-					<div class="form-group has-feedback">
-						<label for="accessoryName"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'AccessoryName'),$_smarty_tpl);?>
+</h2>
+			<form id="addForm" role="form" method="post">
+				<div class="panel panel-default" id="add-accessory-panel">
+					<div class="panel-body add-contents">
+						<div class="col-xs-5">
+							<div class="form-group has-feedback">
+								<label for="accessoryName"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'AccessoryName'),$_smarty_tpl);?>
 </label>
-						<input <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'ACCESSORY_NAME'),$_smarty_tpl);?>
+								<input <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'ACCESSORY_NAME'),$_smarty_tpl);?>
  type="text" id="accessoryName" required class="form-control required"/>
-						<i class="glyphicon glyphicon-asterisk form-control-feedback" data-bv-icon-for="accessoryName"></i>
-					</div>
-				</div>
-				<div class="col-xs-7">
-					<div class="form-group">
-						<label for="addQuantity"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'QuantityAvailable'),$_smarty_tpl);?>
+								<i class="glyphicon glyphicon-asterisk form-control-feedback" data-bv-icon-for="accessoryName"></i>
+							</div>
+						</div>
+						<div class="col-xs-7">
+							<div class="form-group">
+								<label for="addQuantity"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'QuantityAvailable'),$_smarty_tpl);?>
 </label>
-						<input type="number" id="addQuantity" class="form-control" min="0" disabled="disabled" <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'ACCESSORY_QUANTITY_AVAILABLE'),$_smarty_tpl);?>
+								<input type="number" id="addQuantity" class="form-control" min="0" disabled="disabled" <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'ACCESSORY_QUANTITY_AVAILABLE'),$_smarty_tpl);?>
  />
-					</div>
-					<div class="checkbox checkbox-align">
-						<input type="checkbox" id="chkUnlimitedAdd" class="unlimited" name="chkUnlimited" checked="checked"/>
-						<label for="chkUnlimitedAdd"> <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Unlimited'),$_smarty_tpl);?>
+							</div>
+							<div class="checkbox checkbox-align">
+								<input type="checkbox" id="chkUnlimitedAdd" class="unlimited" name="chkUnlimited" checked="checked"/>
+								<label for="chkUnlimitedAdd"> <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Unlimited'),$_smarty_tpl);?>
 </label>
+							</div>
+						</div>
+					</div>
+					<div class="panel-footer">
+						<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['add_button'][0][0]->AddButton(array('class'=>"btn-sm"),$_smarty_tpl);?>
+
+						<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['reset_button'][0][0]->ResetButton(array('class'=>"btn-sm"),$_smarty_tpl);?>
+
 					</div>
 				</div>
-			</div>
-			<div class="panel-footer">
-				<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['add_button'][0][0]->AddButton(array('class'=>"btn-sm"),$_smarty_tpl);?>
-
-				<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['reset_button'][0][0]->ResetButton(array('class'=>"btn-sm"),$_smarty_tpl);?>
-
-			</div>
+			</form>
 		</div>
-	</form>
+	</div>
 
 	<table class="table" id="accessoriesTable">
 		<thead>
