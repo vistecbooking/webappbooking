@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-11-07 19:32:44
+/* Smarty version 3.1.30, created on 2020-11-08 01:09:41
   from "/var/www/html/booking/tpl/globalfooter.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5fa693ec0347f0_49762240',
+  'unifunc' => 'content_5fa6e2e54b1994_28116023',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '58a802df03080b1a065bba91487ad3dc6b074cd8' => 
     array (
       0 => '/var/www/html/booking/tpl/globalfooter.tpl',
-      1 => 1604495966,
+      1 => 1604742064,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5fa693ec0347f0_49762240 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fa6e2e54b1994_28116023 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 

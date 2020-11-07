@@ -1,0 +1,23 @@
+2020-11-07T23:10:39+07:00 [20] DEBUG default - [User=Tanut Choksatchawathi (tanut.cho@gmail.com)] Action passed all validations [File=/var/www/html/booking/Pages/ActionPage.php,Line=108]
+2020-11-07T23:10:39+07:00 [20] DEBUG default - [User=Tanut Choksatchawathi (tanut.cho@gmail.com)] Processing page action. Action generate [File=/var/www/html/booking/Presenters/ActionPresenter.php,Line=88]
+2020-11-07T23:10:39+07:00 [20] DEBUG default - [User=Tanut Choksatchawathi (tanut.cho@gmail.com)] Loading saved report for userId: 583, reportId 7 [File=/var/www/html/booking/Presenters/Reports/CommonReportsPresenter.php,Line=88]
+2020-11-07T23:11:53+07:00 [18] DEBUG default - [User=Tanut Choksatchawathi (tanut.cho@gmail.com)] Action passed all validations [File=/var/www/html/booking/Pages/ActionPage.php,Line=108]
+2020-11-07T23:11:53+07:00 [18] DEBUG default - [User=Tanut Choksatchawathi (tanut.cho@gmail.com)] Processing page action. Action generate [File=/var/www/html/booking/Presenters/ActionPresenter.php,Line=88]
+2020-11-07T23:11:54+07:00 [18] ERROR default - [User=Tanut Choksatchawathi (tanut.cho@gmail.com)] Error executing MySQL query You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FROM reservation_instances ri
+				INNER JOIN reservation_series rs ON rs.series' at line 2 [File=/var/www/html/booking/lib/Database/MySQL/MySqlConnection.php,Line=132]
+2020-11-07T23:11:54+07:00 [18] ERROR default - [User=Tanut Choksatchawathi (tanut.cho@gmail.com)] ProcessAction Error. Action generate, Error exception 'Exception' with message 'There was an error executing your query\nYou have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FROM reservation_instances ri
+				INNER JOIN reservation_series rs ON rs.series' at line 2' in /var/www/html/booking/lib/Database/MySQL/MySqlConnection.php:134
+Stack trace:
+#0 /var/www/html/booking/lib/Database/MySQL/MySqlConnection.php(91): MySqlConnection->_handleError(false)
+#1 /var/www/html/booking/lib/Database/Database.php(45): MySqlConnection->Query(Object(AdHocCommand))
+#2 /var/www/html/booking/Domain/Access/ReportingRepository.php(67): Database->Query(Object(AdHocCommand))
+#3 /var/www/html/booking/lib/Application/Reporting/ReportingService.php(130): ReportingRepository->GetCustomReport(Object(ReportCommandBuilder))
+#4 /var/www/html/booking/Presenters/Reports/GenerateReportPresenter.php(160): ReportingService->GenerateCustomReport(Object(Report_Usage), Object(Report_ResultSelection), Object(Report_GroupBy), Object(Report_Range), Object(Report_Filter))
+#5 /var/www/html/booking/Presenters/Reports/GenerateReportPresenter.php(121): GenerateReportPresenter->BindReport()
+#6 /var/www/html/booking/Presenters/ActionPresenter.php(89): GenerateReportPresenter->GenerateCustomReport()
+#7 /var/www/html/booking/Presenters/Reports/GenerateReportPresenter.php(105): ActionPresenter->ProcessAction()
+#8 /var/www/html/booking/Pages/Reports/GenerateReportPage.php(157): GenerateReportPresenter->ProcessAction()
+#9 /var/www/html/booking/Pages/ActionPage.php(47): GenerateReportPage->ProcessAction()
+#10 /var/www/html/booking/Pages/SecurePage.php(74): ActionPage->PageLoad()
+#11 /var/www/html/booking/Web/reports/generate-report.php(31): SecureActionPageDecorator->PageLoad()
+#12 {main} [File=/var/www/html/booking/Presenters/ActionPresenter.php,Line=94]
