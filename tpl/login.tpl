@@ -16,105 +16,66 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
 *}
-{include file='globalheader.tpl'}
 
-<div id="page-login">
-	{if $ShowLoginError}
-		<div id="loginError" class="alert alert-danger">
-			{translate key='LoginError'}
+<title>Login</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="shortcut icon" href="{$Path}favicon.ico"/>
+<link rel="icon" href="{$Path}favicon.ico"/>
+{cssfile src='scripts/newcss/style.css' rel="stylesheet"}
+{cssfile src='scripts/newcss/login.css' rel="stylesheet"}
+
+<body class="login-background" style="background-image: url(img/background/1.png);">
+	<div class="mx-4 my-4">
+		<div class="container">
+			{if $ShowLoginError}
+				<div id="loginError" class="alert alert-danger">
+					{translate key='LoginError'}
+				</div>
+			{/if}
+
+			{if $EnableCaptcha}
+				{validation_group class="alert alert-danger"}
+				{validator id="captcha" key="CaptchaMustMatch"}
+				{/validation_group}
+			{/if}
+
+			<form role="form" name="login" id="login" method="post"
+				action="{$smarty.server.SCRIPT_NAME}">
+				<div id="login-box" class="login-box shadow bg-white rounded">
+					<img src="img/logo.png" height="50" alt="VISTEC">
+					<p class="mt-4">Welcome Back</p>
+					<input type="text" placeholder="Username" id="email" {formname key=EMAIL} required>
+					<br>
+					<div class="input-with-icon">
+						<input type="password" placeholder="Password" id="password" 
+						{formname key=PASSWORD} required>
+						<span class="input-icon" style="top:.2rem;user-select:none;cursor:pointer"
+							onclick="togglePasswordVisibility()"><i
+								class="material-icons" id="login-pwd-icon">visibility_off</i></span>
+					</div>
+					<a href="{$ForgotPasswordUrl}">forget password?</a>
+					<button type="submit" name="{Actions::LOGIN}" {$ForgotPasswordUrlNew} value="submit">Sign in</button>
+				</div>
+			</form>
 		</div>
-	{/if}
-
-    {if $EnableCaptcha}
-        {validation_group class="alert alert-danger"}
-        {validator id="captcha" key="CaptchaMustMatch"}
-        {/validation_group}
-    {/if}
-
-	<div class="col-md-offset-3 col-md-6 col-xs-12 ">
-		<form role="form" name="login" id="login" class="form-horizontal" method="post"
-			  action="{$smarty.server.SCRIPT_NAME}">
-			<div id="login-box" class="col-xs-12 default-box">
-				<div class="col-xs-12 login-icon">
-					{html_image src="$LogoUrl?2.6" alt="$Title"}
-				</div>
-				{if $ShowUsernamePrompt}
-					<div class="col-xs-12">
-						<div class="input-group margin-bottom-25">
-							<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-							<input type="text" required="" class="form-control"
-								   id="email" {formname key=EMAIL}
-								   placeholder="{translate key=UsernameOrEmail}"/>
-						</div>
-					</div>
-				{/if}
-
-				{if $ShowPasswordPrompt}
-					<div class="col-xs-12">
-						<div class="input-group margin-bottom-25">
-							<span class="input-group-addon">
-							<i class="glyphicon glyphicon-lock"></i>
-							</span>
-							<input type="password" required="" id="password" {formname key=PASSWORD}
-								   class="form-control"
-								   value="" placeholder="{translate key=Password}"/>
-						</div>
-					</div>
-				{/if}
-
-                {if $EnableCaptcha}
-                    <div class="col-xs-12">
-                        <div class="margin-bottom-25">
-                        {control type="CaptchaControl"}
-                        </div>
-                    </div>
-                {else}
-                    <input type="hidden" {formname key=CAPTCHA} value=""/>
-                {/if}
-
-				{if $ShowUsernamePrompt &&  $ShowPasswordPrompt}
-				<div class="col-xs-12">
-					<button type="submit" class="btn btn-large btn-primary  btn-block" name="{Actions::LOGIN}"
-							value="submit">{translate key='LogIn'}</button>
-					<input type="hidden" {formname key=RESUME} value="{$ResumeUrl}"/>
-				</div>
-				{/if}
-
-                {if $ShowRegisterLink}
-                    <div class="col-xs-12 col-sm-6 register">
-                    <span class="bold">{translate key="FirstTimeUser?"}
-                    <a href="{$RegisterUrl}" {$RegisterUrlNew}
-                       title="{translate key=Register}">{translate key=Register}</a>
-                    </span>
-                    </div>
-                {/if}
-
-				<div class="clearfix"></div>
-			</div>
-			<div id="login-footer" class="col-xs-12">
-				{if $ShowForgotPasswordPrompt}
-					<div id="forgot-password" class="col-xs-12 col-sm-6">
-						<a href="{$ForgotPasswordUrl}" {$ForgotPasswordUrlNew} class="btn btn-link pull-left-sm"><span><i
-										class="glyphicon glyphicon-question-sign"></i></span> {translate key='ForgotMyPassword'}</a>
-					</div>
-				{/if}
-				<div id="change-language" class="col-xs-12 col-sm-6">
-					<button type="button" class="btn btn-link pull-right-sm" data-toggle="collapse"
-							data-target="#change-language-options"><span><i class="glyphicon glyphicon-globe"></i></span>
-						{translate key=ChangeLanguage}
-					</button>
-					<div id="change-language-options" class="collapse">
-						<select {formname key=LANGUAGE} class="form-control input-sm" id="languageDropDown">
-							{object_html_options options=$Languages key='GetLanguageCode' label='GetDisplayName' selected=$SelectedLanguage}
-						</select>
-					</div>
-				</div>
-			</div>
-
-
-		</form>
 	</div>
-</div>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+	<script>
+    function togglePasswordVisibility() {
+      if ($("#password").attr("type") === "password") {
+        $("#password").attr("type", "text");
+        $("#login-pwd-icon").text("visibility")
+      } else {
+        $("#password").attr("type", "password");
+        $("#login-pwd-icon").text("visibility_off")
+      }
+    }
+  	</script>
+</body>
 
 {setfocus key='EMAIL'}
 
@@ -134,4 +95,3 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
 		}
 	});
 </script>
-{include file='globalfooter.tpl'}

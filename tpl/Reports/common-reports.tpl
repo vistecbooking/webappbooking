@@ -18,87 +18,82 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
 *}
 {include file='globalheader.tpl' cssFiles="scripts/js/jqplot/jquery.jqplot.min.css"}
 
+
 <div id="page-common-reports">
 
-	<div class="panel panel-default" id="saved-reports-panel">
-		<div class="panel-heading">
-			{translate key=CommonReports}
-		</div>
-		<div class="panel-body no-padding">
-			<div id="report-list">
-				<table class="table">
-					<tbody>
+	<div class="container">
+    <div class="box box-lg mb-4">
+      <h2>Common reports</h2>
+	  <div id="report-list">
+		<div class="table-responsive mb-3">
+				<table class="table table-report">
+				<tbody>
 					<tr>
-						<td class="report-title">{translate key=ReservedResources}</td>
-						<td class="right">
-							<a href="#" reportId="{CannedReport::RESERVATIONS_TODAY}"
-							   class="report report-action runNow">{html_image src="calendar.png"} {translate key=Today}</a>
-							<a href="#" reportId="{CannedReport::RESERVATIONS_THISWEEK}"
-							   class="report report-action runNow">{html_image src="calendar-select-week.png"} {translate key=CurrentWeek}</a>
-							<a href="#" reportId="{CannedReport::RESERVATIONS_THISMONTH}"
-							   class="report report-action runNow">{html_image src="calendar-select-month.png"} {translate key=CurrentMonth}</a>
-						</td>
-					</tr>
-					<tr class="alt">
-						<td class="report-title">{translate key=ReservedAccessories}</td>
-						<td class="right">
-							<a href="#" reportId="{CannedReport::ACCESSORIES_TODAY}"
-							   class="report report-action runNow">{html_image src="calendar.png"} {translate key=Today}</a>
-							<a href="#" reportId="{CannedReport::ACCESSORIES_THISWEEK}"
-							   class="report report-action runNow">{html_image src="calendar-select-week.png"} {translate key=CurrentWeek}</a>
-							<a href="#" reportId="{CannedReport::ACCESSORIES_THISMONTH}"
-							   class="report report-action runNow">{html_image src="calendar-select-month.png"} {translate key=CurrentMonth}</a>
-						</td>
+					<td>Reserved Instruments</td>
+					<td>
+						<a href="#" class="report report-action runNow" reportId="{CannedReport::RESERVATIONS_TODAY}">Today</a>
+						<span> | </span>
+						<a href="#" class="report report-action runNow" reportId="{CannedReport::RESERVATIONS_THISWEEK}">Current Week</a>
+						<span> | </span>
+						<a href="#" class="report report-action runNow" reportId="{CannedReport::RESERVATIONS_THISMONTH}">Current Month</a>
+					</td>
 					</tr>
 					<tr>
-						<td class="report-title">{translate key=ResourceUsageTimeBooked}</td>
-						<td class="right">
-							<a href="#" reportId="{CannedReport::RESOURCE_TIME_ALLTIME}"
-							   class="report report-action runNow">{html_image src="calendar.png"} {translate key=AllTime}</a>
-							<a href="#" reportId="{CannedReport::RESOURCE_TIME_THISWEEK}"
-							   class="report report-action runNow">{html_image src="calendar-select-week.png"} {translate key=CurrentWeek}</a>
-							<a href="#" reportId="{CannedReport::RESOURCE_TIME_THISMONTH}"
-							   class="report report-action runNow">{html_image src="calendar-select-month.png"} {translate key=CurrentMonth}</a>
-						</td>
-					</tr>
-					<tr class="alt">
-						<td class="report-title">{translate key=ResourceUsageReservationCount}</td>
-						<td class="right">
-							<a href="#" reportId="{CannedReport::RESOURCE_COUNT_ALLTIME}"
-							   class="report report-action runNow">{html_image src="calendar.png"} {translate key=AllTime}</a>
-							<a href="#" reportId="{CannedReport::RESOURCE_COUNT_THISWEEK}"
-							   class="report report-action runNow">{html_image src="calendar-select-week.png"} {translate key=CurrentWeek}</a>
-							<a href="#" reportId="{CannedReport::RESOURCE_COUNT_THISMONTH}"
-							   class="report report-action runNow">{html_image src="calendar-select-month.png"} {translate key=CurrentMonth}</a>
-						</td>
+					<td>Reserved Accessories</td>
+					<td>
+						<a href="#" class="report report-action runNow" reportId="{CannedReport::ACCESSORIES_TODAY}">Today</a>
+						<span> | </span>
+						<a href="#" class="report report-action runNow" reportId="{CannedReport::ACCESSORIES_THISWEEK}">Current Week</a>
+						<span> | </span>
+						<a href="#" class="report report-action runNow" reportId="{CannedReport::ACCESSORIES_THISMONTH}">Current Month</a>
+					</td>
 					</tr>
 					<tr>
-						<td class="report-title">{translate key=Top20UsersTimeBooked}</td>
-						<td class="right">
-							<a href="#" reportId="{CannedReport::USER_TIME_ALLTIME}"
-							   class="report report-action runNow">{html_image src="calendar.png"} {translate key=AllTime}</a>
-							<a href="#" reportId="{CannedReport::USER_TIME_THISWEEK}"
-							   class="report report-action runNow">{html_image src="calendar-select-week.png"} {translate key=CurrentWeek}</a>
-							<a href="#" reportId="{CannedReport::USER_TIME_THISMONTH}"
-							   class="report report-action runNow">{html_image src="calendar-select-month.png"} {translate key=CurrentMonth}</a>
-						</td>
+					<td>Instrument Usage - Time Booked</td>
+					<td>
+						<a href="#" class="report report-action runNow" reportId="{CannedReport::RESOURCE_TIME_ALLTIME}">Alltime</a>
+						<span> | </span>
+						<a href="#" class="report report-action runNow" reportId="{CannedReport::RESOURCE_TIME_THISWEEK}">Current Week</a>
+						<span> | </span>
+						<a href="#" class="report report-action runNow" reportId="{CannedReport::RESOURCE_TIME_THISMONTH}">Current Month</a>
+					</td>
 					</tr>
-					<tr class="alt">
-						<td class="report-title">{translate key=Top20UsersReservationCount}</td>
-						<td class="right">
-							<a href="#" reportId="{CannedReport::USER_COUNT_ALLTIME}"
-							   class="report report-action  runNow">{html_image src="calendar.png"} {translate key=AllTime}</a>
-							<a href="#" reportId="{CannedReport::USER_COUNT_THISWEEK}"
-							   class="report report-action runNow">{html_image src="calendar-select-week.png"} {translate key=CurrentWeek}</a>
-							<a href="#" reportId="{CannedReport::USER_COUNT_THISMONTH}"
-							   class="report report-action  runNow">{html_image src="calendar-select-month.png"} {translate key=CurrentMonth}</a>
-						</td>
+					<tr>
+					<td>Instrument Usage - Reservation Count</td>
+					<td>
+						<a href="#" class="report report-action runNow" reportId="{CannedReport::RESOURCE_COUNT_ALLTIME}">Alltime</a>
+						<span> | </span>
+						<a href="#" class="report report-action runNow" reportId="{CannedReport::RESOURCE_COUNT_THISWEEK}">Current Week</a>
+						<span> | </span>
+						<a href="#" class="report report-action runNow" reportId="{CannedReport::RESOURCE_COUNT_THISMONTH}">Current Month</a>
+					</td>
 					</tr>
-					</tbody>
+					<tr>
+					<td>Top 20 Users - Time Booked</td>
+					<td>
+						<a href="#" class="report report-action runNow" reportId="{CannedReport::USER_TIME_ALLTIME}">Alltime</a>
+						<span> | </span>
+						<a href="#" class="report report-action runNow" reportId="{CannedReport::USER_TIME_THISWEEK}">Current Week</a>
+						<span> | </span>
+						<a href="#" class="report report-action runNow" reportId="{CannedReport::USER_TIME_THISMONTH}">Current Month</a>
+					</td>
+					</tr>
+					<tr>
+					<td>Top 20 Users - Reservation Count</td>
+					<td>
+						<a href="#" class="report report-action runNow" reportId="{CannedReport::USER_COUNT_ALLTIME}">Alltime</a>
+						<span> | </span>
+						<a href="#" class="report report-action runNow" reportId="{CannedReport::USER_COUNT_THISWEEK}">Current Week</a>
+						<span> | </span>
+						<a href="#" class="report report-action runNow" reportId="{CannedReport::USER_COUNT_THISMONTH}">Current Month</a>
+					</td>
+					</tr>
+				</tbody>
 				</table>
 			</div>
-		</div>
-	</div>
+      </div>
+    </div>
+  </div>
 </div>
 
 

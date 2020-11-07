@@ -17,19 +17,22 @@ You should have received a copy of the GNU General Public License
 along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
 *}
 {include file='globalheader.tpl' cssFiles="scripts/js/jqplot/jquery.jqplot.min.css"}
+{cssfile src='scripts/newcss/my-reports.css'}
 
-<div id="page-saved-reports">
-
-	<div class="panel panel-default" id="saved-reports-panel">
-		<div class="panel-heading">
-			{translate key=MySavedReports} <span class="badge">{$ReportList|count}</span>
-		</div>
-		<div class="panel-body no-padding">
-			{if $ReportList|count == 0}
-				<h2 class="no-data" style="text-align: center;">{translate key=NoSavedReports}</h2>
-				<a href="{$Path}reports/{Pages::REPORTS_GENERATE}">{translate key=GenerateReport}</a>
-			{else}
-				<div id="report-list">
+<div class="container">
+    <div class="box box-lg mb-4">
+      <div class="my-reports-header">
+        <h2>My save reports</h2>
+        <div class="status">
+          <p>{$ReportList|count}</p>
+        </div>
+      </div>
+      <fieldset>
+	  	{if $ReportList|count == 0}
+        	<h3>You have no save report.</h3>
+        	<a href="{$Path}reports/{Pages::REPORTS_GENERATE}">+ Create new report</a>
+		{else}
+			<div id="report-list">
 					<table class="table">
 						<tbody>
 						{foreach from=$ReportList item=report}
@@ -39,7 +42,6 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
 								<td class="right"><span
 											class="report-created-date">{format_date date=$report->DateCreated()}</span>
 								</td>
-
 								<td class="report-action"><a href="#" class="runNow report"><span
 												class="fa fa-play-circle-o icon add"></span> {translate key=RunReport}
 									</a></td>
@@ -55,17 +57,17 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
 									   <a href="#" class="schedule report">Schedule</a>
 								   {/if}
 								   *}
-
-
 							</tr>
 						{/foreach}
 						</tbody>
 					</table>
-				</div>
-			{/if}
-		</div>
+				</div>	
+		{/if}
+      </fieldset>
+    </div>
+  </div>
 
-	</div>
+<div id="page-saved-reports">
 
 	<div id="resultsDiv">
 	</div>

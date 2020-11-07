@@ -1,1 +1,48 @@
-.form-check{padding:0}.form-check>span{display:inline-block;position:absolute}.form-check>label{font-weight:400}.form-check>.form-check-input{margin-left:0}.form-check>.form-check-label{margin-left:1.25rem}@media (max-width:576px){.form-check>.form-check-label{display:block}}.form-check>.form-text-input{border:1px solid #707070;font-size:.75rem;text-align:center;vertical-align:middle;display:inline-block;width:9.25rem;height:1.375rem;border-radius:5px;margin:0 .3125rem}.form-check>.to{display:inline-block;position:unset;color:#707070}.filter-by-input{font-size:.875rem;padding-left:1.25rem;border:1px solid #707070;width:13.4375rem;height:2.1875rem;border-radius:8px;margin-bottom:.3125rem}.row>.col-lg-12 button{width:16.25rem}
+.form-check {
+  padding: 0;
+}
+.form-check > span {
+  display: inline-block;
+  position: absolute;
+}
+.form-check > label {
+  font-weight: 400;
+}
+.form-check > .form-check-input {
+  margin-left: 0;
+}
+.form-check > .form-check-label {
+  margin-left: 1.25rem;
+}
+@media (max-width: 576px) {
+  .form-check > .form-check-label {
+    display: block;
+  }
+}
+.form-check > .form-text-input {
+  border: 1px solid #707070;
+  font-size: 0.75rem;
+  text-align: center;
+  vertical-align: middle;
+  display: inline-block;
+  width: 9.25rem;
+  height: 1.375rem;
+  border-radius: 5px;
+  margin: 0 0.3125rem;
+}
+.form-check > .to {
+  display: inline-block;
+  position: unset;
+  color: #707070;
+}
+.filter-by-input {
+  display: inline !important;
+  border: 1px solid #707070;
+  width: 13.4375rem;
+  height: 33px;
+  margin-top: 5px;
+  margin-bottom: 0.3125rem;
+}
+.row > .col-lg-12 button {
+  width: 16.25rem;
+}

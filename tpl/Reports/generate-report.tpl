@@ -18,6 +18,205 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
 *}
 
 {include file='globalheader.tpl' cssFiles="scripts/js/jqplot/jquery.jqplot.min.css" Select2=true}
+{cssfile src='scripts/newcss/create-report.css'}
+
+<div class="container">
+    <div class="box box-lg mb-4">
+      <h2 class="mb-4">Create new report</h2>
+      <form role="form" id="customReportInput">
+        <div class="form-group">
+          <div class="row mb-3">
+            <div class="col-lg-2">
+              <label>Select</label>
+            </div>
+            <div class="col-lg-auto">
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="Select" {formname key=REPORT_RESULTS} value="{Report_ResultSelection::FULL_LIST}"id="results_list"
+                  checked />
+                <label class="form-check-label" for="List">List</label>
+              </div>
+            </div>
+            <div class="col-lg-auto">
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="Select" {formname key=REPORT_RESULTS} value="{Report_ResultSelection::TIME}" id="results_time" />
+                <label class="form-check-label" for="Total Time">Total Time</label>
+              </div>
+            </div>
+            <div class="col-lg-auto">
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="Select" {formname key=REPORT_RESULTS} value="{Report_ResultSelection::COUNT}" id="results_count" />
+                <label class="form-check-label" for="Count">Count</label>
+              </div>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-lg-2">
+              <label>Usage</label>
+            </div>
+            <div class="col-lg-auto">
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="Usage" {formname key=REPORT_USAGE} value="{Report_Usage::RESOURCES}" id="usage_resources"
+                  checked />
+                <label class="form-check-label" for="Equipments">Equipments</label>
+              </div>
+            </div>
+            <div class="col-lg-auto">
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="Usage" {formname key=REPORT_USAGE} value="{Report_Usage::ACCESSORIES}" id="usage_accessories"/>
+                <label class="form-check-label" for="Accessories">Accessories</label>
+              </div>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-lg-2"><label>Range</label></div>
+            <div class="col-lg-10">
+              <div class="row">
+                <div class="col-lg-auto">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="Range" {formname key=REPORT_RANGE} value="{Report_Range::ALL_TIME}" id="range_all"
+                      checked />
+                    <label class="form-check-label" for="All Time">All Time</label>
+                  </div>
+                </div>
+                <div class="col-lg-auto">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="Range" {formname key=REPORT_RANGE} value="{Report_Range::CURRENT_MONTH}" id="current_month"/>
+                    <label class="form-check-label" for="Current mount">Current
+                      mount</label>
+                  </div>
+                </div>
+                <div class="col-lg-auto">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="Range" {formname key=REPORT_RANGE} value="{Report_Range::CURRENT_WEEK}" id="current_week" />
+                    <label class="form-check-label" for="Current week">Current
+                      week</label>
+                  </div>
+                </div>
+                <div class="col-lg-auto">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="Range" {formname key=REPORT_RANGE} value="{Report_Range::TODAY}" id="today" />
+                    <label class="form-check-label" for="Today">Today</label>
+                  </div>
+                </div>
+                <div class="col-lg-auto">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="Range" {formname key=REPORT_RANGE} value="{Report_Range::DATE_RANGE}" id="range_within" />
+                    <label class="form-check-label" for="Between">Between</label>
+                    <input
+                      class="form-text-input"
+                      type="text" id="startDate"
+                      placeholder="dd/mm/yyyy" />
+					<input type="hidden" id="formattedBeginDate" {formname key=REPORT_START}/>
+                    <span class="to">-</span>
+                    <input
+                      class="form-text-input"
+                      type="text" id="endDate"
+                      placeholder="dd/mm/yyyy" />
+					<input type="hidden" id="formattedEndDate" {formname key=REPORT_END} />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-2">
+              <label>Filter by</label>
+            </div>
+            <div class="col-lg-10">
+              	<select class="filter-by-input" {formname key=RESOURCE_ID multi=true} multiple="multiple" id="resourceId"> 
+					{foreach from=$Resources item=resource}
+						<option value="{$resource->GetId()}">{$resource->GetName()}</option>
+					{/foreach}
+				</select>
+				<select class="filter-by-input" {formname key=RESOURCE_TYPE_ID multi=true} multiple="multiple" id="resourceTypeId">
+					{foreach from=$ResourceTypes item=resourceType}
+						<option value="{$resourceType->Id()}">{$resourceType->Name()}</option>
+					{/foreach}
+				</select>
+				<select class="filter-by-input" {formname key=ACCESSORY_ID multi=true} multiple="multiple" id="accessoryId">
+					{foreach from=$Accessories item=accessory}
+						<option value="{$accessory->Id}">{$accessory->Name}</option>
+					{/foreach}
+				</select>
+				<select class="filter-by-input" {formname key=SCHEDULE_ID multi=true} multiple="multiple" id="scheduleId">
+					{foreach from=$Schedules item=schedule}
+						<option value="{$schedule->GetId()}">{$schedule->GetName()}</option>
+					{/foreach}
+				</select>
+				<select class="filter-by-input" {formname key=GROUP_ID multi=true} multiple="multiple" id="groupId">
+					{foreach from=$Groups item=group}
+						<option value="{$group->Id}">{$group->Name}</option>
+					{/foreach}
+				</select>
+				<input
+                class="filter-by-input"
+                type="text"
+				id="user-filter"
+                placeholder="All Users" style="display: inline;" />
+				<input id="user_id" class="filter-id" type="hidden" {formname key=USER_ID}/>
+              	<input
+                class="filter-by-input"
+				id="participant-filter"
+                type="text"
+                placeholder="All Paticipants" />
+				<input id="participant_id" class="filter-id" type="hidden" {formname key=PARTICIPANT_ID}/>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-10">
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  name="Range" id="chkIncludeDeleted" {formname key=INCLUDE_DELETED} />
+                <label
+                  class="form-check-label"
+                  for="Include deleted reservations">Include deleted reservations</label>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-12 text-center">
+              <button type="submit" class="btn btn-success" value="{translate key=GetReport}" id="btnCustomReport" asyncAction="" >
+                Get report
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
 
 <div id="page-generate-report">
 	<div id="customReportInput-container">
