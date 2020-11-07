@@ -794,7 +794,7 @@ class SmartyPage extends Smarty
             $type = 'submit';
         }
 
-        echo '<button type="' . $type . '" class="btn btn-block btn-success mb-3 mb-sm-0 ' . $class . '" ' . $this->GetButtonAttributes($params) . '><span class="glyphicon glyphicon-ok-circle"></span> ' . Resources::GetInstance()
+        echo '<button type="' . $type . '" class="btn btn-success mb-3 mb-sm-0 ' . $class . '" ' . $this->GetButtonAttributes($params) . '><span class="glyphicon glyphicon-ok-circle"></span> ' . Resources::GetInstance()
                 ->GetString($key) . '</button>';
     }
 
@@ -809,7 +809,7 @@ class SmartyPage extends Smarty
     {
         $key = isset($params['key']) ? $params['key'] : 'Reset';
         $class = isset($params['class']) ? $params['class'] : '';
-        echo '<button type="reset" class="btn btn-block btn-secondary ' . $class . '"" ' . $this->GetButtonAttributes($params) . '>' . Resources::GetInstance()->GetString($key) . '</button>';
+        echo '<button type="reset" class="btn btn-secondary ' . $class . '"" ' . $this->GetButtonAttributes($params) . '>' . Resources::GetInstance()->GetString($key) . '</button>';
     }
 
     public function FilterButton($params, &$smarty)

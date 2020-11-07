@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2019-10-30 16:00:27
+/* Smarty version 3.1.30, created on 2020-11-07 16:34:03
   from "/var/www/html/booking/tpl/Reports/saved-reports.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5db9512b6f93d9_69831887',
+  'unifunc' => 'content_5fa66a0b2ccbe2_73096373',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '45cbb86b4127c0c99b6d7f7130d4b3bb6756847b' => 
     array (
       0 => '/var/www/html/booking/tpl/Reports/saved-reports.tpl',
-      1 => 1551196422,
+      1 => 1604684462,
       2 => 'file',
     ),
   ),
@@ -23,32 +23,33 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:globalfooter.tpl' => 1,
   ),
 ),false)) {
-function content_5db9512b6f93d9_69831887 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fa66a0b2ccbe2_73096373 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_function_cycle')) require_once '/var/www/html/booking/lib/external/Smarty/plugins/function.cycle.php';
 ?>
 
 <?php $_smarty_tpl->_subTemplateRender("file:globalheader.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('cssFiles'=>"scripts/js/jqplot/jquery.jqplot.min.css"), 0, false);
 ?>
 
+<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['cssfile'][0][0]->IncludeCssFile(array('src'=>'scripts/newcss/my-reports.css'),$_smarty_tpl);?>
 
-<div id="page-saved-reports">
 
-	<div class="panel panel-default" id="saved-reports-panel">
-		<div class="panel-heading">
-			<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'MySavedReports'),$_smarty_tpl);?>
- <span class="badge"><?php echo count($_smarty_tpl->tpl_vars['ReportList']->value);?>
-</span>
-		</div>
-		<div class="panel-body no-padding">
-			<?php if (count($_smarty_tpl->tpl_vars['ReportList']->value) == 0) {?>
-				<h2 class="no-data" style="text-align: center;"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'NoSavedReports'),$_smarty_tpl);?>
-</h2>
-				<a href="<?php echo $_smarty_tpl->tpl_vars['Path']->value;?>
+<div class="container">
+    <div class="box box-lg mb-4">
+      <div class="my-reports-header">
+        <h2>My save reports</h2>
+        <div class="status">
+          <p><?php echo count($_smarty_tpl->tpl_vars['ReportList']->value);?>
+</p>
+        </div>
+      </div>
+      <fieldset>
+	  	<?php if (count($_smarty_tpl->tpl_vars['ReportList']->value) == 0) {?>
+        	<h3>You have no save report.</h3>
+        	<a href="<?php echo $_smarty_tpl->tpl_vars['Path']->value;?>
 reports/<?php echo Pages::REPORTS_GENERATE;?>
-"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'GenerateReport'),$_smarty_tpl);?>
-</a>
-			<?php } else { ?>
-				<div id="report-list">
+">+ Create new report</a>
+		<?php } else { ?>
+			<div id="report-list">
 					<table class="table">
 						<tbody>
 						<?php
@@ -67,7 +68,6 @@ foreach ($_from as $_smarty_tpl->tpl_vars['report']->value) {
 											class="report-created-date"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['format_date'][0][0]->FormatDate(array('date'=>$_smarty_tpl->tpl_vars['report']->value->DateCreated()),$_smarty_tpl);?>
 </span>
 								</td>
-
 								<td class="report-action"><a href="#" class="runNow report"><span
 												class="fa fa-play-circle-o icon add"></span> <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'RunReport'),$_smarty_tpl);?>
 
@@ -80,8 +80,6 @@ foreach ($_from as $_smarty_tpl->tpl_vars['report']->value) {
 												class="fa fa-trash icon remove"></span> <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Delete'),$_smarty_tpl);?>
 </a></td>
 								
-
-
 							</tr>
 						<?php
 }
@@ -91,11 +89,13 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 
 						</tbody>
 					</table>
-				</div>
-			<?php }?>
-		</div>
+				</div>	
+		<?php }?>
+      </fieldset>
+    </div>
+  </div>
 
-	</div>
+<div id="page-saved-reports">
 
 	<div id="resultsDiv">
 	</div>

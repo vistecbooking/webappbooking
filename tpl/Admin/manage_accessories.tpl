@@ -18,65 +18,73 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
 *}
 {include file='globalheader.tpl'}
 
-<div id="page-manage-accessories" class="admin-page">
-	<h1>{translate key=ManageAccessories}</h1>
-
-	<form id="addForm" class="form-inline" role="form" method="post">
-		<div class="panel panel-default" id="add-accessory-panel">
-			<div class="panel-heading">{translate key="AddAccessory"} {showhide_icon}</div>
-			<div class="panel-body add-contents">
-				<div class="col-xs-5">
-					<div class="form-group has-feedback">
-						<label for="accessoryName">{translate key=AccessoryName}</label>
-						<input {formname key=ACCESSORY_NAME} type="text" id="accessoryName" required class="form-control required"/>
-						<i class="glyphicon glyphicon-asterisk form-control-feedback" data-bv-icon-for="accessoryName"></i>
+<div class="container">
+	<div class="box box-lg mb-3">
+		<h1>{translate key=ManageAccessories}</h1>
+			<div class="box box-bordered">
+			<h2>{translate key="AddAccessory"} {showhide_icon}</h2>
+			<form id="addForm" role="form" method="post">
+			<div class="row">
+				<div class="col-md">
+						<div class="form-group">
+							<label for="accessoryName">{translate key=AccessoryName} <span
+								class="text-danger">*required</span></label>
+							<input {formname key=ACCESSORY_NAME} type="text" id="accessoryName" required class="form-control required"/>
+						</div>
+					</div>
+					<div class="col-md">
+						<div class="form-row align-items-center">
+							<div class="col">
+								<div class="form-group">
+									<label for="addQuantity">{translate key='QuantityAvailable'}</label>
+									<input type="number" id="addQuantity" class="form-control" min="0" disabled="disabled" {formname key=ACCESSORY_QUANTITY_AVAILABLE} />
+								</div>
+							</div>
+							<div class="col-auto">
+								<div class="form-check">
+									<br>
+									<input type="checkbox" id="chkUnlimitedAdd" class="form-check-input unlimited" name="chkUnlimited" checked="checked"/>
+									<label for="chkUnlimitedAdd" class="form-check-label">{translate key=Unlimited}</label>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
-				<div class="col-xs-7">
-					<div class="form-group">
-						<label for="addQuantity">{translate key='QuantityAvailable'}</label>
-						<input type="number" id="addQuantity" class="form-control" min="0" disabled="disabled" {formname key=ACCESSORY_QUANTITY_AVAILABLE} />
-					</div>
-					<div class="checkbox checkbox-align">
-						<input type="checkbox" id="chkUnlimitedAdd" class="unlimited" name="chkUnlimited" checked="checked"/>
-						<label for="chkUnlimitedAdd"> {translate key=Unlimited}</label>
-					</div>
-				</div>
-			</div>
-			<div class="panel-footer">
-				{add_button class="btn-sm"}
-				{reset_button class="btn-sm"}
-			</div>
+				{add_button}
+				{reset_button}
+			</form>
 		</div>
-	</form>
+	</div>
 
-	<table class="table" id="accessoriesTable">
-		<thead>
-		<tr>
-			<th>{sort_column key=AccessoryName field=ColumnNames::ACCESSORY_NAME}</th>
-			<th>{sort_column key=QuantityAvailable field=ColumnNames::ACCESSORY_QUANTITY}</th>
-			<th>{translate key='Resources'}</th>
-			<th class="action">{translate key='Actions'}</th>
-		</tr>
-		</thead>
-		<tbody>
-		{foreach from=$accessories item=accessory}
-			{cycle values='row0,row1' assign=rowCss}
-			<tr class="{$rowCss}" data-accessory-id="{$accessory->Id}">
-				<td>{$accessory->Name}</td>
-				<td>{$accessory->QuantityAvailable|default:'&infin;'}</td>
-				<td>
-					<a href="#"
-					   class="update resources">{if $accessory->AssociatedResources == 0}{translate key=All}{else}{$accessory->AssociatedResources}{/if}</a>
-				</td>
-				<td class="action">
-					<a href="#" class="update edit"><span class="fa fa-pencil-square-o icon"></a> |
-					<a href="#" class="update delete"><span class="fa fa-trash icon remove"></span></a>
-				</td>
+	<div class="table-responsive table-shadow">
+		<table class="table table-md table-vistec table-highlight" id="accessoriesTable">
+			<thead>
+			<tr>
+				<th>{sort_column key=AccessoryName field=ColumnNames::ACCESSORY_NAME}</th>
+				<th>{sort_column key=QuantityAvailable field=ColumnNames::ACCESSORY_QUANTITY}</th>
+				<th>{translate key='Resources'}</th>
+				<th class="action">{translate key='Actions'}</th>
 			</tr>
-		{/foreach}
-		</tbody>
-	</table>
+			</thead>
+			<tbody>
+			{foreach from=$accessories item=accessory}
+				{cycle values='row0,row1' assign=rowCss}
+				<tr class="{$rowCss}" data-accessory-id="{$accessory->Id}">
+					<td>{$accessory->Name}</td>
+					<td>{$accessory->QuantityAvailable|default:'&infin;'}</td>
+					<td>
+						<a href="#"
+							class="link-edit update resources">{if $accessory->AssociatedResources == 0}{translate key=All}{else}{$accessory->AssociatedResources}{/if}</a>
+					</td>
+					<td class="action text-right text-nowrap">
+						<a href="#" class="update edit"><span class="custom-icon icon-edit"></span></a> |
+						<a href="#" class="update delete"><span class="custom-icon icon-delete"></span></a>
+					</td>
+				</tr>
+			{/foreach}
+			</tbody>
+		</table>
+	</div>
 
 	<input type="hidden" id="activeId"/>
 

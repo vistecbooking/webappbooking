@@ -129,7 +129,7 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
 				<td class="announcementEnd">{formatdate date=$announcement->End() format='m/d/Y'} {date('h:i A', strtotime($announcement->timeend()))}</td>
 				<td class="announcementGroups">{foreach from=$announcement->GroupIds() item=groupId}{$Groups[$groupId]->Name}, {/foreach}</td>
 				<!-- <td class="announcementResources">{foreach from=$announcement->ResourceIds() item=resourceId}{$Resources[$resourceId]->GetName()}, {/foreach}.</td> --!>
-				<td class="action announcementActions">
+				<td class="action announcementActions text-nowrap">
 					<a href="#" title="{translate key=Email}" class="update sendEmail link-edit mr-1">Send email</a>
 					<a href="#" title="{translate key=Edit}" class="update edit mr-1"><span class="custom-icon icon-edit"></span></a>
 					<a href="#" title="{translate key=Delete}" class="update delete"><span class="custom-icon icon-delete"></span></a>
