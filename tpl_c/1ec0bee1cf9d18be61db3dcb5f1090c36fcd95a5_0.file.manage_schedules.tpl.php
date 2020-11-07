@@ -1,41 +1,41 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-11-05 20:16:58
+/* Smarty version 3.1.30, created on 2020-11-07 19:19:45
   from "/var/www/html/booking/tpl/Admin/manage_schedules.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5fa3fb4a9b32f4_14366757',
+  'unifunc' => 'content_5fa690e1d2d042_07665628',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1ec0bee1cf9d18be61db3dcb5f1090c36fcd95a5' => 
     array (
       0 => '/var/www/html/booking/tpl/Admin/manage_schedules.tpl',
-      1 => 1600849228,
+      1 => 1604751569,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
     'file:globalheader.tpl' => 1,
-    'file:Admin/Schedules/manage_peak_times.tpl' => 1,
+    'file:Admin/Schedules/manage_peak_times.tpl' => 2,
     'file:globalfooter.tpl' => 1,
   ),
 ),false)) {
-function content_5fa3fb4a9b32f4_14366757 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fa690e1d2d042_07665628 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->ext->_tplFunction->registerTplFunctions($_smarty_tpl, array (
   'display_periods' => 
   array (
     'compiled_filepath' => '/var/www/html/booking/tpl_c/1ec0bee1cf9d18be61db3dcb5f1090c36fcd95a5_0.file.manage_schedules.tpl.php',
     'uid' => '1ec0bee1cf9d18be61db3dcb5f1090c36fcd95a5',
-    'call_name' => 'smarty_template_function_display_periods_8343561115fa3fb49266091_76102266',
+    'call_name' => 'smarty_template_function_display_periods_4203742855fa690e1335311_49350826',
   ),
   'display_slot_inputs' => 
   array (
     'compiled_filepath' => '/var/www/html/booking/tpl_c/1ec0bee1cf9d18be61db3dcb5f1090c36fcd95a5_0.file.manage_schedules.tpl.php',
     'uid' => '1ec0bee1cf9d18be61db3dcb5f1090c36fcd95a5',
-    'call_name' => 'smarty_template_function_display_slot_inputs_8343561115fa3fb49266091_76102266',
+    'call_name' => 'smarty_template_function_display_slot_inputs_4203742855fa690e1335311_49350826',
   ),
 ));
 if (!is_callable('smarty_function_html_options')) require_once '/var/www/html/booking/lib/external/Smarty/plugins/function.html_options.php';
@@ -45,19 +45,209 @@ if (!is_callable('smarty_function_html_options')) require_once '/var/www/html/bo
 ?>
 
 
-<div id="page-manage-schedules" class="admin-page">
+<div class="container">
+    <h1>
+        <span class="mr-3"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'ManageSchedules'),$_smarty_tpl);?>
+</span>
+        <a href="#" class="btn btn-success add-link pull-right" id="add-schedule">
+            <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"AddSchedule"),$_smarty_tpl);?>
 
-    <h1><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'ManageSchedules'),$_smarty_tpl);?>
-</h1>
+        </a>
+    </h1>
 
+    <div class="table-responsive table-shadow mb-3">
+      <table class="table table-md table-vistec table-highlight" style="white-space:unset">
+        <thead>
+          <tr>
+            <th><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"AllSchedules"),$_smarty_tpl);?>
+</th>
+            <th>&nbsp;</th>
+          </tr>
+        </thead>
+        <tbody>
+        <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['Schedules']->value, 'schedule');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['schedule']->value) {
+?>
+            <?php $_smarty_tpl->_assignInScope('id', $_smarty_tpl->tpl_vars['schedule']->value->GetId());
+?>
+            <?php $_smarty_tpl->smarty->ext->_capture->open($_smarty_tpl, 'daysVisible', null, null);
+?>
+
+                <span class='propertyValue daysVisible inlineUpdate' data-type='number' data-pk='<?php echo $_smarty_tpl->tpl_vars['id']->value;?>
+' data-name='<?php echo FormKeys::SCHEDULE_DAYS_VISIBLE;?>
+' data-min='0'><?php echo $_smarty_tpl->tpl_vars['schedule']->value->GetDaysVisible();?>
+</span>
+            <?php $_smarty_tpl->smarty->ext->_capture->close($_smarty_tpl);
+?>
+
+            <?php $_smarty_tpl->_assignInScope('dayOfWeek', $_smarty_tpl->tpl_vars['schedule']->value->GetWeekdayStart());
+?>
+            <?php $_smarty_tpl->smarty->ext->_capture->open($_smarty_tpl, 'dayName', null, null);
+?>
+
+                <span class='propertyValue dayName inlineUpdate' data-type='select' data-pk='<?php echo $_smarty_tpl->tpl_vars['id']->value;?>
+' data-name='<?php echo FormKeys::SCHEDULE_WEEKDAY_START;?>
+' data-value='<?php echo $_smarty_tpl->tpl_vars['dayOfWeek']->value;?>
+'><?php if ($_smarty_tpl->tpl_vars['dayOfWeek']->value == Schedule::Today) {
+echo $_smarty_tpl->tpl_vars['Today']->value;
+} else {
+echo $_smarty_tpl->tpl_vars['DayNames']->value[$_smarty_tpl->tpl_vars['dayOfWeek']->value];
+}?></span>
+            <?php $_smarty_tpl->smarty->ext->_capture->close($_smarty_tpl);
+?>
+
+          <tr class="scheduleDetails" data-schedule-id="<?php echo $_smarty_tpl->tpl_vars['id']->value;?>
+">
+            <td>
+              <input type="hidden" class="id" value="<?php echo $_smarty_tpl->tpl_vars['id']->value;?>
+"/>
+              <input type="hidden" class="daysVisible" value="<?php echo $_smarty_tpl->tpl_vars['daysVisible']->value;?>
+"/>
+              <input type="hidden" class="dayOfWeek" value="<?php echo $_smarty_tpl->tpl_vars['dayOfWeek']->value;?>
+"/>
+              <div class="title scheduleName h5 mb-0" data-type="text" data-pk="<?php echo $_smarty_tpl->tpl_vars['id']->value;?>
+" data-name="<?php echo FormKeys::SCHEDULE_NAME;?>
+">
+                <?php echo $_smarty_tpl->tpl_vars['schedule']->value->GetName();?>
+
+                <a class="update renameButton" href="#">
+                    <span class="custom-icon icon-edit ml-3">
+                </a>
+              </div>
+              <p class="my-1">
+                <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"LayoutDescription",'args'=>((string)$_smarty_tpl->smarty->ext->_capture->getBuffer($_smarty_tpl, 'dayName')).", ".((string)$_smarty_tpl->smarty->ext->_capture->getBuffer($_smarty_tpl, 'daysVisible'))),$_smarty_tpl);?>
+<br>
+                <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Resources'),$_smarty_tpl);?>
+
+                <span class="propertyValue">
+                    <?php if (array_key_exists($_smarty_tpl->tpl_vars['id']->value,$_smarty_tpl->tpl_vars['Resources']->value)) {?>
+                        <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['Resources']->value[$_smarty_tpl->tpl_vars['id']->value], 'r', false, NULL, 'resources_loop', array (
+  'last' => true,
+  'iteration' => true,
+  'total' => true,
+));
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['r']->value) {
+$_smarty_tpl->tpl_vars['__smarty_foreach_resources_loop']->value['iteration']++;
+$_smarty_tpl->tpl_vars['__smarty_foreach_resources_loop']->value['last'] = $_smarty_tpl->tpl_vars['__smarty_foreach_resources_loop']->value['iteration'] == $_smarty_tpl->tpl_vars['__smarty_foreach_resources_loop']->value['total'];
+?>
+                            <?php echo htmlspecialchars($_smarty_tpl->tpl_vars['r']->value->GetName(), ENT_QUOTES, 'UTF-8', true);
+if (!(isset($_smarty_tpl->tpl_vars['__smarty_foreach_resources_loop']->value['last']) ? $_smarty_tpl->tpl_vars['__smarty_foreach_resources_loop']->value['last'] : null)) {?>, <?php }?>
+                        <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
+?>
+
+                    <?php } else { ?>
+                        <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'None'),$_smarty_tpl);?>
+
+                    <?php }?>
+                </span>
+                <br>
+                <?php if ($_smarty_tpl->tpl_vars['CreditsEnabled']->value) {?>
+                    <span><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'PeakTimes'),$_smarty_tpl);?>
+</span>
+                    <a class="update changePeakTimes" href="#"><span class="fa fa-pencil-square-o"></span></a>
+                    <div class="peakPlaceHolder">
+                        <?php $_smarty_tpl->_subTemplateRender("file:Admin/Schedules/manage_peak_times.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('Layout'=>$_smarty_tpl->tpl_vars['Layouts']->value[$_smarty_tpl->tpl_vars['id']->value],'Months'=>$_smarty_tpl->tpl_vars['Months']->value,'DayNames'=>$_smarty_tpl->tpl_vars['DayNames']->value), 0, true);
+?>
+
+                    </div>
+                <?php }?>
+              </p>
+                <div style="display:none;">
+                    
+
+                    <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'ScheduleLayout','args'=>$_smarty_tpl->tpl_vars['schedule']->value->GetTimezone()),$_smarty_tpl);?>
+:<br/>
+                    <input type="hidden" class="timezone" value="<?php echo $_smarty_tpl->tpl_vars['schedule']->value->GetTimezone();?>
+"/>
+
+                    <?php if (!$_smarty_tpl->tpl_vars['Layouts']->value[$_smarty_tpl->tpl_vars['id']->value]->UsesDailyLayouts()) {?>
+                        <input type="hidden" class="usesDailyLayouts" value="false"/>
+                        <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'ReservableTimeSlots'),$_smarty_tpl);?>
+
+                        <div class="reservableSlots" id="reservableSlots" ref="reservableEdit">
+                            <?php $_smarty_tpl->ext->_tplFunction->callTemplateFunction($_smarty_tpl, 'display_periods', array('showReservable'=>true,'day'=>null), true);?>
+
+                        </div>
+                        <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'BlockedTimeSlots'),$_smarty_tpl);?>
+
+                        <div class="blockedSlots" id="blockedSlots" ref="blockedEdit">
+                            <?php $_smarty_tpl->ext->_tplFunction->callTemplateFunction($_smarty_tpl, 'display_periods', array('showReservable'=>false,'day'=>null), true);?>
+
+                        </div>
+                    <?php } else { ?>
+                        <input type="hidden" class="usesDailyLayouts" value="true"/>
+                        <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'LayoutVariesByDay'),$_smarty_tpl);?>
+ -
+                        <a href="#" class="showAllDailyLayouts"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'ShowHide'),$_smarty_tpl);?>
+</a>
+                        <div class="allDailyLayouts">
+                            <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, DayOfWeek::Days(), 'day');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['day']->value) {
+?>
+                                <?php echo $_smarty_tpl->tpl_vars['DayNames']->value[$_smarty_tpl->tpl_vars['day']->value];?>
+
+                                <div class="reservableSlots" id="reservableSlots_<?php echo $_smarty_tpl->tpl_vars['day']->value;?>
+"
+                                        ref="reservableEdit_<?php echo $_smarty_tpl->tpl_vars['day']->value;?>
+">
+                                    <?php $_smarty_tpl->ext->_tplFunction->callTemplateFunction($_smarty_tpl, 'display_periods', array('showReservable'=>true,'day'=>$_smarty_tpl->tpl_vars['day']->value), true);?>
+
+                                </div>
+                                <div class="blockedSlots" id="blockedSlots_<?php echo $_smarty_tpl->tpl_vars['day']->value;?>
+" ref="blockedEdit_<?php echo $_smarty_tpl->tpl_vars['day']->value;?>
+">
+                                    <?php $_smarty_tpl->ext->_tplFunction->callTemplateFunction($_smarty_tpl, 'display_periods', array('showReservable'=>false,'day'=>$_smarty_tpl->tpl_vars['day']->value), true);?>
+
+                                </div>
+                            <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
+?>
+
+                        </div>
+                    <?php }?>
+                </div>
+                <?php if ($_smarty_tpl->tpl_vars['schedule']->value->GetIsDefault()) {?>
+                    <i class="note"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'ThisIsTheDefaultSchedule'),$_smarty_tpl);?>
+</i>
+                <?php } else { ?>
+                    <a class="link-primary update makeDefaultButton" href="#"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'MakeDefault'),$_smarty_tpl);?>
+</a>
+                <?php }?>
+                <span class="mx-1">|</span>
+              <a class="link-primary update changeLayoutButton" href="#"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'ChangeLayout'),$_smarty_tpl);?>
+</a>
+              <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['indicator'][0][0]->DisplayIndicator(array('id'=>"action-indicator"),$_smarty_tpl);?>
+
+            </td>
+            <td class="text-right">
+                <?php if ($_smarty_tpl->tpl_vars['schedule']->value->GetIsDefault()) {?>
+                    &nbsp;
+                <?php } else { ?>
+                    <a class="update deleteScheduleButton" href="#"><span class="custom-icon icon-delete"></span></a>
+                <?php }?>
+            </td>
+          </tr>
+        <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
+?>
+
+        </tbody>
+      </table>
+    </div>
     <div class="panel panel-default admin-panel" id="list-schedules-panel">
-        <div class="panel-heading"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"AllSchedules"),$_smarty_tpl);?>
-
-            <a href="#" class="add-link pull-right" id="add-schedule"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"AddSchedule"),$_smarty_tpl);?>
-
-                <span class="fa fa-plus-circle icon add"></span>
-            </a>
-        </div>
         <div class="panel-body no-padding" id="scheduleList">
             <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['Schedules']->value, 'schedule');
@@ -340,7 +530,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                                 position: relative;
                                 display: inline-block;
                                 border-bottom: 1px dotted black;
-                                opacity: 1; 
+                                opacity: 1;
                             }
 
                             .tooltipd .tooltiptext {
@@ -958,9 +1148,51 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 ?>
 
 <?php }
-/* smarty_template_function_display_periods_8343561115fa3fb49266091_76102266 */
-if (!function_exists('smarty_template_function_display_periods_8343561115fa3fb49266091_76102266')) {
-function smarty_template_function_display_periods_8343561115fa3fb49266091_76102266($_smarty_tpl,$params) {
+/* smarty_template_function_display_periods_4203742855fa690e1335311_49350826 */
+if (!function_exists('smarty_template_function_display_periods_4203742855fa690e1335311_49350826')) {
+function smarty_template_function_display_periods_4203742855fa690e1335311_49350826($_smarty_tpl,$params) {
+foreach ($params as $key => $value) {
+$_smarty_tpl->tpl_vars[$key] = new Smarty_Variable($value, $_smarty_tpl->isRenderingCache);
+}?>
+                        <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['Layouts']->value[$_smarty_tpl->tpl_vars['id']->value]->GetSlots($_smarty_tpl->tpl_vars['day']->value), 'period', false, NULL, 'layouts', array (
+  'last' => true,
+  'iteration' => true,
+  'total' => true,
+));
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['period']->value) {
+$_smarty_tpl->tpl_vars['__smarty_foreach_layouts']->value['iteration']++;
+$_smarty_tpl->tpl_vars['__smarty_foreach_layouts']->value['last'] = $_smarty_tpl->tpl_vars['__smarty_foreach_layouts']->value['iteration'] == $_smarty_tpl->tpl_vars['__smarty_foreach_layouts']->value['total'];
+?>
+                            <?php if ($_smarty_tpl->tpl_vars['period']->value->IsReservable() == $_smarty_tpl->tpl_vars['showReservable']->value) {?>
+                                <?php echo $_smarty_tpl->tpl_vars['period']->value->Start->Format("H:i");?>
+ - <?php echo $_smarty_tpl->tpl_vars['period']->value->End->Format("H:i");?>
+
+                                <?php if ($_smarty_tpl->tpl_vars['period']->value->IsLabelled()) {?>
+                                    <?php echo $_smarty_tpl->tpl_vars['period']->value->Label;?>
+
+                                <?php }?>
+                                <?php if (!(isset($_smarty_tpl->tpl_vars['__smarty_foreach_layouts']->value['last']) ? $_smarty_tpl->tpl_vars['__smarty_foreach_layouts']->value['last'] : null)) {?>, <?php }?>
+                            <?php }?>
+                            <?php
+}
+} else {
+?>
+
+                            <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'None'),$_smarty_tpl);?>
+
+                        <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
+?>
+
+                    <?php
+}}
+/*/ smarty_template_function_display_periods_4203742855fa690e1335311_49350826 */
+/* smarty_template_function_display_periods_4203742855fa690e1335311_49350826 */
+if (!function_exists('smarty_template_function_display_periods_4203742855fa690e1335311_49350826')) {
+function smarty_template_function_display_periods_4203742855fa690e1335311_49350826($_smarty_tpl,$params) {
 foreach ($params as $key => $value) {
 $_smarty_tpl->tpl_vars[$key] = new Smarty_Variable($value, $_smarty_tpl->isRenderingCache);
 }?>
@@ -999,10 +1231,10 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 
                         <?php
 }}
-/*/ smarty_template_function_display_periods_8343561115fa3fb49266091_76102266 */
-/* smarty_template_function_display_slot_inputs_8343561115fa3fb49266091_76102266 */
-if (!function_exists('smarty_template_function_display_slot_inputs_8343561115fa3fb49266091_76102266')) {
-function smarty_template_function_display_slot_inputs_8343561115fa3fb49266091_76102266($_smarty_tpl,$params) {
+/*/ smarty_template_function_display_periods_4203742855fa690e1335311_49350826 */
+/* smarty_template_function_display_slot_inputs_4203742855fa690e1335311_49350826 */
+if (!function_exists('smarty_template_function_display_slot_inputs_4203742855fa690e1335311_49350826')) {
+function smarty_template_function_display_slot_inputs_4203742855fa690e1335311_49350826($_smarty_tpl,$params) {
 foreach ($params as $key => $value) {
 $_smarty_tpl->tpl_vars[$key] = new Smarty_Variable($value, $_smarty_tpl->isRenderingCache);
 }?>
@@ -1040,5 +1272,5 @@ echo $_smarty_tpl->tpl_vars['suffix']->value;?>
                             </div>
                         <?php
 }}
-/*/ smarty_template_function_display_slot_inputs_8343561115fa3fb49266091_76102266 */
+/*/ smarty_template_function_display_slot_inputs_4203742855fa690e1335311_49350826 */
 }
