@@ -18,16 +18,132 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
 *}
 {include file='globalheader.tpl' InlineEdit=true}
 
-<div id="page-manage-schedules" class="admin-page">
+<div class="container">
+    <h1>
+        <span class="mr-3">{translate key=ManageSchedules}</span>
+        <a href="#" class="btn btn-success add-link pull-right" id="add-schedule">
+            {translate key="AddSchedule"}
+        </a>
+    </h1>
 
-    <h1>{translate key=ManageSchedules}</h1>
+    <div class="table-responsive table-shadow mb-3">
+      <table class="table table-md table-vistec table-highlight" style="white-space:unset">
+        <thead>
+          <tr>
+            <th>{translate key="AllSchedules"}</th>
+            <th>&nbsp;</th>
+          </tr>
+        </thead>
+        <tbody>
+        {foreach from=$Schedules item=schedule}
+            {assign var=id value=$schedule->GetId()}
+            {capture name=daysVisible}
+                <span class='propertyValue daysVisible inlineUpdate' data-type='number' data-pk='{$id}' data-name='{FormKeys::SCHEDULE_DAYS_VISIBLE}' data-min='0'>{$schedule->GetDaysVisible()}</span>
+            {/capture}
+            {assign var=dayOfWeek value=$schedule->GetWeekdayStart()}
+            {capture name=dayName}
+                <span class='propertyValue dayName inlineUpdate' data-type='select' data-pk='{$id}' data-name='{FormKeys::SCHEDULE_WEEKDAY_START}' data-value='{$dayOfWeek}'>{if $dayOfWeek == Schedule::Today}{$Today}{else}{$DayNames[$dayOfWeek]}{/if}</span>
+            {/capture}
+          <tr class="scheduleDetails" data-schedule-id="{$id}">
+            <td>
+              <input type="hidden" class="id" value="{$id}"/>
+              <input type="hidden" class="daysVisible" value="{$daysVisible}"/>
+              <input type="hidden" class="dayOfWeek" value="{$dayOfWeek}"/>
+              <div class="title scheduleName h5 mb-0" data-type="text" data-pk="{$id}" data-name="{FormKeys::SCHEDULE_NAME}">
+                {$schedule->GetName()}
+                <a class="update renameButton" href="#">
+                    <span class="custom-icon icon-edit ml-3">
+                </a>
+              </div>
+              <p class="my-1">
+                {translate key="LayoutDescription" args="{$smarty.capture.dayName}, {$smarty.capture.daysVisible}"}<br>
+                {translate key=Resources}
+                <span class="propertyValue">
+                    {if array_key_exists($id, $Resources)}
+                        {foreach from=$Resources[$id] item=r name=resources_loop}
+                            {$r->GetName()|escape}{if !$smarty.foreach.resources_loop.last}, {/if}
+                        {/foreach}
+                    {else}
+                        {translate key=None}
+                    {/if}
+                </span>
+                <br>
+                {if $CreditsEnabled}
+                    <span>{translate key=PeakTimes}</span>
+                    <a class="update changePeakTimes" href="#"><span class="fa fa-pencil-square-o"></span></a>
+                    <div class="peakPlaceHolder">
+                        {include file="Admin/Schedules/manage_peak_times.tpl" Layout=$Layouts[$id] Months=$Months DayNames=$DayNames}
+                    </div>
+                {/if}
+              </p>
+                <div style="display:none;">
+                    {function name="display_periods"}
+                        {foreach from=$Layouts[$id]->GetSlots($day) item=period name=layouts}
+                            {if $period->IsReservable() == $showReservable}
+                                {$period->Start->Format("H:i")} - {$period->End->Format("H:i")}
+                                {if $period->IsLabelled()}
+                                    {$period->Label}
+                                {/if}
+                                {if !$smarty.foreach.layouts.last}, {/if}
+                            {/if}
+                            {foreachelse}
+                            {translate key=None}
+                        {/foreach}
+                    {/function}
 
+                    {translate key=ScheduleLayout args=$schedule->GetTimezone()}:<br/>
+                    <input type="hidden" class="timezone" value="{$schedule->GetTimezone()}"/>
+
+                    {if !$Layouts[$id]->UsesDailyLayouts()}
+                        <input type="hidden" class="usesDailyLayouts" value="false"/>
+                        {translate key=ReservableTimeSlots}
+                        <div class="reservableSlots" id="reservableSlots" ref="reservableEdit">
+                            {display_periods showReservable=true day=null}
+                        </div>
+                        {translate key=BlockedTimeSlots}
+                        <div class="blockedSlots" id="blockedSlots" ref="blockedEdit">
+                            {display_periods showReservable=false day=null}
+                        </div>
+                    {else}
+                        <input type="hidden" class="usesDailyLayouts" value="true"/>
+                        {translate key=LayoutVariesByDay} -
+                        <a href="#" class="showAllDailyLayouts">{translate key=ShowHide}</a>
+                        <div class="allDailyLayouts">
+                            {foreach from=DayOfWeek::Days() item=day}
+                                {$DayNames[$day]}
+                                <div class="reservableSlots" id="reservableSlots_{$day}"
+                                        ref="reservableEdit_{$day}">
+                                    {display_periods showReservable=true day=$day}
+                                </div>
+                                <div class="blockedSlots" id="blockedSlots_{$day}" ref="blockedEdit_{$day}">
+                                    {display_periods showReservable=false day=$day}
+                                </div>
+                            {/foreach}
+                        </div>
+                    {/if}
+                </div>
+                {if $schedule->GetIsDefault()}
+                    <i class="note">{translate key=ThisIsTheDefaultSchedule}</i>
+                {else}
+                    <a class="link-primary update makeDefaultButton" href="#">{translate key=MakeDefault}</a>
+                {/if}
+                <span class="mx-1">|</span>
+              <a class="link-primary update changeLayoutButton" href="#">{translate key=ChangeLayout}</a>
+              {indicator id="action-indicator"}
+            </td>
+            <td class="text-right">
+                {if $schedule->GetIsDefault()}
+                    &nbsp;
+                {else}
+                    <a class="update deleteScheduleButton" href="#"><span class="custom-icon icon-delete"></span></a>
+                {/if}
+            </td>
+          </tr>
+        {/foreach}
+        </tbody>
+      </table>
+    </div>
     <div class="panel panel-default admin-panel" id="list-schedules-panel">
-        <div class="panel-heading">{translate key="AllSchedules"}
-            <a href="#" class="add-link pull-right" id="add-schedule">{translate key="AddSchedule"}
-                <span class="fa fa-plus-circle icon add"></span>
-            </a>
-        </div>
         <div class="panel-body no-padding" id="scheduleList">
             {foreach from=$Schedules item=schedule}
                 {assign var=id value=$schedule->GetId()}
@@ -203,7 +319,7 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
                                 position: relative;
                                 display: inline-block;
                                 border-bottom: 1px dotted black;
-                                opacity: 1; 
+                                opacity: 1;
                             }
 
                             .tooltipd .tooltiptext {

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-11-06 02:19:05
+/* Smarty version 3.1.30, created on 2020-11-07 20:28:38
   from "/var/www/html/booking/tpl/Admin/Blackouts/manage_blackouts.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5fa45029584012_09373742',
+  'unifunc' => 'content_5fa6a1067ca620_61016665',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '50e137692280487ca83b82bcdcd488c0af3e54aa' => 
     array (
       0 => '/var/www/html/booking/tpl/Admin/Blackouts/manage_blackouts.tpl',
-      1 => 1600849228,
+      1 => 1604754265,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:globalfooter.tpl' => 1,
   ),
 ),false)) {
-function content_5fa45029584012_09373742 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fa6a1067ca620_61016665 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_function_cycle')) require_once '/var/www/html/booking/lib/external/Smarty/plugins/function.cycle.php';
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
@@ -32,191 +32,243 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 <?php $_smarty_tpl->_subTemplateRender("file:globalheader.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('Timepicker'=>true), 0, false);
 ?>
 
-<div id="page-manage-blackouts" class="admin-page">
-	<h1><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'ManageBlackouts'),$_smarty_tpl);?>
+<div id="page-manage-blackouts" class="container">
+
+	<div class="box box-lg mb-3">
+		<h1><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'ManageBlackouts'),$_smarty_tpl);?>
 </h1>
-
-	<form id="addBlackoutForm" class="form-inline" role="form" method="post">
-		<div class="panel panel-default" id="add-blackout-panel">
-			<div class="panel-heading"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"AddBlackout"),$_smarty_tpl);?>
+		<form id="addBlackoutForm" role="form" method="post">
+			<fieldset class="bordered">
+				<h2><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"AddBlackout"),$_smarty_tpl);?>
  <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['showhide_icon'][0][0]->ShowHideIcon(array(),$_smarty_tpl);?>
-</div>
-			<div class="panel-body add-contents">
-
-				<div class="form-group col-xs-6">
-					<label for="addStartDate"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'BeginBlackout'),$_smarty_tpl);?>
+</h2>
+				<div class="form-row">
+					<div class="form-group col-md">
+						<label for="addResourceId"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Resource'),$_smarty_tpl);?>
 </label>
-					<input type="text" id="addStartDate" class="form-control dateinput inline-block "
-						   value="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formatdate'][0][0]->FormatDate(array('date'=>$_smarty_tpl->tpl_vars['AddStartDate']->value),$_smarty_tpl);?>
-"/>
-					<input <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'BEGIN_DATE'),$_smarty_tpl);?>
- id="formattedAddStartDate" type="hidden"
-													 value="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formatdate'][0][0]->FormatDate(array('date'=>$_smarty_tpl->tpl_vars['AddStartDate']->value,'key'=>'system'),$_smarty_tpl);?>
-"/>
-					<input <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'BEGIN_TIME'),$_smarty_tpl);?>
- type="time" id="addStartTime"
-													 class="form-control inline-block"
-													 value="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['format_date'][0][0]->FormatDate(array('format'=>'H:00','date'=>Date::Now()),$_smarty_tpl);?>
-"
-													 title="Start time"/>
-				</div>
-				<div class="form-group col-xs-6">
-					<label for="addEndDate"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'EndBlackout'),$_smarty_tpl);?>
-</label>
-					<input type="text" id="addEndDate" class="form-control dateinput inline-block " size="10"
-						   value="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formatdate'][0][0]->FormatDate(array('date'=>$_smarty_tpl->tpl_vars['AddEndDate']->value),$_smarty_tpl);?>
-"/>
-					<input <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'END_DATE'),$_smarty_tpl);?>
- type="hidden" id="formattedAddEndDate"
-												   value="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formatdate'][0][0]->FormatDate(array('date'=>$_smarty_tpl->tpl_vars['AddEndDate']->value,'key'=>'system'),$_smarty_tpl);?>
-"/>
-					<input <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'END_TIME'),$_smarty_tpl);?>
- type="time" id="addEndTime"
-												   class="form-control inline-block "
-												   value="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['format_date'][0][0]->FormatDate(array('format'=>'H:00','date'=>Date::Now()->AddHours(1)),$_smarty_tpl);?>
-"
-												   title="End time"/>
-				</div>
-				<br />
-				<br />
-				<div class="form-group col-xs-6">
-					<label for="addAnnounceStartDate"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'BeginAnnouncement'),$_smarty_tpl);?>
-</label>
-					<input type="text" id="addAnnounceStartDate" class="form-control dateinput inline-block "
-						   value="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formatdate'][0][0]->FormatDate(array('date'=>$_smarty_tpl->tpl_vars['AddAnnounceStartDate']->value),$_smarty_tpl);?>
-"/>
-					<input <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'ANNOUNCEMENT_START'),$_smarty_tpl);?>
- id="formattedAddAnnounceStartDate" type="hidden"
-													 value="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formatdate'][0][0]->FormatDate(array('date'=>$_smarty_tpl->tpl_vars['AddAnnounceStartDate']->value,'key'=>'system'),$_smarty_tpl);?>
-"/>
-					<input <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'ANNOUNCEMENT_TIME_START'),$_smarty_tpl);?>
- type="time" id="addAnnounceStartTime"
-													 class="form-control inline-block"
-													 value="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['format_date'][0][0]->FormatDate(array('format'=>'H:00','date'=>Date::Now()),$_smarty_tpl);?>
-"
-													 title="Start time"/>
-				</div>
-				<div class="form-group col-xs-6">
-					<label for="addAnnounceEndDate"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'EndAnnouncement'),$_smarty_tpl);?>
-</label>
-					<input type="text" id="addAnnounceEndDate" class="form-control dateinput inline-block " size="10"
-						   value="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formatdate'][0][0]->FormatDate(array('date'=>$_smarty_tpl->tpl_vars['AddAnnounceEndDate']->value),$_smarty_tpl);?>
-"/>
-					<input <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'ANNOUNCEMENT_END'),$_smarty_tpl);?>
- type="hidden" id="formattedAddAnnounceEndDate"
-												   value="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formatdate'][0][0]->FormatDate(array('date'=>$_smarty_tpl->tpl_vars['AddAnnounceEndDate']->value,'key'=>'system'),$_smarty_tpl);?>
-"/>
-					<input <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'ANNOUNCEMENT_TIME_END'),$_smarty_tpl);?>
- type="time" id="addAnnounceEndTime"
-												   class="form-control inline-block "
-												   value="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['format_date'][0][0]->FormatDate(array('format'=>'H:00','date'=>Date::Now()->AddHours(1)),$_smarty_tpl);?>
-"
-												   title="End time"/>
-				</div>
-				<br />
-				<br />
-				<div class="form-group col-xs-12">
-					<label for="addResourceId"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Resource'),$_smarty_tpl);?>
-</label>
-					<select <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'RESOURCE_ID'),$_smarty_tpl);?>
+						<select <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'RESOURCE_ID'),$_smarty_tpl);?>
  class="form-control" id="addResourceId">
-						<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['object_html_options'][0][0]->ObjectHtmlOptions(array('options'=>$_smarty_tpl->tpl_vars['Resources']->value,'key'=>'GetId','label'=>"GetName",'selected'=>$_smarty_tpl->tpl_vars['ResourceId']->value),$_smarty_tpl);?>
-
-					</select>
-					<?php if (count($_smarty_tpl->tpl_vars['Schedules']->value) > 0) {?>
-						|
-						<div class="checkbox">
-							<input <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'BLACKOUT_APPLY_TO_SCHEDULE'),$_smarty_tpl);?>
- type="checkbox" id="allResources"/>
-							<label for="allResources" style=""><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'AllResourcesOn'),$_smarty_tpl);?>
- </label>
-						</div>
-						<select <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'SCHEDULE_ID'),$_smarty_tpl);?>
- id="addScheduleId" class="form-control" disabled="disabled"
-														   title="Schedule">
-							<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['object_html_options'][0][0]->ObjectHtmlOptions(array('options'=>$_smarty_tpl->tpl_vars['Schedules']->value,'key'=>'GetId','label'=>"GetName",'selected'=>$_smarty_tpl->tpl_vars['ScheduleId']->value),$_smarty_tpl);?>
+							<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['object_html_options'][0][0]->ObjectHtmlOptions(array('options'=>$_smarty_tpl->tpl_vars['Resources']->value,'key'=>'GetId','label'=>"GetName",'selected'=>$_smarty_tpl->tpl_vars['ResourceId']->value),$_smarty_tpl);?>
 
 						</select>
-					<?php }?>
-				</div>
-				<br />
-				<br />
-				<div class="col-xs-12">
-					<div class="form-group has-feedback">
-						<label for="blackoutReason"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Reason'),$_smarty_tpl);?>
+					</div>
+					<div class="form-group col-md align-self-end">
+						<div class="form-row">
+							<div class="col-auto d-flex align-items-center">
+								<span class="mr-2">or</span>
+								<div class="form-check mr-1 pl-0" style="width:auto">
+									<input <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'BLACKOUT_APPLY_TO_SCHEDULE'),$_smarty_tpl);?>
+ type="checkbox" id="allResources"/>
+									<label class="mb-0" for="allResources"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'AllResourcesOn'),$_smarty_tpl);?>
 </label>
-						<input <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'SUMMARY'),$_smarty_tpl);?>
- type="text" id="blackoutReason" required
-													  class="form-control required"/>
-						<i class="glyphicon glyphicon-asterisk form-control-feedback" data-bv-icon-for="blackoutReason"></i>
+								</div>
+							</div>
+							<div class="col">
+								<select <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'SCHEDULE_ID'),$_smarty_tpl);?>
+ id="addScheduleId" class="form-control" disabled="disabled"
+									title="Schedule">
+									<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['object_html_options'][0][0]->ObjectHtmlOptions(array('options'=>$_smarty_tpl->tpl_vars['Schedules']->value,'key'=>'GetId','label'=>"GetName",'selected'=>$_smarty_tpl->tpl_vars['ScheduleId']->value),$_smarty_tpl);?>
+
+								</select>
+							</div>
+						</div>
 					</div>
 				</div>
-				<br />
-				<br />
-				<div class="form-group col-xs-12">
-					<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['control'][0][0]->DisplayControl(array('type'=>"RecurrenceControl",'RepeatTerminationDate'=>$_smarty_tpl->tpl_vars['RepeatTerminationDate']->value),$_smarty_tpl);?>
-
-				</div>
-				<br />
-				<br />
-				<div class="form-group col-xs-12">
-					<div class="radio">
-						<input <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'CONFLICT_ACTION'),$_smarty_tpl);?>
- type="radio" id="deleteExisting"
-															  name="existingReservations"
-															   checked="checked"
-															  value="<?php echo ReservationConflictResolution::Delete;?>
+				<div class="row">
+					<div class="col-md">
+						<div class="form-row">
+							<div class="col-sm form-group">
+								<label for="addStartDate"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'BeginBlackout'),$_smarty_tpl);?>
+</label>
+								<div class="input-with-icon">
+									<input type="text" id="addStartDate" class="form-control"
+										value="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formatdate'][0][0]->FormatDate(array('date'=>$_smarty_tpl->tpl_vars['AddStartDate']->value),$_smarty_tpl);?>
 "/>
-						<label for="deleteExisting"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'BlackoutDeleteConflicts'),$_smarty_tpl);?>
-</label>
-					</div>
-					<div class="radio">
-						<input <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'CONFLICT_ACTION'),$_smarty_tpl);?>
- type="radio" id="notifyExisting"
-															  name="existingReservations"
-															  value="<?php echo ReservationConflictResolution::Notify;?>
+									<input <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'BEGIN_DATE'),$_smarty_tpl);?>
+ id="formattedAddStartDate" type="hidden"
+										value="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formatdate'][0][0]->FormatDate(array('date'=>$_smarty_tpl->tpl_vars['AddStartDate']->value,'key'=>'system'),$_smarty_tpl);?>
 "/>
-						<label for="notifyExisting"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'BlackoutShowMe'),$_smarty_tpl);?>
-</label>
-					</div>
-				
-				</div>
-				<br />
-				<br />
-			</div>
-			<div class="panel-footer">
-				<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['add_button'][0][0]->AddButton(array('class'=>"btn-sm"),$_smarty_tpl);?>
-
-				<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['reset_button'][0][0]->ResetButton(array('class'=>"btn-sm"),$_smarty_tpl);?>
-
-			</div>
-		</div>
-	</form>
-
-	<form class="form" role="form">
-		<div class="panel panel-default">
-			<div class="panel-heading"><span class="glyphicon glyphicon-filter"></span>
-				<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"Filter"),$_smarty_tpl);?>
-
-			</div>
-			<div class="panel-body">
-				<div class="form-group col-xs-4">
-					<input id="startDate" type="text" class="form-control dateinput inline-block"
-						   value="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formatdate'][0][0]->FormatDate(array('date'=>$_smarty_tpl->tpl_vars['StartDate']->value),$_smarty_tpl);?>
+									<span class="input-icon"><i
+											class="material-icons">calendar_today</i></span>
+								</div>
+							</div>
+							<div class="col-sm form-group align-self-end">
+								<div class="input-with-icon">
+									<input <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'BEGIN_TIME'),$_smarty_tpl);?>
+ type="time" id="addStartTime"
+										class="form-control"
+										value="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['format_date'][0][0]->FormatDate(array('format'=>'H:00','date'=>Date::Now()),$_smarty_tpl);?>
 "
-						   title="Between start date" placeholder="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'BeginDate'),$_smarty_tpl);?>
+										title="Start time"/>
+									<span class="input-icon"><i
+											class="material-icons">query_builder</i></span>
+								</div>
+							</div>
+						</div>
+						<div class="form-row">
+							<div class="col-sm form-group">
+								<label for="addEndDate"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'EndBlackout'),$_smarty_tpl);?>
+</label>
+								<div class="input-with-icon">
+									<input type="text" id="addEndDate" class="form-control" size="10"
+										value="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formatdate'][0][0]->FormatDate(array('date'=>$_smarty_tpl->tpl_vars['AddEndDate']->value),$_smarty_tpl);?>
+"/>
+									<input <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'END_DATE'),$_smarty_tpl);?>
+ type="hidden" id="formattedAddEndDate"
+										value="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formatdate'][0][0]->FormatDate(array('date'=>$_smarty_tpl->tpl_vars['AddEndDate']->value,'key'=>'system'),$_smarty_tpl);?>
+"/>
+									<span class="input-icon"><i
+											class="material-icons">calendar_today</i></span>
+								</div>
+							</div>
+							<div class="col-sm form-group align-self-end">
+								<div class="input-with-icon">
+									<input <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'END_TIME'),$_smarty_tpl);?>
+ type="time" id="addEndTime"
+										class="form-control"
+										value="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['format_date'][0][0]->FormatDate(array('format'=>'H:00','date'=>Date::Now()->AddHours(1)),$_smarty_tpl);?>
+"
+										title="End time"/>
+									<span class="input-icon"><i
+											class="material-icons">query_builder</i></span>
+								</div>
+							</div>
+						</div>
+						<div class="form-row mb-3">
+							<div class="col-auto align-self-center">
+								<span>Repeat:</span>
+							</div>
+							<div class="col">
+								<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['control'][0][0]->DisplayControl(array('type'=>"RecurrenceControl",'RepeatTerminationDate'=>$_smarty_tpl->tpl_vars['RepeatTerminationDate']->value),$_smarty_tpl);?>
+
+							</div>
+						</div>
+						<div class="form-row">
+							<div class="col-sm form-group">
+								<label for="addAnnounceStartDate"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'BeginAnnouncement'),$_smarty_tpl);?>
+</label>
+								<div class="input-with-icon">
+									<input type="text" id="addAnnounceStartDate" class="form-control"
+											value="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formatdate'][0][0]->FormatDate(array('date'=>$_smarty_tpl->tpl_vars['AddAnnounceStartDate']->value),$_smarty_tpl);?>
+"/>
+									<input <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'ANNOUNCEMENT_START'),$_smarty_tpl);?>
+ id="formattedAddAnnounceStartDate" type="hidden"
+											value="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formatdate'][0][0]->FormatDate(array('date'=>$_smarty_tpl->tpl_vars['AddAnnounceStartDate']->value,'key'=>'system'),$_smarty_tpl);?>
+"/>
+									<span class="input-icon"><i
+											class="material-icons">calendar_today</i></span>
+								</div>
+							</div>
+							<div class="col-sm form-group align-self-end">
+								<div class="input-with-icon">
+									<input <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'ANNOUNCEMENT_TIME_START'),$_smarty_tpl);?>
+ type="time" id="addAnnounceStartTime"
+										class="form-control"
+										value="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['format_date'][0][0]->FormatDate(array('format'=>'H:00','date'=>Date::Now()),$_smarty_tpl);?>
+"
+										title="Start time"/>
+									<span class="input-icon"><i
+											class="material-icons">query_builder</i></span>
+								</div>
+							</div>
+						</div>
+						<div class="form-row">
+							<div class="col-sm form-group">
+								<label for="addAnnounceEndDate"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'EndAnnouncement'),$_smarty_tpl);?>
+</label>
+								<div class="input-with-icon">
+									<input type="text" id="addAnnounceEndDate" class="form-control" size="10"
+										value="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formatdate'][0][0]->FormatDate(array('date'=>$_smarty_tpl->tpl_vars['AddAnnounceEndDate']->value),$_smarty_tpl);?>
+"/>
+									<input <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'ANNOUNCEMENT_END'),$_smarty_tpl);?>
+ type="hidden" id="formattedAddAnnounceEndDate"
+										value="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formatdate'][0][0]->FormatDate(array('date'=>$_smarty_tpl->tpl_vars['AddAnnounceEndDate']->value,'key'=>'system'),$_smarty_tpl);?>
+"/>
+									<span class="input-icon"><i
+											class="material-icons">calendar_today</i></span>
+								</div>
+							</div>
+							<div class="col-sm form-group align-self-end">
+								<div class="input-with-icon">
+									<input <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'ANNOUNCEMENT_TIME_END'),$_smarty_tpl);?>
+ type="time" id="addAnnounceEndTime"
+										class="form-control"
+										value="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['format_date'][0][0]->FormatDate(array('format'=>'H:00','date'=>Date::Now()->AddHours(1)),$_smarty_tpl);?>
+"
+										title="End time"/>
+									<span class="input-icon"><i
+											class="material-icons">query_builder</i></span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md">
+						<div class="form-group">
+							<label for="blackoutReason"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Reason'),$_smarty_tpl);?>
+ <span class="text-danger">*required</span></label>
+							<input <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'SUMMARY'),$_smarty_tpl);?>
+ type="text" id="blackoutReason" required class="form-control required"/>
+						</div>
+						<div class="form-group">
+							<label for="Confliction">Confliction</label>
+							<div class="form-check">
+								<input class="form-check-input" <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'CONFLICT_ACTION'),$_smarty_tpl);?>
+ type="radio" id="deleteExisting"
+									name="existingReservations"
+									checked="checked"
+									value="<?php echo ReservationConflictResolution::Delete;?>
+"/>
+								<label class="form-check-label" for="deleteExisting"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'BlackoutDeleteConflicts'),$_smarty_tpl);?>
+</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'CONFLICT_ACTION'),$_smarty_tpl);?>
+ type="radio" id="notifyExisting"
+									name="existingReservations"
+									value="<?php echo ReservationConflictResolution::Notify;?>
+"/>
+								<label class="form-check-label" for="notifyExisting"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'BlackoutShowMe'),$_smarty_tpl);?>
+</label>
+							</div>
+						</div>
+					</div>
+				</div>
+				<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['add_button'][0][0]->AddButton(array(),$_smarty_tpl);?>
+
+				<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['reset_button'][0][0]->ResetButton(array(),$_smarty_tpl);?>
+
+			</fieldset>
+
+		</form>
+	</div>
+
+
+	<div class="box box-lg mb-3">
+	<h1><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"Filter"),$_smarty_tpl);?>
+</h1>
+		<form class="form" role="form">
+			<div class="form-row">
+				<div class="form-group col-sm">
+					<input id="startDate" type="text" class="form-control"
+						value="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formatdate'][0][0]->FormatDate(array('date'=>$_smarty_tpl->tpl_vars['StartDate']->value),$_smarty_tpl);?>
+"
+						title="Between start date" placeholder="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'BeginDate'),$_smarty_tpl);?>
 "/>
 					<input id="formattedStartDate" type="hidden" value="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formatdate'][0][0]->FormatDate(array('date'=>$_smarty_tpl->tpl_vars['StartDate']->value,'key'=>'system'),$_smarty_tpl);?>
 "/>
-					-
-					<input id="endDate" type="text" class="form-control dateinput inline-block"
-						   value="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formatdate'][0][0]->FormatDate(array('date'=>$_smarty_tpl->tpl_vars['EndDate']->value),$_smarty_tpl);?>
+				</div>
+				<div class="col-sm-auto mt-2 d-none d-sm-block">
+					&mdash;
+				</div>
+				<div class="form-group col-sm">
+					<input id="endDate" type="text" class="form-control"
+						value="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formatdate'][0][0]->FormatDate(array('date'=>$_smarty_tpl->tpl_vars['EndDate']->value),$_smarty_tpl);?>
 " placeholder="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'EndDate'),$_smarty_tpl);?>
 "/>
 					<input id="formattedEndDate" type="hidden" value="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formatdate'][0][0]->FormatDate(array('date'=>$_smarty_tpl->tpl_vars['EndDate']->value,'key'=>'system'),$_smarty_tpl);?>
 "/>
 				</div>
-				<div class="form-group col-xs-4">
+				<div class="form-group col-sm">
 					<select id="scheduleId" class="form-control col-xs-12">
 						<option value=""><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'AllSchedules'),$_smarty_tpl);?>
 </option>
@@ -224,7 +276,7 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 
 					</select>
 				</div>
-				<div class="form-group col-xs-4">
+				<div class="form-group col-sm">
 					<select id="resourceId" class="form-control col-xs-12">
 						<option value=""><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'AllResources'),$_smarty_tpl);?>
 </option>
@@ -232,17 +284,18 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 
 					</select>
 				</div>
-			</div>
-			<div class="panel-footer">
-				<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['filter_button'][0][0]->FilterButton(array('class'=>"btn-sm",'id'=>"filter"),$_smarty_tpl);?>
+				<div class="col-sm-auto">
+					<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['filter_button'][0][0]->FilterButton(array('class'=>"btn-sm",'id'=>"filter"),$_smarty_tpl);?>
 
-				<button id="showAll" class="btn btn-link btn-sm"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'ViewAll'),$_smarty_tpl);?>
+					<button id="showAll" class="btn btn-link btn-sm"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'ViewAll'),$_smarty_tpl);?>
 </button>
+				</div>
 			</div>
-		</div>
-	</form>
+		</form>
+	</div>
 
-	<table class="table" id="blackoutTable">
+	<div class="table-responsive table-shadow mb-3">
+	<table class="table table-md table-vistec table-highlight" id="blackoutTable">
 		<thead>
 		<tr>
 			<th><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['sort_column'][0][0]->SortColumn(array('key'=>'Resource','field'=>ColumnNames::RESOURCE_NAME),$_smarty_tpl);?>
@@ -255,17 +308,7 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 </th>
 			<th><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'CreatedBy'),$_smarty_tpl);?>
 </th>
-			<th><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Update'),$_smarty_tpl);?>
-</th>
-			<th><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Delete'),$_smarty_tpl);?>
-</th>
-			<th class="action-delete">
-				<div class="checkbox checkbox-single">
-					<input type="checkbox" id="delete-all" aria-label="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'All'),$_smarty_tpl);?>
-"/>
-					<label for="delete-all"></label>
-				</div>
-			</th>
+			<th>&nbsp;</th>
 		</tr>
 		</thead>
 		<tbody>
@@ -291,28 +334,15 @@ foreach ($_from as $_smarty_tpl->tpl_vars['blackout']->value) {
 </td>
 				<td style="max-width:150px;"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['fullname'][0][0]->DisplayFullName(array('first'=>$_smarty_tpl->tpl_vars['blackout']->value->FirstName,'last'=>$_smarty_tpl->tpl_vars['blackout']->value->LastName),$_smarty_tpl);?>
 </td>
-				<td class="update edit"><a href="#"><span class="fa fa-edit"></span></a></td>
-				<?php if ($_smarty_tpl->tpl_vars['blackout']->value->IsRecurring) {?>
-					<td class="update">
-						<a href="#" class="update delete-recurring"><span class="fa fa-trash icon remove"></span></a>
-					</td>
-				<?php } else { ?>
-					<td class="update">
-						<a href="#" class="update delete"><span class="fa fa-trash icon remove"></span></a>
-					</td>
-				<?php }?>
-				<td class="action-delete">
-					<div class="checkbox checkbox-single">
-						<input <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'BLACKOUT_INSTANCE_ID','multi'=>true),$_smarty_tpl);?>
-" class="delete-multiple" type="checkbox" id="delete<?php echo $_smarty_tpl->tpl_vars['id']->value;?>
-"
-						value="<?php echo $_smarty_tpl->tpl_vars['id']->value;?>
-"
-						aria-label="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Delete'),$_smarty_tpl);?>
-"/>
-						<label for="delete<?php echo $_smarty_tpl->tpl_vars['id']->value;?>
-"></label>
-					</div>
+				<td class="update edit text-right text-nowrap">
+					<a href="#">
+						<span class="custom-icon icon-edit"></span>
+					</a>
+					<?php if ($_smarty_tpl->tpl_vars['blackout']->value->IsRecurring) {?>
+						<a href="#" class="update delete-recurring"><span class="custom-icon icon-delete"></span></a>
+					<?php } else { ?>
+						<a href="#" class="update delete"><span class="custom-icon icon-delete"></span></a>
+					<?php }?>
 				</td>
 			</tr>
 		<?php
@@ -330,6 +360,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 		</tr>
 		</tfoot>
 	</table>
+	</div>
 
 	<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['pagination'][0][0]->CreatePagination(array('pageInfo'=>$_smarty_tpl->tpl_vars['PageInfo']->value),$_smarty_tpl);?>
 
@@ -545,7 +576,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 		<div id="creatingNotification">
 			<h3>
 				<?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_15484816055fa45029555185_70743715', "ajaxMessage");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_3756189565fa6a1067a7d59_30119496', "ajaxMessage");
 ?>
 
 			</h3>
@@ -567,7 +598,7 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_15484816055fa45029
 
 <?php }
 /* {block "ajaxMessage"} */
-class Block_15484816055fa45029555185_70743715 extends Smarty_Internal_Block
+class Block_3756189565fa6a1067a7d59_30119496 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>

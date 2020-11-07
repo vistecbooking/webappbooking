@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2019-12-13 16:20:48
+/* Smarty version 3.1.30, created on 2020-11-07 20:13:03
   from "/var/www/html/booking/tpl/Ajax/reservation/reservation_attributes.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5df357f0b485e7_19566135',
+  'unifunc' => 'content_5fa69d5f4e8896_98531424',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '7e6acd96cfc6e5333a52b44e9d233fad3dcc0d36' => 
     array (
       0 => '/var/www/html/booking/tpl/Ajax/reservation/reservation_attributes.tpl',
-      1 => 1551196419,
+      1 => 1600849228,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5df357f0b485e7_19566135 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fa69d5f4e8896_98531424 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 

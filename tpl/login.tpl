@@ -49,7 +49,7 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
 					<input type="text" placeholder="Username" id="email" {formname key=EMAIL} required>
 					<br>
 					<div class="input-with-icon">
-						<input type="password" placeholder="Password" id="password" 
+						<input type="password" placeholder="Password" id="password"
 						{formname key=PASSWORD} required>
 						<span class="input-icon" style="top:.2rem;user-select:none;cursor:pointer"
 							onclick="togglePasswordVisibility()"><i

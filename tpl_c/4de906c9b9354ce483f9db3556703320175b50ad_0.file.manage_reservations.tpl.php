@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2019-12-11 09:05:58
+/* Smarty version 3.1.30, created on 2020-11-07 21:56:46
   from "/var/www/html/booking/tpl/Admin/Reservations/manage_reservations.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5df04f0680c7c1_89031737',
+  'unifunc' => 'content_5fa6b5aeaf5e82_30242642',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4de906c9b9354ce483f9db3556703320175b50ad' => 
     array (
       0 => '/var/www/html/booking/tpl/Admin/Reservations/manage_reservations.tpl',
-      1 => 1551196426,
+      1 => 1604760004,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:globalfooter.tpl' => 1,
   ),
 ),false)) {
-function content_5df04f0680c7c1_89031737 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fa6b5aeaf5e82_30242642 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_function_cycle')) require_once '/var/www/html/booking/lib/external/Smarty/plugins/function.cycle.php';
 ?>
 
@@ -33,133 +33,132 @@ if (!is_callable('smarty_function_cycle')) require_once '/var/www/html/booking/l
 
 
 <div id="page-manage-reservations" class="admin-page">
-	<div>
-		<div class="dropdown admin-header-more pull-right">
-			<button class="btn btn-default" type="button" id="moreReservationActions" data-toggle="dropdown">
-				<span class="glyphicon glyphicon-option-horizontal"></span>
-				<span class="caret"></span>
-			</button>
-			<ul class="dropdown-menu" role="menu" aria-labelledby="moreReservationActions">
-				<?php if ($_smarty_tpl->tpl_vars['CanViewAdmin']->value) {?>
-					<li role="presentation">
-						<a role="menuitem" href="#" id="import-reservations" class="add-link"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Import'),$_smarty_tpl);?>
-
-							<span class="glyphicon glyphicon-import"></span>
-						</a>
-					</li>
-				<?php }?>
-				<li role="presentation">
-					<a role="menuitem" href="<?php echo $_smarty_tpl->tpl_vars['CsvExportUrl']->value;?>
-" download="<?php echo $_smarty_tpl->tpl_vars['CsvExportUrl']->value;?>
-" class="add-link" target="_blank"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Export'),$_smarty_tpl);?>
-
-						<span class="glyphicon glyphicon-export"></span>
-					</a>
-				</li>
-			</ul>
-		</div>
-		<h1><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'ManageReservations'),$_smarty_tpl);?>
+	<div class="container">
+	<div class="box box-lg">
+		<div class="row">
+			<div class="col">
+				<h1><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'ManageReservations'),$_smarty_tpl);?>
 </h1>
-	</div>
-
-	<div class="panel panel-default filterTable" id="filter-reservations-panel">
-		<div class="panel-heading"><span class="glyphicon glyphicon-filter"></span> <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"Filter"),$_smarty_tpl);?>
- <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['showhide_icon'][0][0]->ShowHideIcon(array(),$_smarty_tpl);?>
-</div>
-		<div class="panel-body">
-			<?php $_smarty_tpl->_assignInScope('groupClass', "col-xs-12 col-sm-4 col-md-3");
-?>
-			<form id="filterForm" class="form-inline" role="form">
-				<div class="form-group filter-dates <?php echo $_smarty_tpl->tpl_vars['groupClass']->value;?>
-">
-					<input id="startDate" type="text" class="form-control dateinput inline"
-						   value="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formatdate'][0][0]->FormatDate(array('date'=>$_smarty_tpl->tpl_vars['StartDate']->value),$_smarty_tpl);?>
-"/>
-					<input id="formattedStartDate" type="hidden" value="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formatdate'][0][0]->FormatDate(array('date'=>$_smarty_tpl->tpl_vars['StartDate']->value,'key'=>'system'),$_smarty_tpl);?>
-"/>
-					-
-					<input id="endDate" type="text" class="form-control dateinput inline"
-						   value="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formatdate'][0][0]->FormatDate(array('date'=>$_smarty_tpl->tpl_vars['EndDate']->value),$_smarty_tpl);?>
-"/>
-					<input id="formattedEndDate" type="hidden" value="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formatdate'][0][0]->FormatDate(array('date'=>$_smarty_tpl->tpl_vars['EndDate']->value,'key'=>'system'),$_smarty_tpl);?>
-"/>
-				</div>
-				<div class="form-group filter-user <?php echo $_smarty_tpl->tpl_vars['groupClass']->value;?>
-">
-					<input id="userFilter" type="text" class="form-control" value="<?php echo $_smarty_tpl->tpl_vars['UserNameFilter']->value;?>
+			</div>
+			<div class="col-auto mb-3">
+				<?php if ($_smarty_tpl->tpl_vars['CanViewAdmin']->value) {?>
+					<a role="menuitem" href="#" id="import-reservations" class="add-link link-primary"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Import'),$_smarty_tpl);?>
+ <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['html_image'][0][0]->PrintImage(array('src'=>"file-import.svg",'style'=>"height:1rem"),$_smarty_tpl);?>
+</a>
+					<span class="mx-1">|</span>
+				<?php }?>
+				<a role="menuitem" href="<?php echo $_smarty_tpl->tpl_vars['CsvExportUrl']->value;?>
+" download="<?php echo $_smarty_tpl->tpl_vars['CsvExportUrl']->value;?>
+" class="add-link link-primary" target="_blank"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Export'),$_smarty_tpl);?>
+ <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['html_image'][0][0]->PrintImage(array('src'=>"file-export.svg",'style'=>"height:1rem"),$_smarty_tpl);?>
+</a>
+			</div>
+		</div>
+		<div class="box box-bordered">
+			<h2><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"Filter"),$_smarty_tpl);?>
+</h2>
+			<form id="filterForm" role="form">
+				<div class="form-row">
+					<div class="col-12 col-md-6 col-lg filter-status <?php echo $_smarty_tpl->tpl_vars['groupClass']->value;?>
+"">
+						<select id="statusId" class="form-control">
+							<option value=""><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'AllReservations'),$_smarty_tpl);?>
+</option>
+							<option value="<?php echo ReservationStatus::Pending;?>
 "
-						   placeholder="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'User'),$_smarty_tpl);?>
-"/>
-					<input id="userId" type="hidden" value="<?php echo $_smarty_tpl->tpl_vars['UserIdFilter']->value;?>
-"/>
-				</div>
-				<div class="form-group filter-schedule <?php echo $_smarty_tpl->tpl_vars['groupClass']->value;?>
-">
-					<select id="scheduleId" class="form-control">
-						<option value=""><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'AllSchedules'),$_smarty_tpl);?>
+									<?php if ($_smarty_tpl->tpl_vars['ReservationStatusId']->value == ReservationStatus::Pending) {?>selected="selected"<?php }?>><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'PendingReservations'),$_smarty_tpl);?>
 </option>
-						<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['object_html_options'][0][0]->ObjectHtmlOptions(array('options'=>$_smarty_tpl->tpl_vars['Schedules']->value,'key'=>'GetId','label'=>"GetName",'selected'=>$_smarty_tpl->tpl_vars['ScheduleId']->value),$_smarty_tpl);?>
-
-					</select>
-				</div>
-				<div class="form-group filter-resource <?php echo $_smarty_tpl->tpl_vars['groupClass']->value;?>
+						</select>
+					</div>
+					<div class="col-12 col-md-6 col-lg form-group filter-user <?php echo $_smarty_tpl->tpl_vars['groupClass']->value;?>
 ">
-					<select id="resourceId" class="form-control">
-						<option value=""><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'AllResources'),$_smarty_tpl);?>
-</option>
-						<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['object_html_options'][0][0]->ObjectHtmlOptions(array('options'=>$_smarty_tpl->tpl_vars['Resources']->value,'key'=>'GetId','label'=>"GetName",'selected'=>$_smarty_tpl->tpl_vars['ResourceId']->value),$_smarty_tpl);?>
-
-					</select>
-				</div>
-				<div class="form-group filter-status <?php echo $_smarty_tpl->tpl_vars['groupClass']->value;?>
-">
-					<select id="statusId" class="form-control">
-						<option value=""><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'AllReservations'),$_smarty_tpl);?>
-</option>
-						<option value="<?php echo ReservationStatus::Pending;?>
+						<input id="userFilter" type="text" class="form-control" value="<?php echo $_smarty_tpl->tpl_vars['UserNameFilter']->value;?>
 "
-								<?php if ($_smarty_tpl->tpl_vars['ReservationStatusId']->value == ReservationStatus::Pending) {?>selected="selected"<?php }?>><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'PendingReservations'),$_smarty_tpl);?>
-</option>
-					</select>
-				</div>
-				<div class="form-group filter-referenceNumber <?php echo $_smarty_tpl->tpl_vars['groupClass']->value;?>
-">
-					<input id="referenceNumber" type="text" class="form-control" value="<?php echo $_smarty_tpl->tpl_vars['ReferenceNumber']->value;?>
-"
-						   placeholder="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'ReferenceNumber'),$_smarty_tpl);?>
+							placeholder="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'User'),$_smarty_tpl);?>
 "/>
-				</div>
-				<div class="form-group filter-resourceStatus <?php echo $_smarty_tpl->tpl_vars['groupClass']->value;?>
+						<input id="userId" type="hidden" value="<?php echo $_smarty_tpl->tpl_vars['UserIdFilter']->value;?>
+"/>
+					</div>
+					<div class="col-12 col-md-6 col-lg filter-schedule <?php echo $_smarty_tpl->tpl_vars['groupClass']->value;?>
 ">
-					<select id="resourceStatusIdFilter" class="form-control">
-						<option value=""><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'AllResourceStatuses'),$_smarty_tpl);?>
+						<select id="scheduleId" class="form-control">
+							<option value=""><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'AllSchedules'),$_smarty_tpl);?>
 </option>
-						<option value="<?php echo ResourceStatus::AVAILABLE;?>
+							<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['object_html_options'][0][0]->ObjectHtmlOptions(array('options'=>$_smarty_tpl->tpl_vars['Schedules']->value,'key'=>'GetId','label'=>"GetName",'selected'=>$_smarty_tpl->tpl_vars['ScheduleId']->value),$_smarty_tpl);?>
+
+						</select>
+					</div>
+					<div class="col-12 col-md-6 col-lg filter-resource <?php echo $_smarty_tpl->tpl_vars['groupClass']->value;?>
+"">
+						<select id="resourceId" class="form-control">
+							<option value=""><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'AllResources'),$_smarty_tpl);?>
+</option>
+							<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['object_html_options'][0][0]->ObjectHtmlOptions(array('options'=>$_smarty_tpl->tpl_vars['Resources']->value,'key'=>'GetId','label'=>"GetName",'selected'=>$_smarty_tpl->tpl_vars['ResourceId']->value),$_smarty_tpl);?>
+
+						</select>
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="col-12 col-md-6 col-lg">
+						<div class="row no-gutters">
+							<div class="col form-group mb-3 filter-dates <?php echo $_smarty_tpl->tpl_vars['groupClass']->value;?>
+">
+								<input id="startDate" type="text" class="form-control"
+									value="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formatdate'][0][0]->FormatDate(array('date'=>$_smarty_tpl->tpl_vars['StartDate']->value),$_smarty_tpl);?>
+"/>
+								<input id="formattedStartDate" type="hidden" value="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formatdate'][0][0]->FormatDate(array('date'=>$_smarty_tpl->tpl_vars['StartDate']->value,'key'=>'system'),$_smarty_tpl);?>
+"/>
+							</div>
+							<div class="col-auto mt-2 mx-1">-</div>
+							<div class="col form-group mb-3 filter-dates <?php echo $_smarty_tpl->tpl_vars['groupClass']->value;?>
+">
+								<input id="endDate" type="text" class="form-control"
+									value="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formatdate'][0][0]->FormatDate(array('date'=>$_smarty_tpl->tpl_vars['EndDate']->value),$_smarty_tpl);?>
+"/>
+								<input id="formattedEndDate" type="hidden" value="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formatdate'][0][0]->FormatDate(array('date'=>$_smarty_tpl->tpl_vars['EndDate']->value,'key'=>'system'),$_smarty_tpl);?>
+"/>
+							</div>
+						</div>
+					</div>
+					<div class="col-12 col-md-6 col-lg form-group mb-3 filter-referenceNumber <?php echo $_smarty_tpl->tpl_vars['groupClass']->value;?>
+"">
+						<input id="referenceNumber" type="text" class="form-control" value="<?php echo $_smarty_tpl->tpl_vars['ReferenceNumber']->value;?>
+"
+							placeholder="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'ReferenceNumber'),$_smarty_tpl);?>
+"/>
+					</div>
+					<div class="col-12 col-md-6 col-lg filter-resourceStatus <?php echo $_smarty_tpl->tpl_vars['groupClass']->value;?>
+">
+						<select id="resourceStatusIdFilter" class="form-control">
+							<option value=""><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'AllResourceStatuses'),$_smarty_tpl);?>
+</option>
+							<option value="<?php echo ResourceStatus::AVAILABLE;?>
 "><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Available'),$_smarty_tpl);?>
 </option>
-						<option value="<?php echo ResourceStatus::UNAVAILABLE;?>
+							<option value="<?php echo ResourceStatus::UNAVAILABLE;?>
 "><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Unavailable'),$_smarty_tpl);?>
 </option>
-						<option value="<?php echo ResourceStatus::HIDDEN;?>
+							<option value="<?php echo ResourceStatus::HIDDEN;?>
 "><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Hidden'),$_smarty_tpl);?>
 </option>
-					</select>
-				</div>
-				<div class="form-group filter-resourceStatusReason <?php echo $_smarty_tpl->tpl_vars['groupClass']->value;?>
+						</select>
+					</div>
+					<div class="col-12 col-md-6 col-lg filter-resourceStatusReason <?php echo $_smarty_tpl->tpl_vars['groupClass']->value;?>
 ">
-					<select id="resourceReasonIdFilter" class="form-control"></select>
+						<select id="resourceReasonIdFilter" class="form-control"></select>
+					</div>
 				</div>
+				<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['filter_button'][0][0]->FilterButton(array('id'=>"filter"),$_smarty_tpl);?>
+
+				<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['reset_button'][0][0]->ResetButton(array('id'=>"clearFilter"),$_smarty_tpl);?>
+
 			</form>
 		</div>
-		<div class="panel-footer">
-			<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['filter_button'][0][0]->FilterButton(array('id'=>"filter",'class'=>"btn-sm"),$_smarty_tpl);?>
-
-			<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['reset_button'][0][0]->ResetButton(array('id'=>"clearFilter",'class'=>"btn-sm"),$_smarty_tpl);?>
-
-		</div>
+	</div>
 	</div>
 
-	<table class="table admin-panel" id="reservationTable">
+	<div class="table-responsive table-shadow mb-3">
+	<table class="table table-md table-vistec table-highlight admin-panel" id="reservationTable">
 		<?php $_smarty_tpl->_assignInScope('colCount', 11);
 ?>
 		<thead>
@@ -375,6 +374,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 		</tr>
 		</tfoot>
 	</table>
+	</div>
 
 	<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['pagination'][0][0]->CreatePagination(array('pageInfo'=>$_smarty_tpl->tpl_vars['PageInfo']->value),$_smarty_tpl);?>
 

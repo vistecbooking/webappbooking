@@ -20,92 +20,90 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
 {include file='globalheader.tpl' Qtip=true InlineEdit=true}
 
 <div id="page-manage-reservations" class="admin-page">
-	<div>
-		<div class="dropdown admin-header-more pull-right">
-			<button class="btn btn-default" type="button" id="moreReservationActions" data-toggle="dropdown">
-				<span class="glyphicon glyphicon-option-horizontal"></span>
-				<span class="caret"></span>
-			</button>
-			<ul class="dropdown-menu" role="menu" aria-labelledby="moreReservationActions">
+	<div class="container">
+	<div class="box box-lg">
+		<div class="row">
+			<div class="col">
+				<h1>{translate key=ManageReservations}</h1>
+			</div>
+			<div class="col-auto mb-3">
 				{if $CanViewAdmin}
-					<li role="presentation">
-						<a role="menuitem" href="#" id="import-reservations" class="add-link">{translate key=Import}
-							<span class="glyphicon glyphicon-import"></span>
-						</a>
-					</li>
+					<a role="menuitem" href="#" id="import-reservations" class="add-link link-primary">{translate key=Import} {html_image src="file-import.svg" style="height:1rem"}</a>
+					<span class="mx-1">|</span>
 				{/if}
-				<li role="presentation">
-					<a role="menuitem" href="{$CsvExportUrl}" download="{$CsvExportUrl}" class="add-link" target="_blank">{translate key=Export}
-						<span class="glyphicon glyphicon-export"></span>
-					</a>
-				</li>
-			</ul>
+				<a role="menuitem" href="{$CsvExportUrl}" download="{$CsvExportUrl}" class="add-link link-primary" target="_blank">{translate key=Export} {html_image src="file-export.svg" style="height:1rem"}</a>
+			</div>
 		</div>
-		<h1>{translate key=ManageReservations}</h1>
-	</div>
-
-	<div class="panel panel-default filterTable" id="filter-reservations-panel">
-		<div class="panel-heading"><span class="glyphicon glyphicon-filter"></span> {translate key="Filter"} {showhide_icon}</div>
-		<div class="panel-body">
-			{assign var=groupClass value="col-xs-12 col-sm-4 col-md-3"}
-			<form id="filterForm" class="form-inline" role="form">
-				<div class="form-group filter-dates {$groupClass}">
-					<input id="startDate" type="text" class="form-control dateinput inline"
-						   value="{formatdate date=$StartDate}"/>
-					<input id="formattedStartDate" type="hidden" value="{formatdate date=$StartDate key=system}"/>
-					-
-					<input id="endDate" type="text" class="form-control dateinput inline"
-						   value="{formatdate date=$EndDate}"/>
-					<input id="formattedEndDate" type="hidden" value="{formatdate date=$EndDate key=system}"/>
+		<div class="box box-bordered">
+			<h2>{translate key="Filter"}</h2>
+			<form id="filterForm" role="form">
+				<div class="form-row">
+					<div class="col-12 col-md-6 col-lg filter-status {$groupClass}"">
+						<select id="statusId" class="form-control">
+							<option value="">{translate key=AllReservations}</option>
+							<option value="{ReservationStatus::Pending}"
+									{if $ReservationStatusId eq ReservationStatus::Pending}selected="selected"{/if}>{translate key=PendingReservations}</option>
+						</select>
+					</div>
+					<div class="col-12 col-md-6 col-lg form-group filter-user {$groupClass}">
+						<input id="userFilter" type="text" class="form-control" value="{$UserNameFilter}"
+							placeholder="{translate key=User}"/>
+						<input id="userId" type="hidden" value="{$UserIdFilter}"/>
+					</div>
+					<div class="col-12 col-md-6 col-lg filter-schedule {$groupClass}">
+						<select id="scheduleId" class="form-control">
+							<option value="">{translate key=AllSchedules}</option>
+							{object_html_options options=$Schedules key='GetId' label="GetName" selected=$ScheduleId}
+						</select>
+					</div>
+					<div class="col-12 col-md-6 col-lg filter-resource {$groupClass}"">
+						<select id="resourceId" class="form-control">
+							<option value="">{translate key=AllResources}</option>
+							{object_html_options options=$Resources key='GetId' label="GetName" selected=$ResourceId}
+						</select>
+					</div>
 				</div>
-				<div class="form-group filter-user {$groupClass}">
-					<input id="userFilter" type="text" class="form-control" value="{$UserNameFilter}"
-						   placeholder="{translate key=User}"/>
-					<input id="userId" type="hidden" value="{$UserIdFilter}"/>
+				<div class="form-row">
+					<div class="col-12 col-md-6 col-lg">
+						<div class="row no-gutters">
+							<div class="col form-group mb-3 filter-dates {$groupClass}">
+								<input id="startDate" type="text" class="form-control"
+									value="{formatdate date=$StartDate}"/>
+								<input id="formattedStartDate" type="hidden" value="{formatdate date=$StartDate key=system}"/>
+							</div>
+							<div class="col-auto mt-2 mx-1">-</div>
+							<div class="col form-group mb-3 filter-dates {$groupClass}">
+								<input id="endDate" type="text" class="form-control"
+									value="{formatdate date=$EndDate}"/>
+								<input id="formattedEndDate" type="hidden" value="{formatdate date=$EndDate key=system}"/>
+							</div>
+						</div>
+					</div>
+					<div class="col-12 col-md-6 col-lg form-group mb-3 filter-referenceNumber {$groupClass}"">
+						<input id="referenceNumber" type="text" class="form-control" value="{$ReferenceNumber}"
+							placeholder="{translate key=ReferenceNumber}"/>
+					</div>
+					<div class="col-12 col-md-6 col-lg filter-resourceStatus {$groupClass}">
+						<select id="resourceStatusIdFilter" class="form-control">
+							<option value="">{translate key=AllResourceStatuses}</option>
+							<option value="{ResourceStatus::AVAILABLE}">{translate key=Available}</option>
+							<option value="{ResourceStatus::UNAVAILABLE}">{translate key=Unavailable}</option>
+							<option value="{ResourceStatus::HIDDEN}">{translate key=Hidden}</option>
+						</select>
+					</div>
+					<div class="col-12 col-md-6 col-lg filter-resourceStatusReason {$groupClass}">
+						<select id="resourceReasonIdFilter" class="form-control"></select>
+					</div>
 				</div>
-				<div class="form-group filter-schedule {$groupClass}">
-					<select id="scheduleId" class="form-control">
-						<option value="">{translate key=AllSchedules}</option>
-						{object_html_options options=$Schedules key='GetId' label="GetName" selected=$ScheduleId}
-					</select>
-				</div>
-				<div class="form-group filter-resource {$groupClass}">
-					<select id="resourceId" class="form-control">
-						<option value="">{translate key=AllResources}</option>
-						{object_html_options options=$Resources key='GetId' label="GetName" selected=$ResourceId}
-					</select>
-				</div>
-				<div class="form-group filter-status {$groupClass}">
-					<select id="statusId" class="form-control">
-						<option value="">{translate key=AllReservations}</option>
-						<option value="{ReservationStatus::Pending}"
-								{if $ReservationStatusId eq ReservationStatus::Pending}selected="selected"{/if}>{translate key=PendingReservations}</option>
-					</select>
-				</div>
-				<div class="form-group filter-referenceNumber {$groupClass}">
-					<input id="referenceNumber" type="text" class="form-control" value="{$ReferenceNumber}"
-						   placeholder="{translate key=ReferenceNumber}"/>
-				</div>
-				<div class="form-group filter-resourceStatus {$groupClass}">
-					<select id="resourceStatusIdFilter" class="form-control">
-						<option value="">{translate key=AllResourceStatuses}</option>
-						<option value="{ResourceStatus::AVAILABLE}">{translate key=Available}</option>
-						<option value="{ResourceStatus::UNAVAILABLE}">{translate key=Unavailable}</option>
-						<option value="{ResourceStatus::HIDDEN}">{translate key=Hidden}</option>
-					</select>
-				</div>
-				<div class="form-group filter-resourceStatusReason {$groupClass}">
-					<select id="resourceReasonIdFilter" class="form-control"></select>
-				</div>
+				{filter_button id="filter"}
+				{reset_button id="clearFilter"}
 			</form>
 		</div>
-		<div class="panel-footer">
-			{filter_button id="filter" class="btn-sm"}
-			{reset_button id="clearFilter" class="btn-sm"}
-		</div>
+	</div>
 	</div>
 
-	<table class="table admin-panel" id="reservationTable">
+	<div class="table-responsive table-shadow mb-3">
+	<table class="table table-md table-vistec table-highlight admin-panel" id="reservationTable">
 		{assign var=colCount value=11}
 		<thead>
 		<tr>
@@ -246,6 +244,7 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
 		</tr>
 		</tfoot>
 	</table>
+	</div>
 
 	{pagination pageInfo=$PageInfo}
 

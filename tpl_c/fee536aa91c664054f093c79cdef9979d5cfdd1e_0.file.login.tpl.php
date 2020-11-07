@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-11-07 16:31:59
+/* Smarty version 3.1.30, created on 2020-11-07 22:07:32
   from "/var/www/html/booking/tpl/login.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5fa6698f1c5934_20982996',
+  'unifunc' => 'content_5fa6b834e69cd3_36239208',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'fee536aa91c664054f093c79cdef9979d5cfdd1e' => 
     array (
       0 => '/var/www/html/booking/tpl/login.tpl',
-      1 => 1604684242,
+      1 => 1604761644,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:javascript-includes.tpl' => 1,
   ),
 ),false)) {
-function content_5fa6698f1c5934_20982996 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fa6b834e69cd3_36239208 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 
@@ -79,7 +79,7 @@ array_pop($_smarty_tpl->smarty->_cache['_tag_stack']);?>
  required>
 					<br>
 					<div class="input-with-icon">
-						<input type="password" placeholder="Password" id="password" 
+						<input type="password" placeholder="Password" id="password"
 						<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'PASSWORD'),$_smarty_tpl);?>
  required>
 						<span class="input-icon" style="top:.2rem;user-select:none;cursor:pointer"

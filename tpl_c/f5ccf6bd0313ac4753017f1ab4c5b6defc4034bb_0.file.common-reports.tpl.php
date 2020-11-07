@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2019-12-12 08:39:20
+/* Smarty version 3.1.30, created on 2020-11-07 19:32:42
   from "/var/www/html/booking/tpl/Reports/common-reports.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5df19a487ff723_52501471',
+  'unifunc' => 'content_5fa693eb00f574_43505914',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f5ccf6bd0313ac4753017f1ab4c5b6defc4034bb' => 
     array (
       0 => '/var/www/html/booking/tpl/Reports/common-reports.tpl',
-      1 => 1551196421,
+      1 => 1604684496,
       2 => 'file',
     ),
   ),
@@ -23,155 +23,107 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:globalfooter.tpl' => 1,
   ),
 ),false)) {
-function content_5df19a487ff723_52501471 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fa693eb00f574_43505914 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 <?php $_smarty_tpl->_subTemplateRender("file:globalheader.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('cssFiles'=>"scripts/js/jqplot/jquery.jqplot.min.css"), 0, false);
 ?>
 
 
+
 <div id="page-common-reports">
 
-	<div class="panel panel-default" id="saved-reports-panel">
-		<div class="panel-heading">
-			<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'CommonReports'),$_smarty_tpl);?>
-
-		</div>
-		<div class="panel-body no-padding">
-			<div id="report-list">
-				<table class="table">
-					<tbody>
+	<div class="container">
+    <div class="box box-lg mb-4">
+      <h2>Common reports</h2>
+	  <div id="report-list">
+		<div class="table-responsive mb-3">
+				<table class="table table-report">
+				<tbody>
 					<tr>
-						<td class="report-title"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'ReservedResources'),$_smarty_tpl);?>
-</td>
-						<td class="right">
-							<a href="#" reportId="<?php echo CannedReport::RESERVATIONS_TODAY;?>
-"
-							   class="report report-action runNow"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['html_image'][0][0]->PrintImage(array('src'=>"calendar.png"),$_smarty_tpl);?>
- <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Today'),$_smarty_tpl);?>
-</a>
-							<a href="#" reportId="<?php echo CannedReport::RESERVATIONS_THISWEEK;?>
-"
-							   class="report report-action runNow"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['html_image'][0][0]->PrintImage(array('src'=>"calendar-select-week.png"),$_smarty_tpl);?>
- <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'CurrentWeek'),$_smarty_tpl);?>
-</a>
-							<a href="#" reportId="<?php echo CannedReport::RESERVATIONS_THISMONTH;?>
-"
-							   class="report report-action runNow"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['html_image'][0][0]->PrintImage(array('src'=>"calendar-select-month.png"),$_smarty_tpl);?>
- <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'CurrentMonth'),$_smarty_tpl);?>
-</a>
-						</td>
-					</tr>
-					<tr class="alt">
-						<td class="report-title"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'ReservedAccessories'),$_smarty_tpl);?>
-</td>
-						<td class="right">
-							<a href="#" reportId="<?php echo CannedReport::ACCESSORIES_TODAY;?>
-"
-							   class="report report-action runNow"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['html_image'][0][0]->PrintImage(array('src'=>"calendar.png"),$_smarty_tpl);?>
- <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Today'),$_smarty_tpl);?>
-</a>
-							<a href="#" reportId="<?php echo CannedReport::ACCESSORIES_THISWEEK;?>
-"
-							   class="report report-action runNow"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['html_image'][0][0]->PrintImage(array('src'=>"calendar-select-week.png"),$_smarty_tpl);?>
- <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'CurrentWeek'),$_smarty_tpl);?>
-</a>
-							<a href="#" reportId="<?php echo CannedReport::ACCESSORIES_THISMONTH;?>
-"
-							   class="report report-action runNow"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['html_image'][0][0]->PrintImage(array('src'=>"calendar-select-month.png"),$_smarty_tpl);?>
- <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'CurrentMonth'),$_smarty_tpl);?>
-</a>
-						</td>
+					<td>Reserved Instruments</td>
+					<td>
+						<a href="#" class="report report-action runNow" reportId="<?php echo CannedReport::RESERVATIONS_TODAY;?>
+">Today</a>
+						<span> | </span>
+						<a href="#" class="report report-action runNow" reportId="<?php echo CannedReport::RESERVATIONS_THISWEEK;?>
+">Current Week</a>
+						<span> | </span>
+						<a href="#" class="report report-action runNow" reportId="<?php echo CannedReport::RESERVATIONS_THISMONTH;?>
+">Current Month</a>
+					</td>
 					</tr>
 					<tr>
-						<td class="report-title"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'ResourceUsageTimeBooked'),$_smarty_tpl);?>
-</td>
-						<td class="right">
-							<a href="#" reportId="<?php echo CannedReport::RESOURCE_TIME_ALLTIME;?>
-"
-							   class="report report-action runNow"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['html_image'][0][0]->PrintImage(array('src'=>"calendar.png"),$_smarty_tpl);?>
- <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'AllTime'),$_smarty_tpl);?>
-</a>
-							<a href="#" reportId="<?php echo CannedReport::RESOURCE_TIME_THISWEEK;?>
-"
-							   class="report report-action runNow"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['html_image'][0][0]->PrintImage(array('src'=>"calendar-select-week.png"),$_smarty_tpl);?>
- <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'CurrentWeek'),$_smarty_tpl);?>
-</a>
-							<a href="#" reportId="<?php echo CannedReport::RESOURCE_TIME_THISMONTH;?>
-"
-							   class="report report-action runNow"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['html_image'][0][0]->PrintImage(array('src'=>"calendar-select-month.png"),$_smarty_tpl);?>
- <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'CurrentMonth'),$_smarty_tpl);?>
-</a>
-						</td>
-					</tr>
-					<tr class="alt">
-						<td class="report-title"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'ResourceUsageReservationCount'),$_smarty_tpl);?>
-</td>
-						<td class="right">
-							<a href="#" reportId="<?php echo CannedReport::RESOURCE_COUNT_ALLTIME;?>
-"
-							   class="report report-action runNow"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['html_image'][0][0]->PrintImage(array('src'=>"calendar.png"),$_smarty_tpl);?>
- <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'AllTime'),$_smarty_tpl);?>
-</a>
-							<a href="#" reportId="<?php echo CannedReport::RESOURCE_COUNT_THISWEEK;?>
-"
-							   class="report report-action runNow"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['html_image'][0][0]->PrintImage(array('src'=>"calendar-select-week.png"),$_smarty_tpl);?>
- <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'CurrentWeek'),$_smarty_tpl);?>
-</a>
-							<a href="#" reportId="<?php echo CannedReport::RESOURCE_COUNT_THISMONTH;?>
-"
-							   class="report report-action runNow"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['html_image'][0][0]->PrintImage(array('src'=>"calendar-select-month.png"),$_smarty_tpl);?>
- <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'CurrentMonth'),$_smarty_tpl);?>
-</a>
-						</td>
+					<td>Reserved Accessories</td>
+					<td>
+						<a href="#" class="report report-action runNow" reportId="<?php echo CannedReport::ACCESSORIES_TODAY;?>
+">Today</a>
+						<span> | </span>
+						<a href="#" class="report report-action runNow" reportId="<?php echo CannedReport::ACCESSORIES_THISWEEK;?>
+">Current Week</a>
+						<span> | </span>
+						<a href="#" class="report report-action runNow" reportId="<?php echo CannedReport::ACCESSORIES_THISMONTH;?>
+">Current Month</a>
+					</td>
 					</tr>
 					<tr>
-						<td class="report-title"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Top20UsersTimeBooked'),$_smarty_tpl);?>
-</td>
-						<td class="right">
-							<a href="#" reportId="<?php echo CannedReport::USER_TIME_ALLTIME;?>
-"
-							   class="report report-action runNow"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['html_image'][0][0]->PrintImage(array('src'=>"calendar.png"),$_smarty_tpl);?>
- <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'AllTime'),$_smarty_tpl);?>
-</a>
-							<a href="#" reportId="<?php echo CannedReport::USER_TIME_THISWEEK;?>
-"
-							   class="report report-action runNow"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['html_image'][0][0]->PrintImage(array('src'=>"calendar-select-week.png"),$_smarty_tpl);?>
- <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'CurrentWeek'),$_smarty_tpl);?>
-</a>
-							<a href="#" reportId="<?php echo CannedReport::USER_TIME_THISMONTH;?>
-"
-							   class="report report-action runNow"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['html_image'][0][0]->PrintImage(array('src'=>"calendar-select-month.png"),$_smarty_tpl);?>
- <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'CurrentMonth'),$_smarty_tpl);?>
-</a>
-						</td>
+					<td>Instrument Usage - Time Booked</td>
+					<td>
+						<a href="#" class="report report-action runNow" reportId="<?php echo CannedReport::RESOURCE_TIME_ALLTIME;?>
+">Alltime</a>
+						<span> | </span>
+						<a href="#" class="report report-action runNow" reportId="<?php echo CannedReport::RESOURCE_TIME_THISWEEK;?>
+">Current Week</a>
+						<span> | </span>
+						<a href="#" class="report report-action runNow" reportId="<?php echo CannedReport::RESOURCE_TIME_THISMONTH;?>
+">Current Month</a>
+					</td>
 					</tr>
-					<tr class="alt">
-						<td class="report-title"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Top20UsersReservationCount'),$_smarty_tpl);?>
-</td>
-						<td class="right">
-							<a href="#" reportId="<?php echo CannedReport::USER_COUNT_ALLTIME;?>
-"
-							   class="report report-action  runNow"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['html_image'][0][0]->PrintImage(array('src'=>"calendar.png"),$_smarty_tpl);?>
- <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'AllTime'),$_smarty_tpl);?>
-</a>
-							<a href="#" reportId="<?php echo CannedReport::USER_COUNT_THISWEEK;?>
-"
-							   class="report report-action runNow"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['html_image'][0][0]->PrintImage(array('src'=>"calendar-select-week.png"),$_smarty_tpl);?>
- <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'CurrentWeek'),$_smarty_tpl);?>
-</a>
-							<a href="#" reportId="<?php echo CannedReport::USER_COUNT_THISMONTH;?>
-"
-							   class="report report-action  runNow"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['html_image'][0][0]->PrintImage(array('src'=>"calendar-select-month.png"),$_smarty_tpl);?>
- <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'CurrentMonth'),$_smarty_tpl);?>
-</a>
-						</td>
+					<tr>
+					<td>Instrument Usage - Reservation Count</td>
+					<td>
+						<a href="#" class="report report-action runNow" reportId="<?php echo CannedReport::RESOURCE_COUNT_ALLTIME;?>
+">Alltime</a>
+						<span> | </span>
+						<a href="#" class="report report-action runNow" reportId="<?php echo CannedReport::RESOURCE_COUNT_THISWEEK;?>
+">Current Week</a>
+						<span> | </span>
+						<a href="#" class="report report-action runNow" reportId="<?php echo CannedReport::RESOURCE_COUNT_THISMONTH;?>
+">Current Month</a>
+					</td>
 					</tr>
-					</tbody>
+					<tr>
+					<td>Top 20 Users - Time Booked</td>
+					<td>
+						<a href="#" class="report report-action runNow" reportId="<?php echo CannedReport::USER_TIME_ALLTIME;?>
+">Alltime</a>
+						<span> | </span>
+						<a href="#" class="report report-action runNow" reportId="<?php echo CannedReport::USER_TIME_THISWEEK;?>
+">Current Week</a>
+						<span> | </span>
+						<a href="#" class="report report-action runNow" reportId="<?php echo CannedReport::USER_TIME_THISMONTH;?>
+">Current Month</a>
+					</td>
+					</tr>
+					<tr>
+					<td>Top 20 Users - Reservation Count</td>
+					<td>
+						<a href="#" class="report report-action runNow" reportId="<?php echo CannedReport::USER_COUNT_ALLTIME;?>
+">Alltime</a>
+						<span> | </span>
+						<a href="#" class="report report-action runNow" reportId="<?php echo CannedReport::USER_COUNT_THISWEEK;?>
+">Current Week</a>
+						<span> | </span>
+						<a href="#" class="report report-action runNow" reportId="<?php echo CannedReport::USER_COUNT_THISMONTH;?>
+">Current Month</a>
+					</td>
+					</tr>
+				</tbody>
 				</table>
 			</div>
-		</div>
-	</div>
+      </div>
+    </div>
+  </div>
 </div>
 
 
