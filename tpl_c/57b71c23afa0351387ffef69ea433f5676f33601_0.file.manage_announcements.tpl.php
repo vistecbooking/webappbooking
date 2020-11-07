@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-11-06 02:18:48
+/* Smarty version 3.1.30, created on 2020-11-07 20:41:15
   from "/var/www/html/booking/tpl/Admin/manage_announcements.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5fa45018d2d9b4_79686081',
+  'unifunc' => 'content_5fa6a3fb0a2451_09007717',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '57b71c23afa0351387ffef69ea433f5676f33601' => 
     array (
       0 => '/var/www/html/booking/tpl/Admin/manage_announcements.tpl',
-      1 => 1604603120,
+      1 => 1604748924,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:globalfooter.tpl' => 1,
   ),
 ),false)) {
-function content_5fa45018d2d9b4_79686081 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fa6a3fb0a2451_09007717 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_function_cycle')) require_once '/var/www/html/booking/lib/external/Smarty/plugins/function.cycle.php';
 if (!is_callable('smarty_modifier_regex_replace')) require_once '/var/www/html/booking/lib/external/Smarty/plugins/modifier.regex_replace.php';
 ?>
@@ -140,17 +140,17 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 		</div>
 		<div class="row no-gutters">
 			<div class="col-sm col-md-auto mr-sm-2">
-				<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['add_button'][0][0]->AddButton(array(),$_smarty_tpl);?>
+				<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['add_button'][0][0]->AddButton(array('class'=>"btn-block"),$_smarty_tpl);?>
 
 			</div>
 			<div class="col-sm col-md-auto mr-sm-2">
-				<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['reset_button'][0][0]->ResetButton(array(),$_smarty_tpl);?>
+				<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['reset_button'][0][0]->ResetButton(array('class'=>"btn-block"),$_smarty_tpl);?>
 
 			</div>
-			<!-- <div class="col-sm col-md-auto">
+			<div class="col-sm col-md-auto">
 				<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['indicator'][0][0]->DisplayIndicator(array(),$_smarty_tpl);?>
 
-			</div> -->
+			</div>
 		</div>
 	</form>
 	</div>
@@ -214,7 +214,7 @@ echo $_smarty_tpl->tpl_vars['Resources']->value[$_smarty_tpl->tpl_vars['resource
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 ?>
 .</td> --!>
-				<td class="action announcementActions">
+				<td class="action announcementActions text-nowrap">
 					<a href="#" title="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Email'),$_smarty_tpl);?>
 " class="update sendEmail link-edit mr-1">Send email</a>
 					<a href="#" title="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Edit'),$_smarty_tpl);?>

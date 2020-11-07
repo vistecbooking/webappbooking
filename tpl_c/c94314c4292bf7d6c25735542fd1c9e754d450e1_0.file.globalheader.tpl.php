@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-11-07 16:34:04
+/* Smarty version 3.1.30, created on 2020-11-07 19:32:43
   from "/var/www/html/booking/tpl/globalheader.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5fa66a0c19f003_97430730',
+  'unifunc' => 'content_5fa693eb45b768_75036704',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c94314c4292bf7d6c25735542fd1c9e754d450e1' => 
     array (
       0 => '/var/www/html/booking/tpl/globalheader.tpl',
-      1 => 1604740759,
+      1 => 1604752358,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5fa66a0c19f003_97430730 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fa693eb45b768_75036704 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 
@@ -168,8 +168,6 @@ favicon.ico"/>
 
     <!-- <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"
             type="text/css"/> -->
-    <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['cssfile'][0][0]->IncludeCssFile(array('src'=>"scripts/newcss/style.css",'rel'=>"stylesheet"),$_smarty_tpl);?>
-
     <link rel="stylesheet"
             href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.0/themes/smoothness/jquery-ui.css"
             type="text/css"/>
@@ -215,7 +213,29 @@ favicon.ico"/>
     <?php }?>
     <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['cssfile'][0][0]->IncludeCssFile(array('src'=>"scripts/css/jquery-ui-timepicker-addon.css"),$_smarty_tpl);?>
 
-    
+    <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['cssfile'][0][0]->IncludeCssFile(array('src'=>"booked.css"),$_smarty_tpl);?>
+
+    <style>
+    .no-show {
+        display: none !important;
+    }
+    .ajax-indicator {
+        display: none;
+        background-image: url(../img/admin-ajax-indicator.gif);
+        width: 35px;
+        height: 35px;
+    }
+    .wait-box {
+        display: none;
+        text-align: center;
+        top: 15%;
+        position: relative;
+        padding: 20px;
+        border: 1px solid #585754;
+    }
+    </style>
+    <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['cssfile'][0][0]->IncludeCssFile(array('src'=>"scripts/newcss/style.css",'rel'=>"stylesheet"),$_smarty_tpl);?>
+
     <?php if ($_smarty_tpl->tpl_vars['cssFiles']->value != '') {?>
         <?php $_smarty_tpl->_assignInScope('CssFileList', explode(',',$_smarty_tpl->tpl_vars['cssFiles']->value));
 ?>

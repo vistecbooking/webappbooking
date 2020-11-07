@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2019-12-13 16:20:48
+/* Smarty version 3.1.30, created on 2020-11-07 20:12:55
   from "/var/www/html/booking/tpl/Controls/RecurrenceDiv.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5df357f06b89d9_76980010',
+  'unifunc' => 'content_5fa69d5735ca57_41481987',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c64af209abb90be457e80957b5f2d148f13817d2' => 
     array (
       0 => '/var/www/html/booking/tpl/Controls/RecurrenceDiv.tpl',
-      1 => 1551196421,
+      1 => 1604753739,
       2 => 'file',
     ),
   ),
@@ -20,17 +20,17 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5df357f06b89d9_76980010 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fa69d5735ca57_41481987 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_function_html_options')) require_once '/var/www/html/booking/lib/external/Smarty/plugins/function.html_options.php';
 ?>
 
 <div id="<?php echo $_smarty_tpl->tpl_vars['prefix']->value;?>
 repeatDiv" class="repeat-div">
-	<div class="form-group">
+	<div class="form-group mb-0">
 		<div class="col-xs-12">
-			<label for="<?php echo $_smarty_tpl->tpl_vars['prefix']->value;?>
+			<!-- <label for="<?php echo $_smarty_tpl->tpl_vars['prefix']->value;?>
 repeatOptions"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"RepeatPrompt"),$_smarty_tpl);?>
-</label>
+</label> -->
 			<select id="<?php echo $_smarty_tpl->tpl_vars['prefix']->value;?>
 repeatOptions" <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'repeat_options'),$_smarty_tpl);?>
 
@@ -51,7 +51,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 
 			</select>
 		</div>
-		
+
 		<div class="col-sm-4 col-xs-12">
 			<div id="<?php echo $_smarty_tpl->tpl_vars['prefix']->value;?>
 repeatEveryDiv" class="recur-toggle no-show days weeks months years">

@@ -18,159 +18,212 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
 *}
 
 {include file='globalheader.tpl' Timepicker=true}
-<div id="page-manage-blackouts" class="admin-page">
-	<h1>{translate key=ManageBlackouts}</h1>
+<div id="page-manage-blackouts" class="container">
 
-	<form id="addBlackoutForm" class="form-inline" role="form" method="post">
-		<div class="panel panel-default" id="add-blackout-panel">
-			<div class="panel-heading">{translate key="AddBlackout"} {showhide_icon}</div>
-			<div class="panel-body add-contents">
-
-				<div class="form-group col-xs-6">
-					<label for="addStartDate">{translate key=BeginBlackout}</label>
-					<input type="text" id="addStartDate" class="form-control dateinput inline-block "
-						   value="{formatdate date=$AddStartDate}"/>
-					<input {formname key=BEGIN_DATE} id="formattedAddStartDate" type="hidden"
-													 value="{formatdate date=$AddStartDate key=system}"/>
-					<input {formname key=BEGIN_TIME} type="time" id="addStartTime"
-													 class="form-control inline-block"
-													 value="{format_date format='H:00' date=Date::Now()}"
-													 title="Start time"/>
-				</div>
-				<div class="form-group col-xs-6">
-					<label for="addEndDate">{translate key=EndBlackout}</label>
-					<input type="text" id="addEndDate" class="form-control dateinput inline-block " size="10"
-						   value="{formatdate date=$AddEndDate}"/>
-					<input {formname key=END_DATE} type="hidden" id="formattedAddEndDate"
-												   value="{formatdate date=$AddEndDate key=system}"/>
-					<input {formname key=END_TIME} type="time" id="addEndTime"
-												   class="form-control inline-block "
-												   value="{format_date format='H:00' date=Date::Now()->AddHours(1)}"
-												   title="End time"/>
-				</div>
-				<br />
-				<br />
-				<div class="form-group col-xs-6">
-					<label for="addAnnounceStartDate">{translate key=BeginAnnouncement}</label>
-					<input type="text" id="addAnnounceStartDate" class="form-control dateinput inline-block "
-						   value="{formatdate date=$AddAnnounceStartDate}"/>
-					<input {formname key=ANNOUNCEMENT_START} id="formattedAddAnnounceStartDate" type="hidden"
-													 value="{formatdate date=$AddAnnounceStartDate key=system}"/>
-					<input {formname key=ANNOUNCEMENT_TIME_START} type="time" id="addAnnounceStartTime"
-													 class="form-control inline-block"
-													 value="{format_date format='H:00' date=Date::Now()}"
-													 title="Start time"/>
-				</div>
-				<div class="form-group col-xs-6">
-					<label for="addAnnounceEndDate">{translate key=EndAnnouncement}</label>
-					<input type="text" id="addAnnounceEndDate" class="form-control dateinput inline-block " size="10"
-						   value="{formatdate date=$AddAnnounceEndDate}"/>
-					<input {formname key=ANNOUNCEMENT_END} type="hidden" id="formattedAddAnnounceEndDate"
-												   value="{formatdate date=$AddAnnounceEndDate key=system}"/>
-					<input {formname key=ANNOUNCEMENT_TIME_END} type="time" id="addAnnounceEndTime"
-												   class="form-control inline-block "
-												   value="{format_date format='H:00' date=Date::Now()->AddHours(1)}"
-												   title="End time"/>
-				</div>
-				<br />
-				<br />
-				<div class="form-group col-xs-12">
-					<label for="addResourceId">{translate key=Resource}</label>
-					<select {formname key=RESOURCE_ID} class="form-control" id="addResourceId">
-						{object_html_options options=$Resources key='GetId' label="GetName" selected=$ResourceId}
-					</select>
-					{if $Schedules|count > 0}
-						|
-						<div class="checkbox">
-							<input {formname key=BLACKOUT_APPLY_TO_SCHEDULE} type="checkbox" id="allResources"/>
-							<label for="allResources" style="">{translate key=AllResourcesOn} </label>
-						</div>
-						<select {formname key=SCHEDULE_ID} id="addScheduleId" class="form-control" disabled="disabled"
-														   title="Schedule">
-							{object_html_options options=$Schedules key='GetId' label="GetName" selected=$ScheduleId}
+	<div class="box box-lg mb-3">
+		<h1>{translate key=ManageBlackouts}</h1>
+		<form id="addBlackoutForm" role="form" method="post">
+			<fieldset class="bordered">
+				<h2>{translate key="AddBlackout"} {showhide_icon}</h2>
+				<div class="form-row">
+					<div class="form-group col-md">
+						<label for="addResourceId">{translate key=Resource}</label>
+						<select {formname key=RESOURCE_ID} class="form-control" id="addResourceId">
+							{object_html_options options=$Resources key='GetId' label="GetName" selected=$ResourceId}
 						</select>
-					{/if}
-				</div>
-				<br />
-				<br />
-				<div class="col-xs-12">
-					<div class="form-group has-feedback">
-						<label for="blackoutReason">{translate key=Reason}</label>
-						<input {formname key=SUMMARY} type="text" id="blackoutReason" required
-													  class="form-control required"/>
-						<i class="glyphicon glyphicon-asterisk form-control-feedback" data-bv-icon-for="blackoutReason"></i>
+					</div>
+					<div class="form-group col-md align-self-end">
+						<div class="form-row">
+							<div class="col-auto d-flex align-items-center">
+								<span class="mr-2">or</span>
+								<div class="form-check mr-1 pl-0" style="width:auto">
+									<input {formname key=BLACKOUT_APPLY_TO_SCHEDULE} type="checkbox" id="allResources"/>
+									<label class="mb-0" for="allResources">{translate key=AllResourcesOn}</label>
+								</div>
+							</div>
+							<div class="col">
+								<select {formname key=SCHEDULE_ID} id="addScheduleId" class="form-control" disabled="disabled"
+									title="Schedule">
+									{object_html_options options=$Schedules key='GetId' label="GetName" selected=$ScheduleId}
+								</select>
+							</div>
+						</div>
 					</div>
 				</div>
-				<br />
-				<br />
-				<div class="form-group col-xs-12">
-					{control type="RecurrenceControl" RepeatTerminationDate=$RepeatTerminationDate}
-				</div>
-				<br />
-				<br />
-				<div class="form-group col-xs-12">
-					<div class="radio">
-						<input {formname key=CONFLICT_ACTION} type="radio" id="deleteExisting"
-															  name="existingReservations"
-															   checked="checked"
-															  value="{ReservationConflictResolution::Delete}"/>
-						<label for="deleteExisting">{translate key=BlackoutDeleteConflicts}</label>
+				<div class="row">
+					<div class="col-md">
+						<div class="form-row">
+							<div class="col-sm form-group">
+								<label for="addStartDate">{translate key=BeginBlackout}</label>
+								<div class="input-with-icon">
+									<input type="text" id="addStartDate" class="form-control"
+										value="{formatdate date=$AddStartDate}"/>
+									<input {formname key=BEGIN_DATE} id="formattedAddStartDate" type="hidden"
+										value="{formatdate date=$AddStartDate key=system}"/>
+									<span class="input-icon"><i
+											class="material-icons">calendar_today</i></span>
+								</div>
+							</div>
+							<div class="col-sm form-group align-self-end">
+								<div class="input-with-icon">
+									<input {formname key=BEGIN_TIME} type="time" id="addStartTime"
+										class="form-control"
+										value="{format_date format='H:00' date=Date::Now()}"
+										title="Start time"/>
+									<span class="input-icon"><i
+											class="material-icons">query_builder</i></span>
+								</div>
+							</div>
+						</div>
+						<div class="form-row">
+							<div class="col-sm form-group">
+								<label for="addEndDate">{translate key=EndBlackout}</label>
+								<div class="input-with-icon">
+									<input type="text" id="addEndDate" class="form-control" size="10"
+										value="{formatdate date=$AddEndDate}"/>
+									<input {formname key=END_DATE} type="hidden" id="formattedAddEndDate"
+										value="{formatdate date=$AddEndDate key=system}"/>
+									<span class="input-icon"><i
+											class="material-icons">calendar_today</i></span>
+								</div>
+							</div>
+							<div class="col-sm form-group align-self-end">
+								<div class="input-with-icon">
+									<input {formname key=END_TIME} type="time" id="addEndTime"
+										class="form-control"
+										value="{format_date format='H:00' date=Date::Now()->AddHours(1)}"
+										title="End time"/>
+									<span class="input-icon"><i
+											class="material-icons">query_builder</i></span>
+								</div>
+							</div>
+						</div>
+						<div class="form-row mb-3">
+							<div class="col-auto align-self-center">
+								<span>Repeat:</span>
+							</div>
+							<div class="col">
+								{control type="RecurrenceControl" RepeatTerminationDate=$RepeatTerminationDate}
+							</div>
+						</div>
+						<div class="form-row">
+							<div class="col-sm form-group">
+								<label for="addAnnounceStartDate">{translate key=BeginAnnouncement}</label>
+								<div class="input-with-icon">
+									<input type="text" id="addAnnounceStartDate" class="form-control"
+											value="{formatdate date=$AddAnnounceStartDate}"/>
+									<input {formname key=ANNOUNCEMENT_START} id="formattedAddAnnounceStartDate" type="hidden"
+											value="{formatdate date=$AddAnnounceStartDate key=system}"/>
+									<span class="input-icon"><i
+											class="material-icons">calendar_today</i></span>
+								</div>
+							</div>
+							<div class="col-sm form-group align-self-end">
+								<div class="input-with-icon">
+									<input {formname key=ANNOUNCEMENT_TIME_START} type="time" id="addAnnounceStartTime"
+										class="form-control"
+										value="{format_date format='H:00' date=Date::Now()}"
+										title="Start time"/>
+									<span class="input-icon"><i
+											class="material-icons">query_builder</i></span>
+								</div>
+							</div>
+						</div>
+						<div class="form-row">
+							<div class="col-sm form-group">
+								<label for="addAnnounceEndDate">{translate key=EndAnnouncement}</label>
+								<div class="input-with-icon">
+									<input type="text" id="addAnnounceEndDate" class="form-control" size="10"
+										value="{formatdate date=$AddAnnounceEndDate}"/>
+									<input {formname key=ANNOUNCEMENT_END} type="hidden" id="formattedAddAnnounceEndDate"
+										value="{formatdate date=$AddAnnounceEndDate key=system}"/>
+									<span class="input-icon"><i
+											class="material-icons">calendar_today</i></span>
+								</div>
+							</div>
+							<div class="col-sm form-group align-self-end">
+								<div class="input-with-icon">
+									<input {formname key=ANNOUNCEMENT_TIME_END} type="time" id="addAnnounceEndTime"
+										class="form-control"
+										value="{format_date format='H:00' date=Date::Now()->AddHours(1)}"
+										title="End time"/>
+									<span class="input-icon"><i
+											class="material-icons">query_builder</i></span>
+								</div>
+							</div>
+						</div>
 					</div>
-					<div class="radio">
-						<input {formname key=CONFLICT_ACTION} type="radio" id="notifyExisting"
-															  name="existingReservations"
-															  value="{ReservationConflictResolution::Notify}"/>
-						<label for="notifyExisting">{translate key=BlackoutShowMe}</label>
+					<div class="col-md">
+						<div class="form-group">
+							<label for="blackoutReason">{translate key=Reason} <span class="text-danger">*required</span></label>
+							<input {formname key=SUMMARY} type="text" id="blackoutReason" required class="form-control required"/>
+						</div>
+						<div class="form-group">
+							<label for="Confliction">Confliction</label>
+							<div class="form-check">
+								<input class="form-check-input" {formname key=CONFLICT_ACTION} type="radio" id="deleteExisting"
+									name="existingReservations"
+									checked="checked"
+									value="{ReservationConflictResolution::Delete}"/>
+								<label class="form-check-label" for="deleteExisting">{translate key=BlackoutDeleteConflicts}</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" {formname key=CONFLICT_ACTION} type="radio" id="notifyExisting"
+									name="existingReservations"
+									value="{ReservationConflictResolution::Notify}"/>
+								<label class="form-check-label" for="notifyExisting">{translate key=BlackoutShowMe}</label>
+							</div>
+						</div>
 					</div>
-				
 				</div>
-				<br />
-				<br />
-			</div>
-			<div class="panel-footer">
-				{add_button class="btn-sm"}
-				{reset_button class="btn-sm"}
-			</div>
-		</div>
-	</form>
+				{add_button}
+				{reset_button}
+			</fieldset>
 
-	<form class="form" role="form">
-		<div class="panel panel-default">
-			<div class="panel-heading"><span class="glyphicon glyphicon-filter"></span>
-				{translate key="Filter"}
-			</div>
-			<div class="panel-body">
-				<div class="form-group col-xs-4">
-					<input id="startDate" type="text" class="form-control dateinput inline-block"
-						   value="{formatdate date=$StartDate}"
-						   title="Between start date" placeholder="{translate key=BeginDate}"/>
+		</form>
+	</div>
+
+
+	<div class="box box-lg mb-3">
+	<h1>{translate key="Filter"}</h1>
+		<form class="form" role="form">
+			<div class="form-row">
+				<div class="form-group col-sm">
+					<input id="startDate" type="text" class="form-control"
+						value="{formatdate date=$StartDate}"
+						title="Between start date" placeholder="{translate key=BeginDate}"/>
 					<input id="formattedStartDate" type="hidden" value="{formatdate date=$StartDate key=system}"/>
-					-
-					<input id="endDate" type="text" class="form-control dateinput inline-block"
-						   value="{formatdate date=$EndDate}" placeholder="{translate key=EndDate}"/>
+				</div>
+				<div class="col-sm-auto mt-2 d-none d-sm-block">
+					&mdash;
+				</div>
+				<div class="form-group col-sm">
+					<input id="endDate" type="text" class="form-control"
+						value="{formatdate date=$EndDate}" placeholder="{translate key=EndDate}"/>
 					<input id="formattedEndDate" type="hidden" value="{formatdate date=$EndDate key=system}"/>
 				</div>
-				<div class="form-group col-xs-4">
+				<div class="form-group col-sm">
 					<select id="scheduleId" class="form-control col-xs-12">
 						<option value="">{translate key=AllSchedules}</option>
 						{object_html_options options=$Schedules key='GetId' label="GetName" selected=$ScheduleId}
 					</select>
 				</div>
-				<div class="form-group col-xs-4">
+				<div class="form-group col-sm">
 					<select id="resourceId" class="form-control col-xs-12">
 						<option value="">{translate key=AllResources}</option>
 						{object_html_options options=$Resources key='GetId' label="GetName" selected=$ResourceId}
 					</select>
 				</div>
+				<div class="col-sm-auto">
+					{filter_button class="btn-sm" id="filter"}
+					<button id="showAll" class="btn btn-link btn-sm">{translate key=ViewAll}</button>
+				</div>
 			</div>
-			<div class="panel-footer">
-				{filter_button class="btn-sm" id="filter"}
-				<button id="showAll" class="btn btn-link btn-sm">{translate key=ViewAll}</button>
-			</div>
-		</div>
-	</form>
+		</form>
+	</div>
 
-	<table class="table" id="blackoutTable">
+	<div class="table-responsive table-shadow mb-3">
+	<table class="table table-md table-vistec table-highlight" id="blackoutTable">
 		<thead>
 		<tr>
 			<th>{sort_column key=Resource field=ColumnNames::RESOURCE_NAME}</th>
@@ -178,14 +231,7 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
 			<th>{sort_column key=EndDate field=ColumnNames::BLACKOUT_END}</th>
 			<th>{sort_column key=Reason field=ColumnNames::BLACKOUT_TITLE}</th>
 			<th>{translate key=CreatedBy}</th>
-			<th>{translate key=Update}</th>
-			<th>{translate key=Delete}</th>
-			<th class="action-delete">
-				<div class="checkbox checkbox-single">
-					<input type="checkbox" id="delete-all" aria-label="{translate key=All}"/>
-					<label for="delete-all"></label>
-				</div>
-			</th>
+			<th>&nbsp;</th>
 		</tr>
 		</thead>
 		<tbody>
@@ -198,23 +244,15 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
 				<td class="date">{formatdate date=$blackout->EndDate timezone=$Timezone format='m/d/Y h:i A'}</td>
 				<td>{$blackout->Title}</td>
 				<td style="max-width:150px;">{fullname first=$blackout->FirstName last=$blackout->LastName}</td>
-				<td class="update edit"><a href="#"><span class="fa fa-edit"></span></a></td>
-				{if $blackout->IsRecurring}
-					<td class="update">
-						<a href="#" class="update delete-recurring"><span class="fa fa-trash icon remove"></span></a>
-					</td>
-				{else}
-					<td class="update">
-						<a href="#" class="update delete"><span class="fa fa-trash icon remove"></span></a>
-					</td>
-				{/if}
-				<td class="action-delete">
-					<div class="checkbox checkbox-single">
-						<input {formname key=BLACKOUT_INSTANCE_ID multi=true}" class="delete-multiple" type="checkbox" id="delete{$id}"
-						value="{$id}"
-						aria-label="{translate key=Delete}"/>
-						<label for="delete{$id}"></label>
-					</div>
+				<td class="update edit text-right text-nowrap">
+					<a href="#">
+						<span class="custom-icon icon-edit"></span>
+					</a>
+					{if $blackout->IsRecurring}
+						<a href="#" class="update delete-recurring"><span class="custom-icon icon-delete"></span></a>
+					{else}
+						<a href="#" class="update delete"><span class="custom-icon icon-delete"></span></a>
+					{/if}
 				</td>
 			</tr>
 		{/foreach}
@@ -226,6 +264,7 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
 		</tr>
 		</tfoot>
 	</table>
+	</div>
 
 	{pagination pageInfo=$PageInfo}
 

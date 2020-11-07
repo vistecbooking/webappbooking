@@ -96,14 +96,14 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
 		</div>
 		<div class="row no-gutters">
 			<div class="col-sm col-md-auto mr-sm-2">
-				{add_button}
+				{add_button class="btn-block"}
 			</div>
 			<div class="col-sm col-md-auto mr-sm-2">
-				{reset_button}
+				{reset_button class="btn-block"}
 			</div>
-			<!-- <div class="col-sm col-md-auto">
+			<div class="col-sm col-md-auto">
 				{indicator}
-			</div> -->
+			</div>
 		</div>
 	</form>
 	</div>

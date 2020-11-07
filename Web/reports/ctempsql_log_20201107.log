@@ -55,3 +55,142 @@
 		LEFT JOIN groups admin_group ON g.admin_group_id = admin_group.group_id
 		ORDER BY g.name;
 2020-11-07T16:34:02+07:00 [16] DEBUG sql - [User=Tanut Choksatchawathi (tanut.cho@gmail.com)] MySql Query: SELECT * FROM saved_reports WHERE user_id = '583' ORDER BY report_name, date_created;
+2020-11-07T18:32:15+07:00 [24] DEBUG sql - [User=Tanut Choksatchawathi (tanut.cho@gmail.com)] MySql Query: SELECT r.*, s.admin_group_id as s_admin_group_id,
+		(SELECT GROUP_CONCAT(CONCAT(cav.custom_attribute_id, '=', cav.attribute_value) SEPARATOR "!sep!")
+						FROM custom_attribute_values cav WHERE cav.entity_id = r.resource_id AND cav.attribute_category = 4) as attribute_list,
+		(SELECT GROUP_CONCAT(rga.resource_group_id SEPARATOR "!sep!") FROM resource_group_assignment rga WHERE rga.resource_id = r.resource_id) AS group_list
+		FROM resources r
+		INNER JOIN schedules s ON r.schedule_id = s.schedule_id
+		ORDER BY COALESCE(r.sort_order,0), r.name;
+2020-11-07T18:32:15+07:00 [24] DEBUG sql - [User=Tanut Choksatchawathi (tanut.cho@gmail.com)] MySql Query: SELECT *,
+			(SELECT GROUP_CONCAT(CONCAT(cav.custom_attribute_id, '=', cav.attribute_value) SEPARATOR "!sep!")
+							FROM custom_attribute_values cav INNER JOIN custom_attribute_entities cae on cav.custom_attribute_id = cae.custom_attribute_id
+							WHERE cav.entity_id = r.resource_type_id AND cav.attribute_category = 5) as attribute_list
+							FROM resource_types r;
+2020-11-07T18:32:16+07:00 [24] DEBUG sql - [User=Tanut Choksatchawathi (tanut.cho@gmail.com)] MySql Query: SELECT a.*, c.num_resources,
+			(SELECT GROUP_CONCAT(CONCAT(ra.resource_id, ",", COALESCE(ra.minimum_quantity,""), ",",  COALESCE(ra.maximum_quantity,"")) SEPARATOR "!sep!")
+				FROM resource_accessories ra WHERE ra.accessory_id = a.accessory_id) as resource_accessory_list
+ 			FROM accessories a
+			LEFT JOIN (
+				SELECT accessory_id, COUNT(*) AS num_resources
+				FROM resource_accessories ra
+				GROUP BY ra.accessory_id
+				) AS c ON a.accessory_id = c.accessory_id
+
+ 			ORDER BY accessory_name;
+2020-11-07T18:32:16+07:00 [24] DEBUG sql - [User=Tanut Choksatchawathi (tanut.cho@gmail.com)] MySql Query: SELECT s.*, l.timezone FROM schedules s INNER JOIN layouts l ON s.layout_id = l.layout_id ORDER BY s.name;
+2020-11-07T18:32:16+07:00 [24] DEBUG sql - [User=Tanut Choksatchawathi (tanut.cho@gmail.com)] MySql Query: SELECT g.*, admin_group.name as admin_group_name
+		FROM groups g
+		LEFT JOIN groups admin_group ON g.admin_group_id = admin_group.group_id
+		ORDER BY g.name;
+2020-11-07T19:31:46+07:00 [25] DEBUG sql - [User=Tanut Choksatchawathi (tanut.cho@gmail.com)] MySql Query: SELECT  SUM( UNIX_TIMESTAMP(LEAST(ri.end_date, '9999-01-01 07:00:00')) - UNIX_TIMESTAMP(GREATEST(ri.start_date, '0001-01-01 06:42:04')) ) AS totalTime,owner.fname as owner_fname, owner.lname as owner_lname, owner.email as email, CONCAT(owner.fname, ' ', owner.lname) as owner_name, owner.user_id as owner_id
+				FROM reservation_instances ri
+				INNER JOIN reservation_series rs ON rs.series_id = ri.series_id
+				INNER JOIN users owner ON owner.user_id = rs.owner_id
+
+				 INNER JOIN reservation_resources rr ON rs.series_id = rr.series_id
+				INNER JOIN resources ON rr.resource_id = resources.resource_id
+				INNER JOIN schedules ON resources.schedule_id = schedules.schedule_id
+				WHERE 1=1
+				AND rs.status_id <> 2
+				 AND ((ri.start_date >= '0001-01-01 06:42:04' AND ri.start_date < '9999-01-01 07:00:00') OR
+						(ri.end_date >= '0001-01-01 06:42:04' AND ri.end_date <= '9999-01-01 07:00:00') OR
+						(ri.start_date <= '0001-01-01 06:42:04' AND ri.end_date > '9999-01-01 07:00:00'))
+				 GROUP BY owner.user_id
+				 ORDER BY totalTime DESC
+				 LIMIT 0 , 20;
+2020-11-07T19:31:47+07:00 [25] DEBUG sql - [User=Tanut Choksatchawathi (tanut.cho@gmail.com)] MySql Query: SELECT u.*, p.name AS position_name FROM users u 
+		LEFT JOIN positions p ON p.position_id = u.position_id
+		WHERE u.user_id = '583';
+2020-11-07T19:31:47+07:00 [25] DEBUG sql - [User=Tanut Choksatchawathi (tanut.cho@gmail.com)] MySql Query: SELECT * FROM user_email_preferences WHERE user_id = '583';
+2020-11-07T19:31:48+07:00 [25] DEBUG sql - [User=Tanut Choksatchawathi (tanut.cho@gmail.com)] MySql Query: SELECT
+			urp.user_id, r.resource_id, r.name
+		FROM
+			user_resource_permissions urp, resources r
+		WHERE
+			urp.user_id = '583' AND r.resource_id = urp.resource_id;
+2020-11-07T19:31:48+07:00 [25] DEBUG sql - [User=Tanut Choksatchawathi (tanut.cho@gmail.com)] MySql Query: SELECT g.*, r.role_level
+		FROM user_groups ug
+		INNER JOIN groups g ON ug.group_id = g.group_id
+		LEFT JOIN group_roles gr ON ug.group_id = gr.group_id
+		LEFT JOIN roles r ON gr.role_id = r.role_id
+		WHERE user_id = '583' AND (null is null OR r.role_level IN (null) );
+2020-11-07T19:31:48+07:00 [25] DEBUG sql - [User=Tanut Choksatchawathi (tanut.cho@gmail.com)] MySql Query: SELECT cav.*, ca.display_label
+		FROM custom_attribute_values cav
+		INNER JOIN custom_attributes ca ON ca.custom_attribute_id = cav.custom_attribute_id
+		WHERE cav.attribute_category = '2' AND cav.entity_id = '583';
+2020-11-07T19:31:49+07:00 [25] DEBUG sql - [User=Tanut Choksatchawathi (tanut.cho@gmail.com)] MySql Query: SELECT name, value FROM user_preferences WHERE user_id = '583';
+2020-11-07T19:32:53+07:00 [19] DEBUG sql - [User=Tanut Choksatchawathi (tanut.cho@gmail.com)] MySql Query: SELECT  SUM( UNIX_TIMESTAMP(LEAST(ri.end_date, '9999-01-01 07:00:00')) - UNIX_TIMESTAMP(GREATEST(ri.start_date, '0001-01-01 06:42:04')) ) AS totalTime,owner.fname as owner_fname, owner.lname as owner_lname, owner.email as email, CONCAT(owner.fname, ' ', owner.lname) as owner_name, owner.user_id as owner_id
+				FROM reservation_instances ri
+				INNER JOIN reservation_series rs ON rs.series_id = ri.series_id
+				INNER JOIN users owner ON owner.user_id = rs.owner_id
+
+				 INNER JOIN reservation_resources rr ON rs.series_id = rr.series_id
+				INNER JOIN resources ON rr.resource_id = resources.resource_id
+				INNER JOIN schedules ON resources.schedule_id = schedules.schedule_id
+				WHERE 1=1
+				AND rs.status_id <> 2
+				 AND ((ri.start_date >= '0001-01-01 06:42:04' AND ri.start_date < '9999-01-01 07:00:00') OR
+						(ri.end_date >= '0001-01-01 06:42:04' AND ri.end_date <= '9999-01-01 07:00:00') OR
+						(ri.start_date <= '0001-01-01 06:42:04' AND ri.end_date > '9999-01-01 07:00:00'))
+				 GROUP BY owner.user_id
+				 ORDER BY totalTime DESC
+				 LIMIT 0 , 20;
+2020-11-07T19:32:54+07:00 [19] DEBUG sql - [User=Tanut Choksatchawathi (tanut.cho@gmail.com)] MySql Query: SELECT u.*, p.name AS position_name FROM users u 
+		LEFT JOIN positions p ON p.position_id = u.position_id
+		WHERE u.user_id = '583';
+2020-11-07T19:32:54+07:00 [19] DEBUG sql - [User=Tanut Choksatchawathi (tanut.cho@gmail.com)] MySql Query: SELECT * FROM user_email_preferences WHERE user_id = '583';
+2020-11-07T19:32:55+07:00 [19] DEBUG sql - [User=Tanut Choksatchawathi (tanut.cho@gmail.com)] MySql Query: SELECT
+			urp.user_id, r.resource_id, r.name
+		FROM
+			user_resource_permissions urp, resources r
+		WHERE
+			urp.user_id = '583' AND r.resource_id = urp.resource_id;
+2020-11-07T19:32:55+07:00 [19] DEBUG sql - [User=Tanut Choksatchawathi (tanut.cho@gmail.com)] MySql Query: SELECT g.*, r.role_level
+		FROM user_groups ug
+		INNER JOIN groups g ON ug.group_id = g.group_id
+		LEFT JOIN group_roles gr ON ug.group_id = gr.group_id
+		LEFT JOIN roles r ON gr.role_id = r.role_id
+		WHERE user_id = '583' AND (null is null OR r.role_level IN (null) );
+2020-11-07T19:32:55+07:00 [19] DEBUG sql - [User=Tanut Choksatchawathi (tanut.cho@gmail.com)] MySql Query: SELECT cav.*, ca.display_label
+		FROM custom_attribute_values cav
+		INNER JOIN custom_attributes ca ON ca.custom_attribute_id = cav.custom_attribute_id
+		WHERE cav.attribute_category = '2' AND cav.entity_id = '583';
+2020-11-07T19:32:56+07:00 [19] DEBUG sql - [User=Tanut Choksatchawathi (tanut.cho@gmail.com)] MySql Query: SELECT name, value FROM user_preferences WHERE user_id = '583';
+2020-11-07T19:33:05+07:00 [24] DEBUG sql - [User=Tanut Choksatchawathi (tanut.cho@gmail.com)] MySql Query: SELECT  SUM( UNIX_TIMESTAMP(LEAST(ri.end_date, '9999-01-01 07:00:00')) - UNIX_TIMESTAMP(GREATEST(ri.start_date, '0001-01-01 06:42:04')) ) AS totalTime,owner.fname as owner_fname, owner.lname as owner_lname, owner.email as email, CONCAT(owner.fname, ' ', owner.lname) as owner_name, owner.user_id as owner_id
+				FROM reservation_instances ri
+				INNER JOIN reservation_series rs ON rs.series_id = ri.series_id
+				INNER JOIN users owner ON owner.user_id = rs.owner_id
+
+				 INNER JOIN reservation_resources rr ON rs.series_id = rr.series_id
+				INNER JOIN resources ON rr.resource_id = resources.resource_id
+				INNER JOIN schedules ON resources.schedule_id = schedules.schedule_id
+				WHERE 1=1
+				AND rs.status_id <> 2
+				 AND ((ri.start_date >= '0001-01-01 06:42:04' AND ri.start_date < '9999-01-01 07:00:00') OR
+						(ri.end_date >= '0001-01-01 06:42:04' AND ri.end_date <= '9999-01-01 07:00:00') OR
+						(ri.start_date <= '0001-01-01 06:42:04' AND ri.end_date > '9999-01-01 07:00:00'))
+				 GROUP BY owner.user_id
+				 ORDER BY totalTime DESC
+				 LIMIT 0 , 20;
+2020-11-07T19:33:06+07:00 [24] DEBUG sql - [User=Tanut Choksatchawathi (tanut.cho@gmail.com)] MySql Query: SELECT u.*, p.name AS position_name FROM users u 
+		LEFT JOIN positions p ON p.position_id = u.position_id
+		WHERE u.user_id = '583';
+2020-11-07T19:33:06+07:00 [24] DEBUG sql - [User=Tanut Choksatchawathi (tanut.cho@gmail.com)] MySql Query: SELECT * FROM user_email_preferences WHERE user_id = '583';
+2020-11-07T19:33:07+07:00 [24] DEBUG sql - [User=Tanut Choksatchawathi (tanut.cho@gmail.com)] MySql Query: SELECT
+			urp.user_id, r.resource_id, r.name
+		FROM
+			user_resource_permissions urp, resources r
+		WHERE
+			urp.user_id = '583' AND r.resource_id = urp.resource_id;
+2020-11-07T19:33:07+07:00 [24] DEBUG sql - [User=Tanut Choksatchawathi (tanut.cho@gmail.com)] MySql Query: SELECT g.*, r.role_level
+		FROM user_groups ug
+		INNER JOIN groups g ON ug.group_id = g.group_id
+		LEFT JOIN group_roles gr ON ug.group_id = gr.group_id
+		LEFT JOIN roles r ON gr.role_id = r.role_id
+		WHERE user_id = '583' AND (null is null OR r.role_level IN (null) );
+2020-11-07T19:33:07+07:00 [24] DEBUG sql - [User=Tanut Choksatchawathi (tanut.cho@gmail.com)] MySql Query: SELECT cav.*, ca.display_label
+		FROM custom_attribute_values cav
+		INNER JOIN custom_attributes ca ON ca.custom_attribute_id = cav.custom_attribute_id
+		WHERE cav.attribute_category = '2' AND cav.entity_id = '583';
+2020-11-07T19:33:07+07:00 [24] DEBUG sql - [User=Tanut Choksatchawathi (tanut.cho@gmail.com)] MySql Query: SELECT name, value FROM user_preferences WHERE user_id = '583';

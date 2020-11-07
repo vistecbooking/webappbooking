@@ -97,18 +97,18 @@ abstract class Page implements IPage
 																 ->GetSectionKey(ConfigSection::RESERVATION, ConfigKeys::RESERVATION_PREVENT_PARTICIPATION,
 																				 new BooleanConverter()));
 
-		$this->smarty->assign('LogoUrl', 'vistec_logo.png');
-		if (file_exists($this->path . 'img/vistec_logo.png'))
+		$this->smarty->assign('LogoUrl', 'logo.png');
+		if (file_exists($this->path . 'img/logo.png'))
 		{
-			$this->smarty->assign('LogoUrl', 'vistec_logo.png');
+			$this->smarty->assign('LogoUrl', 'logo.png');
 		}
-		if (file_exists($this->path . 'img/vistec_logo.gif'))
+		if (file_exists($this->path . 'img/logo.gif'))
 		{
-			$this->smarty->assign('LogoUrl', 'vistec_logo.gif');
+			$this->smarty->assign('LogoUrl', 'logo.gif');
 		}
-		if (file_exists($this->path . 'img/vistec_logo.jpg'))
+		if (file_exists($this->path . 'img/logo.jpg'))
 		{
-			$this->smarty->assign('LogoUrl', 'vistec_logo.jpg');
+			$this->smarty->assign('LogoUrl', 'logo.jpg');
 		}
 
 		$this->smarty->assign('CssUrl', 'null-style.css');

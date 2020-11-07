@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2019-12-13 16:20:48
+/* Smarty version 3.1.30, created on 2020-11-07 20:12:52
   from "/var/www/html/booking/tpl/Reservation/create.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5df357f055ce78_88381598',
+  'unifunc' => 'content_5fa69d54933233_11087048',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a5ebdd54501ad3b291a18e1fb342d7e31935f798' => 
     array (
       0 => '/var/www/html/booking/tpl/Reservation/create.tpl',
-      1 => 1551196420,
+      1 => 1600849228,
       2 => 'file',
     ),
   ),
@@ -24,13 +24,13 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:globalfooter.tpl' => 1,
   ),
 ),false)) {
-function content_5df357f055ce78_88381598 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fa69d54933233_11087048 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->ext->_tplFunction->registerTplFunctions($_smarty_tpl, array (
   'displayResource' => 
   array (
     'compiled_filepath' => '/var/www/html/booking/tpl_c/a5ebdd54501ad3b291a18e1fb342d7e31935f798_0.file.create.tpl.php',
     'uid' => 'a5ebdd54501ad3b291a18e1fb342d7e31935f798',
-    'call_name' => 'smarty_template_function_displayResource_20214765535df357f02b63a7_49909283',
+    'call_name' => 'smarty_template_function_displayResource_13838180525fa69d54221078_77666451',
   ),
 ));
 $_smarty_tpl->_loadInheritance();
@@ -38,7 +38,7 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1443745935df357f02ccab5_55277507', "header");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2949357435fa69d54472601_38450918', "header");
 ?>
 
 
@@ -62,7 +62,7 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1443745935df357f02
 				<div class="col-md-6 col-xs-12 col-top reservationHeader">
 					<h3>
 						<?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_10672236355df357f030dff3_63785652', 'reservationHeader');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_10378325785fa69d5457ab69_40807164', 'reservationHeader');
 ?>
 
 						<button type="button" style="margin-left: 10px;" class="btn btn-default" onclick="window.location='<?php echo $_smarty_tpl->tpl_vars['ReturnUrl']->value;?>
@@ -77,7 +77,7 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_10672236355df357f0
 				<div class="col-md-6 col-xs-12 col-top">
 					<div class="pull-right-sm">
 						<?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2177942125df357f0321f31_46385720', "submitButtons");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_12139121235fa69d54584409_69482613', "submitButtons");
 ?>
 
 					</div>
@@ -500,7 +500,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 				<div class="reservationButtons col-md-6 col-md-offset-6 col-xs-12">
 					<div class="pull-right-sm">
 						<?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_3992956145df357f04bd9a5_74365658', "submitButtons");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_9339968515fa69d54776b17_77533118', "submitButtons");
 ?>
 
 					</div>
@@ -512,7 +512,7 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_3992956145df357f04
 
 			<?php if ($_smarty_tpl->tpl_vars['UploadsEnabled']->value) {?>
 				<?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2094134325df357f04c1984_84992916', 'attachments');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_11658602895fa69d5478b138_05342448', 'attachments');
 ?>
 
 			<?php }?>
@@ -628,7 +628,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 		<div id="creatingNotification">
 			<h3 id="createUpdateMessage" class="no-show">
 				<?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_17627528985df357f04e8509_83246727', "ajaxMessage");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_16410539975fa69d5480d727_64164417', "ajaxMessage");
 ?>
 
 			</h3>
@@ -894,7 +894,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 
 <?php }
 /* {block "header"} */
-class Block_1443745935df357f02ccab5_55277507 extends Smarty_Internal_Block
+class Block_2949357435fa69d54472601_38450918 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:globalheader.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('Validator'=>true,'Qtip'=>true,'printCssFiles'=>'css/reservation.print.css'), 0, false);
@@ -904,9 +904,9 @@ $_smarty_tpl->_subTemplateRender("file:globalheader.tpl", $_smarty_tpl->cache_id
 }
 }
 /* {/block "header"} */
-/* smarty_template_function_displayResource_20214765535df357f02b63a7_49909283 */
-if (!function_exists('smarty_template_function_displayResource_20214765535df357f02b63a7_49909283')) {
-function smarty_template_function_displayResource_20214765535df357f02b63a7_49909283($_smarty_tpl,$params) {
+/* smarty_template_function_displayResource_13838180525fa69d54221078_77666451 */
+if (!function_exists('smarty_template_function_displayResource_13838180525fa69d54221078_77666451')) {
+function smarty_template_function_displayResource_13838180525fa69d54221078_77666451($_smarty_tpl,$params) {
 foreach ($params as $key => $value) {
 $_smarty_tpl->tpl_vars[$key] = new Smarty_Variable($value, $_smarty_tpl->isRenderingCache);
 }?>
@@ -924,9 +924,9 @@ $_smarty_tpl->tpl_vars[$key] = new Smarty_Variable($value, $_smarty_tpl->isRende
 	</div>
 <?php
 }}
-/*/ smarty_template_function_displayResource_20214765535df357f02b63a7_49909283 */
+/*/ smarty_template_function_displayResource_13838180525fa69d54221078_77666451 */
 /* {block 'reservationHeader'} */
-class Block_10672236355df357f030dff3_63785652 extends Smarty_Internal_Block
+class Block_10378325785fa69d5457ab69_40807164 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"CreateReservationHeading"),$_smarty_tpl);
@@ -934,7 +934,7 @@ echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translat
 }
 /* {/block 'reservationHeader'} */
 /* {block "submitButtons"} */
-class Block_2177942125df357f0321f31_46385720 extends Smarty_Internal_Block
+class Block_12139121235fa69d54584409_69482613 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -955,7 +955,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block "submitButtons"} */
 /* {block "submitButtons"} */
-class Block_3992956145df357f04bd9a5_74365658 extends Smarty_Internal_Block
+class Block_9339968515fa69d54776b17_77533118 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -976,7 +976,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block "submitButtons"} */
 /* {block 'attachments'} */
-class Block_2094134325df357f04c1984_84992916 extends Smarty_Internal_Block
+class Block_11658602895fa69d5478b138_05342448 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -986,7 +986,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'attachments'} */
 /* {block "ajaxMessage"} */
-class Block_17627528985df357f04e8509_83246727 extends Smarty_Internal_Block
+class Block_16410539975fa69d5480d727_64164417 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>

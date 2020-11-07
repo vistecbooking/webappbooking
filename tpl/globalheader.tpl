@@ -149,7 +149,6 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
 
     <!-- <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"
             type="text/css"/> -->
-    {cssfile src="scripts/newcss/style.css" rel="stylesheet"}
     <link rel="stylesheet"
             href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.0/themes/smoothness/jquery-ui.css"
             type="text/css"/>
@@ -189,7 +188,8 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
         {jsfile src="js/fullcalendarLang/$HtmlLang.js"}
     {/if}
     {cssfile src="scripts/css/jquery-ui-timepicker-addon.css"}
-    {* cssfile src="booked.css" *}
+    {cssfile src="booked.css"}
+    {cssfile src="scripts/newcss/style.css" rel="stylesheet"}
     {if $cssFiles neq ''}
         {assign var='CssFileList' value=','|explode:$cssFiles}
         {foreach from=$CssFileList item=cssFile}
@@ -216,7 +216,7 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
 {if $HideNavBar == false}
     <nav class="navbar fixed-top navbar-expand-lg navbar-light" role="navigation">
         <a class="navbar-brand" href="{$HomeUrl}">
-            {html_image src="$LogoUrl?2.6" style="height:30px" alt="$Title"}
+            {html_image src="$LogoUrl?2.6" height="30" alt="$Title"}
         </a>
         <button
             class="navbar-toggler"
@@ -309,7 +309,9 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
             <ul class="navbar-nav">
                 {if $LoggedIn}
                     <li class="nav-item dropdown" id="navMyAccountDropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">{translate key="MyAccount"}</a>
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                            {html_image src="person.png" class="img-fluid rounded-circle" alt="{translate key="MyAccount"}" style="height:40px"}
+                        </a>
                         <div class="dropdown-menu dropdown-menu-right">
                             <a class="dropdown-item" href="{$Path}{Pages::PROFILE}">{translate key="Profile"}</a>
                             <a class="dropdown-item" href="{$Path}{Pages::PASSWORD}">{translate key="ChangePassword"}</a>

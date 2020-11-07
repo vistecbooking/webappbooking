@@ -301,7 +301,7 @@ class SmartyPage extends Smarty
             $alt = $this->Resources->GetString($altKey);
         }
 
-        return "<img src=\"$imgPath\" title=\"$alt\" alt=\"$alt\"  $attributes />";
+        return "<img src=\"$imgPath\" title=\"$alt\" alt=\"$alt\" width=\"$width\" height=\"$height\" $attributes />";
     }
 
     public function DisplayControl($params, &$smarty)
