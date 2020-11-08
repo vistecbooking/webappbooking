@@ -513,8 +513,10 @@ function onBookingClick(url, resource_id){
 	<div id="page-schedule">
 
 	{if $ShowResourceWarning}
-		<div class="alert alert-warning no-resource-warning"><span class="fa fa-warning"></span> {translate key=NoResources} <a
-					href="admin/manage_resources.php">{translate key=AddResource}</a></div>
+		<div class="alert alert-warning no-resource-warning">
+			<span class="fa fa-warning"></span> {translate key=NoResources}
+			<a href="admin/manage_resources.php">{translate key=AddResource}</a>
+		</div>
 	{/if}
 
 	{if $IsAccessible}
@@ -581,44 +583,28 @@ function onBookingClick(url, resource_id){
 		<div type="text" id="datepicker" style="display:none;"></div>
 	{/block}
 
-			<script type="text/javascript">
-				$( document ).ready(function() {
-					$(function () {
-						$('[data-toggle="tooltip"]').tooltip();
-					});
-					$('#tooltip').tooltip('show');
+	<script type="text/javascript">
+		$( document ).ready(function() {
+			$(function () {
+				$('[data-toggle="tooltip"]').tooltip();
+			});
+			$('#tooltip').tooltip('show');
 
-					var numTabs = 0;
-				  //alert("Loaded");
-				  	$(".title_str").each(function(){
-				  		numTabs = numTabs+1;
-				  		if(numTabs == 1){
-				  			$(this).css('display','block');
-				  		}
-					});
-					//alert(numTabs);
-				});
+			var numTabs = 0;
+			//alert("Loaded");
+				$(".title_str").each(function(){
+					numTabs = numTabs+1;
+					if(numTabs == 1){
+						$(this).css('display','block');
+					}
+			});
+			//alert(numTabs);
+		});
 
-				document.getElementById("tooltip").onclick = function () {
-					$('#tooltip').tooltip('toggle');
-				};
-			</script>
-	{block name="legend"}
-		<div class="hidden-xs row-fluid col-sm-12 schedule-legend">
-			<div class="center">
-				<div class="legend reservable">{translate key=Reservable}</div>
-				<div class="legend unreservable">{translate key=Unreservable}</div>
-				<div class="legend reserved">{translate key=Reserved}</div>
-				{if $LoggedIn}
-				<div class="legend reserved mine">{translate key=MyReservation}</div>
-				<div class="legend reserved participating">{translate key=Participant}</div>
-				{/if}
-				<div class="legend reserved pending">{translate key=Pending}</div>
-				<div class="legend pasttime">{translate key=Past}</div>
-				<div class="legend restricted">{translate key=Restricted}</div>
-			</div>
-		</div>
-	{/block}
+		document.getElementById("tooltip").onclick = function () {
+			$('#tooltip').tooltip('toggle');
+		};
+	</script>
 
 	<div class="row-fluid">
 		<div id="reservations" class="col-md-12 col-sm-12">
@@ -694,6 +680,23 @@ function onBookingClick(url, resource_id){
 			{/if}
 		</div>
 	</div>
+
+	{block name="legend"}
+		<div class="hidden-xs row-fluid col-sm-12 schedule-legend">
+			<div class="center">
+				<div class="legend reservable">{translate key=Reservable}</div>
+				<div class="legend unreservable">{translate key=Unreservable}</div>
+				<div class="legend reserved">{translate key=Reserved}</div>
+				{if $LoggedIn}
+				<div class="legend reserved mine">{translate key=MyReservation}</div>
+				<div class="legend reserved participating">{translate key=Participant}</div>
+				{/if}
+				<div class="legend reserved pending">{translate key=Pending}</div>
+				<div class="legend pasttime">{translate key=Past}</div>
+				<div class="legend restricted">{translate key=Restricted}</div>
+			</div>
+		</div>
+	{/block}
 
 	<div class="clearfix">&nbsp;</div>
 	<input type="hidden" value="{$ScheduleId}" id="scheduleId"/>
