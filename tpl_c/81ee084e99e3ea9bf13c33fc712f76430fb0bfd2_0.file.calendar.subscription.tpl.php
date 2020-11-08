@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-11-07 22:12:18
+/* Smarty version 3.1.30, created on 2020-11-08 17:03:15
   from "/var/www/html/booking/tpl/Calendar/calendar.subscription.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5fa6b952c806e4_52980919',
+  'unifunc' => 'content_5fa7c2634fe453_22598779',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5fa6b952c806e4_52980919 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fa7c2634fe453_22598779 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div id="calendarSubscription" class="calendar-subscription">
     <?php if ($_smarty_tpl->tpl_vars['IsSubscriptionAllowed']->value && $_smarty_tpl->tpl_vars['IsSubscriptionEnabled']->value) {?>

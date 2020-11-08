@@ -110,6 +110,7 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
                 src="https://cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.1/inputs-ext/wysihtml5/wysihtml5.js"></script>
         {jsfile src="js/wysihtml5/bootstrap3-wysihtml5.all.min.js"}
     {/if}
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
     {*
         {/if}
@@ -309,7 +310,7 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
             <ul class="navbar-nav">
                 {if $LoggedIn}
                     <li class="nav-item dropdown" id="navMyAccountDropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                        <a href="#" class="nav-link dropdown-toggle p-0" data-toggle="dropdown">
                             {html_image src="person.png" class="img-fluid rounded-circle" alt="{translate key="MyAccount"}" style="height:40px"}
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">

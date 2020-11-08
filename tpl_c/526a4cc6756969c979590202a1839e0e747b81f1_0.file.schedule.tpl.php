@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-11-07 20:29:03
+/* Smarty version 3.1.30, created on 2020-11-08 17:17:10
   from "/var/www/html/booking/tpl/Schedule/schedule.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5fa6a11f7d8271_31752044',
+  'unifunc' => 'content_5fa7c5a694a248_83170667',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '526a4cc6756969c979590202a1839e0e747b81f1' => 
     array (
       0 => '/var/www/html/booking/tpl/Schedule/schedule.tpl',
-      1 => 1600849228,
+      1 => 1604830618,
       2 => 'file',
     ),
   ),
@@ -22,61 +22,61 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:globalfooter.tpl' => 1,
   ),
 ),false)) {
-function content_5fa6a11f7d8271_31752044 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fa7c5a694a248_83170667 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->ext->_tplFunction->registerTplFunctions($_smarty_tpl, array (
   'displayGeneralReserved' => 
   array (
     'compiled_filepath' => '/var/www/html/booking/tpl_c/526a4cc6756969c979590202a1839e0e747b81f1_0.file.schedule.tpl.php',
     'uid' => '526a4cc6756969c979590202a1839e0e747b81f1',
-    'call_name' => 'smarty_template_function_displayGeneralReserved_620784005fa6a11f020f00_87875585',
+    'call_name' => 'smarty_template_function_displayGeneralReserved_2346181405fa7c5a5a57ad8_16496762',
   ),
   'displayMyReserved' => 
   array (
     'compiled_filepath' => '/var/www/html/booking/tpl_c/526a4cc6756969c979590202a1839e0e747b81f1_0.file.schedule.tpl.php',
     'uid' => '526a4cc6756969c979590202a1839e0e747b81f1',
-    'call_name' => 'smarty_template_function_displayMyReserved_620784005fa6a11f020f00_87875585',
+    'call_name' => 'smarty_template_function_displayMyReserved_2346181405fa7c5a5a57ad8_16496762',
   ),
   'displayMyParticipating' => 
   array (
     'compiled_filepath' => '/var/www/html/booking/tpl_c/526a4cc6756969c979590202a1839e0e747b81f1_0.file.schedule.tpl.php',
     'uid' => '526a4cc6756969c979590202a1839e0e747b81f1',
-    'call_name' => 'smarty_template_function_displayMyParticipating_620784005fa6a11f020f00_87875585',
+    'call_name' => 'smarty_template_function_displayMyParticipating_2346181405fa7c5a5a57ad8_16496762',
   ),
   'displayReserved' => 
   array (
     'compiled_filepath' => '/var/www/html/booking/tpl_c/526a4cc6756969c979590202a1839e0e747b81f1_0.file.schedule.tpl.php',
     'uid' => '526a4cc6756969c979590202a1839e0e747b81f1',
-    'call_name' => 'smarty_template_function_displayReserved_620784005fa6a11f020f00_87875585',
+    'call_name' => 'smarty_template_function_displayReserved_2346181405fa7c5a5a57ad8_16496762',
   ),
   'displayPastTime' => 
   array (
     'compiled_filepath' => '/var/www/html/booking/tpl_c/526a4cc6756969c979590202a1839e0e747b81f1_0.file.schedule.tpl.php',
     'uid' => '526a4cc6756969c979590202a1839e0e747b81f1',
-    'call_name' => 'smarty_template_function_displayPastTime_620784005fa6a11f020f00_87875585',
+    'call_name' => 'smarty_template_function_displayPastTime_2346181405fa7c5a5a57ad8_16496762',
   ),
   'displayReservable' => 
   array (
     'compiled_filepath' => '/var/www/html/booking/tpl_c/526a4cc6756969c979590202a1839e0e747b81f1_0.file.schedule.tpl.php',
     'uid' => '526a4cc6756969c979590202a1839e0e747b81f1',
-    'call_name' => 'smarty_template_function_displayReservable_620784005fa6a11f020f00_87875585',
+    'call_name' => 'smarty_template_function_displayReservable_2346181405fa7c5a5a57ad8_16496762',
   ),
   'displayRestricted' => 
   array (
     'compiled_filepath' => '/var/www/html/booking/tpl_c/526a4cc6756969c979590202a1839e0e747b81f1_0.file.schedule.tpl.php',
     'uid' => '526a4cc6756969c979590202a1839e0e747b81f1',
-    'call_name' => 'smarty_template_function_displayRestricted_620784005fa6a11f020f00_87875585',
+    'call_name' => 'smarty_template_function_displayRestricted_2346181405fa7c5a5a57ad8_16496762',
   ),
   'displayUnreservable' => 
   array (
     'compiled_filepath' => '/var/www/html/booking/tpl_c/526a4cc6756969c979590202a1839e0e747b81f1_0.file.schedule.tpl.php',
     'uid' => '526a4cc6756969c979590202a1839e0e747b81f1',
-    'call_name' => 'smarty_template_function_displayUnreservable_620784005fa6a11f020f00_87875585',
+    'call_name' => 'smarty_template_function_displayUnreservable_2346181405fa7c5a5a57ad8_16496762',
   ),
   'displaySlot' => 
   array (
     'compiled_filepath' => '/var/www/html/booking/tpl_c/526a4cc6756969c979590202a1839e0e747b81f1_0.file.schedule.tpl.php',
     'uid' => '526a4cc6756969c979590202a1839e0e747b81f1',
-    'call_name' => 'smarty_template_function_displaySlot_620784005fa6a11f020f00_87875585',
+    'call_name' => 'smarty_template_function_displaySlot_2346181405fa7c5a5a57ad8_16496762',
   ),
 ));
 $_smarty_tpl->_loadInheritance();
@@ -107,19 +107,21 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_3715703805fa6a11f496bd1_41973783', "header");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_20831743445fa7c5a64305f3_37901953', "header");
 ?>
 
+
+
+
 <?php if (!isset($_smarty_tpl->tpl_vars['rid']->value)) {?>
-				
+
 <div id="globalError" class="error no-show"></div>
-<div class="panel panel-default admin-panel" id="list-resources-panel">
 <?php echo '<script'; ?>
 >
-$(document).ready(function(){	
+$(document).ready(function(){
 	initResources();
 
-	$( "#search_btn" ).click(function() {
+	$("#s").change(function() {
 		var s = $("#s").val()
 		var hostname = window.location.hostname;
 		var path = window.location.pathname;
@@ -145,14 +147,14 @@ $(document).ready(function(){
 				window.location.replace("http://"+hostname+"/Web/schedule.php"); // online
 			}
 		}
-	});
+	})
 
 	$( "#category" ).change(function() {
-		var str = "";	 
+		var str = "";
 		if($('select[name=category]').val() != ""){
 			str = '?bs='+$('select[name=category]').val();
 		}else{
-			str = "";	
+			str = "";
 		}
 
 		var hostname = window.location.hostname;
@@ -191,7 +193,11 @@ function onBookingClick(url, resource_id){
 			window.location.replace(url+"&mode="+$("#mode-24").val());
 		}
 		else{
-			$('#dialogSelectMode').modal();
+			Swal.fire({
+				icon: 'info',
+				title: 'Infufficient Information',
+				text: 'Please select mode to book for this equipment.'
+			})
 			return;
 		}
 	}
@@ -201,138 +207,349 @@ function onBookingClick(url, resource_id){
 }
 <?php echo '</script'; ?>
 >
-		<div class="panel-heading" style="padding-bottom: 45px;"><div style="float: left;">Instrument filter by 
-			<select id="category" name="category" class="inline-block">
-				<option value=""><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'AllResourceTypes'),$_smarty_tpl);?>
+
+<div class="container-fluid">
+	<div class="row mx-0">
+		<div class="col-lg-3 mb-3 d-none d-lg-block">
+			<aside class="aside">
+				<h2>Find an equipment</h2>
+				<div class="form-group">
+					<label for="Search" style="font-weight:bold">Search</label>
+					<input
+						type="text"
+						id="s"
+						value="<?php echo $_smarty_tpl->tpl_vars['get_s']->value;?>
+"
+						class="form-control ui-autocomplete-input"
+						placeholder="Searching for equipment"
+						autocomplete="off">
+				</div>
+				<div class="form-group">
+					<label for="category" style="font-weight:bold">Categories</label>
+					<select id="category" name="category" class="form-control">
+						<option value=""><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'AllResourceTypes'),$_smarty_tpl);?>
 </option>
-				<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['object_html_options'][0][0]->ObjectHtmlOptions(array('options'=>$_smarty_tpl->tpl_vars['ResourceTypes']->value,'key'=>'Id','label'=>"Name",'selected'=>$_smarty_tpl->tpl_vars['get_bs']->value),$_smarty_tpl);?>
+						<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['object_html_options'][0][0]->ObjectHtmlOptions(array('options'=>$_smarty_tpl->tpl_vars['ResourceTypes']->value,'key'=>'Id','label'=>"Name",'selected'=>$_smarty_tpl->tpl_vars['get_bs']->value),$_smarty_tpl);?>
 
-			</select>
+					</select>
+				</div>
+				<!--
+				<div class="form-group">
+					<label for="category" style="font-weight:bold">Categories</label>
+					<div class="form-check">
+						<input
+							type="checkbox"
+							class="form-check-input"
+							id="catg_check1" /><label for="catg_check1"
+							class="form-check-label">Equipment's group 1</label>
+					</div>
+					<div class="form-check">
+						<input
+							type="checkbox"
+							class="form-check-input"
+							id="catg_check2" /><label for="catg_check2"
+							class="form-check-label">Equipment's group 2</label>
+					</div>
+					<div class="form-check">
+						<input
+							type="checkbox"
+							class="form-check-input"
+							id="catg_check3" /><label for="catg_check3"
+							class="form-check-label">Equipment's group 3</label>
+					</div>
+					<div class="form-check">
+						<input
+							type="checkbox"
+							class="form-check-input"
+							id="catg_check4" /><label for="catg_check4"
+							class="form-check-label">Equipment's group 4</label>
+					</div>
+					<div class="form-check">
+						<input
+							type="checkbox"
+							class="form-check-input"
+							id="catg_check5" /><label for="catg_check5"
+							class="form-check-label">Equipment's group 5</label>
+					</div>
+					<div class="form-check">
+						<input
+							type="checkbox"
+							class="form-check-input"
+							id="catg_check6" /><label for="catg_check6"
+							class="form-check-label">Equipment's group 6</label>
+					</div>
+					<div class="form-check">
+						<input
+							type="checkbox"
+							class="form-check-input"
+							id="catg_check7" /><label for="catg_check7"
+							class="form-check-label">Equipment's group 7</label>
+					</div>
+				</div>
+				<div class="form-group">
+					<label style="font-weight:bold">Type</label>
+					<div class="form-check">
+						<input
+							type="checkbox"
+							class="form-check-input"
+							id="type_book" /><label for="type_book"
+							class="form-check-label">Book</label>
+					</div>
+					<div class="form-check">
+						<input
+							type="checkbox"
+							class="form-check-input"
+							id="type_queue" /><label for="type_queue"
+							class="form-check-label">Queue</label>
+					</div>
+				</div>
+				<div class="form-group">
+					<label style="font-weight:bold">Day to use</label>
+					<div class="form-check">
+						<input
+							type="checkbox"
+							class="form-check-input"
+							id="dtu_today" /><label for="dtu_today"
+							class="form-check-label">Today</label>
+					</div>
+					<div class="form-check">
+						<input
+							type="checkbox"
+							class="form-check-input"
+							id="dtu_tomorrow" /><label for="dtu_tomorrow"
+							class="form-check-label">Tomorrow</label>
+					</div>
+					<div class="form-check">
+						<input
+							type="checkbox"
+							class="form-check-input"
+							id="dtu_this_week" /><label for="dtu_this_week"
+							class="form-check-label">This week</label>
+					</div>
+					<div class="form-check">
+						<input
+							type="checkbox"
+							class="form-check-input"
+							id="dtu_custom_date_range" /><label for="dtu_custom_date_range"
+							class="form-check-label">Custom date range</label>
+					</div>
+				</div>
+				-->
+			</aside>
 		</div>
-		
-			<div class="participationText" style="float:right;">
-				<span class="hidden-xs">Search</span>
-				<span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span><input type="text" id="s" value="<?php echo $_smarty_tpl->tpl_vars['get_s']->value;?>
-" class="form-control inline-block user-search ui-autocomplete-input" placeholder="search" autocomplete="off">
-				<button type="button" class="btn btn-success save create btnCreate" id="search_btn">
-								<span class="glyphicon glyphicon-search"></span>
-								Search
-							</button>
+		<main class="col-lg-9">
+			<div class="row">
+				<div class="col">
+					<h1 class="text-center">Equipment</h1>
+				</div>
+				<div class="col-auto d-lg-none">
+					<button type="button" class="btn btn-light" data-toggle="modal"
+						data-target="#filterModal">
+						<span class="material-icons">filter_alt</span>
+					</button>
+				</div>
 			</div>
-		</div>
-		<div class="panel-body no-padding" id="resourceList">
-
-		<div class="row row-eq-height" style="margin-right: 0px; margin-left: 0px; display: flex;
-  flex-wrap: wrap;">
 			<?php $_smarty_tpl->_assignInScope('i', 0);
 ?>
 			<?php if (count($_smarty_tpl->tpl_vars['resources']->value) > 0) {?>
-			<?php
+			<div class="row row-cols-2 row-cols-lg-3 row-cols-xl-4">
+				<?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['resources']->value, 'resource');
 if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['resource']->value) {
 ?>
-			
-				<?php if (($_smarty_tpl->tpl_vars['i']->value%3) == 0&$_smarty_tpl->tpl_vars['i']->value != 0) {?>
-						</div><div class="row row-eq-height" style="margin-right: 0px; margin-left: 0px; display: flex;
-	  flex-wrap: wrap;">
-				<?php }?>
-			<?php $_smarty_tpl->_assignInScope('i', $_smarty_tpl->tpl_vars['i']->value+1);
+					<?php $_smarty_tpl->_assignInScope('i', $_smarty_tpl->tpl_vars['i']->value+1);
 ?>
-					<div id="main" class="container-fluid col-xs-12 col-sm-4" style="padding-top: 20px; border: 1px solid #dcdcdc;">
-						<div  class="container-fluid col-xs-12 col-sm-12">
-							<center>
+					<div class="col">
+						<div class="eq-card">
+							<img class="card-image" src="../Web/uploads/images/<?php echo $_smarty_tpl->tpl_vars['resource']->value['image_name'];?>
+" alt="<?php echo $_smarty_tpl->tpl_vars['resource']->value['name'];?>
+" resourceId="<?php echo $_smarty_tpl->tpl_vars['resource']->value['resource_id'];?>
+"/>
+							<div class="card-tag">
 								<?php if ($_smarty_tpl->tpl_vars['resource']->value['status_id'] == 1) {?>
-									<p style="font-size: 26px">
-										<b><?php echo $_smarty_tpl->tpl_vars['resource']->value['name'];?>
-</b> <sup style="vertical-align: super !important"><span class="label label-success">Available</span></sup>
-									</p>
+									<div class="badge badge-danger">Queue</div>
+									<div class="badge badge-primary">Book</div>
 								<?php } else { ?>
-									<p style="font-size: 26px">
-										<?php echo $_smarty_tpl->tpl_vars['resource']->value['name'];?>
- <sup style="vertical-align: super !important"><span class="label label-danger">Unavailable</span></sup>
-									</p>
+									<div class="badge badge-secondary">Unavailable</div>
 								<?php }?>
-							</center>
-						</div>
-						<div class="container-fluid col-xs-12 col-sm-12">
-							<br />
-							<center>
-								<img src="../Web/uploads/images/<?php echo $_smarty_tpl->tpl_vars['resource']->value['image_name'];?>
-" alt="Resource Image" class="image resourceNameSelector" style="width: auto;max-height: 204px;" resourceId="<?php echo $_smarty_tpl->tpl_vars['resource']->value['resource_id'];?>
-">
-							</center>  
-						</div>
-						<div  class="container-fluid col-xs-12 col-sm-12">
-							<center>
+							</div>
+							<div class="card-body">
+								<div class="card-title"><?php echo $_smarty_tpl->tpl_vars['resource']->value['name'];?>
+</div>
+								<!-- <p>In queue: 8</p> -->
 								<?php if ($_smarty_tpl->tpl_vars['resource']->value['status_id'] == 1) {?>
 									<?php if ($_smarty_tpl->tpl_vars['resource']->value['resource_id'] == 2) {?>
-										<br />
-										<div class="row col-sm-8 col-sm-offset-2">
-											<select name="mode-2" id="mode-2" class="form-control">
-												<option value="" selected="">-- Select Mode --</option>
-												<option value="Powder mode">Powder mode</option>
-												<option value="Modified mode">Modified mode</option>
-											</select>
-										</div>
-										<br />
+										<select name="mode-2" id="mode-2" class="form-control mb-3">
+											<option value="" selected="">-- Select Mode --</option>
+											<option value="Powder mode">Powder mode</option>
+											<option value="Modified mode">Modified mode</option>
+										</select>
 									<?php } elseif ($_smarty_tpl->tpl_vars['resource']->value['resource_id'] == 24) {?>
-										<br />
-										<div class="row col-sm-8 col-sm-offset-2">
-											<select name="mode-24" id="mode-24" class="form-control">
-												<option value="" selected="">-- Select Mode --</option>
-												<option value="LC coupled with QTOF-MS/MS">LC coupled with QTOF-MS/MS</option>
-												<option value="ES-QTOF mode">ES-QTOF mode</option>
-											</select>
-										</div>
-										<br />
+										<select name="mode-24" id="mode-24" class="form-control mb-3">
+											<option value="" selected="">-- Select Mode --</option>
+											<option value="LC coupled with QTOF-MS/MS">LC coupled with QTOF-MS/MS</option>
+											<option value="ES-QTOF mode">ES-QTOF mode</option>
+										</select>
 									<?php }?>
-									<br />
-									<p style="padding-top:  10px; font-size: 20px"><a style="cursor: pointer" onclick="onBookingClick('../Web/schedule.php?id=<?php echo $_smarty_tpl->tpl_vars['resource']->value['resource_id'];?>
+									<a class="btn btn-block btn-success" onclick="onBookingClick('../Web/schedule.php?id=<?php echo $_smarty_tpl->tpl_vars['resource']->value['resource_id'];?>
 &sid=<?php echo $_smarty_tpl->tpl_vars['resource']->value['schedule_id'];?>
 ', <?php echo $_smarty_tpl->tpl_vars['resource']->value['resource_id'];?>
-)" >Click to booking</a></p>
+)">Reserve</a>
 								<?php } else { ?>
-									<br />
-									<p style="padding-top:  10px; font-size: 20px"><a href="../Web/schedule.php?id=<?php echo $_smarty_tpl->tpl_vars['resource']->value['resource_id'];?>
+									<a class="btn btn-block btn-secondary" href="../Web/schedule.php?id=<?php echo $_smarty_tpl->tpl_vars['resource']->value['resource_id'];?>
 &sid=<?php echo $_smarty_tpl->tpl_vars['resource']->value['schedule_id'];?>
-&unavailable=true">Click to view</a></p>
+&unavailable=true">View Information</a>
 								<?php }?>
-							</center>
+							</div>
 						</div>
-					</div><!-- close main-->	
-					<?php if ($_smarty_tpl->tpl_vars['i']->value >= count($_smarty_tpl->tpl_vars['resources']->value)) {?>
-					<?php $_smarty_tpl->_assignInScope('j', 3-($_smarty_tpl->tpl_vars['i']->value%3));
+					</div>
+				<?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 ?>
-						<?php if ($_smarty_tpl->tpl_vars['j']->value == 1) {?>
-							<div id="main" class="container-fluid col-xs-12 col-sm-4" style="padding-top: 40px;    border: 1px solid #dcdcdc;">
-							
-							</div>
-						<?php }?>
-						<?php if ($_smarty_tpl->tpl_vars['j']->value == 2) {?>
-							<div id="main" class="container-fluid col-xs-12 col-sm-4" style="padding-top: 40px;    border: 1px solid #dcdcdc;">
-							
-							</div>
-							<div id="main" class="container-fluid col-xs-12 col-sm-4" style="padding-top: 40px;    border: 1px solid #dcdcdc;">
-							
-							</div>
-						<?php }?>
-					<?php }?>
+
+				<!--
+				<div class="col">
+					<div class="eq-card">
+						<img class="card-image" src="../assets/eq.jpg" alt="Equipment" />
+						<div class="card-tag">
+							<div class="badge badge-danger">Queue</div>
+							<div class="badge badge-primary">Book</div>
+						</div>
+						<div class="card-body">
+							<div class="card-title">ATR-FTIR</div>
+							<p>In queue: 8</p>
+							<button type="button" class="btn btn-block btn-success"
+								data-toggle="modal" data-target="#queue-detail">
+								Reserve
+							</button>
+						</div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="eq-card">
+						<img class="card-image" src="../assets/eq.jpg" alt="Equipment" />
+						<div class="card-tag">
+							<div class="badge badge-danger">Queue</div>
+							<div class="badge badge-primary">Book</div>
+						</div>
+						<div class="card-body">
+							<div class="card-title">ATR-FTIR</div>
+							<p>In queue: 8</p>
+							<button type="button" class="btn btn-block btn-success">
+								Reserve
+							</button>
+						</div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="eq-card">
+						<img class="card-image" src="../assets/eq.jpg" alt="Equipment" />
+						<div class="card-tag">
+							<div class="badge badge-danger">Queue</div>
+						</div>
+						<div class="card-body">
+							<div class="card-title">ATR-FTIR</div>
+							<p>In queue: 8</p>
+							<button type="button" class="btn btn-block btn-success">
+								Reserve
+							</button>
+						</div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="eq-card">
+						<img class="card-image" src="../assets/eq.jpg" alt="Equipment" />
+						<div class="card-tag">
+							<div class="badge badge-primary">Book</div>
+						</div>
+						<div class="card-body">
+							<div class="card-title">ATR-FTIR</div>
+							<p>In queue: 8</p>
+							<button type="button" class="btn btn-block btn-success">
+								Reserve
+							</button>
+						</div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="eq-card">
+						<img class="card-image" src="../assets/eq.jpg" alt="Equipment" />
+						<div class="card-tag">
+							<div class="badge badge-secondary">Blackout</div>
+							<div class="badge badge-primary">Book</div>
+						</div>
+						<div class="card-body">
+							<div class="card-title">ATR-FTIR</div>
+							<p>Blackout reason: ...</p>
+							<button type="button" class="btn btn-block btn-success">
+								Reserve
+							</button>
+						</div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="eq-card eq-blackout">
+						<img class="card-image" src="../assets/eq.jpg" alt="Equipment" />
+						<div class="card-tag">
+							<div class="badge badge-secondary">Unavailable</div>
+						</div>
+						<div class="card-body">
+							<div class="card-title">ATR-FTIR</div>
+							<p>Unavailable</p>
+						</div>
+					</div>
+				</div>
+				-->
+			</div>
+			<?php } else { ?>
+				<div class="container h-100">
+					<div class="row h-100 justify-content-center align-items-center">
+						<center><h1 style=" margin: 50px 0px; color: #9c9c9c;"><b>Instruments not found.</b></h1></center>
+					</div>
+				</div>
+			<?php }?>
+		</main>
+	</div>
+	<nav aria-label="Page navigation example">
+		<ul class="pagination justify-content-center">
+			<li class="page-item">
+				<a class="page-link <?php if (count($_smarty_tpl->tpl_vars['pagination']->value) == 0) {?> isDisabled<?php }?>" <?php if (count($_smarty_tpl->tpl_vars['pagination']->value) != 0) {?> href="/Web/schedule.php?page=1"<?php }?>>Previous</a>
+			</li>
+			<li class="page-item active">
+				<a class="page-link">1</a>
+			</li>
+			<?php $_smarty_tpl->_assignInScope('i', 0);
+?>
+			<?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['pagination']->value, 'page');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['page']->value) {
+?>
+				<?php $_smarty_tpl->_assignInScope('i', $_smarty_tpl->tpl_vars['i']->value+1);
+?>
+				<li class="<?php echo $_smarty_tpl->tpl_vars['page']->value['class'];?>
+ page-item">
+					<a class="page-link" href="/Web/schedule.php?page=<?php echo $_smarty_tpl->tpl_vars['page']->value['count'];?>
+"><?php echo $_smarty_tpl->tpl_vars['page']->value['count'];?>
+</a>
+				</li>
 			<?php
 }
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 ?>
 
-			<?php } else { ?>
-				<div class="container h-100">
-				  <div class="row h-100 justify-content-center align-items-center">
-				    <center><h1 style=" margin: 50px 0px; color: #9c9c9c;"><b>Instruments not found.</b></h1></center> 
-				  </div>  
-				</div>
-			<?php }?>
-		</div>
-</div></div>
+			<li class="page-item">
+				<a class="page-link <?php if (count($_smarty_tpl->tpl_vars['pagination']->value) == 0) {?> isDisabled<?php }?>" <?php if (count($_smarty_tpl->tpl_vars['pagination']->value) != 0) {?> href="/Web/schedule.php?page=<?php echo $_smarty_tpl->tpl_vars['nextPage']->value;?>
+"<?php }?>>Next</a>
+			</li>
+		</ul>
+	</nav>
+</div>
+
 <style type="text/css">
 	.isDisabled {
   color: currentColor;
@@ -341,52 +558,13 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
   text-decoration: none;
 }
 </style>
-	<center>
-		<ul class="pagination" style="margin-top: 0px;">
-			<li><a class="page <?php if (count($_smarty_tpl->tpl_vars['pagination']->value) == 0) {?> isDisabled<?php }?>" <?php if (count($_smarty_tpl->tpl_vars['pagination']->value) != 0) {?> href="/Web/schedule.php?page=1"<?php }?>>«</a></li>
-			<li class="active"><a  >1</a></li>
-			<?php $_smarty_tpl->_assignInScope('i', 0);
-?>
-				<?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['pagination']->value, 'page');
-if ($_from !== null) {
-foreach ($_from as $_smarty_tpl->tpl_vars['page']->value) {
-?>
-				<?php $_smarty_tpl->_assignInScope('i', $_smarty_tpl->tpl_vars['i']->value+1);
-?>
-				<li class="<?php echo $_smarty_tpl->tpl_vars['page']->value['class'];?>
-"><a class="page" href="/Web/schedule.php?page=<?php echo $_smarty_tpl->tpl_vars['page']->value['count'];?>
-"><?php echo $_smarty_tpl->tpl_vars['page']->value['count'];?>
-</a></li>
-				<?php
-}
-}
-$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
-?>
 
-			<li><a class="page <?php if (count($_smarty_tpl->tpl_vars['pagination']->value) == 0) {?> isDisabled<?php }?>" <?php if (count($_smarty_tpl->tpl_vars['pagination']->value) != 0) {?> href="/Web/schedule.php?page=<?php echo $_smarty_tpl->tpl_vars['nextPage']->value;?>
-"<?php }?>>»</a></li>
-		</ul>
-	</center>
-</div></div></div></div>
 
-<div class="modal fade" id="dialogSelectMode" tabindex="-1" role="dialog" aria-labelledby="dialogSelectModeLabel"
-		 aria-hidden="true">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<div class="modal-body">
-				<h3>Please Select Mode.</h3>
-				<br />
-				<center>
-					<button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
-				</center>
-				<br />
-			</div>
-		</div>
-	</div>
-</div>
+
+
 
 <?php } else { ?>
+
 	<div id="page-schedule">
 
 	<?php if ($_smarty_tpl->tpl_vars['ShowResourceWarning']->value) {?>
@@ -404,7 +582,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 	</div>
 
 	<?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_10913240575fa6a11f6452e3_20618839', "schedule_control");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1874082165fa7c5a66aa9d6_14317686', "schedule_control");
 ?>
 
 
@@ -433,7 +611,7 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_10913240575fa6a11f
 			<?php echo '</script'; ?>
 >
 	<?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_20929779635fa6a11f659c67_39909849', "legend");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_743339935fa7c5a66cbde6_79888633', "legend");
 ?>
 
 
@@ -446,7 +624,7 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_20929779635fa6a11f
 							class="glyphicon glyphicon-chevron-right"></i></a>
 			</div>
 			<?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_13965968485fa6a11f71ec03_03254147', "reservations");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_3918222865fa7c5a6809718_33058430', "reservations");
 ?>
 
 			<?php } else { ?>
@@ -465,7 +643,7 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_13965968485fa6a11f
 		<?php echo $_smarty_tpl->smarty->ext->_capture->getBuffer($_smarty_tpl, 'date_navigation');?>
 
 	</div>
-	
+
 </div>
 
 <form id="moveReservationForm">
@@ -498,17 +676,17 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_13965968485fa6a11f
 </div>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_19682994875fa6a11f74cdd2_37969184', "scripts-before");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_13893713255fa7c5a68571a3_80088975', "scripts-before");
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_19253755355fa6a11f79e731_27243776', "scripts-common");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_20692593255fa7c5a68e8df0_16013399', "scripts-common");
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_4679165855fa6a11f7a3d22_10720350', "scripts-after");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_17025270285fa7c5a68f3455_04182199', "scripts-after");
 ?>
 
 
@@ -540,10 +718,10 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_4679165855fa6a11f7
 			$( ".reservations td").removeAttr("data-href");
 			$( ".reservations td").removeAttr("data-start");
 			$( ".reservations td").removeAttr("data-end");
-			
+
 			//$( ".reservations td").attr("draggable");
 			$( ".reservations td").attr("resid");
-		});	
+		});
 	<?php echo '</script'; ?>
 >
 <?php }?>
@@ -555,9 +733,9 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_4679165855fa6a11f7
 		z-index: 1040 !important;
 	}
 </style><?php }
-/* smarty_template_function_displayGeneralReserved_620784005fa6a11f020f00_87875585 */
-if (!function_exists('smarty_template_function_displayGeneralReserved_620784005fa6a11f020f00_87875585')) {
-function smarty_template_function_displayGeneralReserved_620784005fa6a11f020f00_87875585($_smarty_tpl,$params) {
+/* smarty_template_function_displayGeneralReserved_2346181405fa7c5a5a57ad8_16496762 */
+if (!function_exists('smarty_template_function_displayGeneralReserved_2346181405fa7c5a5a57ad8_16496762')) {
+function smarty_template_function_displayGeneralReserved_2346181405fa7c5a5a57ad8_16496762($_smarty_tpl,$params) {
 foreach ($params as $key => $value) {
 $_smarty_tpl->tpl_vars[$key] = new Smarty_Variable($value, $_smarty_tpl->isRenderingCache);
 }?>
@@ -584,10 +762,10 @@ span="<?php echo $_smarty_tpl->tpl_vars['Slot']->value->PeriodSpan();?>
 </td>
 <?php
 }}
-/*/ smarty_template_function_displayGeneralReserved_620784005fa6a11f020f00_87875585 */
-/* smarty_template_function_displayMyReserved_620784005fa6a11f020f00_87875585 */
-if (!function_exists('smarty_template_function_displayMyReserved_620784005fa6a11f020f00_87875585')) {
-function smarty_template_function_displayMyReserved_620784005fa6a11f020f00_87875585($_smarty_tpl,$params) {
+/*/ smarty_template_function_displayGeneralReserved_2346181405fa7c5a5a57ad8_16496762 */
+/* smarty_template_function_displayMyReserved_2346181405fa7c5a5a57ad8_16496762 */
+if (!function_exists('smarty_template_function_displayMyReserved_2346181405fa7c5a5a57ad8_16496762')) {
+function smarty_template_function_displayMyReserved_2346181405fa7c5a5a57ad8_16496762($_smarty_tpl,$params) {
 foreach ($params as $key => $value) {
 $_smarty_tpl->tpl_vars[$key] = new Smarty_Variable($value, $_smarty_tpl->isRenderingCache);
 }?>
@@ -595,10 +773,10 @@ $_smarty_tpl->tpl_vars[$key] = new Smarty_Variable($value, $_smarty_tpl->isRende
 
 <?php
 }}
-/*/ smarty_template_function_displayMyReserved_620784005fa6a11f020f00_87875585 */
-/* smarty_template_function_displayMyParticipating_620784005fa6a11f020f00_87875585 */
-if (!function_exists('smarty_template_function_displayMyParticipating_620784005fa6a11f020f00_87875585')) {
-function smarty_template_function_displayMyParticipating_620784005fa6a11f020f00_87875585($_smarty_tpl,$params) {
+/*/ smarty_template_function_displayMyReserved_2346181405fa7c5a5a57ad8_16496762 */
+/* smarty_template_function_displayMyParticipating_2346181405fa7c5a5a57ad8_16496762 */
+if (!function_exists('smarty_template_function_displayMyParticipating_2346181405fa7c5a5a57ad8_16496762')) {
+function smarty_template_function_displayMyParticipating_2346181405fa7c5a5a57ad8_16496762($_smarty_tpl,$params) {
 foreach ($params as $key => $value) {
 $_smarty_tpl->tpl_vars[$key] = new Smarty_Variable($value, $_smarty_tpl->isRenderingCache);
 }?>
@@ -606,10 +784,10 @@ $_smarty_tpl->tpl_vars[$key] = new Smarty_Variable($value, $_smarty_tpl->isRende
 
 <?php
 }}
-/*/ smarty_template_function_displayMyParticipating_620784005fa6a11f020f00_87875585 */
-/* smarty_template_function_displayReserved_620784005fa6a11f020f00_87875585 */
-if (!function_exists('smarty_template_function_displayReserved_620784005fa6a11f020f00_87875585')) {
-function smarty_template_function_displayReserved_620784005fa6a11f020f00_87875585($_smarty_tpl,$params) {
+/*/ smarty_template_function_displayMyParticipating_2346181405fa7c5a5a57ad8_16496762 */
+/* smarty_template_function_displayReserved_2346181405fa7c5a5a57ad8_16496762 */
+if (!function_exists('smarty_template_function_displayReserved_2346181405fa7c5a5a57ad8_16496762')) {
+function smarty_template_function_displayReserved_2346181405fa7c5a5a57ad8_16496762($_smarty_tpl,$params) {
 foreach ($params as $key => $value) {
 $_smarty_tpl->tpl_vars[$key] = new Smarty_Variable($value, $_smarty_tpl->isRenderingCache);
 }?>
@@ -617,10 +795,10 @@ $_smarty_tpl->tpl_vars[$key] = new Smarty_Variable($value, $_smarty_tpl->isRende
 
 <?php
 }}
-/*/ smarty_template_function_displayReserved_620784005fa6a11f020f00_87875585 */
-/* smarty_template_function_displayPastTime_620784005fa6a11f020f00_87875585 */
-if (!function_exists('smarty_template_function_displayPastTime_620784005fa6a11f020f00_87875585')) {
-function smarty_template_function_displayPastTime_620784005fa6a11f020f00_87875585($_smarty_tpl,$params) {
+/*/ smarty_template_function_displayReserved_2346181405fa7c5a5a57ad8_16496762 */
+/* smarty_template_function_displayPastTime_2346181405fa7c5a5a57ad8_16496762 */
+if (!function_exists('smarty_template_function_displayPastTime_2346181405fa7c5a5a57ad8_16496762')) {
+function smarty_template_function_displayPastTime_2346181405fa7c5a5a57ad8_16496762($_smarty_tpl,$params) {
 foreach ($params as $key => $value) {
 $_smarty_tpl->tpl_vars[$key] = new Smarty_Variable($value, $_smarty_tpl->isRenderingCache);
 }?>
@@ -635,10 +813,10 @@ span="<?php echo $_smarty_tpl->tpl_vars['Slot']->value->PeriodSpan();?>
 </td>
 <?php
 }}
-/*/ smarty_template_function_displayPastTime_620784005fa6a11f020f00_87875585 */
-/* smarty_template_function_displayReservable_620784005fa6a11f020f00_87875585 */
-if (!function_exists('smarty_template_function_displayReservable_620784005fa6a11f020f00_87875585')) {
-function smarty_template_function_displayReservable_620784005fa6a11f020f00_87875585($_smarty_tpl,$params) {
+/*/ smarty_template_function_displayPastTime_2346181405fa7c5a5a57ad8_16496762 */
+/* smarty_template_function_displayReservable_2346181405fa7c5a5a57ad8_16496762 */
+if (!function_exists('smarty_template_function_displayReservable_2346181405fa7c5a5a57ad8_16496762')) {
+function smarty_template_function_displayReservable_2346181405fa7c5a5a57ad8_16496762($_smarty_tpl,$params) {
 foreach ($params as $key => $value) {
 $_smarty_tpl->tpl_vars[$key] = new Smarty_Variable($value, $_smarty_tpl->isRenderingCache);
 }?>
@@ -654,10 +832,10 @@ span="<?php echo $_smarty_tpl->tpl_vars['Slot']->value->PeriodSpan();?>
 ">&nbsp;</td>
 <?php
 }}
-/*/ smarty_template_function_displayReservable_620784005fa6a11f020f00_87875585 */
-/* smarty_template_function_displayRestricted_620784005fa6a11f020f00_87875585 */
-if (!function_exists('smarty_template_function_displayRestricted_620784005fa6a11f020f00_87875585')) {
-function smarty_template_function_displayRestricted_620784005fa6a11f020f00_87875585($_smarty_tpl,$params) {
+/*/ smarty_template_function_displayReservable_2346181405fa7c5a5a57ad8_16496762 */
+/* smarty_template_function_displayRestricted_2346181405fa7c5a5a57ad8_16496762 */
+if (!function_exists('smarty_template_function_displayRestricted_2346181405fa7c5a5a57ad8_16496762')) {
+function smarty_template_function_displayRestricted_2346181405fa7c5a5a57ad8_16496762($_smarty_tpl,$params) {
 foreach ($params as $key => $value) {
 $_smarty_tpl->tpl_vars[$key] = new Smarty_Variable($value, $_smarty_tpl->isRenderingCache);
 }?>
@@ -666,10 +844,10 @@ span="<?php echo $_smarty_tpl->tpl_vars['Slot']->value->PeriodSpan();?>
 " class="restricted slot">&nbsp;</td>
 <?php
 }}
-/*/ smarty_template_function_displayRestricted_620784005fa6a11f020f00_87875585 */
-/* smarty_template_function_displayUnreservable_620784005fa6a11f020f00_87875585 */
-if (!function_exists('smarty_template_function_displayUnreservable_620784005fa6a11f020f00_87875585')) {
-function smarty_template_function_displayUnreservable_620784005fa6a11f020f00_87875585($_smarty_tpl,$params) {
+/*/ smarty_template_function_displayRestricted_2346181405fa7c5a5a57ad8_16496762 */
+/* smarty_template_function_displayUnreservable_2346181405fa7c5a5a57ad8_16496762 */
+if (!function_exists('smarty_template_function_displayUnreservable_2346181405fa7c5a5a57ad8_16496762')) {
+function smarty_template_function_displayUnreservable_2346181405fa7c5a5a57ad8_16496762($_smarty_tpl,$params) {
 foreach ($params as $key => $value) {
 $_smarty_tpl->tpl_vars[$key] = new Smarty_Variable($value, $_smarty_tpl->isRenderingCache);
 }?>
@@ -680,10 +858,10 @@ span="<?php echo $_smarty_tpl->tpl_vars['Slot']->value->PeriodSpan();?>
 </td>
 <?php
 }}
-/*/ smarty_template_function_displayUnreservable_620784005fa6a11f020f00_87875585 */
-/* smarty_template_function_displaySlot_620784005fa6a11f020f00_87875585 */
-if (!function_exists('smarty_template_function_displaySlot_620784005fa6a11f020f00_87875585')) {
-function smarty_template_function_displaySlot_620784005fa6a11f020f00_87875585($_smarty_tpl,$params) {
+/*/ smarty_template_function_displayUnreservable_2346181405fa7c5a5a57ad8_16496762 */
+/* smarty_template_function_displaySlot_2346181405fa7c5a5a57ad8_16496762 */
+if (!function_exists('smarty_template_function_displaySlot_2346181405fa7c5a5a57ad8_16496762')) {
+function smarty_template_function_displaySlot_2346181405fa7c5a5a57ad8_16496762($_smarty_tpl,$params) {
 foreach ($params as $key => $value) {
 $_smarty_tpl->tpl_vars[$key] = new Smarty_Variable($value, $_smarty_tpl->isRenderingCache);
 }?>
@@ -698,9 +876,9 @@ $_smarty_tpl->tpl_vars[$key] = new Smarty_Variable($value, $_smarty_tpl->isRende
 
 <?php
 }}
-/*/ smarty_template_function_displaySlot_620784005fa6a11f020f00_87875585 */
+/*/ smarty_template_function_displaySlot_2346181405fa7c5a5a57ad8_16496762 */
 /* {block "header"} */
-class Block_3715703805fa6a11f496bd1_41973783 extends Smarty_Internal_Block
+class Block_20831743445fa7c5a64305f3_37901953 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -713,7 +891,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block "header"} */
 /* {block "schedule_control"} */
-class Block_10913240575fa6a11f6452e3_20618839 extends Smarty_Internal_Block
+class Block_1874082165fa7c5a66aa9d6_14317686 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -729,7 +907,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 				<?php echo '</script'; ?>
 >
 				<div style="float: right; right:0">
-					<button type="button" id="tooltip" class="btn btn-info" data-toggle="tooltip" data-placement="left" 
+					<button type="button" id="tooltip" class="btn btn-info" data-toggle="tooltip" data-placement="left"
 						title="How to book an instrument: Click and drag on table as your preferred time.">
 						<i class="fa fa-2 fa-info"></i>
 					</button>
@@ -751,7 +929,7 @@ foreach ($_from as $_smarty_tpl->tpl_vars['resource']->value) {
 							<?php if ($_smarty_tpl->tpl_vars['resource']->value->Id == $_smarty_tpl->tpl_vars['rid']->value) {?>
 								<?php $_smarty_tpl->_assignInScope('resourceNameTitle', $_smarty_tpl->tpl_vars['resource']->value->Name);
 ?>
-							<?php }?>	
+							<?php }?>
 						<?php
 }
 }
@@ -769,7 +947,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
  <?php if (!$_smarty_tpl->tpl_vars['CanViewAdmin']->value) {?> <br /> (Remaining time: <?php echo $_smarty_tpl->tpl_vars['quota_limit_txt']->value;?>
  hrs left) <?php }?> </h1>
 							<?php }?>
-						
+
 					</div>
 					<?php $_smarty_tpl->_assignInScope('TodaysDate', Date::Now());
 ?>
@@ -825,7 +1003,7 @@ echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['html_ima
 }
 /* {/block "schedule_control"} */
 /* {block "legend"} */
-class Block_20929779635fa6a11f659c67_39909849 extends Smarty_Internal_Block
+class Block_743339935fa7c5a66cbde6_79888633 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -857,7 +1035,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block "legend"} */
 /* {block "reservations"} */
-class Block_13965968485fa6a11f71ec03_03254147 extends Smarty_Internal_Block
+class Block_3918222865fa7c5a6809718_33058430 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -885,9 +1063,9 @@ continue 1;
 						<table class="reservations" border="1" cellpadding="0" width="100%">
 							<thead>
                             <?php if ($_smarty_tpl->tpl_vars['date']->value->DateEquals($_smarty_tpl->tpl_vars['TodaysDate']->value)) {?>
-							<tr class="today"> 
+							<tr class="today">
 								<?php } else { ?>
-							<tr> 
+							<tr>
 								<?php }?>
 								<td class="resdate"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formatdate'][0][0]->FormatDate(array('date'=>$_smarty_tpl->tpl_vars['date']->value,'key'=>"schedule_daily"),$_smarty_tpl);?>
 </td>
@@ -946,7 +1124,7 @@ $_smarty_tpl->_assignInScope('href', ((string)$_smarty_tpl->tpl_vars['CreateRese
 "<?php }?>><?php echo $_smarty_tpl->tpl_vars['resource']->value->Name;?>
 </a>
 											   <?php }?>
-											   
+
 										<?php } else { ?>
 											<?php if ($_smarty_tpl->tpl_vars['mode']->value == 'ES-QTOF mode') {?>
 												<span resourceId="<?php echo $_smarty_tpl->tpl_vars['resource']->value->Id;?>
@@ -1005,7 +1183,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 }
 /* {/block "reservations"} */
 /* {block "scripts-before"} */
-class Block_19682994875fa6a11f74cdd2_37969184 extends Smarty_Internal_Block
+class Block_13893713255fa7c5a68571a3_80088975 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -1016,7 +1194,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block "scripts-before"} */
 /* {block "scripts-common"} */
-class Block_19253755355fa6a11f79e731_27243776 extends Smarty_Internal_Block
+class Block_20692593255fa7c5a68e8df0_16013399 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -1129,7 +1307,7 @@ ajax/reservation_move.php",
 }
 /* {/block "scripts-common"} */
 /* {block "scripts-after"} */
-class Block_4679165855fa6a11f7a3d22_10720350 extends Smarty_Internal_Block
+class Block_17025270285fa7c5a68f3455_04182199 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>

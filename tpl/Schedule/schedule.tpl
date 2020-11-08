@@ -77,15 +77,26 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
 {block name="header"}
 	{include file='globalheader.tpl' Qtip=true Select2=true FloatThead=true cssFiles='scripts/css/jqtree.css' printCssFiles='css/schedule.print.css'}
 {/block}
+
+{*
+
+███████╗ ██████╗ ██╗   ██╗██╗██████╗ ███╗   ███╗███████╗███╗   ██╗████████╗
+██╔════╝██╔═══██╗██║   ██║██║██╔══██╗████╗ ████║██╔════╝████╗  ██║╚══██╔══╝
+█████╗  ██║   ██║██║   ██║██║██████╔╝██╔████╔██║█████╗  ██╔██╗ ██║   ██║
+██╔══╝  ██║▄▄ ██║██║   ██║██║██╔═══╝ ██║╚██╔╝██║██╔══╝  ██║╚██╗██║   ██║
+███████╗╚██████╔╝╚██████╔╝██║██║     ██║ ╚═╝ ██║███████╗██║ ╚████║   ██║
+╚══════╝ ╚══▀▀═╝  ╚═════╝ ╚═╝╚═╝     ╚═╝     ╚═╝╚══════╝╚═╝  ╚═══╝   ╚═╝
+
+*}
+
 {if !isset($rid)}
-				
+
 <div id="globalError" class="error no-show"></div>
-<div class="panel panel-default admin-panel" id="list-resources-panel">
 <script>
-$(document).ready(function(){	
+$(document).ready(function(){
 	initResources();
 
-	$( "#search_btn" ).click(function() {
+	$("#s").change(function() {
 		var s = $("#s").val()
 		var hostname = window.location.hostname;
 		var path = window.location.pathname;
@@ -111,14 +122,14 @@ $(document).ready(function(){
 				window.location.replace("http://"+hostname+"/Web/schedule.php"); // online
 			}
 		}
-	});
+	})
 
 	$( "#category" ).change(function() {
-		var str = "";	 
+		var str = "";
 		if($('select[name=category]').val() != ""){
 			str = '?bs='+$('select[name=category]').val();
 		}else{
-			str = "";	
+			str = "";
 		}
 
 		var hostname = window.location.hostname;
@@ -157,7 +168,11 @@ function onBookingClick(url, resource_id){
 			window.location.replace(url+"&mode="+$("#mode-24").val());
 		}
 		else{
-			$('#dialogSelectMode').modal();
+			Swal.fire({
+				icon: 'info',
+				title: 'Infufficient Information',
+				text: 'Please select mode to book for this equipment.'
+			})
 			return;
 		}
 	}
@@ -166,114 +181,311 @@ function onBookingClick(url, resource_id){
 	}
 }
 </script>
-		<div class="panel-heading" style="padding-bottom: 45px;"><div style="float: left;">Instrument filter by 
-			<select id="category" name="category" class="inline-block">
-				<option value="">{translate key=AllResourceTypes}</option>
-				{object_html_options options=$ResourceTypes key='Id' label="Name" selected=$get_bs}
-			</select>
-		</div>
-		
-			<div class="participationText" style="float:right;">
-				<span class="hidden-xs">Search</span>
-				<span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span><input type="text" id="s" value="{$get_s}" class="form-control inline-block user-search ui-autocomplete-input" placeholder="search" autocomplete="off">
-				<button type="button" class="btn btn-success save create btnCreate" id="search_btn">
-								<span class="glyphicon glyphicon-search"></span>
-								Search
-							</button>
-			</div>
-		</div>
-		<div class="panel-body no-padding" id="resourceList">
 
-		<div class="row row-eq-height" style="margin-right: 0px; margin-left: 0px; display: flex;
-  flex-wrap: wrap;">
-			{$i =0}
+<div class="container-fluid">
+	<div class="row mx-0">
+		<div class="col-lg-3 mb-3 d-none d-lg-block">
+			<aside class="aside">
+				<h2>Find an equipment</h2>
+				<div class="form-group">
+					<label for="Search" style="font-weight:bold">Search</label>
+					<input
+						type="text"
+						id="s"
+						value="{$get_s}"
+						class="form-control ui-autocomplete-input"
+						placeholder="Searching for equipment"
+						autocomplete="off">
+				</div>
+				<div class="form-group">
+					<label for="category" style="font-weight:bold">Categories</label>
+					<select id="category" name="category" class="form-control">
+						<option value="">{translate key=AllResourceTypes}</option>
+						{object_html_options options=$ResourceTypes key='Id' label="Name" selected=$get_bs}
+					</select>
+				</div>
+				<!--
+				<div class="form-group">
+					<label for="category" style="font-weight:bold">Categories</label>
+					<div class="form-check">
+						<input
+							type="checkbox"
+							class="form-check-input"
+							id="catg_check1" /><label for="catg_check1"
+							class="form-check-label">Equipment's group 1</label>
+					</div>
+					<div class="form-check">
+						<input
+							type="checkbox"
+							class="form-check-input"
+							id="catg_check2" /><label for="catg_check2"
+							class="form-check-label">Equipment's group 2</label>
+					</div>
+					<div class="form-check">
+						<input
+							type="checkbox"
+							class="form-check-input"
+							id="catg_check3" /><label for="catg_check3"
+							class="form-check-label">Equipment's group 3</label>
+					</div>
+					<div class="form-check">
+						<input
+							type="checkbox"
+							class="form-check-input"
+							id="catg_check4" /><label for="catg_check4"
+							class="form-check-label">Equipment's group 4</label>
+					</div>
+					<div class="form-check">
+						<input
+							type="checkbox"
+							class="form-check-input"
+							id="catg_check5" /><label for="catg_check5"
+							class="form-check-label">Equipment's group 5</label>
+					</div>
+					<div class="form-check">
+						<input
+							type="checkbox"
+							class="form-check-input"
+							id="catg_check6" /><label for="catg_check6"
+							class="form-check-label">Equipment's group 6</label>
+					</div>
+					<div class="form-check">
+						<input
+							type="checkbox"
+							class="form-check-input"
+							id="catg_check7" /><label for="catg_check7"
+							class="form-check-label">Equipment's group 7</label>
+					</div>
+				</div>
+				<div class="form-group">
+					<label style="font-weight:bold">Type</label>
+					<div class="form-check">
+						<input
+							type="checkbox"
+							class="form-check-input"
+							id="type_book" /><label for="type_book"
+							class="form-check-label">Book</label>
+					</div>
+					<div class="form-check">
+						<input
+							type="checkbox"
+							class="form-check-input"
+							id="type_queue" /><label for="type_queue"
+							class="form-check-label">Queue</label>
+					</div>
+				</div>
+				<div class="form-group">
+					<label style="font-weight:bold">Day to use</label>
+					<div class="form-check">
+						<input
+							type="checkbox"
+							class="form-check-input"
+							id="dtu_today" /><label for="dtu_today"
+							class="form-check-label">Today</label>
+					</div>
+					<div class="form-check">
+						<input
+							type="checkbox"
+							class="form-check-input"
+							id="dtu_tomorrow" /><label for="dtu_tomorrow"
+							class="form-check-label">Tomorrow</label>
+					</div>
+					<div class="form-check">
+						<input
+							type="checkbox"
+							class="form-check-input"
+							id="dtu_this_week" /><label for="dtu_this_week"
+							class="form-check-label">This week</label>
+					</div>
+					<div class="form-check">
+						<input
+							type="checkbox"
+							class="form-check-input"
+							id="dtu_custom_date_range" /><label for="dtu_custom_date_range"
+							class="form-check-label">Custom date range</label>
+					</div>
+				</div>
+				-->
+			</aside>
+		</div>
+		<main class="col-lg-9">
+			<div class="row">
+				<div class="col">
+					<h1 class="text-center">Equipment</h1>
+				</div>
+				<div class="col-auto d-lg-none">
+					<button type="button" class="btn btn-light" data-toggle="modal"
+						data-target="#filterModal">
+						<span class="material-icons">filter_alt</span>
+					</button>
+				</div>
+			</div>
+			{$i=0}
 			{if count($resources)>0}
-			{foreach from=$resources item=resource}
-			
-				{if ($i%3) == 0 & $i != 0}
-						</div><div class="row row-eq-height" style="margin-right: 0px; margin-left: 0px; display: flex;
-	  flex-wrap: wrap;">
-				{/if}
-			{$i = $i+1}
-					<div id="main" class="container-fluid col-xs-12 col-sm-4" style="padding-top: 20px; border: 1px solid #dcdcdc;">
-						<div  class="container-fluid col-xs-12 col-sm-12">
-							<center>
+			<div class="row row-cols-2 row-cols-lg-3 row-cols-xl-4">
+				{foreach from=$resources item=resource}
+					{$i = $i+1}
+					<div class="col">
+						<div class="eq-card">
+							<img class="card-image" src="../Web/uploads/images/{$resource['image_name']}" alt="{$resource['name']}" resourceId="{$resource['resource_id']}"/>
+							<div class="card-tag">
 								{if $resource['status_id'] ==1}
-									<p style="font-size: 26px">
-										<b>{$resource['name']}</b> <sup style="vertical-align: super !important"><span class="label label-success">Available</span></sup>
-									</p>
+									<div class="badge badge-danger">Queue</div>
+									<div class="badge badge-primary">Book</div>
 								{else}
-									<p style="font-size: 26px">
-										{$resource['name']} <sup style="vertical-align: super !important"><span class="label label-danger">Unavailable</span></sup>
-									</p>
+									<div class="badge badge-secondary">Unavailable</div>
 								{/if}
-							</center>
-						</div>
-						<div class="container-fluid col-xs-12 col-sm-12">
-							<br />
-							<center>
-								<img src="../Web/uploads/images/{$resource['image_name']}" alt="Resource Image" class="image resourceNameSelector" style="width: auto;max-height: 204px;" resourceId="{$resource['resource_id']}">
-							</center>  
-						</div>
-						<div  class="container-fluid col-xs-12 col-sm-12">
-							<center>
+							</div>
+							<div class="card-body">
+								<div class="card-title">{$resource['name']}</div>
+								<!-- <p>In queue: 8</p> -->
 								{if $resource['status_id'] ==1}
 									{if $resource['resource_id'] == 2}
-										<br />
-										<div class="row col-sm-8 col-sm-offset-2">
-											<select name="mode-2" id="mode-2" class="form-control">
-												<option value="" selected="">-- Select Mode --</option>
-												<option value="Powder mode">Powder mode</option>
-												<option value="Modified mode">Modified mode</option>
-											</select>
-										</div>
-										<br />
+										<select name="mode-2" id="mode-2" class="form-control mb-3">
+											<option value="" selected="">-- Select Mode --</option>
+											<option value="Powder mode">Powder mode</option>
+											<option value="Modified mode">Modified mode</option>
+										</select>
 									{elseif $resource['resource_id'] == 24}
-										<br />
-										<div class="row col-sm-8 col-sm-offset-2">
-											<select name="mode-24" id="mode-24" class="form-control">
-												<option value="" selected="">-- Select Mode --</option>
-												<option value="LC coupled with QTOF-MS/MS">LC coupled with QTOF-MS/MS</option>
-												<option value="ES-QTOF mode">ES-QTOF mode</option>
-											</select>
-										</div>
-										<br />
+										<select name="mode-24" id="mode-24" class="form-control mb-3">
+											<option value="" selected="">-- Select Mode --</option>
+											<option value="LC coupled with QTOF-MS/MS">LC coupled with QTOF-MS/MS</option>
+											<option value="ES-QTOF mode">ES-QTOF mode</option>
+										</select>
 									{/if}
-									<br />
-									<p style="padding-top:  10px; font-size: 20px"><a style="cursor: pointer" onclick="onBookingClick('../Web/schedule.php?id={$resource['resource_id']}&sid={$resource['schedule_id']}', {$resource['resource_id']})" >Click to booking</a></p>
+									<a class="btn btn-block btn-success" onclick="onBookingClick('../Web/schedule.php?id={$resource['resource_id']}&sid={$resource['schedule_id']}', {$resource['resource_id']})">Reserve</a>
 								{else}
-									<br />
-									<p style="padding-top:  10px; font-size: 20px"><a href="../Web/schedule.php?id={$resource['resource_id']}&sid={$resource['schedule_id']}&unavailable=true">Click to view</a></p>
+									<a class="btn btn-block btn-secondary" href="../Web/schedule.php?id={$resource['resource_id']}&sid={$resource['schedule_id']}&unavailable=true">View Information</a>
 								{/if}
-							</center>
+							</div>
 						</div>
-					</div><!-- close main-->	
-					{if $i >= count($resources)}
-					{$j = 3-($i%3)}
-						{if $j ==1}
-							<div id="main" class="container-fluid col-xs-12 col-sm-4" style="padding-top: 40px;    border: 1px solid #dcdcdc;">
-							
-							</div>
-						{/if}
-						{if $j ==2}
-							<div id="main" class="container-fluid col-xs-12 col-sm-4" style="padding-top: 40px;    border: 1px solid #dcdcdc;">
-							
-							</div>
-							<div id="main" class="container-fluid col-xs-12 col-sm-4" style="padding-top: 40px;    border: 1px solid #dcdcdc;">
-							
-							</div>
-						{/if}
-					{/if}
-			{/foreach}
+					</div>
+				{/foreach}
+				<!--
+				<div class="col">
+					<div class="eq-card">
+						<img class="card-image" src="../assets/eq.jpg" alt="Equipment" />
+						<div class="card-tag">
+							<div class="badge badge-danger">Queue</div>
+							<div class="badge badge-primary">Book</div>
+						</div>
+						<div class="card-body">
+							<div class="card-title">ATR-FTIR</div>
+							<p>In queue: 8</p>
+							<button type="button" class="btn btn-block btn-success"
+								data-toggle="modal" data-target="#queue-detail">
+								Reserve
+							</button>
+						</div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="eq-card">
+						<img class="card-image" src="../assets/eq.jpg" alt="Equipment" />
+						<div class="card-tag">
+							<div class="badge badge-danger">Queue</div>
+							<div class="badge badge-primary">Book</div>
+						</div>
+						<div class="card-body">
+							<div class="card-title">ATR-FTIR</div>
+							<p>In queue: 8</p>
+							<button type="button" class="btn btn-block btn-success">
+								Reserve
+							</button>
+						</div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="eq-card">
+						<img class="card-image" src="../assets/eq.jpg" alt="Equipment" />
+						<div class="card-tag">
+							<div class="badge badge-danger">Queue</div>
+						</div>
+						<div class="card-body">
+							<div class="card-title">ATR-FTIR</div>
+							<p>In queue: 8</p>
+							<button type="button" class="btn btn-block btn-success">
+								Reserve
+							</button>
+						</div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="eq-card">
+						<img class="card-image" src="../assets/eq.jpg" alt="Equipment" />
+						<div class="card-tag">
+							<div class="badge badge-primary">Book</div>
+						</div>
+						<div class="card-body">
+							<div class="card-title">ATR-FTIR</div>
+							<p>In queue: 8</p>
+							<button type="button" class="btn btn-block btn-success">
+								Reserve
+							</button>
+						</div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="eq-card">
+						<img class="card-image" src="../assets/eq.jpg" alt="Equipment" />
+						<div class="card-tag">
+							<div class="badge badge-secondary">Blackout</div>
+							<div class="badge badge-primary">Book</div>
+						</div>
+						<div class="card-body">
+							<div class="card-title">ATR-FTIR</div>
+							<p>Blackout reason: ...</p>
+							<button type="button" class="btn btn-block btn-success">
+								Reserve
+							</button>
+						</div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="eq-card eq-blackout">
+						<img class="card-image" src="../assets/eq.jpg" alt="Equipment" />
+						<div class="card-tag">
+							<div class="badge badge-secondary">Unavailable</div>
+						</div>
+						<div class="card-body">
+							<div class="card-title">ATR-FTIR</div>
+							<p>Unavailable</p>
+						</div>
+					</div>
+				</div>
+				-->
+			</div>
 			{else}
 				<div class="container h-100">
-				  <div class="row h-100 justify-content-center align-items-center">
-				    <center><h1 style=" margin: 50px 0px; color: #9c9c9c;"><b>Instruments not found.</b></h1></center> 
-				  </div>  
+					<div class="row h-100 justify-content-center align-items-center">
+						<center><h1 style=" margin: 50px 0px; color: #9c9c9c;"><b>Instruments not found.</b></h1></center>
+					</div>
 				</div>
 			{/if}
-		</div>
-</div></div>
+		</main>
+	</div>
+	<nav aria-label="Page navigation example">
+		<ul class="pagination justify-content-center">
+			<li class="page-item">
+				<a class="page-link {if count($pagination) == 0} isDisabled{/if}" {if count($pagination) != 0} href="/Web/schedule.php?page=1"{/if}>Previous</a>
+			</li>
+			<li class="page-item active">
+				<a class="page-link">1</a>
+			</li>
+			{$i=0}
+			{foreach from=$pagination item=page}
+				{$i = $i+1}
+				<li class="{$page['class']} page-item">
+					<a class="page-link" href="/Web/schedule.php?page={$page['count']}">{$page['count']}</a>
+				</li>
+			{/foreach}
+			<li class="page-item">
+				<a class="page-link {if count($pagination) == 0} isDisabled{/if}" {if count($pagination) != 0} href="/Web/schedule.php?page={$nextPage}"{/if}>Next</a>
+			</li>
+		</ul>
+	</nav>
+</div>
+
 <style type="text/css">
 	.isDisabled {
   color: currentColor;
@@ -282,37 +494,22 @@ function onBookingClick(url, resource_id){
   text-decoration: none;
 }
 </style>
-	<center>
-		<ul class="pagination" style="margin-top: 0px;">
-			<li><a class="page {if count($pagination) == 0} isDisabled{/if}" {if count($pagination) != 0} href="/Web/schedule.php?page=1"{/if}>«</a></li>
-			<li class="active"><a  >1</a></li>
-			{$i=0}
-				{foreach from=$pagination item=page}
-				{$i = $i+1}
-				<li class="{$page['class']}"><a class="page" href="/Web/schedule.php?page={$page['count']}">{$page['count']}</a></li>
-				{/foreach}
-			<li><a class="page {if count($pagination) == 0} isDisabled{/if}" {if count($pagination) != 0} href="/Web/schedule.php?page={$nextPage}"{/if}>»</a></li>
-		</ul>
-	</center>
-</div></div></div></div>
 
-<div class="modal fade" id="dialogSelectMode" tabindex="-1" role="dialog" aria-labelledby="dialogSelectModeLabel"
-		 aria-hidden="true">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<div class="modal-body">
-				<h3>Please Select Mode.</h3>
-				<br />
-				<center>
-					<button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
-				</center>
-				<br />
-			</div>
-		</div>
-	</div>
-</div>
+
+
+{*
+
+████████╗██╗███╗   ███╗███████╗████████╗ █████╗ ██████╗ ██╗     ███████╗
+╚══██╔══╝██║████╗ ████║██╔════╝╚══██╔══╝██╔══██╗██╔══██╗██║     ██╔════╝
+   ██║   ██║██╔████╔██║█████╗     ██║   ███████║██████╔╝██║     █████╗
+   ██║   ██║██║╚██╔╝██║██╔══╝     ██║   ██╔══██║██╔══██╗██║     ██╔══╝
+   ██║   ██║██║ ╚═╝ ██║███████╗   ██║   ██║  ██║██████╔╝███████╗███████╗
+   ╚═╝   ╚═╝╚═╝     ╚═╝╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═════╝ ╚══════╝╚══════╝
+
+*}
 
 {else}
+
 	<div id="page-schedule">
 
 	{if $ShowResourceWarning}
@@ -336,7 +533,7 @@ function onBookingClick(url, resource_id){
 					};
 				</script>
 				<div style="float: right; right:0">
-					<button type="button" id="tooltip" class="btn btn-info" data-toggle="tooltip" data-placement="left" 
+					<button type="button" id="tooltip" class="btn btn-info" data-toggle="tooltip" data-placement="left"
 						title="How to book an instrument: Click and drag on table as your preferred time.">
 						<i class="fa fa-2 fa-info"></i>
 					</button>
@@ -350,7 +547,7 @@ function onBookingClick(url, resource_id){
 						{foreach from=$Resources item=resource name=resource_loop}
 							{if $resource->Id == $rid}
 								{assign var=resourceNameTitle value=$resource->Name}
-							{/if}	
+							{/if}
 						{/foreach}
 							{if $mode == 'ES-QTOF mode' }
 								<h1>ES-QTOF-MS/MS {if !$CanViewAdmin} <br /> (Remaining time: {$quota_limit_txt} hrs left) {/if} </h1>
@@ -359,7 +556,7 @@ function onBookingClick(url, resource_id){
 							{else}
 								<h1>{$resourceNameTitle} {if !$CanViewAdmin} <br /> (Remaining time: {$quota_limit_txt} hrs left) {/if} </h1>
 							{/if}
-						
+
 					</div>
 					{assign var=TodaysDate value=Date::Now()}
 					<a href="#" class="change-date btn-link btn-success" data-year="{$TodaysDate->Year()}" data-month="{$TodaysDate->Month()}" data-day="{$TodaysDate->Day()}" alt="{translate key=Today}"><i class="fa fa-home"></i></a>
@@ -440,9 +637,9 @@ function onBookingClick(url, resource_id){
 						<table class="reservations" border="1" cellpadding="0" width="100%">
 							<thead>
                             {if $date->DateEquals($TodaysDate)}
-							<tr class="today"> 
+							<tr class="today">
 								{else}
-							<tr> 
+							<tr>
 								{/if}
 								<td class="resdate">{formatdate date=$date key="schedule_daily"}</td>
 								{foreach from=$periods.$ts item=period}
@@ -466,7 +663,7 @@ function onBookingClick(url, resource_id){
 											   {else}
 													{if $resource->HasColor()}style="color:{$resource->GetTextColor()}"{/if}>{$resource->Name}</a>
 											   {/if}
-											   
+
 										{else}
 											{if $mode == 'ES-QTOF mode' }
 												<span resourceId="{$resource->Id}" resourceId="{$resource->Id}"
@@ -505,7 +702,7 @@ function onBookingClick(url, resource_id){
 		<div class="col-xs-9 visible-md visible-lg">&nbsp;</div>
 		{$smarty.capture.date_navigation}
 	</div>
-	
+
 </div>
 
 <form id="moveReservationForm">
@@ -624,10 +821,10 @@ FirstDay=$FirstWeekday}
 			$( ".reservations td").removeAttr("data-href");
 			$( ".reservations td").removeAttr("data-start");
 			$( ".reservations td").removeAttr("data-end");
-			
+
 			//$( ".reservations td").attr("draggable");
 			$( ".reservations td").attr("resid");
-		});	
+		});
 	</script>
 {/if}
 <style>
