@@ -510,7 +510,10 @@ function onBookingClick(url, resource_id){
 
 {else}
 
+{cssfile src="scripts/newcss/booking-table.css" rel="stylesheet"}
 <div id="page-schedule">
+<div class="container">
+<section class="box py-4">
 
 	{if $ShowResourceWarning}
 		<div class="alert alert-warning no-resource-warning">
@@ -521,14 +524,18 @@ function onBookingClick(url, resource_id){
 
 	{if $IsAccessible}
 
+	<!--
 	<div id="defaultSetMessage" class="alert alert-success hidden">
 		{translate key=DefaultScheduleSet}
 	</div>
+	-->
 
 	{block name="schedule_control"}
-		<div class="row-fluid">
+		<div class="row-fluid mb-3">
 			<div class="btn-search">
-				<button id="backlistpage" type="button" class="btn btn-primary btn-sm"><i class="fa fa-th" aria-hidden="true"></i> Back to tools list page</button>
+				<button id="backlistpage" type="button" class="btn btn-primary btn-sm">
+					<i class="fa fa-th" aria-hidden="true"></i> Back to tools list page
+				</button>
 				<script type="text/javascript">
 					document.getElementById("backlistpage").onclick = function () {
 						location.href = "schedule.php";
@@ -544,7 +551,7 @@ function onBookingClick(url, resource_id){
 
 			{capture name="date_navigation"}
 				<div class="row-fluid">
-				<div class="schedule-dates col-lg-12 col-md-12">
+				<div class="schedule-dates col-lg-12 col-md-12 p-0" style="font-size:1rem">
 					<div class="title_str" style="display: none;" >
 						{foreach from=$Resources item=resource name=resource_loop}
 							{if $resource->Id == $rid}
@@ -561,7 +568,9 @@ function onBookingClick(url, resource_id){
 
 					</div>
 					{assign var=TodaysDate value=Date::Now()}
-					<a href="#" class="change-date btn-link btn-success" data-year="{$TodaysDate->Year()}" data-month="{$TodaysDate->Month()}" data-day="{$TodaysDate->Day()}" alt="{translate key=Today}"><i class="fa fa-home"></i></a>
+					<a href="#" class="change-date btn btn-sm btn-success" data-year="{$TodaysDate->Year()}" data-month="{$TodaysDate->Month()}" data-day="{$TodaysDate->Day()}" alt="{translate key=Today}">
+						<i class="fa fa-calendar"></i>
+					</a>
 					{assign var=FirstDate value=$DisplayDates->GetBegin()}
 					{assign var=LastDate value=$DisplayDates->GetEnd()->AddDays(-1)}
 					<a href="#" class="change-date" data-year="{$PreviousDate->Year()}" data-month="{$PreviousDate->Month()}"
@@ -577,8 +586,6 @@ function onBookingClick(url, resource_id){
 				</div>
 				</div>
 			{/capture}
-
-			{$smarty.capture.date_navigation}
 		</div>
 		<div type="text" id="datepicker" style="display:none;"></div>
 	{/block}
@@ -608,11 +615,13 @@ function onBookingClick(url, resource_id){
 
 	<div class="row-fluid">
 		<div id="reservations" class="col-md-12 col-sm-12">
+			<!--
 			<div>
 				<a href="#" id="restore-sidebar" title="Show Reservation Filter" class="hidden toggle-sidebar">{translate key=ResourceFilter} <i
-							class="glyphicon glyphicon-filter"></i> <i
-							class="glyphicon glyphicon-chevron-right"></i></a>
+					class="glyphicon glyphicon-filter"></i> <i
+					class="glyphicon glyphicon-chevron-right"></i></a>
 			</div>
+			-->
 
 			{*
 
@@ -626,95 +635,259 @@ function onBookingClick(url, resource_id){
 			*}
 
 			{block name="reservations"}
-				{assign var=TodaysDate value=Date::Now()}
-				{foreach from=$BoundDates item=date}
-				{assign var=ts value=$date->Timestamp()}
-				{$periods.$ts = $DailyLayout->GetPeriods($date, true)}
-				{if $periods[$ts]|count == 0}{continue}{*dont show if there are no slots*}{/if}
-				<div style="position:relative;">
-					<table class="reservations" border="1" cellpadding="0" width="100%">
+				<header>
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-auto">
+								<span class="h1">{$Resources[0]->Name}</span>
+								<section>
+									<span class="badge badge-edit">Available</span>
+								</section>
+							</div>
+							<div class="col-sm">
+								<p>
+									Maximum time : 24 Hrs. Available in : Monday - Friday<br>
+									Moderator : Mr. Chalantorn New (Chalantorn@gmail.com)
+								</p>
+							</div>
+						</div>
+						<div class="row align-items-end">
+							<div class="col-sm">
+								<p class="m-0">
+									Select time slot to booking. <strong>(Remaining time: 12 Hrs. left)</strong>
+								</p>
+							</div>
+							<div class="col-auto">
+								{$smarty.capture.date_navigation}
+							</div>
+						</div>
+					</div>
+				</header>
+				<section class="booking-table-container table-responsive my-3">
+					<table id="table" class="table mb-0 table-bordered table-sm">
 						<thead>
-							{if $date->DateEquals($TodaysDate)}
-								<tr class="today">
-							{else}
-								<tr>
-							{/if}
-								<td class="resdate">{formatdate date=$date key="schedule_daily"}</td>
-								{foreach from=$periods.$ts item=period}
-									<td class="reslabel" colspan="{$period->Span()}">{$period->Label($date)}</td>
-								{/foreach}
+							<tr>
+								<th>
+									<span class="d-block d-sm-block d-md-none">&nbsp;</span>
+									{$BoundDates[0]->Format('F')}
+									<span class="d-block d-sm-block d-md-none">&nbsp;</span>
+								</th>
+								<th>
+									12:00 AM
+								</th>
+								<th>
+									1:00 AM
+								</th>
+								<th>
+									2:00 AM
+								</th>
+								<th>
+									3:00 AM
+								</th>
+								<th>
+									4:00 AM
+								</th>
+								<th>
+									5:00 AM
+								</th>
+								<th>
+									6:00 AM
+								</th>
+								<th>
+									7:00 AM
+								</th>
+								<th>
+									8:00 AM
+								</th>
+								<th>
+									9:00 AM
+								</th>
+								<th>
+									10:00 AM
+								</th>
+								<th>
+									11:00 AM
+								</th>
+								<th>
+									12:00 AM
+								</th>
+								<th>
+									1:00 PM
+								</th>
+								<th>
+									2:00 PM
+								</th>
+								<th>
+									3:00 PM
+								</th>
+								<th>
+									4:00 PM
+								</th>
+								<th>
+									5:00 PM
+								</th>
+								<th>
+									6:00 PM
+								</th>
+								<th>
+									7:00 PM
+								</th>
+								<th>
+									8:00 PM
+								</th>
+								<th>
+									9:00 PM
+								</th>
+								<th>
+									10:00 PM
+								</th>
+								<th>
+									11:00 PM
+								</th>
 							</tr>
 						</thead>
 						<tbody>
-							{foreach from=$Resources item=resource name=resource_loop}
+							{$weekday_classname = array("sun","mon","tue","wed","thu","fri","sat")}
+							{assign var=TodaysDate value=Date::Now()}
+							{foreach from=$BoundDates item=date}
+							{assign var=ts value=$date->Timestamp()}
+							{$periods.$ts = $DailyLayout->GetPeriods($date, true)}
+							{if $periods[$ts]|count == 0}{continue}{*dont show if there are no slots*}{/if}
+							{assign var=resource value=$Resources[0]}
 							{if $resource->Id == $rid}
 							{assign var=resourceId value=$resource->Id}
 							{assign var=slots value=$DailyLayout->GetLayout($date, $resourceId)}
 							{assign var=href value="{$CreateReservationPage}?rid={$resource->Id}&sid={$ScheduleId}&rd={formatdate date=$date key=url}{if isset($mode)}&mode={$mode}{/if}"}
-							<tr class="slots">
-								<td class="resourcename" {if $resource->HasColor()}style="background-color:{$resource->GetColor()}"{/if}>
-									{if $resource->CanAccess && $DailyLayout->IsDateReservable($date)}
-										<a href="{$href}" resourceId="{$resource->Id}" class="resourceNameSelector"
-											{if $mode == 'ES-QTOF mode' }
-												{if $resource->HasColor()}style="color:{$resource->GetTextColor()}"{/if}>ES-QTOF-MS/MS</a>
-											{else}
-												{if $resource->HasColor()}style="color:{$resource->GetTextColor()}"{/if}>{$resource->Name}</a>
-											{/if}
-									{else}
-										{if $mode == 'ES-QTOF mode' }
-											<span resourceId="{$resource->Id}" resourceId="{$resource->Id}"
-												class="resourceNameSelector"
-												{if $resource->HasColor()}style="color:{$resource->GetTextColor()}"{/if}>ES-QTOF-MS/MS</span>
-										{else}
-											<span resourceId="{$resource->Id}" resourceId="{$resource->Id}"
-												class="resourceNameSelector"
-												{if $resource->HasColor()}style="color:{$resource->GetTextColor()}"{/if}>{$resource->Name}</span>
-										{/if}
-									{/if}
+							<tr class="list-complete-item {$weekday_classname[$date->Weekday()]}">
+								<td>
+									<span>{$date->Format('l')}</span>
+									<span>{$date->Format('d')}</span>
+									<span>{$date->Format('F')}</span>
 								</td>
 								{foreach from=$slots item=slot}
 									{assign var=slotRef value="{$slot->BeginDate()->Format('YmdHis')}{$resourceId}"}
 									{displaySlot Slot=$slot Href="$href" AccessAllowed=$resource->CanAccess SlotRef=$slotRef ResourceId=$resourceId}
 								{/foreach}
-								</tr>
+							</tr>
 							{/if}
+							{* /foreach *}
+							{flush}
 							{/foreach}
 						</tbody>
+						<tfoot>
+							<tr>
+								<th>
+									<span class="d-block d-sm-block d-md-none">&nbsp;</span>
+									{$BoundDates[0]->Format('F')}
+									<span class="d-block d-sm-block d-md-none">&nbsp;</span>
+								</th>
+								<th>
+									12:00 AM
+								</th>
+								<th>
+									1:00 AM
+								</th>
+								<th>
+									2:00 AM
+								</th>
+								<th>
+									3:00 AM
+								</th>
+								<th>
+									4:00 AM
+								</th>
+								<th>
+									5:00 AM
+								</th>
+								<th>
+									6:00 AM
+								</th>
+								<th>
+									7:00 AM
+								</th>
+								<th>
+									8:00 AM
+								</th>
+								<th>
+									9:00 AM
+								</th>
+								<th>
+									10:00 AM
+								</th>
+								<th>
+									11:00 AM
+								</th>
+								<th>
+									12:00 AM
+								</th>
+								<th>
+									1:00 PM
+								</th>
+								<th>
+									2:00 PM
+								</th>
+								<th>
+									3:00 PM
+								</th>
+								<th>
+									4:00 PM
+								</th>
+								<th>
+									5:00 PM
+								</th>
+								<th>
+									6:00 PM
+								</th>
+								<th>
+									7:00 PM
+								</th>
+								<th>
+									8:00 PM
+								</th>
+								<th>
+									9:00 PM
+								</th>
+								<th>
+									10:00 PM
+								</th>
+								<th>
+									11:00 PM
+								</th>
+							</tr>
+						</tfoot>
 					</table>
-				</div>
-				{flush}
-			{/foreach}
-		{/block}
+				</section>
+			{/block}
+
+			<section>
+				{$smarty.capture.date_navigation}
+			</section>
+
+			{block name="legend"}
+				<footer class="booking-table-badges text-right">
+					<span class="badge booking-badge-available">{translate key=Reservable}</span>
+					<span class="badge booking-badge-blackout">{translate key=Unreservable}</span>
+					<span class="badge booking-badge-reserved">{translate key=Reserved}</span>
+					{if $LoggedIn}
+					<span class="badge booking-badge-self">{translate key=MyReservation}</span>
+					<span class="badge booking-badge-participant">{translate key=Participant}</span>
+					{/if}
+					<span class="badge booking-badge-pending pending">{translate key=Pending}</span>
+					<span class="badge booking-badge-passed">{translate key=Past}</span>
+					<span class="badge booking-badge-restricted">{translate key=Restricted}</span>
+				</footer>
+			{/block}
 		{else}
 			<div class="error">{translate key=NoResourcePermission}</div>
 		{/if}
 	</div>
-</div>
 
-	{block name="legend"}
-		<div class="hidden-xs row-fluid col-sm-12 schedule-legend">
-			<div class="center">
-				<div class="legend reservable">{translate key=Reservable}</div>
-				<div class="legend unreservable">{translate key=Unreservable}</div>
-				<div class="legend reserved">{translate key=Reserved}</div>
-				{if $LoggedIn}
-				<div class="legend reserved mine">{translate key=MyReservation}</div>
-				<div class="legend reserved participating">{translate key=Participant}</div>
-				{/if}
-				<div class="legend reserved pending">{translate key=Pending}</div>
-				<div class="legend pasttime">{translate key=Past}</div>
-				<div class="legend restricted">{translate key=Restricted}</div>
-			</div>
-		</div>
-	{/block}
+</section>
+</div>
+</div>
 
 	<div class="clearfix">&nbsp;</div>
 	<input type="hidden" value="{$ScheduleId}" id="scheduleId"/>
-
-	<div class="row-fluid no-margin">
-		<div class="col-xs-9 visible-md visible-lg">&nbsp;</div>
-		{$smarty.capture.date_navigation}
-	</div>
 
 </div>
 

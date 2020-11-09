@@ -36,7 +36,17 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
     <link rel="shortcut icon" href="{$Path}favicon.ico"/>
     <link rel="icon" href="{$Path}favicon.ico"/>
 
-    {* JS Files *}
+    {*
+
+         ██╗ █████╗ ██╗   ██╗ █████╗ ███████╗ ██████╗██████╗ ██╗██████╗ ████████╗
+         ██║██╔══██╗██║   ██║██╔══██╗██╔════╝██╔════╝██╔══██╗██║██╔══██╗╚══██╔══╝
+         ██║███████║██║   ██║███████║███████╗██║     ██████╔╝██║██████╔╝   ██║
+    ██   ██║██╔══██║╚██╗ ██╔╝██╔══██║╚════██║██║     ██╔══██╗██║██╔═══╝    ██║
+    ╚█████╔╝██║  ██║ ╚████╔╝ ██║  ██║███████║╚██████╗██║  ██║██║██║        ██║
+     ╚════╝ ╚═╝  ╚═╝  ╚═══╝  ╚═╝  ╚═╝╚══════╝ ╚═════╝╚═╝  ╚═╝╚═╝╚═╝        ╚═╝
+
+    *}
+
     {*
         <!-- JavaScript -->
         {if $UseLocalJquery}
@@ -129,7 +139,16 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
     {jsfile src="phpscheduleit.js"}
     <!-- End JavaScript -->
 
-    <!-- CSS -->
+    {*
+
+     ██████╗███████╗███████╗
+    ██╔════╝██╔════╝██╔════╝
+    ██║     ███████╗███████╗
+    ██║     ╚════██║╚════██║
+    ╚██████╗███████║███████║
+     ╚═════╝╚══════╝╚══════╝
+
+    *}
     {*
         {if $UseLocalJquery}
             {cssfile src="scripts/css/smoothness/jquery-ui-1.10.4.custom.min.css"}
