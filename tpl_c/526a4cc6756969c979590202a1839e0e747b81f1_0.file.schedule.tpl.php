@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-11-09 18:12:39
+/* Smarty version 3.1.30, created on 2020-11-10 04:34:10
   from "/var/www/html/booking/tpl/Schedule/schedule.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5fa92427c12122_09686855',
+  'unifunc' => 'content_5fa9b5d2ee5904_00235696',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '526a4cc6756969c979590202a1839e0e747b81f1' => 
     array (
       0 => '/var/www/html/booking/tpl/Schedule/schedule.tpl',
-      1 => 1604886079,
+      1 => 1604957635,
       2 => 'file',
     ),
   ),
@@ -22,61 +22,61 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:globalfooter.tpl' => 1,
   ),
 ),false)) {
-function content_5fa92427c12122_09686855 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fa9b5d2ee5904_00235696 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->ext->_tplFunction->registerTplFunctions($_smarty_tpl, array (
   'displayGeneralReserved' => 
   array (
     'compiled_filepath' => '/var/www/html/booking/tpl_c/526a4cc6756969c979590202a1839e0e747b81f1_0.file.schedule.tpl.php',
     'uid' => '526a4cc6756969c979590202a1839e0e747b81f1',
-    'call_name' => 'smarty_template_function_displayGeneralReserved_15066445505fa92426e71877_58211833',
+    'call_name' => 'smarty_template_function_displayGeneralReserved_7807460745fa9b5d24c03f7_96586822',
   ),
   'displayMyReserved' => 
   array (
     'compiled_filepath' => '/var/www/html/booking/tpl_c/526a4cc6756969c979590202a1839e0e747b81f1_0.file.schedule.tpl.php',
     'uid' => '526a4cc6756969c979590202a1839e0e747b81f1',
-    'call_name' => 'smarty_template_function_displayMyReserved_15066445505fa92426e71877_58211833',
+    'call_name' => 'smarty_template_function_displayMyReserved_7807460745fa9b5d24c03f7_96586822',
   ),
   'displayMyParticipating' => 
   array (
     'compiled_filepath' => '/var/www/html/booking/tpl_c/526a4cc6756969c979590202a1839e0e747b81f1_0.file.schedule.tpl.php',
     'uid' => '526a4cc6756969c979590202a1839e0e747b81f1',
-    'call_name' => 'smarty_template_function_displayMyParticipating_15066445505fa92426e71877_58211833',
+    'call_name' => 'smarty_template_function_displayMyParticipating_7807460745fa9b5d24c03f7_96586822',
   ),
   'displayReserved' => 
   array (
     'compiled_filepath' => '/var/www/html/booking/tpl_c/526a4cc6756969c979590202a1839e0e747b81f1_0.file.schedule.tpl.php',
     'uid' => '526a4cc6756969c979590202a1839e0e747b81f1',
-    'call_name' => 'smarty_template_function_displayReserved_15066445505fa92426e71877_58211833',
+    'call_name' => 'smarty_template_function_displayReserved_7807460745fa9b5d24c03f7_96586822',
   ),
   'displayPastTime' => 
   array (
     'compiled_filepath' => '/var/www/html/booking/tpl_c/526a4cc6756969c979590202a1839e0e747b81f1_0.file.schedule.tpl.php',
     'uid' => '526a4cc6756969c979590202a1839e0e747b81f1',
-    'call_name' => 'smarty_template_function_displayPastTime_15066445505fa92426e71877_58211833',
+    'call_name' => 'smarty_template_function_displayPastTime_7807460745fa9b5d24c03f7_96586822',
   ),
   'displayReservable' => 
   array (
     'compiled_filepath' => '/var/www/html/booking/tpl_c/526a4cc6756969c979590202a1839e0e747b81f1_0.file.schedule.tpl.php',
     'uid' => '526a4cc6756969c979590202a1839e0e747b81f1',
-    'call_name' => 'smarty_template_function_displayReservable_15066445505fa92426e71877_58211833',
+    'call_name' => 'smarty_template_function_displayReservable_7807460745fa9b5d24c03f7_96586822',
   ),
   'displayRestricted' => 
   array (
     'compiled_filepath' => '/var/www/html/booking/tpl_c/526a4cc6756969c979590202a1839e0e747b81f1_0.file.schedule.tpl.php',
     'uid' => '526a4cc6756969c979590202a1839e0e747b81f1',
-    'call_name' => 'smarty_template_function_displayRestricted_15066445505fa92426e71877_58211833',
+    'call_name' => 'smarty_template_function_displayRestricted_7807460745fa9b5d24c03f7_96586822',
   ),
   'displayUnreservable' => 
   array (
     'compiled_filepath' => '/var/www/html/booking/tpl_c/526a4cc6756969c979590202a1839e0e747b81f1_0.file.schedule.tpl.php',
     'uid' => '526a4cc6756969c979590202a1839e0e747b81f1',
-    'call_name' => 'smarty_template_function_displayUnreservable_15066445505fa92426e71877_58211833',
+    'call_name' => 'smarty_template_function_displayUnreservable_7807460745fa9b5d24c03f7_96586822',
   ),
   'displaySlot' => 
   array (
     'compiled_filepath' => '/var/www/html/booking/tpl_c/526a4cc6756969c979590202a1839e0e747b81f1_0.file.schedule.tpl.php',
     'uid' => '526a4cc6756969c979590202a1839e0e747b81f1',
-    'call_name' => 'smarty_template_function_displaySlot_15066445505fa92426e71877_58211833',
+    'call_name' => 'smarty_template_function_displaySlot_7807460745fa9b5d24c03f7_96586822',
   ),
 ));
 $_smarty_tpl->_loadInheritance();
@@ -107,7 +107,7 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_4582800275fa92427736628_33398627', "header");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_18323989565fa9b5d2ade1a1_44171406', "header");
 ?>
 
 
@@ -121,7 +121,31 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_4582800275fa924277
 $(document).ready(function(){
 	initResources();
 
-	$("#s").change(function() {
+	function moveSearchPanel(){
+		if(window.matchMedia('(min-width: 992px)').matches){
+			// desktop, move panel to aside
+			if(!$('#searchpanel').html().trim()){
+				$('#searchpanel').html($("#filter_wrapper").html())
+				$("#filter_wrapper").html("")
+			}
+		}else{
+			// mobile, move panel to modal
+			if(!$("#filter_wrapper").html().trim()){
+				$("#filter_wrapper").html($('#searchpanel').html())
+				$('#searchpanel').html("")
+			}
+		}
+	}
+	moveSearchPanel();
+
+	window.addEventListener("resize", moveSearchPanel);
+	window.addEventListener("orientationchange", moveSearchPanel);
+});
+
+var searchBoxTimeout = null;
+function searchEq_searchbox() {
+	clearTimeout(searchBoxTimeout);
+	searchBoxTimeout = setTimeout(function(){
 		var s = $("#s").val()
 		var hostname = window.location.hostname;
 		var path = window.location.pathname;
@@ -147,36 +171,36 @@ $(document).ready(function(){
 				window.location.replace("http://"+hostname+"/Web/schedule.php"); // online
 			}
 		}
-	})
+	}, 750)
+}
 
-	$( "#category" ).change(function() {
-		var str = "";
-		if($('select[name=category]').val() != ""){
-			str = '?bs='+$('select[name=category]').val();
-		}else{
-			str = "";
-		}
+function searchEq_selectcatg() {
+	var str = "";
+	if($('select[name=category]').val() != ""){
+		str = '?bs='+$('select[name=category]').val();
+	}else{
+		str = "";
+	}
 
-		var hostname = window.location.hostname;
-		var path = window.location.pathname;
-		var rootFolder = '';
-		var pathindex = path.toLowerCase().indexOf('/web');
-		if(pathindex > 0)
-		{
-			rootFolder = path.substring(0, pathindex);
-		}
-		hostname += rootFolder;
+	var hostname = window.location.hostname;
+	var path = window.location.pathname;
+	var rootFolder = '';
+	var pathindex = path.toLowerCase().indexOf('/web');
+	if(pathindex > 0)
+	{
+		rootFolder = path.substring(0, pathindex);
+	}
+	hostname += rootFolder;
 
-		var s = $("#s").val()
-		if( s != "" &&  $('select[name=category]').val() != ""){
-			str += '&s='+s;
-		}else if($('select[name=category]').val() == "" && s != ""){
-			str += '?s='+s;
-		}
+	var s = $("#s").val()
+	if( s != "" &&  $('select[name=category]').val() != ""){
+		str += '&s='+s;
+	}else if($('select[name=category]').val() == "" && s != ""){
+		str += '?s='+s;
+	}
 
-	   window.location.replace("http://"+hostname+"/Web/schedule.php"+str); // online
-	});
-});
+		window.location.replace("http://"+hostname+"/Web/schedule.php"+str); // online
+}
 
 function initResources() {
 	$('.resourceNameSelector').each(function () {
@@ -211,7 +235,7 @@ function onBookingClick(url, resource_id){
 <div class="container-fluid">
 	<div class="row mx-0">
 		<div class="col-lg-3 mb-3 d-none d-lg-block">
-			<aside class="aside">
+			<aside id="searchpanel" class="aside">
 				<h2>Find an equipment</h2>
 				<div class="form-group">
 					<label for="Search" style="font-weight:bold">Search</label>
@@ -222,11 +246,12 @@ function onBookingClick(url, resource_id){
 "
 						class="form-control ui-autocomplete-input"
 						placeholder="Searching for equipment"
-						autocomplete="off">
+						autocomplete="off"
+						oninput="queryInstrument()">
 				</div>
 				<div class="form-group">
 					<label for="category" style="font-weight:bold">Categories</label>
-					<select id="category" name="category" class="form-control">
+					<select id="category" name="category" class="form-control" oninput="searchEq_selectcatg()">
 						<option value=""><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'AllResourceTypes'),$_smarty_tpl);?>
 </option>
 						<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['object_html_options'][0][0]->ObjectHtmlOptions(array('options'=>$_smarty_tpl->tpl_vars['ResourceTypes']->value,'key'=>'Id','label'=>"Name",'selected'=>$_smarty_tpl->tpl_vars['get_bs']->value),$_smarty_tpl);?>
@@ -335,19 +360,19 @@ function onBookingClick(url, resource_id){
 					</div>
 				</div>
 				-->
+				<button type="button" class="btn btn-block btn-success"
+					data-toggle="modal" data-target="#queue-detail">
+					Simulate Queuing Modal
+				</button>
 			</aside>
 		</div>
 		<main class="col-lg-9">
-			<div class="row">
-				<div class="col">
-					<h1 class="text-center">Equipment</h1>
-				</div>
-				<div class="col-auto d-lg-none">
-					<button type="button" class="btn btn-light" data-toggle="modal"
-						data-target="#filterModal">
-						<span class="material-icons">filter_alt</span>
-					</button>
-				</div>
+			<div style="position:relative">
+				<h1 class="text-center">Equipment</h1>
+				<button type="button" class="btn btn-light d-lg-none" data-toggle="modal"
+					data-target="#filterModal" style="position:absolute;right:0;top:0">
+					<span class="material-icons">filter_alt</span>
+				</button>
 			</div>
 			<?php $_smarty_tpl->_assignInScope('i', 0);
 ?>
@@ -561,6 +586,252 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 
 
 
+<div class="modal fade" id="filterModal" tabindex="-1" aria-labelledby="filterModal"
+	aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-body">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<aside id="filter_wrapper"></aside>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<div class="modal fade" id="queue-detail" tabindex="-1" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered" style="max-width:95vw">
+		<div class="modal-content">
+			<div class="modal-body py-0">
+				<div class="row">
+					<div class="col-12 order-1 order-sm-0 col-sm-3 py-3">
+						<h1>
+							ATR-FTIR <span class="badge badge-success">Available</span>
+						</h1>
+						<img class="img-fluid d-block mx-auto mb-2" src="../assets/eq.jpg"
+							alt="Equipment" width="100%">
+						<p class="mb-0">
+							<span class="text-danger">
+								***<br>
+								Maximum time: 24 Hrs.<br>
+								Available in: Monday - Friday<br>
+							</span>
+							Person in charge: Mr. Chalantorn New (Chalantorn@gmail.com)
+						</p>
+					</div>
+					<div id="data-app" class="col order-0 order-sm-1 py-3"
+						style="background:#F6F4F9;border-left:1px #707070 solid">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<h2 class="text-center">QUEUING</h2>
+						<p class="lead">In queue: 8 queue(s)</p>
+						<div class="overflow-y mb-3"
+							style="height:30vh;background:#fff;border-radius:.3rem">
+							<table class="table">
+								<tbody>
+									<tr>
+										<td><small>No.</small> <span class="text-primary">07</span></td>
+										<td>Mr.Pongpith Sim <small>(Group1)</small></td>
+										<td class="text-edit">in use</td>
+										<td>Running time : 21 Mins.</td>
+									</tr>
+									<tr>
+										<td><small>No.</small> 08</td>
+										<td>Mr.Chalan No <small>(Group7)</small></td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td><small>No.</small> 08</td>
+										<td>Mr.Chalan No <small>(Group7)</small></td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td><small>No.</small> 08</td>
+										<td>Mr.Chalan No <small>(Group7)</small></td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td><small>No.</small> 08</td>
+										<td>Mr.Chalan No <small>(Group7)</small></td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td><small>No.</small> 08</td>
+										<td>Mr.Chalan No <small>(Group7)</small></td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td><small>No.</small> 08</td>
+										<td>Mr.Chalan No <small>(Group7)</small></td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td><small>No.</small> 08</td>
+										<td>Mr.Chalan No <small>(Group7)</small></td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td><small>No.</small> 08</td>
+										<td>Mr.Chalan No <small>(Group7)</small></td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td><small>No.</small> 08</td>
+										<td>Mr.Chalan No <small>(Group7)</small></td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td><small>No.</small> 08</td>
+										<td>Mr.Chalan No <small>(Group7)</small></td>
+										<td></td>
+										<td></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" value="" id="busy"
+								@input="toggleMenu()">
+							<label class="form-check-label" for="busy">
+								Enter when you're busy
+							</label>
+						</div>
+						<div v-if="is_busy">
+							<p class="mb-1">select your busy date & time range</p>
+							<div v-for="(item, index) in busy_time" :key="index"
+								class="form-row align-items-center mb-2">
+								<div class="col">
+									<div class="input-with-icon">
+										<input v-model="item.start_date" type="date"
+											class="form-control"
+											placeholder="Date">
+										<span class="input-icon">
+											<i class="material-icons">calendar_today</i>
+										</span>
+									</div>
+								</div>
+								<div class="col">
+									<div class="input-with-icon">
+										<input v-model="item.start_time" type="time"
+											class="form-control"
+											placeholder="Time">
+										<span class="input-icon">
+											<i class="material-icons">schedule</i>
+										</span>
+									</div>
+								</div>
+								<div class="col-auto">to</div>
+								<div class="col">
+									<div class="input-with-icon">
+										<input v-model="item.end_date" type="date"
+											class="form-control"
+											placeholder="date">
+										<span class="input-icon">
+											<i class="material-icons">calendar_today</i>
+										</span>
+									</div>
+								</div>
+								<div class="col">
+									<div class="input-with-icon">
+										<input v-model="item.end_time" type="time"
+											class="form-control"
+											placeholder="Time">
+										<span class="input-icon">
+											<i class="material-icons">schedule</i>
+										</span>
+									</div>
+								</div>
+								<div class="col-auto" v-if="busy_time.length > 1">
+									<span class="custom-icon icon-delete" style="cursor:pointer"
+										@click="removeBusyTime(index)"></span>
+								</div>
+							</div>
+							<div class="text-right" v-if="busy_time.length < 3">
+								<a href="javascript:void(0)" style="font-size:0.9rem"
+									@click="addBusyTime">
+									+ Add more busy time slot
+								</a>
+							</div>
+						</div>
+						<div class="text-center">
+							<button type="button" class="btn btn-success" @click="callBookSuccess">
+								Book A Queue
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<?php echo '<script'; ?>
+ src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ defer>
+	new Vue({
+		el: "#data-app",
+		data() {
+			return {
+				is_busy: false,
+				busy_time: [
+					{
+						start_date: null,
+						start_time: null,
+						end_date: null,
+						end_time: null,
+					}
+				]
+			}
+		},
+		methods: {
+			toggleMenu() {
+				this.is_busy = !this.is_busy
+			},
+			addBusyTime() {
+				this.busy_time.length < 3 && this.busy_time.push({
+					start_date: null,
+					start_time: null,
+					end_date: null,
+					end_time: null,
+				})
+			},
+			removeBusyTime(i) {
+				this.busy_time.splice(i, 1)
+			},
+			callBookSuccess(){
+				Swal.fire({
+					icon: 'success',
+					title: 'Queuing Success',
+					html: '<div class="box mb-3"><div class="h2">Chalantorn Newviyawong <small>(Group4)</small></div><div class="h3">ATR-FTIR</div><div class="d-inline-block py-3 px-5"style="background:#F6F4F9;border-radius:10px"><div class="h4 mb-0">Queue No.</div><div style="font-size:5rem">15</div></div></div><div class="mb-2">Log in using the face recognize from the tool you booked when your queue arrives</div>',
+					customClass: {
+						closeButton: 'closeButton',
+						actions: 'actions',
+						confirmButton: 'confirmButton',
+						denyButton: 'denyButton',
+						cancelButton: 'cancelButton',
+					}
+				})
+			}
+		}
+	})
+<?php echo '</script'; ?>
+>
+
 
 
 <?php } else { ?>
@@ -590,7 +861,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 	-->
 
 	<?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_8319654995fa9242799e4b2_90333468', "schedule_control");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_7704017355fa9b5d2cd8eb1_25175272', "schedule_control");
 ?>
 
 
@@ -633,7 +904,7 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_8319654995fa924279
 			
 
 			<?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_20962654595fa92427ae01b2_70654002', "reservations");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_18454909465fa9b5d2dd6e33_36102736', "reservations");
 ?>
 
 
@@ -643,7 +914,7 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_20962654595fa92427
 			</section>
 
 			<?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_5397176145fa92427b01347_26503480', "legend");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_6573408835fa9b5d2df77c5_25703061', "legend");
 ?>
 
 		<?php } else { ?>
@@ -692,17 +963,17 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_5397176145fa92427b
 </div>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1466851825fa92427b471e1_83613079', "scripts-before");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_5400601255fa9b5d2e2be30_18885859', "scripts-before");
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_15753370315fa92427bbf482_72979012', "scripts-common");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_9628114945fa9b5d2e8e6a4_17360060', "scripts-common");
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_4591941455fa92427bc5f78_80927576', "scripts-after");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_946900875fa9b5d2e95944_91783026', "scripts-after");
 ?>
 
 
@@ -749,9 +1020,9 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_4591941455fa92427b
 		z-index: 1040 !important;
 	}
 </style><?php }
-/* smarty_template_function_displayGeneralReserved_15066445505fa92426e71877_58211833 */
-if (!function_exists('smarty_template_function_displayGeneralReserved_15066445505fa92426e71877_58211833')) {
-function smarty_template_function_displayGeneralReserved_15066445505fa92426e71877_58211833($_smarty_tpl,$params) {
+/* smarty_template_function_displayGeneralReserved_7807460745fa9b5d24c03f7_96586822 */
+if (!function_exists('smarty_template_function_displayGeneralReserved_7807460745fa9b5d24c03f7_96586822')) {
+function smarty_template_function_displayGeneralReserved_7807460745fa9b5d24c03f7_96586822($_smarty_tpl,$params) {
 foreach ($params as $key => $value) {
 $_smarty_tpl->tpl_vars[$key] = new Smarty_Variable($value, $_smarty_tpl->isRenderingCache);
 }?>
@@ -778,10 +1049,10 @@ span="<?php echo $_smarty_tpl->tpl_vars['Slot']->value->PeriodSpan();?>
 </td>
 <?php
 }}
-/*/ smarty_template_function_displayGeneralReserved_15066445505fa92426e71877_58211833 */
-/* smarty_template_function_displayMyReserved_15066445505fa92426e71877_58211833 */
-if (!function_exists('smarty_template_function_displayMyReserved_15066445505fa92426e71877_58211833')) {
-function smarty_template_function_displayMyReserved_15066445505fa92426e71877_58211833($_smarty_tpl,$params) {
+/*/ smarty_template_function_displayGeneralReserved_7807460745fa9b5d24c03f7_96586822 */
+/* smarty_template_function_displayMyReserved_7807460745fa9b5d24c03f7_96586822 */
+if (!function_exists('smarty_template_function_displayMyReserved_7807460745fa9b5d24c03f7_96586822')) {
+function smarty_template_function_displayMyReserved_7807460745fa9b5d24c03f7_96586822($_smarty_tpl,$params) {
 foreach ($params as $key => $value) {
 $_smarty_tpl->tpl_vars[$key] = new Smarty_Variable($value, $_smarty_tpl->isRenderingCache);
 }?>
@@ -789,10 +1060,10 @@ $_smarty_tpl->tpl_vars[$key] = new Smarty_Variable($value, $_smarty_tpl->isRende
 
 <?php
 }}
-/*/ smarty_template_function_displayMyReserved_15066445505fa92426e71877_58211833 */
-/* smarty_template_function_displayMyParticipating_15066445505fa92426e71877_58211833 */
-if (!function_exists('smarty_template_function_displayMyParticipating_15066445505fa92426e71877_58211833')) {
-function smarty_template_function_displayMyParticipating_15066445505fa92426e71877_58211833($_smarty_tpl,$params) {
+/*/ smarty_template_function_displayMyReserved_7807460745fa9b5d24c03f7_96586822 */
+/* smarty_template_function_displayMyParticipating_7807460745fa9b5d24c03f7_96586822 */
+if (!function_exists('smarty_template_function_displayMyParticipating_7807460745fa9b5d24c03f7_96586822')) {
+function smarty_template_function_displayMyParticipating_7807460745fa9b5d24c03f7_96586822($_smarty_tpl,$params) {
 foreach ($params as $key => $value) {
 $_smarty_tpl->tpl_vars[$key] = new Smarty_Variable($value, $_smarty_tpl->isRenderingCache);
 }?>
@@ -800,10 +1071,10 @@ $_smarty_tpl->tpl_vars[$key] = new Smarty_Variable($value, $_smarty_tpl->isRende
 
 <?php
 }}
-/*/ smarty_template_function_displayMyParticipating_15066445505fa92426e71877_58211833 */
-/* smarty_template_function_displayReserved_15066445505fa92426e71877_58211833 */
-if (!function_exists('smarty_template_function_displayReserved_15066445505fa92426e71877_58211833')) {
-function smarty_template_function_displayReserved_15066445505fa92426e71877_58211833($_smarty_tpl,$params) {
+/*/ smarty_template_function_displayMyParticipating_7807460745fa9b5d24c03f7_96586822 */
+/* smarty_template_function_displayReserved_7807460745fa9b5d24c03f7_96586822 */
+if (!function_exists('smarty_template_function_displayReserved_7807460745fa9b5d24c03f7_96586822')) {
+function smarty_template_function_displayReserved_7807460745fa9b5d24c03f7_96586822($_smarty_tpl,$params) {
 foreach ($params as $key => $value) {
 $_smarty_tpl->tpl_vars[$key] = new Smarty_Variable($value, $_smarty_tpl->isRenderingCache);
 }?>
@@ -811,10 +1082,10 @@ $_smarty_tpl->tpl_vars[$key] = new Smarty_Variable($value, $_smarty_tpl->isRende
 
 <?php
 }}
-/*/ smarty_template_function_displayReserved_15066445505fa92426e71877_58211833 */
-/* smarty_template_function_displayPastTime_15066445505fa92426e71877_58211833 */
-if (!function_exists('smarty_template_function_displayPastTime_15066445505fa92426e71877_58211833')) {
-function smarty_template_function_displayPastTime_15066445505fa92426e71877_58211833($_smarty_tpl,$params) {
+/*/ smarty_template_function_displayReserved_7807460745fa9b5d24c03f7_96586822 */
+/* smarty_template_function_displayPastTime_7807460745fa9b5d24c03f7_96586822 */
+if (!function_exists('smarty_template_function_displayPastTime_7807460745fa9b5d24c03f7_96586822')) {
+function smarty_template_function_displayPastTime_7807460745fa9b5d24c03f7_96586822($_smarty_tpl,$params) {
 foreach ($params as $key => $value) {
 $_smarty_tpl->tpl_vars[$key] = new Smarty_Variable($value, $_smarty_tpl->isRenderingCache);
 }?>
@@ -829,10 +1100,10 @@ span="<?php echo $_smarty_tpl->tpl_vars['Slot']->value->PeriodSpan();?>
 </td>
 <?php
 }}
-/*/ smarty_template_function_displayPastTime_15066445505fa92426e71877_58211833 */
-/* smarty_template_function_displayReservable_15066445505fa92426e71877_58211833 */
-if (!function_exists('smarty_template_function_displayReservable_15066445505fa92426e71877_58211833')) {
-function smarty_template_function_displayReservable_15066445505fa92426e71877_58211833($_smarty_tpl,$params) {
+/*/ smarty_template_function_displayPastTime_7807460745fa9b5d24c03f7_96586822 */
+/* smarty_template_function_displayReservable_7807460745fa9b5d24c03f7_96586822 */
+if (!function_exists('smarty_template_function_displayReservable_7807460745fa9b5d24c03f7_96586822')) {
+function smarty_template_function_displayReservable_7807460745fa9b5d24c03f7_96586822($_smarty_tpl,$params) {
 foreach ($params as $key => $value) {
 $_smarty_tpl->tpl_vars[$key] = new Smarty_Variable($value, $_smarty_tpl->isRenderingCache);
 }?>
@@ -848,10 +1119,10 @@ span="<?php echo $_smarty_tpl->tpl_vars['Slot']->value->PeriodSpan();?>
 ">&nbsp;</td>
 <?php
 }}
-/*/ smarty_template_function_displayReservable_15066445505fa92426e71877_58211833 */
-/* smarty_template_function_displayRestricted_15066445505fa92426e71877_58211833 */
-if (!function_exists('smarty_template_function_displayRestricted_15066445505fa92426e71877_58211833')) {
-function smarty_template_function_displayRestricted_15066445505fa92426e71877_58211833($_smarty_tpl,$params) {
+/*/ smarty_template_function_displayReservable_7807460745fa9b5d24c03f7_96586822 */
+/* smarty_template_function_displayRestricted_7807460745fa9b5d24c03f7_96586822 */
+if (!function_exists('smarty_template_function_displayRestricted_7807460745fa9b5d24c03f7_96586822')) {
+function smarty_template_function_displayRestricted_7807460745fa9b5d24c03f7_96586822($_smarty_tpl,$params) {
 foreach ($params as $key => $value) {
 $_smarty_tpl->tpl_vars[$key] = new Smarty_Variable($value, $_smarty_tpl->isRenderingCache);
 }?>
@@ -860,10 +1131,10 @@ span="<?php echo $_smarty_tpl->tpl_vars['Slot']->value->PeriodSpan();?>
 " class="restricted slot">&nbsp;</td>
 <?php
 }}
-/*/ smarty_template_function_displayRestricted_15066445505fa92426e71877_58211833 */
-/* smarty_template_function_displayUnreservable_15066445505fa92426e71877_58211833 */
-if (!function_exists('smarty_template_function_displayUnreservable_15066445505fa92426e71877_58211833')) {
-function smarty_template_function_displayUnreservable_15066445505fa92426e71877_58211833($_smarty_tpl,$params) {
+/*/ smarty_template_function_displayRestricted_7807460745fa9b5d24c03f7_96586822 */
+/* smarty_template_function_displayUnreservable_7807460745fa9b5d24c03f7_96586822 */
+if (!function_exists('smarty_template_function_displayUnreservable_7807460745fa9b5d24c03f7_96586822')) {
+function smarty_template_function_displayUnreservable_7807460745fa9b5d24c03f7_96586822($_smarty_tpl,$params) {
 foreach ($params as $key => $value) {
 $_smarty_tpl->tpl_vars[$key] = new Smarty_Variable($value, $_smarty_tpl->isRenderingCache);
 }?>
@@ -874,10 +1145,10 @@ span="<?php echo $_smarty_tpl->tpl_vars['Slot']->value->PeriodSpan();?>
 </td>
 <?php
 }}
-/*/ smarty_template_function_displayUnreservable_15066445505fa92426e71877_58211833 */
-/* smarty_template_function_displaySlot_15066445505fa92426e71877_58211833 */
-if (!function_exists('smarty_template_function_displaySlot_15066445505fa92426e71877_58211833')) {
-function smarty_template_function_displaySlot_15066445505fa92426e71877_58211833($_smarty_tpl,$params) {
+/*/ smarty_template_function_displayUnreservable_7807460745fa9b5d24c03f7_96586822 */
+/* smarty_template_function_displaySlot_7807460745fa9b5d24c03f7_96586822 */
+if (!function_exists('smarty_template_function_displaySlot_7807460745fa9b5d24c03f7_96586822')) {
+function smarty_template_function_displaySlot_7807460745fa9b5d24c03f7_96586822($_smarty_tpl,$params) {
 foreach ($params as $key => $value) {
 $_smarty_tpl->tpl_vars[$key] = new Smarty_Variable($value, $_smarty_tpl->isRenderingCache);
 }?>
@@ -892,9 +1163,9 @@ $_smarty_tpl->tpl_vars[$key] = new Smarty_Variable($value, $_smarty_tpl->isRende
 
 <?php
 }}
-/*/ smarty_template_function_displaySlot_15066445505fa92426e71877_58211833 */
+/*/ smarty_template_function_displaySlot_7807460745fa9b5d24c03f7_96586822 */
 /* {block "header"} */
-class Block_4582800275fa92427736628_33398627 extends Smarty_Internal_Block
+class Block_18323989565fa9b5d2ade1a1_44171406 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -907,7 +1178,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block "header"} */
 /* {block "schedule_control"} */
-class Block_8319654995fa9242799e4b2_90333468 extends Smarty_Internal_Block
+class Block_7704017355fa9b5d2cd8eb1_25175272 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -1020,7 +1291,7 @@ echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['html_ima
 }
 /* {/block "schedule_control"} */
 /* {block "reservations"} */
-class Block_20962654595fa92427ae01b2_70654002 extends Smarty_Internal_Block
+class Block_18454909465fa9b5d2dd6e33_36102736 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -1305,7 +1576,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 }
 /* {/block "reservations"} */
 /* {block "legend"} */
-class Block_5397176145fa92427b01347_26503480 extends Smarty_Internal_Block
+class Block_6573408835fa9b5d2df77c5_25703061 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -1335,7 +1606,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block "legend"} */
 /* {block "scripts-before"} */
-class Block_1466851825fa92427b471e1_83613079 extends Smarty_Internal_Block
+class Block_5400601255fa9b5d2e2be30_18885859 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -1346,7 +1617,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block "scripts-before"} */
 /* {block "scripts-common"} */
-class Block_15753370315fa92427bbf482_72979012 extends Smarty_Internal_Block
+class Block_9628114945fa9b5d2e8e6a4_17360060 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -1459,7 +1730,7 @@ ajax/reservation_move.php",
 }
 /* {/block "scripts-common"} */
 /* {block "scripts-after"} */
-class Block_4591941455fa92427bc5f78_80927576 extends Smarty_Internal_Block
+class Block_946900875fa9b5d2e95944_91783026 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>

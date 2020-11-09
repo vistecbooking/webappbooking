@@ -96,7 +96,31 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
 $(document).ready(function(){
 	initResources();
 
-	$("#s").change(function() {
+	function moveSearchPanel(){
+		if(window.matchMedia('(min-width: 992px)').matches){
+			// desktop, move panel to aside
+			if(!$('#searchpanel').html().trim()){
+				$('#searchpanel').html($("#filter_wrapper").html())
+				$("#filter_wrapper").html("")
+			}
+		}else{
+			// mobile, move panel to modal
+			if(!$("#filter_wrapper").html().trim()){
+				$("#filter_wrapper").html($('#searchpanel').html())
+				$('#searchpanel').html("")
+			}
+		}
+	}
+	moveSearchPanel();
+
+	window.addEventListener("resize", moveSearchPanel);
+	window.addEventListener("orientationchange", moveSearchPanel);
+});
+
+var searchBoxTimeout = null;
+function searchEq_searchbox() {
+	clearTimeout(searchBoxTimeout);
+	searchBoxTimeout = setTimeout(function(){
 		var s = $("#s").val()
 		var hostname = window.location.hostname;
 		var path = window.location.pathname;
@@ -122,36 +146,36 @@ $(document).ready(function(){
 				window.location.replace("http://"+hostname+"/Web/schedule.php"); // online
 			}
 		}
-	})
+	}, 750)
+}
 
-	$( "#category" ).change(function() {
-		var str = "";
-		if($('select[name=category]').val() != ""){
-			str = '?bs='+$('select[name=category]').val();
-		}else{
-			str = "";
-		}
+function searchEq_selectcatg() {
+	var str = "";
+	if($('select[name=category]').val() != ""){
+		str = '?bs='+$('select[name=category]').val();
+	}else{
+		str = "";
+	}
 
-		var hostname = window.location.hostname;
-		var path = window.location.pathname;
-		var rootFolder = '';
-		var pathindex = path.toLowerCase().indexOf('/web');
-		if(pathindex > 0)
-		{
-			rootFolder = path.substring(0, pathindex);
-		}
-		hostname += rootFolder;
+	var hostname = window.location.hostname;
+	var path = window.location.pathname;
+	var rootFolder = '';
+	var pathindex = path.toLowerCase().indexOf('/web');
+	if(pathindex > 0)
+	{
+		rootFolder = path.substring(0, pathindex);
+	}
+	hostname += rootFolder;
 
-		var s = $("#s").val()
-		if( s != "" &&  $('select[name=category]').val() != ""){
-			str += '&s='+s;
-		}else if($('select[name=category]').val() == "" && s != ""){
-			str += '?s='+s;
-		}
+	var s = $("#s").val()
+	if( s != "" &&  $('select[name=category]').val() != ""){
+		str += '&s='+s;
+	}else if($('select[name=category]').val() == "" && s != ""){
+		str += '?s='+s;
+	}
 
-	   window.location.replace("http://"+hostname+"/Web/schedule.php"+str); // online
-	});
-});
+		window.location.replace("http://"+hostname+"/Web/schedule.php"+str); // online
+}
 
 function initResources() {
 	$('.resourceNameSelector').each(function () {
@@ -185,7 +209,19 @@ function onBookingClick(url, resource_id){
 <div class="container-fluid">
 	<div class="row mx-0">
 		<div class="col-lg-3 mb-3 d-none d-lg-block">
-			<aside class="aside">
+
+			{*
+
+			 █████╗ ███████╗██╗██████╗ ███████╗
+			██╔══██╗██╔════╝██║██╔══██╗██╔════╝
+			███████║███████╗██║██║  ██║█████╗
+			██╔══██║╚════██║██║██║  ██║██╔══╝
+			██║  ██║███████║██║██████╔╝███████╗
+			╚═╝  ╚═╝╚══════╝╚═╝╚═════╝ ╚══════╝
+
+			*}
+
+			<aside id="searchpanel" class="aside">
 				<h2>Find an equipment</h2>
 				<div class="form-group">
 					<label for="Search" style="font-weight:bold">Search</label>
@@ -195,11 +231,12 @@ function onBookingClick(url, resource_id){
 						value="{$get_s}"
 						class="form-control ui-autocomplete-input"
 						placeholder="Searching for equipment"
-						autocomplete="off">
+						autocomplete="off"
+						oninput="queryInstrument()">
 				</div>
 				<div class="form-group">
 					<label for="category" style="font-weight:bold">Categories</label>
-					<select id="category" name="category" class="form-control">
+					<select id="category" name="category" class="form-control" oninput="searchEq_selectcatg()">
 						<option value="">{translate key=AllResourceTypes}</option>
 						{object_html_options options=$ResourceTypes key='Id' label="Name" selected=$get_bs}
 					</select>
@@ -306,19 +343,19 @@ function onBookingClick(url, resource_id){
 					</div>
 				</div>
 				-->
+				<button type="button" class="btn btn-block btn-success"
+					data-toggle="modal" data-target="#queue-detail">
+					Simulate Queuing Modal
+				</button>
 			</aside>
 		</div>
 		<main class="col-lg-9">
-			<div class="row">
-				<div class="col">
-					<h1 class="text-center">Equipment</h1>
-				</div>
-				<div class="col-auto d-lg-none">
-					<button type="button" class="btn btn-light" data-toggle="modal"
-						data-target="#filterModal">
-						<span class="material-icons">filter_alt</span>
-					</button>
-				</div>
+			<div style="position:relative">
+				<h1 class="text-center">Equipment</h1>
+				<button type="button" class="btn btn-light d-lg-none" data-toggle="modal"
+					data-target="#filterModal" style="position:absolute;right:0;top:0">
+					<span class="material-icons">filter_alt</span>
+				</button>
 			</div>
 			{$i=0}
 			{if count($resources)>0}
@@ -495,7 +532,263 @@ function onBookingClick(url, resource_id){
 }
 </style>
 
+{*
 
+███████╗██╗██╗  ████████╗███████╗██████╗     ███╗   ███╗ ██████╗ ██████╗  █████╗ ██╗
+██╔════╝██║██║  ╚══██╔══╝██╔════╝██╔══██╗    ████╗ ████║██╔═══██╗██╔══██╗██╔══██╗██║
+█████╗  ██║██║     ██║   █████╗  ██████╔╝    ██╔████╔██║██║   ██║██║  ██║███████║██║
+██╔══╝  ██║██║     ██║   ██╔══╝  ██╔══██╗    ██║╚██╔╝██║██║   ██║██║  ██║██╔══██║██║
+██║     ██║███████╗██║   ███████╗██║  ██║    ██║ ╚═╝ ██║╚██████╔╝██████╔╝██║  ██║███████╗
+╚═╝     ╚═╝╚══════╝╚═╝   ╚══════╝╚═╝  ╚═╝    ╚═╝     ╚═╝ ╚═════╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝
+
+*}
+
+<div class="modal fade" id="filterModal" tabindex="-1" aria-labelledby="filterModal"
+	aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-body">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<aside id="filter_wrapper"></aside>
+			</div>
+		</div>
+	</div>
+</div>
+
+{*
+
+ ██████╗ ██╗   ██╗███████╗██╗   ██╗███████╗
+██╔═══██╗██║   ██║██╔════╝██║   ██║██╔════╝
+██║   ██║██║   ██║█████╗  ██║   ██║█████╗
+██║▄▄ ██║██║   ██║██╔══╝  ██║   ██║██╔══╝
+╚██████╔╝╚██████╔╝███████╗╚██████╔╝███████╗
+ ╚══▀▀═╝  ╚═════╝ ╚══════╝ ╚═════╝ ╚══════╝
+
+*}
+
+<div class="modal fade" id="queue-detail" tabindex="-1" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered" style="max-width:95vw">
+		<div class="modal-content">
+			<div class="modal-body py-0">
+				<div class="row">
+					<div class="col-12 order-1 order-sm-0 col-sm-3 py-3">
+						<h1>
+							ATR-FTIR <span class="badge badge-success">Available</span>
+						</h1>
+						<img class="img-fluid d-block mx-auto mb-2" src="../assets/eq.jpg"
+							alt="Equipment" width="100%">
+						<p class="mb-0">
+							<span class="text-danger">
+								***<br>
+								Maximum time: 24 Hrs.<br>
+								Available in: Monday - Friday<br>
+							</span>
+							Person in charge: Mr. Chalantorn New (Chalantorn@gmail.com)
+						</p>
+					</div>
+					<div id="data-app" class="col order-0 order-sm-1 py-3"
+						style="background:#F6F4F9;border-left:1px #707070 solid">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<h2 class="text-center">QUEUING</h2>
+						<p class="lead">In queue: 8 queue(s)</p>
+						<div class="overflow-y mb-3"
+							style="height:30vh;background:#fff;border-radius:.3rem">
+							<table class="table">
+								<tbody>
+									<tr>
+										<td><small>No.</small> <span class="text-primary">07</span></td>
+										<td>Mr.Pongpith Sim <small>(Group1)</small></td>
+										<td class="text-edit">in use</td>
+										<td>Running time : 21 Mins.</td>
+									</tr>
+									<tr>
+										<td><small>No.</small> 08</td>
+										<td>Mr.Chalan No <small>(Group7)</small></td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td><small>No.</small> 08</td>
+										<td>Mr.Chalan No <small>(Group7)</small></td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td><small>No.</small> 08</td>
+										<td>Mr.Chalan No <small>(Group7)</small></td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td><small>No.</small> 08</td>
+										<td>Mr.Chalan No <small>(Group7)</small></td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td><small>No.</small> 08</td>
+										<td>Mr.Chalan No <small>(Group7)</small></td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td><small>No.</small> 08</td>
+										<td>Mr.Chalan No <small>(Group7)</small></td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td><small>No.</small> 08</td>
+										<td>Mr.Chalan No <small>(Group7)</small></td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td><small>No.</small> 08</td>
+										<td>Mr.Chalan No <small>(Group7)</small></td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td><small>No.</small> 08</td>
+										<td>Mr.Chalan No <small>(Group7)</small></td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td><small>No.</small> 08</td>
+										<td>Mr.Chalan No <small>(Group7)</small></td>
+										<td></td>
+										<td></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" value="" id="busy"
+								@input="toggleMenu()">
+							<label class="form-check-label" for="busy">
+								Enter when you're busy
+							</label>
+						</div>
+						<div v-if="is_busy">
+							<p class="mb-1">select your busy date & time range</p>
+							<div v-for="(item, index) in busy_time" :key="index"
+								class="form-row align-items-center mb-2">
+								<div class="col">
+									<div class="input-with-icon">
+										<input v-model="item.start_date" type="date"
+											class="form-control"
+											placeholder="Date">
+										<span class="input-icon">
+											<i class="material-icons">calendar_today</i>
+										</span>
+									</div>
+								</div>
+								<div class="col">
+									<div class="input-with-icon">
+										<input v-model="item.start_time" type="time"
+											class="form-control"
+											placeholder="Time">
+										<span class="input-icon">
+											<i class="material-icons">schedule</i>
+										</span>
+									</div>
+								</div>
+								<div class="col-auto">to</div>
+								<div class="col">
+									<div class="input-with-icon">
+										<input v-model="item.end_date" type="date"
+											class="form-control"
+											placeholder="date">
+										<span class="input-icon">
+											<i class="material-icons">calendar_today</i>
+										</span>
+									</div>
+								</div>
+								<div class="col">
+									<div class="input-with-icon">
+										<input v-model="item.end_time" type="time"
+											class="form-control"
+											placeholder="Time">
+										<span class="input-icon">
+											<i class="material-icons">schedule</i>
+										</span>
+									</div>
+								</div>
+								<div class="col-auto" v-if="busy_time.length > 1">
+									<span class="custom-icon icon-delete" style="cursor:pointer"
+										@click="removeBusyTime(index)"></span>
+								</div>
+							</div>
+							<div class="text-right" v-if="busy_time.length < 3">
+								<a href="javascript:void(0)" style="font-size:0.9rem"
+									@click="addBusyTime">
+									+ Add more busy time slot
+								</a>
+							</div>
+						</div>
+						<div class="text-center">
+							<button type="button" class="btn btn-success" @click="callBookSuccess">
+								Book A Queue
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script defer>
+	new Vue({
+		el: "#data-app",
+		data() {
+			return {
+				is_busy: false,
+				busy_time: [
+					{
+						start_date: null,
+						start_time: null,
+						end_date: null,
+						end_time: null,
+					}
+				]
+			}
+		},
+		methods: {
+			toggleMenu() {
+				this.is_busy = !this.is_busy
+			},
+			addBusyTime() {
+				this.busy_time.length < 3 && this.busy_time.push({
+					start_date: null,
+					start_time: null,
+					end_date: null,
+					end_time: null,
+				})
+			},
+			removeBusyTime(i) {
+				this.busy_time.splice(i, 1)
+			},
+			callBookSuccess(){
+				Swal.fire({
+					icon: 'success',
+					title: 'Queuing Success',
+					html: '<div class="box mb-3"><div class="h2">Chalantorn Newviyawong <small>(Group4)</small></div><div class="h3">ATR-FTIR</div><div class="d-inline-block py-3 px-5"style="background:#F6F4F9;border-radius:10px"><div class="h4 mb-0">Queue No.</div><div style="font-size:5rem">15</div></div></div><div class="mb-2">Log in using the face recognize from the tool you booked when your queue arrives</div>',
+					customClass: {
+						confirmButton: 'btn btn-primary',
+					}
+				})
+			}
+		}
+	})
+</script>
 
 {*
 
