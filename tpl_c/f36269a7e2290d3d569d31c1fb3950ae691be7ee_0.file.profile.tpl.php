@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-11-09 14:46:29
+/* Smarty version 3.1.30, created on 2020-11-09 18:56:05
   from "/var/www/html/booking/tpl/MyAccount/profile.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5fa8f3d5a5ae83_33164625',
+  'unifunc' => 'content_5fa92e557df7d4_93720145',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f36269a7e2290d3d569d31c1fb3950ae691be7ee' => 
     array (
       0 => '/var/www/html/booking/tpl/MyAccount/profile.tpl',
-      1 => 1604907985,
+      1 => 1604921984,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:globalheader.tpl' => 1,
   ),
 ),false)) {
-function content_5fa8f3d5a5ae83_33164625 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fa92e557df7d4_93720145 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_function_html_options')) require_once '/var/www/html/booking/lib/external/Smarty/plugins/function.html_options.php';
 ?>
 
@@ -212,6 +212,8 @@ echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['textbox'
     </div>
     <div class="row">
       <div class="col-md-6">
+	  <form id="notification-preferences-form" method="post" action="<?php echo $_SERVER['SCRIPT_NAME'];?>
+">
         <div class="box box-lg mb-4">
           <h2>Notification Preference</h2>
           <div class="form-group">
@@ -220,36 +222,35 @@ echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['textbox'
             <div
               class="btn-group btn-group-toggle d-flex"
               data-toggle="buttons">
-              <label class="btn btn-outline-success active">
+              <label class="btn btn-outline-success <?php if ($_smarty_tpl->tpl_vars['Created']->value) {?>active<?php }?>">
                 <input
                   type="radio"
-                  name="options"
-                  autocomplete="off"
-                  checked />
+				  id="createdYes"
+                  name="<?php echo ReservationEvent::Created;?>
+" value="1" <?php if ($_smarty_tpl->tpl_vars['Created']->value) {?>checked="checked"<?php }?> autocomplete="off" />
                 Send me an email
               </label>
-              <label class="btn btn-outline-secondary">
-                <input type="radio" name="options" autocomplete="off" /> Do
+              <label class="btn btn-outline-secondary <?php if (!$_smarty_tpl->tpl_vars['Created']->value) {?>active<?php }?>">
+                <input type="radio" id="createdNo" name="<?php echo ReservationEvent::Created;?>
+" value="0" <?php if (!$_smarty_tpl->tpl_vars['Created']->value) {?>checked="checked"<?php }?> autocomplete="off" /> Do
                 not notify me
               </label>
             </div>
           </div>
           <div class="form-group">
-            <label>When I create a reservation or a reservation is created on my
+            <label>When I update a reservation or a reservation is created on my
               behalf</label>
             <div
               class="btn-group btn-group-toggle d-flex"
               data-toggle="buttons">
-              <label class="btn btn-outline-success active">
-                <input
-                  type="radio"
-                  name="options"
-                  autocomplete="off"
-                  checked />
+              <label class="btn btn-outline-success <?php if ($_smarty_tpl->tpl_vars['Updated']->value) {?>active<?php }?>">
+                <input id="updatedYes" type="radio" name="<?php echo ReservationEvent::Updated;?>
+" value="1" <?php if ($_smarty_tpl->tpl_vars['Updated']->value) {?>checked="checked"<?php }?> autocomplete="off" />
                 Send me an email
               </label>
-              <label class="btn btn-outline-secondary">
-                <input type="radio" name="options" autocomplete="off" /> Do
+              <label class="btn btn-outline-secondary <?php if (!$_smarty_tpl->tpl_vars['Updated']->value) {?>active<?php }?>">
+                <input id="updatedNo" type="radio" name="<?php echo ReservationEvent::Updated;?>
+" value="0" <?php if (!$_smarty_tpl->tpl_vars['Updated']->value) {?>checked="checked"<?php }?> autocomplete="off" /> Do
                 not notify me
               </label>
             </div>
@@ -260,16 +261,14 @@ echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['textbox'
             <div
               class="btn-group btn-group-toggle d-flex"
               data-toggle="buttons">
-              <label class="btn btn-outline-success active">
-                <input
-                  type="radio"
-                  name="options"
-                  autocomplete="off"
-                  checked />
+              <label class="btn btn-outline-success <?php if ($_smarty_tpl->tpl_vars['Deleted']->value) {?>active<?php }?>">
+                <input id="deletedYes" type="radio" name="<?php echo ReservationEvent::Deleted;?>
+" value="1" <?php if ($_smarty_tpl->tpl_vars['Deleted']->value) {?>checked="checked"<?php }?> autocomplete="off" />
                 Send me an email
               </label>
-              <label class="btn btn-outline-secondary">
-                <input type="radio" name="options" autocomplete="off" /> Do
+              <label class="btn btn-outline-secondary <?php if (!$_smarty_tpl->tpl_vars['Deleted']->value) {?>active<?php }?>">
+                <input id="deletedNo" type="radio" name="<?php echo ReservationEvent::Deleted;?>
+" value="0" <?php if (!$_smarty_tpl->tpl_vars['Deleted']->value) {?>checked="checked"<?php }?> autocomplete="off" /> Do
                 not notify me
               </label>
             </div>
@@ -279,21 +278,27 @@ echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['textbox'
             <div
               class="btn-group btn-group-toggle d-flex"
               data-toggle="buttons">
-              <label class="btn btn-outline-success active">
-                <input
-                  type="radio"
-                  name="options"
-                  autocomplete="off"
-                  checked />
+              <label class="btn btn-outline-success <?php if ($_smarty_tpl->tpl_vars['Approved']->value) {?>active<?php }?>">
+                <input id="approvedYes" type="radio" name="<?php echo ReservationEvent::Approved;?>
+" value="1" <?php if ($_smarty_tpl->tpl_vars['Approved']->value) {?>checked="checked"<?php }?> autocomplete="off" />
                 Send me an email
               </label>
-              <label class="btn btn-outline-secondary">
-                <input type="radio" name="options" autocomplete="off" /> Do
+              <label class="btn btn-outline-secondary <?php if (!$_smarty_tpl->tpl_vars['Approved']->value) {?>active<?php }?>">
+                <input id="approvedNo" type="radio" name="<?php echo ReservationEvent::Approved;?>
+" value="0" <?php if (!$_smarty_tpl->tpl_vars['Approved']->value) {?>checked="checked"<?php }?> autocomplete="off" /> Do
                 not notify me
               </label>
             </div>
           </div>
+		  <br />
+		 <div class="text-right">
+				<button type="submit" class="btn btn-success" name="<?php echo Actions::SAVE;?>
+" >
+				Update
+				</button>
+			</div>
         </div>
+		</form>
       </div>
       <div class="col-md-6 change-pwd-box">
         <div class="box box-lg mb-4">

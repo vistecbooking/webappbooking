@@ -144,6 +144,7 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
     </div>
     <div class="row">
       <div class="col-md-6">
+	  <form id="notification-preferences-form" method="post" action="{$smarty.server.SCRIPT_NAME}">
         <div class="box box-lg mb-4">
           <h2>Notification Preference</h2>
           <div class="form-group">
@@ -152,36 +153,31 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
             <div
               class="btn-group btn-group-toggle d-flex"
               data-toggle="buttons">
-              <label class="btn btn-outline-success active">
+              <label class="btn btn-outline-success {if $Created}active{/if}">
                 <input
                   type="radio"
-                  name="options"
-                  autocomplete="off"
-                  checked />
+				  id="createdYes"
+                  name="{ReservationEvent::Created}" value="1" {if $Created}checked="checked"{/if} autocomplete="off" />
                 Send me an email
               </label>
-              <label class="btn btn-outline-secondary">
-                <input type="radio" name="options" autocomplete="off" /> Do
+              <label class="btn btn-outline-secondary {if !$Created}active{/if}">
+                <input type="radio" id="createdNo" name="{ReservationEvent::Created}" value="0" {if !$Created}checked="checked"{/if} autocomplete="off" /> Do
                 not notify me
               </label>
             </div>
           </div>
           <div class="form-group">
-            <label>When I create a reservation or a reservation is created on my
+            <label>When I update a reservation or a reservation is created on my
               behalf</label>
             <div
               class="btn-group btn-group-toggle d-flex"
               data-toggle="buttons">
-              <label class="btn btn-outline-success active">
-                <input
-                  type="radio"
-                  name="options"
-                  autocomplete="off"
-                  checked />
+              <label class="btn btn-outline-success {if $Updated}active{/if}">
+                <input id="updatedYes" type="radio" name="{ReservationEvent::Updated}" value="1" {if $Updated}checked="checked"{/if} autocomplete="off" />
                 Send me an email
               </label>
-              <label class="btn btn-outline-secondary">
-                <input type="radio" name="options" autocomplete="off" /> Do
+              <label class="btn btn-outline-secondary {if !$Updated}active{/if}">
+                <input id="updatedNo" type="radio" name="{ReservationEvent::Updated}" value="0" {if !$Updated}checked="checked"{/if} autocomplete="off" /> Do
                 not notify me
               </label>
             </div>
@@ -192,16 +188,12 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
             <div
               class="btn-group btn-group-toggle d-flex"
               data-toggle="buttons">
-              <label class="btn btn-outline-success active">
-                <input
-                  type="radio"
-                  name="options"
-                  autocomplete="off"
-                  checked />
+              <label class="btn btn-outline-success {if $Deleted}active{/if}">
+                <input id="deletedYes" type="radio" name="{ReservationEvent::Deleted}" value="1" {if $Deleted}checked="checked"{/if} autocomplete="off" />
                 Send me an email
               </label>
-              <label class="btn btn-outline-secondary">
-                <input type="radio" name="options" autocomplete="off" /> Do
+              <label class="btn btn-outline-secondary {if !$Deleted}active{/if}">
+                <input id="deletedNo" type="radio" name="{ReservationEvent::Deleted}" value="0" {if !$Deleted}checked="checked"{/if} autocomplete="off" /> Do
                 not notify me
               </label>
             </div>
@@ -211,21 +203,24 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
             <div
               class="btn-group btn-group-toggle d-flex"
               data-toggle="buttons">
-              <label class="btn btn-outline-success active">
-                <input
-                  type="radio"
-                  name="options"
-                  autocomplete="off"
-                  checked />
+              <label class="btn btn-outline-success {if $Approved}active{/if}">
+                <input id="approvedYes" type="radio" name="{ReservationEvent::Approved}" value="1" {if $Approved}checked="checked"{/if} autocomplete="off" />
                 Send me an email
               </label>
-              <label class="btn btn-outline-secondary">
-                <input type="radio" name="options" autocomplete="off" /> Do
+              <label class="btn btn-outline-secondary {if !$Approved}active{/if}">
+                <input id="approvedNo" type="radio" name="{ReservationEvent::Approved}" value="0" {if !$Approved}checked="checked"{/if} autocomplete="off" /> Do
                 not notify me
               </label>
             </div>
           </div>
+		  <br />
+		 <div class="text-right">
+				<button type="submit" class="btn btn-success" name="{Actions::SAVE}" >
+				Update
+				</button>
+			</div>
         </div>
+		</form>
       </div>
       <div class="col-md-6 change-pwd-box">
         <div class="box box-lg mb-4">
