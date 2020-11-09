@@ -38,4 +38,3 @@ td.fc-today {
 		{include file="Dashboard/calendar-page-base.tpl"}
 	</div>
 </div>
-</div>
