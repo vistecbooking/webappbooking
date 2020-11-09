@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-11-06 00:51:56
+/* Smarty version 3.1.30, created on 2020-11-10 05:30:50
   from "/var/www/html/booking/tpl/Admin/Attributes/manage_attributes.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5fa43bbc208096_35506683',
+  'unifunc' => 'content_5fa9c31aa62260_47956070',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b503415fec74590d2f5e0ddb7beacf767b1fce68' => 
     array (
       0 => '/var/www/html/booking/tpl/Admin/Attributes/manage_attributes.tpl',
-      1 => 1604581918,
+      1 => 1604960841,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:globalfooter.tpl' => 1,
   ),
 ),false)) {
-function content_5fa43bbc208096_35506683 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fa9c31aa62260_47956070 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 
@@ -31,31 +31,51 @@ function content_5fa43bbc208096_35506683 (Smarty_Internal_Template $_smarty_tpl)
 
 
 <div id="page-manage-attributes" class="admin-page">
-	<h1><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'CustomAttributes'),$_smarty_tpl);?>
+	<div class="container">
+		<div class="box box-lg mb-3">
+			<div class="row no-gutters">
+				<div class="col-auto">
+					<h1><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'CustomAttributes'),$_smarty_tpl);?>
 </h1>
+				</div>
+				<div class="col"></div>
+				<div class="col-auto">
+					<a href="#" id="addAttributeButton" class="btn btn-success mb-3 mb-sm-0">
+						<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'AddAttribute'),$_smarty_tpl);?>
 
-	<div id="customAttributeHeader" class="form-group">
-
-		<label><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Category'),$_smarty_tpl);?>
-:
-			<select id="attributeCategory" class="inline form-control">
-				<option value="<?php echo CustomAttributeCategory::RESERVATION;?>
+					</a>
+				</div>
+			</div>
+			<div class="box box-bordered">
+				<form action="#">
+					<div class="form-row">
+						<div class="col-auto">
+							<div class="form-group">
+								<label><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Category'),$_smarty_tpl);?>
+:</label>
+								<select id="attributeCategory" class="form-control">
+									<option value="<?php echo CustomAttributeCategory::RESERVATION;?>
 "><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'CategoryReservation'),$_smarty_tpl);?>
 </option>
-				<option value="<?php echo CustomAttributeCategory::USER;?>
+									<option value="<?php echo CustomAttributeCategory::USER;?>
 "><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'User'),$_smarty_tpl);?>
 </option>
-				<option value="<?php echo CustomAttributeCategory::RESOURCE;?>
+									<option value="<?php echo CustomAttributeCategory::RESOURCE;?>
 "><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Resource'),$_smarty_tpl);?>
 </option>
-				<option value="<?php echo CustomAttributeCategory::RESOURCE_TYPE;?>
+									<option value="<?php echo CustomAttributeCategory::RESOURCE_TYPE;?>
 "><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'ResourceType'),$_smarty_tpl);?>
 </option>
-			</select>
-		</label>
-
-		<a href="#" id="addAttributeButton"><span class="fa fa-plus-circle icon add"></span> <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'AddAttribute'),$_smarty_tpl);?>
-</a>
+								</select>
+							</div>
+						</div>
+						<div class="col d-flex align-items-center">
+							<span class="ml-sm-3 mt-0 mt-sm-3">(30 attributes)</span>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
 	</div>
 
 	<div class="modal fade" id="addAttributeDialog" tabindex="-1" role="dialog" aria-labelledby="addLabel" aria-hidden="true">

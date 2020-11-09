@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-11-05 20:11:28
+/* Smarty version 3.1.30, created on 2020-11-10 05:14:47
   from "/var/www/html/booking/tpl/Admin/InlineAttributeEdit.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5fa3fa00156b04_64024594',
+  'unifunc' => 'content_5fa9bf5717c940_28157930',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5fa3fa00156b04_64024594 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fa9bf5717c940_28157930 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 
@@ -44,8 +44,8 @@ function content_5fa3fa00156b04_64024594 (Smarty_Internal_Template $_smarty_tpl)
 ?>
 			<?php ob_start();
 echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formatdate'][0][0]->FormatDate(array('date'=>$_smarty_tpl->tpl_vars['value']->value,'key'=>'fullcalendar'),$_smarty_tpl);
-$_prefixVariable8=ob_get_clean();
-$_smarty_tpl->_assignInScope('value', $_prefixVariable8);
+$_prefixVariable9=ob_get_clean();
+$_smarty_tpl->_assignInScope('value', $_prefixVariable9);
 ?>
 		<?php }?>
 		<h5 class="inline"><?php echo $_smarty_tpl->tpl_vars['attribute']->value->Label();?>

@@ -16,9 +16,10 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
 *}
-<h3>{$Attributes|count} {translate key=Attributes}</h3>
+<!-- <h3>{$Attributes|count} {translate key=Attributes}</h3> -->
 {if $Attributes|count > 0}
-	<table class="table">
+<div class="table-responsive table-shadow mb-3">
+	<table class="table table-md table-vistec table-highlight table-sm">
 		<thead>
 		<tr>
 			<th>ID</th>
@@ -88,6 +89,7 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
 		{/foreach}
 		</tbody>
 	</table>
+</div>
 {/if}
 
 <script type="text/javascript">

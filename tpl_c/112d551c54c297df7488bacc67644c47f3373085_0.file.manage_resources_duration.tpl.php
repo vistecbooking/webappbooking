@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-11-05 20:11:28
+/* Smarty version 3.1.30, created on 2020-11-10 05:14:47
   from "/var/www/html/booking/tpl/Admin/Resources/manage_resources_duration.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5fa3fa007892d3_88915075',
+  'unifunc' => 'content_5fa9bf5744f018_60989401',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5fa3fa007892d3_88915075 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fa9bf5744f018_60989401 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 <div class="minDuration"
