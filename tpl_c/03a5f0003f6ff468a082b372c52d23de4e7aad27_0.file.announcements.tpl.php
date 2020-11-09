@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-11-07 23:09:44
+/* Smarty version 3.1.30, created on 2020-11-09 12:33:49
   from "/var/www/html/booking/tpl/Dashboard/announcements.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5fa6c6c8758f51_26420706',
+  'unifunc' => 'content_5fa8d4bd09f864_40504071',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5fa6c6c8758f51_26420706 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fa8d4bd09f864_40504071 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.css">

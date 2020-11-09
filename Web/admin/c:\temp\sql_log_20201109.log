@@ -1,0 +1,17 @@
+2020-11-09T12:32:50+07:00 [22] DEBUG sql - [User=Tanut Choksatchawathi (tanut.cho@gmail.com)] MySql Query: SELECT g.*, admin_group.name as admin_group_name
+		FROM groups g
+		LEFT JOIN groups admin_group ON g.admin_group_id = admin_group.group_id
+		ORDER BY g.name;
+2020-11-09T12:32:51+07:00 [22] DEBUG sql - [User=Tanut Choksatchawathi (tanut.cho@gmail.com)] MySql Query: SELECT s.*, l.timezone FROM schedules s INNER JOIN layouts l ON s.layout_id = l.layout_id ORDER BY s.name;
+2020-11-09T12:32:51+07:00 [22] DEBUG sql - [User=Tanut Choksatchawathi (tanut.cho@gmail.com)] MySql Query: SELECT r.*, s.admin_group_id as s_admin_group_id,
+		(SELECT GROUP_CONCAT(CONCAT(cav.custom_attribute_id, '=', cav.attribute_value) SEPARATOR "!sep!")
+						FROM custom_attribute_values cav WHERE cav.entity_id = r.resource_id AND cav.attribute_category = 4) as attribute_list,
+		(SELECT GROUP_CONCAT(rga.resource_group_id SEPARATOR "!sep!") FROM resource_group_assignment rga WHERE rga.resource_id = r.resource_id) AS group_list
+		FROM resources r
+		INNER JOIN schedules s ON r.schedule_id = s.schedule_id
+		ORDER BY COALESCE(r.sort_order,0), r.name;
+2020-11-09T12:32:51+07:00 [22] DEBUG sql - [User=Tanut Choksatchawathi (tanut.cho@gmail.com)] MySql Query: SELECT q.*, r.name as resource_name, g.name as group_name, s.name as schedule_name
+		FROM quotas q
+		LEFT JOIN resources r ON r.resource_id = q.resource_id
+		LEFT JOIN groups g ON g.group_id = q.group_id
+		LEFT JOIN schedules s ON s.schedule_id = q.schedule_id;

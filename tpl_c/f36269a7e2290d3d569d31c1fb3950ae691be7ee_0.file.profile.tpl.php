@@ -1,47 +1,42 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-11-07 23:10:34
+/* Smarty version 3.1.30, created on 2020-11-09 14:46:29
   from "/var/www/html/booking/tpl/MyAccount/profile.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5fa6c6faad4e46_20025817',
+  'unifunc' => 'content_5fa8f3d5a5ae83_33164625',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f36269a7e2290d3d569d31c1fb3950ae691be7ee' => 
     array (
       0 => '/var/www/html/booking/tpl/MyAccount/profile.tpl',
-      1 => 1604742064,
+      1 => 1604907985,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
     'file:globalheader.tpl' => 1,
-    'file:globalfooter.tpl' => 1,
   ),
 ),false)) {
-function content_5fa6c6faad4e46_20025817 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fa8f3d5a5ae83_33164625 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_function_html_options')) require_once '/var/www/html/booking/lib/external/Smarty/plugins/function.html_options.php';
 ?>
 
 <?php $_smarty_tpl->_subTemplateRender("file:globalheader.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('Validator'=>true), 0, false);
 ?>
 
+<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['cssfile'][0][0]->IncludeCssFile(array('src'=>'scripts/newcss/my-account.css'),$_smarty_tpl);?>
+
 
 <div class="page-profile">
 
-	<div class="hidden col-xs-12 col-sm-8 col-sm-offset-2 alert alert-success" role="alert" id="profileUpdatedMessage">
-		<span class="glyphicon glyphicon-ok-sign"></span> <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'YourProfileWasUpdated'),$_smarty_tpl);?>
-
-	</div>
-
-
-	<div id="profile-box" class="default-box col-xs-12 col-sm-8 col-sm-offset-2">
-
-
-		<form method="post" ajaxAction="<?php echo ProfileActions::Update;?>
+	  <div class="container">
+    <div class="box box-lg mb-4">
+      <h2>My Profile</h2>
+	  <form method="post" ajaxAction="<?php echo ProfileActions::Update;?>
 " id="form-profile" action="<?php echo $_SERVER['SCRIPT_NAME'];?>
 "
 			  role="form"
@@ -53,56 +48,28 @@ if (!is_callable('smarty_function_html_options')) require_once '/var/www/html/bo
 			  data-bv-onerror="enableButton"
 			  data-bv-onsuccess="enableButton"
 			  data-bv-live="enabled">
+		<div class="validationSummary alert alert-danger no-show" id="validationErrors">
+			<ul>
+				<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['async_validator'][0][0]->AsyncValidator(array('id'=>"fname",'key'=>"FirstNameRequired"),$_smarty_tpl);?>
 
-			<h1><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'EditProfile'),$_smarty_tpl);?>
-</h1>
+				<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['async_validator'][0][0]->AsyncValidator(array('id'=>"lname",'key'=>"LastNameRequired"),$_smarty_tpl);?>
 
-			<div class="validationSummary alert alert-danger no-show" id="validationErrors">
-				<ul>
-					<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['async_validator'][0][0]->AsyncValidator(array('id'=>"fname",'key'=>"FirstNameRequired"),$_smarty_tpl);?>
+				<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['async_validator'][0][0]->AsyncValidator(array('id'=>"username",'key'=>"UserNameRequired"),$_smarty_tpl);?>
 
-					<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['async_validator'][0][0]->AsyncValidator(array('id'=>"lname",'key'=>"LastNameRequired"),$_smarty_tpl);?>
+				<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['async_validator'][0][0]->AsyncValidator(array('id'=>"emailformat",'key'=>"ValidEmailRequired"),$_smarty_tpl);?>
 
-					<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['async_validator'][0][0]->AsyncValidator(array('id'=>"username",'key'=>"UserNameRequired"),$_smarty_tpl);?>
+				<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['async_validator'][0][0]->AsyncValidator(array('id'=>"uniqueemail",'key'=>"UniqueEmailRequired"),$_smarty_tpl);?>
 
-					<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['async_validator'][0][0]->AsyncValidator(array('id'=>"emailformat",'key'=>"ValidEmailRequired"),$_smarty_tpl);?>
+				<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['async_validator'][0][0]->AsyncValidator(array('id'=>"uniqueusername",'key'=>"UniqueUsernameRequired"),$_smarty_tpl);?>
 
-					<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['async_validator'][0][0]->AsyncValidator(array('id'=>"uniqueemail",'key'=>"UniqueEmailRequired"),$_smarty_tpl);?>
+				<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['async_validator'][0][0]->AsyncValidator(array('id'=>"additionalattributes",'key'=>''),$_smarty_tpl);?>
 
-					<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['async_validator'][0][0]->AsyncValidator(array('id'=>"uniqueusername",'key'=>"UniqueUsernameRequired"),$_smarty_tpl);?>
-
-					<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['async_validator'][0][0]->AsyncValidator(array('id'=>"additionalattributes",'key'=>''),$_smarty_tpl);?>
-
-				</ul>
-			</div>
-
-			<?php if ($_smarty_tpl->tpl_vars['IsUser']->value) {?>
-				<div class="row">
-					<div class="col-sm-6 col-sm-offset-3">
-						<center>
-							<img src="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['profile_image'][0][0]->GetProfileImage(array('image'=>$_smarty_tpl->tpl_vars['ProfileImg']->value),$_smarty_tpl);?>
-" alt="Profile Image"
-									class="img-circle" width="200px" height="200px" />
-							<br/>
-							<a class="update imageButton" id="changeImage" href="#"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Change'),$_smarty_tpl);?>
-</a>
-							<?php if ($_smarty_tpl->tpl_vars['ProfileImg']->value != "noimg.png") {?>
-								|
-								<a class="update removeImageButton" id="removeImage" href="#"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Remove'),$_smarty_tpl);?>
-</a>
-							<?php }?>
-							<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['indicator'][0][0]->DisplayIndicator(array('id'=>'removeImageIndicator'),$_smarty_tpl);?>
-
-						</center>
-					</div>
-				</div>
-				<br />
-			<?php }?>
-
-			<div class="row">
-				<div class="col-xs-12 col-sm-6">
-					<div class="form-group">
-						<label class="reg" for="login"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"Username"),$_smarty_tpl);?>
+			</ul>
+		</div>
+		<div class="row">
+			<div class="col-sm">
+			<div class="form-group">
+				<label class="reg" for="login"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"Username"),$_smarty_tpl);?>
 </label>
 						<?php if ($_smarty_tpl->tpl_vars['AllowUsernameChange']->value) {?>
 							<?php ob_start();
@@ -117,11 +84,9 @@ echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['textbox'
  value="<?php echo $_smarty_tpl->tpl_vars['Username']->value;?>
 "/>
 						<?php }?>
-					</div>
-				</div>
-				<div class="col-xs-12 col-sm-6">
-					<div class="form-group">
-						<label class="reg" for="email"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"Email"),$_smarty_tpl);?>
+			</div>
+			<div class="form-group">
+				<label class="reg" for="email"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"Email"),$_smarty_tpl);?>
 </label>
 						<?php if ($_smarty_tpl->tpl_vars['AllowEmailAddressChange']->value) {?>
 							<?php ob_start();
@@ -139,14 +104,10 @@ echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['textbox'
  value="<?php echo $_smarty_tpl->tpl_vars['Email']->value;?>
 "/>
 						<?php }?>
-					</div>
-				</div>
 			</div>
-
-			<div class="row">
-				<div class="col-xs-12 col-sm-6">
-					<div class="form-group">
-						<label class="reg" for="fname"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"FirstName"),$_smarty_tpl);?>
+			<div class="form-row">
+				<div class="col-sm form-group">
+					<label class="reg" for="fname"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"FirstName"),$_smarty_tpl);?>
 </label>
 						<?php if ($_smarty_tpl->tpl_vars['AllowNameChange']->value) {?>
 							<?php ob_start();
@@ -160,12 +121,10 @@ echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['textbox'
 							<input type="hidden" <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'FIRST_NAME'),$_smarty_tpl);?>
  value="<?php echo $_smarty_tpl->tpl_vars['FirstName']->value;?>
 "/>
-						<?php }?>
-					</div>
+						<?php }?>	
 				</div>
-				<div class="col-xs-12 col-sm-6">
-					<div class="form-group">
-						<label class="reg" for="lname"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"LastName"),$_smarty_tpl);?>
+				<div class="col-sm form-group">
+					<label class="reg" for="lname"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"LastName"),$_smarty_tpl);?>
 </label>
 						<?php if ($_smarty_tpl->tpl_vars['AllowNameChange']->value) {?>
 							<?php ob_start();
@@ -180,27 +139,10 @@ echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['textbox'
  value="<?php echo $_smarty_tpl->tpl_vars['LastName']->value;?>
 "/>
 						<?php }?>
-					</div>
 				</div>
 			</div>
-
-			<?php if ($_smarty_tpl->tpl_vars['IsUser']->value) {?>
-				<div class="row">
-					<div class="col-xs-12 col-sm-6">
-						<div class="form-group">
-							<label class="reg" for="nickname"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"NickName"),$_smarty_tpl);?>
-</label>
-							<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['textbox'][0][0]->Textbox(array('type'=>"text",'name'=>"NICKNAME",'class'=>"input",'value'=>"NickName"),$_smarty_tpl);?>
-
-						</div>
-					</div>
-				</div>
-			<?php }?>
-
-			<div class="row">
-				<div class="col-xs-12 col-sm-6">
-					<div class="form-group">
-						<label class="reg" for="phone"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"Phone"),$_smarty_tpl);?>
+			<div class="form-group">
+				<label class="reg" for="phone"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"Phone"),$_smarty_tpl);?>
 </label>
 						<?php if ($_smarty_tpl->tpl_vars['AllowPhoneChange']->value) {?>
 							<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['textbox'][0][0]->Textbox(array('name'=>"PHONE",'class'=>"input",'value'=>"Phone",'size'=>"20"),$_smarty_tpl);?>
@@ -212,45 +154,11 @@ echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['textbox'
  value="<?php echo $_smarty_tpl->tpl_vars['Phone']->value;?>
 "/>
 						<?php }?>
-					</div>
-				</div>
-				<?php if ($_smarty_tpl->tpl_vars['IsUser']->value) {?>
-					<div class="col-xs-12 col-sm-6">
-						<div class="form-group">
-							<label class="reg" for="line_ID"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"LineID"),$_smarty_tpl);?>
-</label>
-							<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['textbox'][0][0]->Textbox(array('name'=>"LINE_ID",'class'=>"input",'value'=>"LineID"),$_smarty_tpl);?>
-
-						</div>
-					</div>
-				<?php }?>
 			</div>
-
-			<?php if ($_smarty_tpl->tpl_vars['IsUser']->value) {?>
-				<div class="row">
-					<div class="col-xs-12 col-sm-6">
-						<div class="form-group">
-							<label class="reg" for="advisor_name"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"AdvisorName"),$_smarty_tpl);?>
-</label>
-							<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['textbox'][0][0]->Textbox(array('name'=>"ADVISOR_NAME",'class'=>"input",'value'=>"AdvisorName"),$_smarty_tpl);?>
-
-						</div>
-					</div>
-					<div class="col-xs-12 col-sm-6">
-						<div class="form-group">
-							<label class="reg" for="student_ID"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"StudentID"),$_smarty_tpl);?>
-</label>
-							<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['textbox'][0][0]->Textbox(array('name'=>"STUDENT_ID",'class'=>"input",'value'=>"StudentID"),$_smarty_tpl);?>
-
-						</div>
-					</div>
-				</div>
-			<?php }?>
-
-			<div class="row">
-				<div class="col-xs-12 col-sm-6">
-					<div class="form-group">
-						<label class="reg" for="organization"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"Organization"),$_smarty_tpl);?>
+			</div>
+			<div class="col-sm">
+			<div class="form-group">
+				<label class="reg" for="organization"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"Organization"),$_smarty_tpl);?>
 </label>
 						<?php if ($_smarty_tpl->tpl_vars['AllowOrganizationChange']->value) {?>
 							<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['textbox'][0][0]->Textbox(array('name'=>"ORGANIZATION",'class'=>"input",'value'=>"Organization",'size'=>"20"),$_smarty_tpl);?>
@@ -262,11 +170,9 @@ echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['textbox'
  value="<?php echo $_smarty_tpl->tpl_vars['Organization']->value;?>
 "/>
 						<?php }?>
-					</div>
-				</div>
-				<div class="col-xs-12 col-sm-6">
-					<div class="form-group">
-						<label class="reg" for="position"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"Position"),$_smarty_tpl);?>
+			</div>
+			<div class="form-group">
+				<label class="reg" for="position"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"Position"),$_smarty_tpl);?>
 </label>
 						<?php if ($_smarty_tpl->tpl_vars['AllowPositionChange']->value) {?>
 							<select id="position" <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'POSITION_ID'),$_smarty_tpl);?>
@@ -283,88 +189,302 @@ echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['textbox'
  value="<?php echo $_smarty_tpl->tpl_vars['PositionId']->value;?>
 "/>
 						<?php }?>
-					</div>
-				</div>
 			</div>
-
-			<?php if (count($_smarty_tpl->tpl_vars['Attributes']->value) > 0) {?>
-				<?php
-$_smarty_tpl->tpl_vars['i'] = new Smarty_Variable(null, $_smarty_tpl->isRenderingCache);$_smarty_tpl->tpl_vars['i']->step = 1;$_smarty_tpl->tpl_vars['i']->total = (int) ceil(($_smarty_tpl->tpl_vars['i']->step > 0 ? count($_smarty_tpl->tpl_vars['Attributes']->value)+1 - (1) : 1-(count($_smarty_tpl->tpl_vars['Attributes']->value))+1)/abs($_smarty_tpl->tpl_vars['i']->step));
-if ($_smarty_tpl->tpl_vars['i']->total > 0) {
-for ($_smarty_tpl->tpl_vars['i']->value = 1, $_smarty_tpl->tpl_vars['i']->iteration = 1;$_smarty_tpl->tpl_vars['i']->iteration <= $_smarty_tpl->tpl_vars['i']->total;$_smarty_tpl->tpl_vars['i']->value += $_smarty_tpl->tpl_vars['i']->step, $_smarty_tpl->tpl_vars['i']->iteration++) {
-$_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration == 1;$_smarty_tpl->tpl_vars['i']->last = $_smarty_tpl->tpl_vars['i']->iteration == $_smarty_tpl->tpl_vars['i']->total;?>
-					<?php if ($_smarty_tpl->tpl_vars['i']->value%2 != 0) {?>
-						<div class="row">
-					<?php }?>
-					<div class="col-xs-12 col-sm-6">
-						<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['control'][0][0]->DisplayControl(array('type'=>"AttributeControl",'attribute'=>$_smarty_tpl->tpl_vars['Attributes']->value[$_smarty_tpl->tpl_vars['i']->value-1]),$_smarty_tpl);?>
-
-					</div>
-					<?php if ($_smarty_tpl->tpl_vars['i']->value%2 == 0 || $_smarty_tpl->tpl_vars['i']->value == count($_smarty_tpl->tpl_vars['Attributes']->value)) {?>
-						</div>
-					<?php }?>
-				<?php }
-}
-?>
-
-			<?php }?>
-
-			<div class="row">
-				<div class="col-xs-12 col-sm-6">
-					<div class="form-group">
-						<label class="reg" for="homepage"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"DefaultPage"),$_smarty_tpl);?>
+			<div class="form-group">
+				<label class="reg" for="homepage"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"DefaultPage"),$_smarty_tpl);?>
 </label>
 						<select <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'DEFAULT_HOMEPAGE'),$_smarty_tpl);?>
  id="homepage" class="form-control">
 							<?php echo smarty_function_html_options(array('values'=>$_smarty_tpl->tpl_vars['HomepageValues']->value,'output'=>$_smarty_tpl->tpl_vars['HomepageOutput']->value,'selected'=>$_smarty_tpl->tpl_vars['Homepage']->value),$_smarty_tpl);?>
 
 						</select>
-					</div>
-				</div>
 			</div>
-
-			<div>
-				<button type="button" class="update btn btn-primary col-xs-12" name="<?php echo Actions::SAVE;?>
-" id="btnUpdate">
-					<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Update'),$_smarty_tpl);?>
-
+			<br />
+			<div class="text-right">
+				<button type="button" class="btn btn-success" name="<?php echo Actions::SAVE;?>
+" id="btnUpdate" >
+				Save Information
 				</button>
 			</div>
-		</form>
-	</div>
-
-	<div id="imageDialog" class="modal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel"
-		aria-hidden="true">
-		<form id="imageForm" method="post" enctype="multipart/form-data" ajaxAction="<?php echo ProfileActions::ActionChangeImage;?>
-">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-						<h4 class="modal-title" id="imageModalLabel"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'AddImage'),$_smarty_tpl);?>
-</h4>
-					</div>
-					<div class="modal-body">
-						<label for="profileImage" class="off-screen">Image file</label>
-						<input id="profileImage" type="file" class="text" size="60" <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'PROFILE_IMG'),$_smarty_tpl);?>
-
-							accept="image/*;capture=camera"/>
-
-						<div class="note">.gif, .jpg, or .png</div>
-					</div>
-
-					<div class="modal-footer">
-						<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['cancel_button'][0][0]->CancelButton(array(),$_smarty_tpl);?>
-
-						<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['update_button'][0][0]->UpdateButton(array(),$_smarty_tpl);?>
-
-						<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['indicator'][0][0]->DisplayIndicator(array(),$_smarty_tpl);?>
-
-					</div>
-				</div>
 			</div>
-		</form>
-	</div>
+		</div>
+	  </form>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="box box-lg mb-4">
+          <h2>Notification Preference</h2>
+          <div class="form-group">
+            <label>When I create a reservation or a reservation is created on my
+              behalf</label>
+            <div
+              class="btn-group btn-group-toggle d-flex"
+              data-toggle="buttons">
+              <label class="btn btn-outline-success active">
+                <input
+                  type="radio"
+                  name="options"
+                  autocomplete="off"
+                  checked />
+                Send me an email
+              </label>
+              <label class="btn btn-outline-secondary">
+                <input type="radio" name="options" autocomplete="off" /> Do
+                not notify me
+              </label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>When I create a reservation or a reservation is created on my
+              behalf</label>
+            <div
+              class="btn-group btn-group-toggle d-flex"
+              data-toggle="buttons">
+              <label class="btn btn-outline-success active">
+                <input
+                  type="radio"
+                  name="options"
+                  autocomplete="off"
+                  checked />
+                Send me an email
+              </label>
+              <label class="btn btn-outline-secondary">
+                <input type="radio" name="options" autocomplete="off" /> Do
+                not notify me
+              </label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>When I delete a reservation or a reservation is deleted on my
+              behalf</label>
+            <div
+              class="btn-group btn-group-toggle d-flex"
+              data-toggle="buttons">
+              <label class="btn btn-outline-success active">
+                <input
+                  type="radio"
+                  name="options"
+                  autocomplete="off"
+                  checked />
+                Send me an email
+              </label>
+              <label class="btn btn-outline-secondary">
+                <input type="radio" name="options" autocomplete="off" /> Do
+                not notify me
+              </label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>When my pending reservation is approved</label>
+            <div
+              class="btn-group btn-group-toggle d-flex"
+              data-toggle="buttons">
+              <label class="btn btn-outline-success active">
+                <input
+                  type="radio"
+                  name="options"
+                  autocomplete="off"
+                  checked />
+                Send me an email
+              </label>
+              <label class="btn btn-outline-secondary">
+                <input type="radio" name="options" autocomplete="off" /> Do
+                not notify me
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 change-pwd-box">
+        <div class="box box-lg mb-4">
+          <h2>Change Password</h2>
+          <div class="form-row">
+            <div class="col-sm form-group">
+              <label for="old-pwd">Your old password</label>
+              <div class="input-with-icon">
+                <input
+                  type="password"
+                  class="form-control"
+                  id="old-pwd"
+                  placeholder="********" />
+                <span
+                  class="input-icon"
+                  onclick="togglePasswordVisibility_old()"><i class="material-icons"
+                    id="old-pwd-icon">visibility_off</i></span>
+              </div>
+            </div>
+            <div class="col-sm form-group"></div>
+          </div>
+          <div class="form-row">
+            <div class="col-sm form-group">
+              <label for="new-pwd">New password</label>
+              <div class="input-with-icon">
+                <input
+                  type="password"
+                  class="form-control"
+                  id="new-pwd"
+                  placeholder="Enter your new password"
+                  oninput="validation(document.getElementById('new-pwd'))" />
+                <span
+                  class="input-icon"
+                  onclick="togglePasswordVisibility_new()"><i class="material-icons"
+                    id="new-pwd-icon">visibility_off</i></span>
+              </div>
+            </div>
+            <div class="col-sm form-group">
+              <label for="pwd-check"></label>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="check-char"
+                  id="check-char"
+                  value="check1"
+                  disabled />
+                <label class="form-check-label" for="check-pwd-char">
+                  At least 6 characters
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="check-num"
+                  id="check-num"
+                  value="check2"
+                  disabled />
+                <label class="form-check-label" for="check-pwd-num">
+                  Contain number and alphabet
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-sm form-group">
+              <input
+                type="password"
+                class="form-control"
+                id="re-pwd"
+                placeholder="Re-enter your new password" />
+            </div>
+            <div class="col-sm form-group"></div>
+          </div>
+          <div class="text-right">
+            <button type="button" class="btn btn-success">
+              Save new password
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="box box-lg mb-4">
+      <h2>Background Picture</h2>
+      <div class="row">
+        <div class="col-md">
+          <div class="bg-pic">
+            <img
+              src="img/vistec_login_box_ratio.png"
+              id="bg-pic"
+              alt="login-box-png"
+              class="login-box-png" />
+          </div>
+        </div>
+        <div class="col-md">
+          <div class="bg-select">
+            <h6>Choose your picture</h6>
+            <img
+              src="img/background/1.png"
+              alt="1.png"
+              id="1"
+              onclick="selected(document.getElementById('1'))" />
+            <img
+              src="img/background/2.png"
+              alt="2.png"
+              id="2"
+              onclick="selected(document.getElementById('2'))" />
+            <img
+              src="img/background/3.png"
+              alt="3.png"
+              id="3"
+              onclick="selected(document.getElementById('3'))" />
+            <img
+              src="img/background/4.png"
+              alt="4.png"
+              id="4"
+              onclick="selected(document.getElementById('4'))" />
+            <img
+              src="img/background/5.png"
+              alt="5.png"
+              id="5"
+              onclick="selected(document.getElementById('5'))" />
+            <div class="select-box">
+              <span class="material-icons add"> add </span>
+              <p>Add new pictures</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <?php echo '<script'; ?>
+>
+    // function to see old password
+    function togglePasswordVisibility_old() {
+      if ($("#old-pwd").attr("type") === "password") {
+        $("#old-pwd").attr("type", "text");
+        $("#old-pwd-icon").text("visibility");
+      } else {
+        $("#old-pwd").attr("type", "password");
+        $("#old-pwd-icon").text("visibility_off");
+      }
+    }
+    // function to see new password
+    function togglePasswordVisibility_new() {
+      if ($("#new-pwd").attr("type") === "password") {
+        $("#new-pwd").attr("type", "text");
+        $("#new-pwd-icon").text("visibility");
+      } else {
+        $("#new-pwd").attr("type", "password");
+        $("#new-pwd-icon").text("visibility_off");
+      }
+    }
+    // function to check password validation
+
+    function validation(pwd) {
+      if (pwd.value.match(char)) {
+        $("#check-char").prop("disabled", false);
+        $("#check-char").prop("checked", true);
+      } else {
+        $("#check-char").prop("disabled", true);
+        $("#check-char").prop("checked", false);
+      }
+      if (pwd.value.match(num_alp)) {
+        $("#check-num").prop("disabled", false);
+        $("#check-num").prop("checked", true);
+      } else {
+        $("#check-num").prop("disabled", true);
+        $("#check-num").prop("checked", false);
+      }
+    }
+    // function to select background picture
+    var select = document.getElementById("1");
+    selected(select);
+    function unselect(id) {
+      $("#" + id).css("border", "none");
+    }
+    async function selected(img) {
+      unselect(select.id);
+      // console.log(select);
+      select = img;
+      $("#" + img.id).css("border", "4px solid #28A745");
+      // console.log(select);
+      $("#bg-pic").css(
+        "background-image",
+        "url(img/background/" + img.alt + ")"
+      );
+    }
+  <?php echo '</script'; ?>
+>
 
 	<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['csrf_token'][0][0]->CSRFToken(array(),$_smarty_tpl);?>
 
@@ -428,7 +548,5 @@ $_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration == 1
 
 	</div>
 
-</div>
-<?php $_smarty_tpl->_subTemplateRender("file:globalfooter.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
-}
+</div><?php }
 }

@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-11-07 23:09:48
+/* Smarty version 3.1.30, created on 2020-11-09 12:33:51
   from "/var/www/html/booking/tpl/Dashboard/calendar-page-base.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5fa6c6cc152ff3_09723823',
+  'unifunc' => 'content_5fa8d4bfaa4b63_40542792',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5fa6c6cc152ff3_09723823 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fa8d4bfaa4b63_40542792 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 

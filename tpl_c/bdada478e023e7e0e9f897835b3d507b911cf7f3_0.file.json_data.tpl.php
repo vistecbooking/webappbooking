@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-11-07 23:09:52
+/* Smarty version 3.1.30, created on 2020-11-09 12:33:55
   from "/var/www/html/booking/tpl/json_data.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5fa6c6d03e0e11_04344775',
+  'unifunc' => 'content_5fa8d4c375aad3_89456878',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5fa6c6d03e0e11_04344775 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fa8d4c375aad3_89456878 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 <?php if ($_smarty_tpl->tpl_vars['data']->value != '') {

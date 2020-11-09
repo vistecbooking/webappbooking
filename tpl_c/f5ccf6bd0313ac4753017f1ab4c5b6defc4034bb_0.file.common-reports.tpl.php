@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-11-07 23:10:34
+/* Smarty version 3.1.30, created on 2020-11-09 14:45:57
   from "/var/www/html/booking/tpl/Reports/common-reports.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5fa6c6faf1da92_92700393',
+  'unifunc' => 'content_5fa8f3b53496f4_02910956',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f5ccf6bd0313ac4753017f1ab4c5b6defc4034bb' => 
     array (
       0 => '/var/www/html/booking/tpl/Reports/common-reports.tpl',
-      1 => 1604750057,
+      1 => 1604846656,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:globalfooter.tpl' => 1,
   ),
 ),false)) {
-function content_5fa6c6faf1da92_92700393 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fa8f3b53496f4_02910956 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 <?php $_smarty_tpl->_subTemplateRender("file:globalheader.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('cssFiles'=>"scripts/js/jqplot/jquery.jqplot.min.css"), 0, false);
