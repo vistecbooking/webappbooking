@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-11-10 21:13:26
+/* Smarty version 3.1.30, created on 2020-11-10 21:18:48
   from "/var/www/html/booking/tpl/Admin/manage_users.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5faaa006d33ef0_09012684',
+  'unifunc' => 'content_5faaa148ab69f8_03864794',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6c1972624596d30bbdde725459489bbacc0114be' => 
     array (
       0 => '/var/www/html/booking/tpl/Admin/manage_users.tpl',
-      1 => 1605017599,
+      1 => 1605017922,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:globalfooter.tpl' => 1,
   ),
 ),false)) {
-function content_5faaa006d33ef0_09012684 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5faaa148ab69f8_03864794 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_function_html_options')) require_once '/var/www/html/booking/lib/external/Smarty/plugins/function.html_options.php';
 if (!is_callable('smarty_function_cycle')) require_once '/var/www/html/booking/lib/external/Smarty/plugins/function.cycle.php';
 ?>
@@ -135,7 +135,7 @@ foreach ($_from as $_smarty_tpl->tpl_vars['user']->value) {
 						<td><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['format_date'][0][0]->FormatDate(array('date'=>$_smarty_tpl->tpl_vars['user']->value->LastLogin,'key'=>'short_datetime','timezone'=>$_smarty_tpl->tpl_vars['Timezone']->value),$_smarty_tpl);?>
 </td>
 						<td class="action"><a href="#" class="update changeStatus"><?php echo $_smarty_tpl->tpl_vars['statusDescriptions']->value[$_smarty_tpl->tpl_vars['user']->value->StatusId];?>
-</a><span class="arrow">⇆</span>
+</a>
 							<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['indicator'][0][0]->DisplayIndicator(array('id'=>"userStatusIndicator"),$_smarty_tpl);?>
 
 						</td>
@@ -163,8 +163,6 @@ foreach ($_from as $_smarty_tpl->tpl_vars['user']->value) {
 						<td>
 							<div class="btn-group">
 								<button type="button" class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown">
-									<span style="margin-left: 0;"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'More'),$_smarty_tpl);?>
-</span>
 								</button>
 								<ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="moreActions<?php echo $_smarty_tpl->tpl_vars['id']->value;?>
 ">

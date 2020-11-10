@@ -94,7 +94,7 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
 						<td>{$user->Organization}</td>
 						<td>{$user->PositionName}</td>
 						<td>{format_date date=$user->LastLogin key=short_datetime timezone=$Timezone}</td>
-						<td class="action"><a href="#" class="update changeStatus">{$statusDescriptions[$user->StatusId]}</a><span class="arrow">⇆</span>
+						<td class="action"><a href="#" class="update changeStatus">{$statusDescriptions[$user->StatusId]}</a>
 							{indicator id="userStatusIndicator"}
 						</td>
 						{if $CreditsEnabled}
@@ -116,7 +116,6 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
 						<td>
 							<div class="btn-group">
 								<button type="button" class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown">
-									<span style="margin-left: 0;">{translate key=More}</span>
 								</button>
 								<ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="moreActions{$id}">
 									<li role="presentation"><a role="menuitem"
