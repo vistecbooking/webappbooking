@@ -12,7 +12,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'd32ad0980055ed11ef5a3608ba302bbbc2544d71' => 
     array (
       0 => '/var/www/html/booking/tpl/javascript-includes.tpl',
-      1 => 1600849228,
+      1 => 1604742064,
       2 => 'file',
     ),
   ),

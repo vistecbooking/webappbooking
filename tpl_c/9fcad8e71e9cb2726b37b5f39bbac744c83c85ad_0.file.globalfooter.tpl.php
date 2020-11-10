@@ -12,7 +12,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     '9fcad8e71e9cb2726b37b5f39bbac744c83c85ad' => 
     array (
       0 => '/var/www/html/booking/tpl/globalfooter.tpl',
-      1 => 1604495966,
+      1 => 1604742064,
       2 => 'file',
     ),
   ),

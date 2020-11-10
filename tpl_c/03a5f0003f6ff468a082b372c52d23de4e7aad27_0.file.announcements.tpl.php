@@ -12,7 +12,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     '03a5f0003f6ff468a082b372c52d23de4e7aad27' => 
     array (
       0 => '/var/www/html/booking/tpl/Dashboard/announcements.tpl',
-      1 => 1600849228,
+      1 => 1604742064,
       2 => 'file',
     ),
   ),

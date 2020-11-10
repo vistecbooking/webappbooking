@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2019-12-10 13:33:26
+/* Smarty version 3.1.30, created on 2020-11-09 18:51:10
   from "/var/www/html/booking/tpl/MyAccount/notification-preferences.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5def3c36de0b14_56494901',
+  'unifunc' => 'content_5fa92d2ed75cd3_92460692',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'dbb7becc15bed2a720fa42d770f451d12c28f610' => 
     array (
       0 => '/var/www/html/booking/tpl/MyAccount/notification-preferences.tpl',
-      1 => 1551196423,
+      1 => 1604742064,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:globalfooter.tpl' => 1,
   ),
 ),false)) {
-function content_5def3c36de0b14_56494901 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fa92d2ed75cd3_92460692 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 <?php $_smarty_tpl->_subTemplateRender("file:globalheader.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('cssFiles'=>"my-account.css"), 0, false);

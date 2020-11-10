@@ -12,7 +12,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'ea1949991f92569d1cb854b59fc2a5662b87d582' => 
     array (
       0 => '/var/www/html/booking/tpl/error.tpl',
-      1 => 1600849228,
+      1 => 1604742064,
       2 => 'file',
     ),
   ),

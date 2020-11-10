@@ -12,7 +12,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'f980a94f526b0aea6b33227a807c51e437bce298' => 
     array (
       0 => '/var/www/html/booking/tpl/Dashboard/calendar-page-base.tpl',
-      1 => 1600849228,
+      1 => 1604742064,
       2 => 'file',
     ),
   ),
