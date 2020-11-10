@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2019-10-24 16:22:54
+/* Smarty version 3.1.30, created on 2020-11-10 10:05:23
   from "/var/www/html/booking/tpl/Admin/manage_positions.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5db16d6e06ca63_04285947',
+  'unifunc' => 'content_5faa037359a490_13219594',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '45989f06769048335f7a45174e7c3f75052e52b1' => 
     array (
       0 => '/var/www/html/booking/tpl/Admin/manage_positions.tpl',
-      1 => 1551196424,
+      1 => 1604977518,
       2 => 'file',
     ),
   ),
@@ -22,13 +22,86 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:globalfooter.tpl' => 1,
   ),
 ),false)) {
-function content_5db16d6e06ca63_04285947 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5faa037359a490_13219594 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_function_cycle')) require_once '/var/www/html/booking/lib/external/Smarty/plugins/function.cycle.php';
 ?>
 
 <?php $_smarty_tpl->_subTemplateRender("file:globalheader.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
+<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['cssfile'][0][0]->IncludeCssFile(array('src'=>'scripts/newcss/positions.css'),$_smarty_tpl);?>
+
+
+<div class="container">
+      <div class="box box-lg mb-4">
+        <h2>Positions</h2>
+		<form id="addPositionForm" role="form" method="post">
+			<div class="box box-bordered">
+			<h3>Add position</h3>
+			<div class="ml-4">
+				<div class="row">
+				<div class="col-lg">
+					<div class="form-group">
+					<label for="position name"
+						>Position Name
+						<span class="text-danger">*require</span></label
+					>
+					<input
+						type="text"
+						class="form-control"
+						placeholder="position name"
+						<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'POSITION_NAME'),$_smarty_tpl);?>
+ id="addPositionName" required
+					/>
+					</div>
+				</div>
+				<div class="col-lg"></div>
+				</div>
+				<div class="row">
+				<div class="col-lg-auto">
+					<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['add_button'][0][0]->AddButton(array('class'=>"btn-sm"),$_smarty_tpl);?>
+
+					<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['reset_button'][0][0]->ResetButton(array('class'=>"btn-sm"),$_smarty_tpl);?>
+
+					<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['indicator'][0][0]->DisplayIndicator(array(),$_smarty_tpl);?>
+
+				</div>
+				</div>
+			</div>
+			</div>
+		</form>
+      </div>
+	  </div>
+      <div class="table-responsive table-shadow mb-5">
+        <table class="table table-vistec table-highlight">
+          <thead>
+            <tr>
+              <th colspan="2">Positions name</th>
+            </tr>
+          </thead>
+          <tbody>
+		  <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['positions']->value, 'position');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['position']->value) {
+?>
+		  <?php smarty_function_cycle(array('values'=>'row0,row1','assign'=>'rowCss'),$_smarty_tpl);?>
+
+			<tr data-group-id="<?php echo $_smarty_tpl->tpl_vars['position']->value->Id;?>
+">
+				<td><?php echo $_smarty_tpl->tpl_vars['position']->value->Name;?>
+</td>
+				<td class="action"><a href="#" class="update rename"><span class="custom-icon icon-edit"></a><a href="#" class="update delete"></span
+                ><span class="custom-icon icon-delete"></span</a></td>
+			</tr>
+		<?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
+?>
+
+		</tbody>
+</div>
 
 <div id="page-manage-positions" class="admin-page">
 	<h1><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'ManagePositions'),$_smarty_tpl);?>

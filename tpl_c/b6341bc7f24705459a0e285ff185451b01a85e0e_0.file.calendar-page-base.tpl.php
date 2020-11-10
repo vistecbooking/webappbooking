@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2019-12-10 14:59:37
+/* Smarty version 3.1.30, created on 2020-11-09 19:00:27
   from "/var/www/html/booking/tpl/SearchAvailability/calendar-page-base.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5def5069cae6b8_59471267',
+  'unifunc' => 'content_5fa92f5bdf06b6_94135455',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b6341bc7f24705459a0e285ff185451b01a85e0e' => 
     array (
       0 => '/var/www/html/booking/tpl/SearchAvailability/calendar-page-base.tpl',
-      1 => 1551196422,
+      1 => 1604742064,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5def5069cae6b8_59471267 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fa92f5bdf06b6_94135455 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 
@@ -84,23 +84,23 @@ function content_5def5069cae6b8_59471267 (Smarty_Internal_Template $_smarty_tpl)
 ', 'YYYY-MM-DD'),
                 todayText: '<?php ob_start();
 echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Today'),$_smarty_tpl);
-$_prefixVariable2=ob_get_clean();
-echo strtr($_prefixVariable2, array("\\" => "\\\\", "'" => "\\'", "\"" => "\\\"", "\r" => "\\r", "\n" => "\\n", "</" => "<\/" ));?>
-',
-                dayText: '<?php ob_start();
-echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Day'),$_smarty_tpl);
 $_prefixVariable3=ob_get_clean();
 echo strtr($_prefixVariable3, array("\\" => "\\\\", "'" => "\\'", "\"" => "\\\"", "\r" => "\\r", "\n" => "\\n", "</" => "<\/" ));?>
 ',
-                monthText: '<?php ob_start();
-echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Month'),$_smarty_tpl);
+                dayText: '<?php ob_start();
+echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Day'),$_smarty_tpl);
 $_prefixVariable4=ob_get_clean();
 echo strtr($_prefixVariable4, array("\\" => "\\\\", "'" => "\\'", "\"" => "\\\"", "\r" => "\\r", "\n" => "\\n", "</" => "<\/" ));?>
 ',
-                weekText: '<?php ob_start();
-echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Week'),$_smarty_tpl);
+                monthText: '<?php ob_start();
+echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Month'),$_smarty_tpl);
 $_prefixVariable5=ob_get_clean();
 echo strtr($_prefixVariable5, array("\\" => "\\\\", "'" => "\\'", "\"" => "\\\"", "\r" => "\\r", "\n" => "\\n", "</" => "<\/" ));?>
+',
+                weekText: '<?php ob_start();
+echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Week'),$_smarty_tpl);
+$_prefixVariable6=ob_get_clean();
+echo strtr($_prefixVariable6, array("\\" => "\\\\", "'" => "\\'", "\"" => "\\\"", "\r" => "\\r", "\n" => "\\n", "</" => "<\/" ));?>
 ',
                 dayClickUrl: '<?php echo $_smarty_tpl->tpl_vars['pageUrl']->value;?>
 ?ct=<?php echo CalendarTypes::Day;?>

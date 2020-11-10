@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2019-12-10 13:39:26
+/* Smarty version 3.1.30, created on 2020-11-09 19:03:50
   from "/var/www/html/booking/tpl/Search/search-reservations-results.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5def3d9e06f470_45593939',
+  'unifunc' => 'content_5fa93026e7b214_58857736',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3dc5bb20fca686b54020f6e06e3ff16c7147c4d6' => 
     array (
       0 => '/var/www/html/booking/tpl/Search/search-reservations-results.tpl',
-      1 => 1551196421,
+      1 => 1604742064,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5def3d9e06f470_45593939 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fa93026e7b214_58857736 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_function_cycle')) require_once '/var/www/html/booking/lib/external/Smarty/plugins/function.cycle.php';
 ?>
 

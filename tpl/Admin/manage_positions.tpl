@@ -17,6 +17,62 @@ You should have received a copy of the GNU General Public License
 along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
 *}
 {include file='globalheader.tpl'}
+{cssfile src='scripts/newcss/positions.css'}
+
+<div class="container">
+      <div class="box box-lg mb-4">
+        <h2>Positions</h2>
+		<form id="addPositionForm" role="form" method="post">
+			<div class="box box-bordered">
+			<h3>Add position</h3>
+			<div class="ml-4">
+				<div class="row">
+				<div class="col-lg">
+					<div class="form-group">
+					<label for="position name"
+						>Position Name
+						<span class="text-danger">*require</span></label
+					>
+					<input
+						type="text"
+						class="form-control"
+						placeholder="position name"
+						{formname key=POSITION_NAME} id="addPositionName" required
+					/>
+					</div>
+				</div>
+				<div class="col-lg"></div>
+				</div>
+				<div class="row">
+				<div class="col-lg-auto">
+					{add_button class="btn-sm"}
+					{reset_button class="btn-sm"}
+					{indicator}
+				</div>
+				</div>
+			</div>
+			</div>
+		</form>
+      </div>
+	  </div>
+      <div class="table-responsive table-shadow mb-5">
+        <table id="positionList" class="table table-vistec table-highlight">
+          <thead>
+            <tr>
+              <th colspan="2">Positions name</th>
+            </tr>
+          </thead>
+          <tbody>
+		  {foreach from=$positions item=position}
+		  {cycle values='row0,row1' assign=rowCss}
+			<tr data-group-id="{$position->Id}">
+				<td>{$position->Name}</td>
+				<td class="action"><a href="#" class="update rename"><span class="custom-icon icon-edit"></a><a href="#" class="update delete"></span
+                ><span class="custom-icon icon-delete"></span</a></td>
+			</tr>
+		{/foreach}
+		</tbody>
+</div>
 
 <div id="page-manage-positions" class="admin-page">
 	<h1>{translate key=ManagePositions}</h1>
