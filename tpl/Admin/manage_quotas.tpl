@@ -17,16 +17,20 @@ You should have received a copy of the GNU General Public License
 along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
 *}
 {include file='globalheader.tpl' Timepicker=true}
+{cssfile src='scripts/newcss/quotas.css'}
+
 <div id="page-manage-quotas" class="admin-page">
-	<h1>{translate key=ManageQuotas}</h1>
-
-	<form id="addQuotaForm" method="post" role="form" class="form-inline">
-
-		<div class="panel panel-default" id="add-quota-panel">
-			<div class="panel-heading">{translate key="AddQuota"} {showhide_icon}</div>
-			<div class="panel-body" id="addQuota">
-				{capture name="schedules" assign="schedules"}
-					<select class='form-control' id='scheduleId' {formname key=SCHEDULE_ID} title='Select Schedule'>
+	 <div class="container">
+      <div class="box box-lg mb-4">
+        <h2>Quotas</h2>
+		<form id="addQuotaForm" method="post" role="form">
+			<div class="box box-bordered">
+			<h3>Add Quotas</h3>
+			<div class="ml-4">
+				<div class="row align-items-center">
+				<div class="col-lg-auto mb-3">
+					<span>On</span>
+					<select id='scheduleId' {formname key=SCHEDULE_ID} title='Select Schedule'>
 						<option selected='selected' value=''>{translate key=AllSchedules}</option>
 						{foreach from=$Schedules item=schedule}
 							{if $schedule->GetId() == $FilterSchedule}
@@ -36,29 +40,131 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
 							{/if}
 						{/foreach}
 					</select>
-				{/capture}
-
-				{capture name="resources" assign="resources"}
-					<select class='form-control' {formname key=RESOURCE_ID} title='Select Resource'>
+				</div>
+				<div class="col-lg-auto mb-3">
+					<span>For</span>
+					<select {formname key=RESOURCE_ID} title='Select Resource'>
 						<option selected='selected' value=''>{translate key=AllResources}</option>
 						{foreach from=$Resources item=resource}
 							<option value='{$resource->GetResourceId()}'>{$resource->GetName()|replace:',':' '}</option>
 						{/foreach}
 					</select>
-				{/capture}
-
-				{capture name="groups" assign="groups"}
-					<select class='form-control' {formname key=GROUP} title='Select Group'>
+				</div>
+				</div>
+				<div class="row align-items-center">
+				<div class="col-lg-auto mb-3">
+					<span>users in</span>
+					<select {formname key=GROUP} title='Select Group'>
 						<option selected='selected' value=''>{translate key=AllGroups}</option>
 						{foreach from=$Groups item=group}
 							<option value='{$group->Id}'>{$group->Name|replace:',':' '}</option>
 						{/foreach}
 					</select>
+				</div>
+				<div class="col-lg-auto mb-3">
+					<span>are limited to</span>
+					<input type='number' step='any' min='0' max='10000' value='0' {formname key=LIMIT} title='Quota number'/>
+					<span>hours</span>
+				</div>
+				</div>
+				<div class="row">
+				<div class="col-lg-auto">
+					{add_button class="btn btn-success"}
+					{reset_button class="btn btn-secondary"}
+					{indicator}
+				</div>
+				</div>
+			</div>
+			</div>
+		</form>
+      </div>
+      <h3>All Quotas</h3>
+      <div class="table-responsive table-shadow">
+        <table class="table table-vistec table-highlight">
+          <thead>
+            <tr>
+              <th colspan="2">Equipment</th>
+            </tr>
+          </thead>
+		  <tbody>
+		 	{foreach from=$Quotas item=quota}
+			 <tr>
+				{capture name="scheduleName" assign="scheduleName"}
+					<span class='bold'>{if $quota->ScheduleName ne ""}
+							{$quota->ScheduleName|replace:',':' '}
+						{else}
+							{translate key="AllSchedules"}
+						{/if}
+					</span>
 				{/capture}
-
+				{capture name="resourceName" assign="resourceName"}
+					<span class='bold'>{if $quota->ResourceName ne ""}
+							{$quota->ResourceName|replace:',':' '}
+						{else}
+							{translate key="AllResources"}
+						{/if}
+					</span>
+				{/capture}
+				{capture name="groupName" assign="groupName"}
+					<span class='bold'>
+						{if $quota->GroupName ne ""}
+							{$quota->GroupName|replace:',':' '}
+						{else}
+							{translate key="AllGroups"}
+						{/if}
+					</span>
+				{/capture}
 				{capture name="amount" assign="amount"}
-					<input type='number' step='any' class='form-control mid-number' min='0' max='10000' value='0' {formname key=LIMIT} title='Quota number'/>
-				hours {/capture} 
+					<span class='bold'>{$quota->Limit}</span>
+				{/capture}
+				{capture name="unit" assign="unit"}
+					<span class='bold'>{translate key=$quota->Unit}</span>
+				{/capture}
+				{capture name="duration" assign="duration"}
+					
+				{/capture}
+				{capture name="enforceHours" assign="enforceHours"}
+					<span class='bold'>
+					{if $quota->AllDay}
+						{translate key=AllDay}
+					{else}
+						{translate key=Between} {formatdate date=$quota->EnforcedStartTime key=period_time} - {formatdate date=$quota->EnforcedEndTime key=period_time}
+					{/if}
+					</span>
+				{/capture}
+				{capture name="enforceDays" assign="enforceDays"}
+					<span class='bold'>
+					{if $quota->Everyday}
+						{translate key=Everyday}
+					{else}
+						{foreach from=$quota->EnforcedDays item=day}
+							{translate key=$DayNames[$day]}
+						{/foreach}
+					{/if}
+					</span>
+				{/capture}
+				{capture name="scope" assign="scope"}
+					{if $quota->Scope == QuotaScope::IncludeCompleted}
+						{translate key=IncludingCompletedReservations}
+					{else}
+						{translate key=NotCountingCompletedReservations}
+					{/if}
+				{/capture}
+				{cycle values='row0,row1' assign=rowCss}
+					<td>
+						{translate key=QuotaConfiguration args="$scheduleName,$resourceName,$groupName,$amount,$unit,$duration"} <span class="bold">{$scope}</span>.
+					</td>
+					<td>
+						<a href="#" quotaId="{$quota->Id}" class="delete pull-right"><span class="fa fa-trash icon remove"></span></a>
+					</td>
+				{foreachelse}
+				{translate key=None}
+			</tr>
+			{/foreach} 
+		  </tbody>
+		</table>
+	</div>
+</div>
 
 				{capture name="unit" assign="unit"}
 					<select style='display:none;' class='form-control' {formname key=UNIT} title='Quota unit' >
@@ -142,95 +248,13 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
 					</div>
 				{/capture}
 
-				<div class="add-quota-line" >{translate key=QuotaConfiguration args="$schedules,$resources,$groups,$amount,$unit,$duration"} {$scope}</div>
+				<div class="add-quota-line" style='display:none;'>{translate key=QuotaConfiguration args="$schedules,$resources,$groups,$amount,$unit,$duration"} {$scope}</div>
 				<div class="add-quota-line" style='display:none;'>{translate key=QuotaEnforcement args="$enforceHours,$enforceDays"}</div>
 
 				
 			</div>
-
-			<div class="panel-footer">
-				{add_button class="btn-sm"}
-				{reset_button class="btn-sm"}
-				{indicator}
-			</div>
 		</div>
 	</form>
-
-	<div class="panel panel-default" id="list-quotas-panel">
-		<div class="panel-heading">{translate key="AllQuotas"}</div>
-		<div class="panel-body no-padding" id="quotaList">
-			{foreach from=$Quotas item=quota}
-				{capture name="scheduleName" assign="scheduleName"}
-					<span class='bold'>{if $quota->ScheduleName ne ""}
-							{$quota->ScheduleName|replace:',':' '}
-						{else}
-							{translate key="AllSchedules"}
-						{/if}
-					</span>
-				{/capture}
-				{capture name="resourceName" assign="resourceName"}
-					<span class='bold'>{if $quota->ResourceName ne ""}
-							{$quota->ResourceName|replace:',':' '}
-						{else}
-							{translate key="AllResources"}
-						{/if}
-					</span>
-				{/capture}
-				{capture name="groupName" assign="groupName"}
-					<span class='bold'>
-						{if $quota->GroupName ne ""}
-							{$quota->GroupName|replace:',':' '}
-						{else}
-							{translate key="AllGroups"}
-						{/if}
-					</span>
-				{/capture}
-				{capture name="amount" assign="amount"}
-					<span class='bold'>{$quota->Limit}</span>
-				{/capture}
-				{capture name="unit" assign="unit"}
-					<span class='bold'>{translate key=$quota->Unit}</span>
-				{/capture}
-				{capture name="duration" assign="duration"}
-					
-				{/capture}
-				{capture name="enforceHours" assign="enforceHours"}
-					<span class='bold'>
-					{if $quota->AllDay}
-						{translate key=AllDay}
-					{else}
-						{translate key=Between} {formatdate date=$quota->EnforcedStartTime key=period_time} - {formatdate date=$quota->EnforcedEndTime key=period_time}
-					{/if}
-					</span>
-				{/capture}
-				{capture name="enforceDays" assign="enforceDays"}
-					<span class='bold'>
-					{if $quota->Everyday}
-						{translate key=Everyday}
-					{else}
-						{foreach from=$quota->EnforcedDays item=day}
-							{translate key=$DayNames[$day]}
-						{/foreach}
-					{/if}
-					</span>
-				{/capture}
-				{capture name="scope" assign="scope"}
-					{if $quota->Scope == QuotaScope::IncludeCompleted}
-						{translate key=IncludingCompletedReservations}
-					{else}
-						{translate key=NotCountingCompletedReservations}
-					{/if}
-				{/capture}
-				{cycle values='row0,row1' assign=rowCss}
-				<div class="quotaItem {$rowCss}" style="padding: 20px;border: 1px solid #d2d2d2; ">
-					{translate key=QuotaConfiguration args="$scheduleName,$resourceName,$groupName,$amount,$unit,$duration"} <span class="bold">{$scope}</span>.
-					<a href="#" quotaId="{$quota->Id}" class="delete pull-right"><span class="fa fa-trash icon remove"></span></a>
-				</div>
-				{foreachelse}
-				{translate key=None}
-			{/foreach}
-		</div>
-	</div>
 
 	<div class="modal fade" id="deleteDialog" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
 		<div class="modal-dialog">

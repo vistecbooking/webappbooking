@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-11-07 21:56:47
+/* Smarty version 3.1.30, created on 2020-11-09 12:32:52
   from "/var/www/html/booking/tpl/globalheader.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5fa6b5afc252e3_88753881',
+  'unifunc' => 'content_5fa8d48404fac4_55034052',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b0800c4c77b321ea57e15554f7514e1b5447bee7' => 
     array (
       0 => '/var/www/html/booking/tpl/globalheader.tpl',
-      1 => 1604760893,
+      1 => 1604846656,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5fa6b5afc252e3_88753881 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fa8d48404fac4_55034052 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 
@@ -215,25 +215,6 @@ favicon.ico"/>
 
     <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['cssfile'][0][0]->IncludeCssFile(array('src'=>"booked.css"),$_smarty_tpl);?>
 
-    <style>
-    .no-show {
-        display: none !important;
-    }
-    .ajax-indicator {
-        display: none;
-        background-image: url(../img/admin-ajax-indicator.gif);
-        width: 35px;
-        height: 35px;
-    }
-    .wait-box {
-        display: none;
-        text-align: center;
-        top: 15%;
-        position: relative;
-        padding: 20px;
-        border: 1px solid #585754;
-    }
-    </style>
     <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['cssfile'][0][0]->IncludeCssFile(array('src'=>"scripts/newcss/style.css",'rel'=>"stylesheet"),$_smarty_tpl);?>
 
     <?php if ($_smarty_tpl->tpl_vars['cssFiles']->value != '') {?>
@@ -452,8 +433,13 @@ reports/<?php echo Pages::REPORTS_COMMON;?>
             <ul class="navbar-nav">
                 <?php if ($_smarty_tpl->tpl_vars['LoggedIn']->value) {?>
                     <li class="nav-item dropdown" id="navMyAccountDropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"MyAccount"),$_smarty_tpl);?>
-</a>
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                            <?php ob_start();
+echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"MyAccount"),$_smarty_tpl);
+$_prefixVariable1=ob_get_clean();
+echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['html_image'][0][0]->PrintImage(array('src'=>"person.png",'class'=>"img-fluid rounded-circle",'alt'=>$_prefixVariable1,'style'=>"height:40px"),$_smarty_tpl);?>
+
+                        </a>
                         <div class="dropdown-menu dropdown-menu-right">
                             <a class="dropdown-item" href="<?php echo $_smarty_tpl->tpl_vars['Path']->value;
 echo Pages::PROFILE;?>

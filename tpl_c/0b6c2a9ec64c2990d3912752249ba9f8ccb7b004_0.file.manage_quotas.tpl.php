@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2019-12-11 09:04:09
+/* Smarty version 3.1.30, created on 2020-11-09 12:32:51
   from "/var/www/html/booking/tpl/Admin/manage_quotas.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5df04e99f30eb1_51414291',
+  'unifunc' => 'content_5fa8d483da7f47_91693849',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0b6c2a9ec64c2990d3912752249ba9f8ccb7b004' => 
     array (
       0 => '/var/www/html/booking/tpl/Admin/manage_quotas.tpl',
-      1 => 1553067212,
+      1 => 1604846656,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:globalfooter.tpl' => 1,
   ),
 ),false)) {
-function content_5df04e99f30eb1_51414291 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fa8d483da7f47_91693849 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_modifier_replace')) require_once '/var/www/html/booking/lib/external/Smarty/plugins/modifier.replace.php';
 if (!is_callable('smarty_function_cycle')) require_once '/var/www/html/booking/lib/external/Smarty/plugins/function.cycle.php';
 ?>
@@ -30,21 +30,21 @@ if (!is_callable('smarty_function_cycle')) require_once '/var/www/html/booking/l
 <?php $_smarty_tpl->_subTemplateRender("file:globalheader.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('Timepicker'=>true), 0, false);
 ?>
 
+<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['cssfile'][0][0]->IncludeCssFile(array('src'=>'scripts/newcss/quotas.css'),$_smarty_tpl);?>
+
+
 <div id="page-manage-quotas" class="admin-page">
-	<h1><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'ManageQuotas'),$_smarty_tpl);?>
-</h1>
-
-	<form id="addQuotaForm" method="post" role="form" class="form-inline">
-
-		<div class="panel panel-default" id="add-quota-panel">
-			<div class="panel-heading"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"AddQuota"),$_smarty_tpl);?>
- <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['showhide_icon'][0][0]->ShowHideIcon(array(),$_smarty_tpl);?>
-</div>
-			<div class="panel-body" id="addQuota">
-				<?php $_smarty_tpl->smarty->ext->_capture->open($_smarty_tpl, "schedules", "schedules", null);
-?>
-
-					<select class='form-control' id='scheduleId' <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'SCHEDULE_ID'),$_smarty_tpl);?>
+	 <div class="container">
+      <div class="box box-lg mb-4">
+        <h2>Quotas</h2>
+		<form id="addQuotaForm" method="post" role="form">
+			<div class="box box-bordered">
+			<h3>Add Quotas</h3>
+			<div class="ml-4">
+				<div class="row align-items-center">
+				<div class="col-lg-auto mb-3">
+					<span>On</span>
+					<select id='scheduleId' <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'SCHEDULE_ID'),$_smarty_tpl);?>
  title='Select Schedule'>
 						<option selected='selected' value=''><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'AllSchedules'),$_smarty_tpl);?>
 </option>
@@ -69,14 +69,10 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 ?>
 
 					</select>
-				<?php $_smarty_tpl->smarty->ext->_capture->close($_smarty_tpl);
-?>
-
-
-				<?php $_smarty_tpl->smarty->ext->_capture->open($_smarty_tpl, "resources", "resources", null);
-?>
-
-					<select class='form-control' <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'RESOURCE_ID'),$_smarty_tpl);?>
+				</div>
+				<div class="col-lg-auto mb-3">
+					<span>For</span>
+					<select <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'RESOURCE_ID'),$_smarty_tpl);?>
  title='Select Resource'>
 						<option selected='selected' value=''><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'AllResources'),$_smarty_tpl);?>
 </option>
@@ -95,14 +91,12 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 ?>
 
 					</select>
-				<?php $_smarty_tpl->smarty->ext->_capture->close($_smarty_tpl);
-?>
-
-
-				<?php $_smarty_tpl->smarty->ext->_capture->open($_smarty_tpl, "groups", "groups", null);
-?>
-
-					<select class='form-control' <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'GROUP'),$_smarty_tpl);?>
+				</div>
+				</div>
+				<div class="row align-items-center">
+				<div class="col-lg-auto mb-3">
+					<span>users in</span>
+					<select <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'GROUP'),$_smarty_tpl);?>
  title='Select Group'>
 						<option selected='selected' value=''><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'AllGroups'),$_smarty_tpl);?>
 </option>
@@ -121,18 +115,193 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 ?>
 
 					</select>
+				</div>
+				<div class="col-lg-auto mb-3">
+					<span>are limited to</span>
+					<input type='number' step='any' min='0' max='10000' value='0' <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'LIMIT'),$_smarty_tpl);?>
+ title='Quota number'/>
+					<span>hours</span>
+				</div>
+				</div>
+				<div class="row">
+				<div class="col-lg-auto">
+					<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['add_button'][0][0]->AddButton(array('class'=>"btn btn-success"),$_smarty_tpl);?>
+
+					<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['reset_button'][0][0]->ResetButton(array('class'=>"btn btn-secondary"),$_smarty_tpl);?>
+
+					<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['indicator'][0][0]->DisplayIndicator(array(),$_smarty_tpl);?>
+
+				</div>
+				</div>
+			</div>
+			</div>
+		</form>
+      </div>
+      <h3>All Quotas</h3>
+      <div class="table-responsive table-shadow">
+        <table class="table table-vistec table-highlight">
+          <thead>
+            <tr>
+              <th colspan="2">Equipment</th>
+            </tr>
+          </thead>
+		  <tbody>
+		 	<?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['Quotas']->value, 'quota');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['quota']->value) {
+?>
+			 <tr>
+				<?php $_smarty_tpl->smarty->ext->_capture->open($_smarty_tpl, "scheduleName", "scheduleName", null);
+?>
+
+					<span class='bold'><?php if ($_smarty_tpl->tpl_vars['quota']->value->ScheduleName != '') {?>
+							<?php echo smarty_modifier_replace($_smarty_tpl->tpl_vars['quota']->value->ScheduleName,',',' ');?>
+
+						<?php } else { ?>
+							<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"AllSchedules"),$_smarty_tpl);?>
+
+						<?php }?>
+					</span>
 				<?php $_smarty_tpl->smarty->ext->_capture->close($_smarty_tpl);
 ?>
 
+				<?php $_smarty_tpl->smarty->ext->_capture->open($_smarty_tpl, "resourceName", "resourceName", null);
+?>
+
+					<span class='bold'><?php if ($_smarty_tpl->tpl_vars['quota']->value->ResourceName != '') {?>
+							<?php echo smarty_modifier_replace($_smarty_tpl->tpl_vars['quota']->value->ResourceName,',',' ');?>
+
+						<?php } else { ?>
+							<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"AllResources"),$_smarty_tpl);?>
+
+						<?php }?>
+					</span>
+				<?php $_smarty_tpl->smarty->ext->_capture->close($_smarty_tpl);
+?>
+
+				<?php $_smarty_tpl->smarty->ext->_capture->open($_smarty_tpl, "groupName", "groupName", null);
+?>
+
+					<span class='bold'>
+						<?php if ($_smarty_tpl->tpl_vars['quota']->value->GroupName != '') {?>
+							<?php echo smarty_modifier_replace($_smarty_tpl->tpl_vars['quota']->value->GroupName,',',' ');?>
+
+						<?php } else { ?>
+							<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"AllGroups"),$_smarty_tpl);?>
+
+						<?php }?>
+					</span>
+				<?php $_smarty_tpl->smarty->ext->_capture->close($_smarty_tpl);
+?>
 
 				<?php $_smarty_tpl->smarty->ext->_capture->open($_smarty_tpl, "amount", "amount", null);
 ?>
 
-					<input type='number' step='any' class='form-control mid-number' min='0' max='10000' value='0' <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'LIMIT'),$_smarty_tpl);?>
- title='Quota number'/>
-				hours <?php $_smarty_tpl->smarty->ext->_capture->close($_smarty_tpl);
+					<span class='bold'><?php echo $_smarty_tpl->tpl_vars['quota']->value->Limit;?>
+</span>
+				<?php $_smarty_tpl->smarty->ext->_capture->close($_smarty_tpl);
+?>
+
+				<?php $_smarty_tpl->smarty->ext->_capture->open($_smarty_tpl, "unit", "unit", null);
+?>
+
+					<span class='bold'><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>$_smarty_tpl->tpl_vars['quota']->value->Unit),$_smarty_tpl);?>
+</span>
+				<?php $_smarty_tpl->smarty->ext->_capture->close($_smarty_tpl);
+?>
+
+				<?php $_smarty_tpl->smarty->ext->_capture->open($_smarty_tpl, "duration", "duration", null);
+?>
+
+					
+				<?php $_smarty_tpl->smarty->ext->_capture->close($_smarty_tpl);
+?>
+
+				<?php $_smarty_tpl->smarty->ext->_capture->open($_smarty_tpl, "enforceHours", "enforceHours", null);
+?>
+
+					<span class='bold'>
+					<?php if ($_smarty_tpl->tpl_vars['quota']->value->AllDay) {?>
+						<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'AllDay'),$_smarty_tpl);?>
+
+					<?php } else { ?>
+						<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Between'),$_smarty_tpl);?>
+ <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formatdate'][0][0]->FormatDate(array('date'=>$_smarty_tpl->tpl_vars['quota']->value->EnforcedStartTime,'key'=>'period_time'),$_smarty_tpl);?>
+ - <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formatdate'][0][0]->FormatDate(array('date'=>$_smarty_tpl->tpl_vars['quota']->value->EnforcedEndTime,'key'=>'period_time'),$_smarty_tpl);?>
+
+					<?php }?>
+					</span>
+				<?php $_smarty_tpl->smarty->ext->_capture->close($_smarty_tpl);
+?>
+
+				<?php $_smarty_tpl->smarty->ext->_capture->open($_smarty_tpl, "enforceDays", "enforceDays", null);
+?>
+
+					<span class='bold'>
+					<?php if ($_smarty_tpl->tpl_vars['quota']->value->Everyday) {?>
+						<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Everyday'),$_smarty_tpl);?>
+
+					<?php } else { ?>
+						<?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['quota']->value->EnforcedDays, 'day');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['day']->value) {
+?>
+							<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>$_smarty_tpl->tpl_vars['DayNames']->value[$_smarty_tpl->tpl_vars['day']->value]),$_smarty_tpl);?>
+
+						<?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
+?>
+
+					<?php }?>
+					</span>
+				<?php $_smarty_tpl->smarty->ext->_capture->close($_smarty_tpl);
+?>
+
+				<?php $_smarty_tpl->smarty->ext->_capture->open($_smarty_tpl, "scope", "scope", null);
+?>
+
+					<?php if ($_smarty_tpl->tpl_vars['quota']->value->Scope == QuotaScope::IncludeCompleted) {?>
+						<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'IncludingCompletedReservations'),$_smarty_tpl);?>
+
+					<?php } else { ?>
+						<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'NotCountingCompletedReservations'),$_smarty_tpl);?>
+
+					<?php }?>
+				<?php $_smarty_tpl->smarty->ext->_capture->close($_smarty_tpl);
+?>
+
+				<?php smarty_function_cycle(array('values'=>'row0,row1','assign'=>'rowCss'),$_smarty_tpl);?>
+
+					<td>
+						<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'QuotaConfiguration','args'=>((string)$_smarty_tpl->tpl_vars['scheduleName']->value).",".((string)$_smarty_tpl->tpl_vars['resourceName']->value).",".((string)$_smarty_tpl->tpl_vars['groupName']->value).",".((string)$_smarty_tpl->tpl_vars['amount']->value).",".((string)$_smarty_tpl->tpl_vars['unit']->value).",".((string)$_smarty_tpl->tpl_vars['duration']->value)),$_smarty_tpl);?>
+ <span class="bold"><?php echo $_smarty_tpl->tpl_vars['scope']->value;?>
+</span>.
+					</td>
+					<td>
+						<a href="#" quotaId="<?php echo $_smarty_tpl->tpl_vars['quota']->value->Id;?>
+" class="delete pull-right"><span class="fa fa-trash icon remove"></span></a>
+					</td>
+				<?php
+}
+} else {
+?>
+
+				<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'None'),$_smarty_tpl);?>
+
+			</tr>
+			<?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 ?>
  
+		  </tbody>
+		</table>
+	</div>
+</div>
 
 				<?php $_smarty_tpl->smarty->ext->_capture->open($_smarty_tpl, "unit", "unit", null);
 ?>
@@ -276,7 +445,7 @@ XX</option>
 ?>
 
 
-				<div class="add-quota-line" ><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'QuotaConfiguration','args'=>((string)$_smarty_tpl->tpl_vars['schedules']->value).",".((string)$_smarty_tpl->tpl_vars['resources']->value).",".((string)$_smarty_tpl->tpl_vars['groups']->value).",".((string)$_smarty_tpl->tpl_vars['amount']->value).",".((string)$_smarty_tpl->tpl_vars['unit']->value).",".((string)$_smarty_tpl->tpl_vars['duration']->value)),$_smarty_tpl);?>
+				<div class="add-quota-line" style='display:none;'><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'QuotaConfiguration','args'=>((string)$_smarty_tpl->tpl_vars['schedules']->value).",".((string)$_smarty_tpl->tpl_vars['resources']->value).",".((string)$_smarty_tpl->tpl_vars['groups']->value).",".((string)$_smarty_tpl->tpl_vars['amount']->value).",".((string)$_smarty_tpl->tpl_vars['unit']->value).",".((string)$_smarty_tpl->tpl_vars['duration']->value)),$_smarty_tpl);?>
  <?php echo $_smarty_tpl->tpl_vars['scope']->value;?>
 </div>
 				<div class="add-quota-line" style='display:none;'><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'QuotaEnforcement','args'=>((string)$_smarty_tpl->tpl_vars['enforceHours']->value).",".((string)$_smarty_tpl->tpl_vars['enforceDays']->value)),$_smarty_tpl);?>
@@ -284,173 +453,8 @@ XX</option>
 
 				
 			</div>
-
-			<div class="panel-footer">
-				<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['add_button'][0][0]->AddButton(array('class'=>"btn-sm"),$_smarty_tpl);?>
-
-				<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['reset_button'][0][0]->ResetButton(array('class'=>"btn-sm"),$_smarty_tpl);?>
-
-				<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['indicator'][0][0]->DisplayIndicator(array(),$_smarty_tpl);?>
-
-			</div>
 		</div>
 	</form>
-
-	<div class="panel panel-default" id="list-quotas-panel">
-		<div class="panel-heading"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"AllQuotas"),$_smarty_tpl);?>
-</div>
-		<div class="panel-body no-padding" id="quotaList">
-			<?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['Quotas']->value, 'quota');
-if ($_from !== null) {
-foreach ($_from as $_smarty_tpl->tpl_vars['quota']->value) {
-?>
-				<?php $_smarty_tpl->smarty->ext->_capture->open($_smarty_tpl, "scheduleName", "scheduleName", null);
-?>
-
-					<span class='bold'><?php if ($_smarty_tpl->tpl_vars['quota']->value->ScheduleName != '') {?>
-							<?php echo smarty_modifier_replace($_smarty_tpl->tpl_vars['quota']->value->ScheduleName,',',' ');?>
-
-						<?php } else { ?>
-							<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"AllSchedules"),$_smarty_tpl);?>
-
-						<?php }?>
-					</span>
-				<?php $_smarty_tpl->smarty->ext->_capture->close($_smarty_tpl);
-?>
-
-				<?php $_smarty_tpl->smarty->ext->_capture->open($_smarty_tpl, "resourceName", "resourceName", null);
-?>
-
-					<span class='bold'><?php if ($_smarty_tpl->tpl_vars['quota']->value->ResourceName != '') {?>
-							<?php echo smarty_modifier_replace($_smarty_tpl->tpl_vars['quota']->value->ResourceName,',',' ');?>
-
-						<?php } else { ?>
-							<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"AllResources"),$_smarty_tpl);?>
-
-						<?php }?>
-					</span>
-				<?php $_smarty_tpl->smarty->ext->_capture->close($_smarty_tpl);
-?>
-
-				<?php $_smarty_tpl->smarty->ext->_capture->open($_smarty_tpl, "groupName", "groupName", null);
-?>
-
-					<span class='bold'>
-						<?php if ($_smarty_tpl->tpl_vars['quota']->value->GroupName != '') {?>
-							<?php echo smarty_modifier_replace($_smarty_tpl->tpl_vars['quota']->value->GroupName,',',' ');?>
-
-						<?php } else { ?>
-							<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"AllGroups"),$_smarty_tpl);?>
-
-						<?php }?>
-					</span>
-				<?php $_smarty_tpl->smarty->ext->_capture->close($_smarty_tpl);
-?>
-
-				<?php $_smarty_tpl->smarty->ext->_capture->open($_smarty_tpl, "amount", "amount", null);
-?>
-
-					<span class='bold'><?php echo $_smarty_tpl->tpl_vars['quota']->value->Limit;?>
-</span>
-				<?php $_smarty_tpl->smarty->ext->_capture->close($_smarty_tpl);
-?>
-
-				<?php $_smarty_tpl->smarty->ext->_capture->open($_smarty_tpl, "unit", "unit", null);
-?>
-
-					<span class='bold'><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>$_smarty_tpl->tpl_vars['quota']->value->Unit),$_smarty_tpl);?>
-</span>
-				<?php $_smarty_tpl->smarty->ext->_capture->close($_smarty_tpl);
-?>
-
-				<?php $_smarty_tpl->smarty->ext->_capture->open($_smarty_tpl, "duration", "duration", null);
-?>
-
-					
-				<?php $_smarty_tpl->smarty->ext->_capture->close($_smarty_tpl);
-?>
-
-				<?php $_smarty_tpl->smarty->ext->_capture->open($_smarty_tpl, "enforceHours", "enforceHours", null);
-?>
-
-					<span class='bold'>
-					<?php if ($_smarty_tpl->tpl_vars['quota']->value->AllDay) {?>
-						<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'AllDay'),$_smarty_tpl);?>
-
-					<?php } else { ?>
-						<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Between'),$_smarty_tpl);?>
- <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formatdate'][0][0]->FormatDate(array('date'=>$_smarty_tpl->tpl_vars['quota']->value->EnforcedStartTime,'key'=>'period_time'),$_smarty_tpl);?>
- - <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formatdate'][0][0]->FormatDate(array('date'=>$_smarty_tpl->tpl_vars['quota']->value->EnforcedEndTime,'key'=>'period_time'),$_smarty_tpl);?>
-
-					<?php }?>
-					</span>
-				<?php $_smarty_tpl->smarty->ext->_capture->close($_smarty_tpl);
-?>
-
-				<?php $_smarty_tpl->smarty->ext->_capture->open($_smarty_tpl, "enforceDays", "enforceDays", null);
-?>
-
-					<span class='bold'>
-					<?php if ($_smarty_tpl->tpl_vars['quota']->value->Everyday) {?>
-						<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Everyday'),$_smarty_tpl);?>
-
-					<?php } else { ?>
-						<?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['quota']->value->EnforcedDays, 'day');
-if ($_from !== null) {
-foreach ($_from as $_smarty_tpl->tpl_vars['day']->value) {
-?>
-							<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>$_smarty_tpl->tpl_vars['DayNames']->value[$_smarty_tpl->tpl_vars['day']->value]),$_smarty_tpl);?>
-
-						<?php
-}
-}
-$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
-?>
-
-					<?php }?>
-					</span>
-				<?php $_smarty_tpl->smarty->ext->_capture->close($_smarty_tpl);
-?>
-
-				<?php $_smarty_tpl->smarty->ext->_capture->open($_smarty_tpl, "scope", "scope", null);
-?>
-
-					<?php if ($_smarty_tpl->tpl_vars['quota']->value->Scope == QuotaScope::IncludeCompleted) {?>
-						<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'IncludingCompletedReservations'),$_smarty_tpl);?>
-
-					<?php } else { ?>
-						<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'NotCountingCompletedReservations'),$_smarty_tpl);?>
-
-					<?php }?>
-				<?php $_smarty_tpl->smarty->ext->_capture->close($_smarty_tpl);
-?>
-
-				<?php smarty_function_cycle(array('values'=>'row0,row1','assign'=>'rowCss'),$_smarty_tpl);?>
-
-				<div class="quotaItem <?php echo $_smarty_tpl->tpl_vars['rowCss']->value;?>
-" style="padding: 20px;border: 1px solid #d2d2d2; ">
-					<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'QuotaConfiguration','args'=>((string)$_smarty_tpl->tpl_vars['scheduleName']->value).",".((string)$_smarty_tpl->tpl_vars['resourceName']->value).",".((string)$_smarty_tpl->tpl_vars['groupName']->value).",".((string)$_smarty_tpl->tpl_vars['amount']->value).",".((string)$_smarty_tpl->tpl_vars['unit']->value).",".((string)$_smarty_tpl->tpl_vars['duration']->value)),$_smarty_tpl);?>
- <span class="bold"><?php echo $_smarty_tpl->tpl_vars['scope']->value;?>
-</span>.
-					<a href="#" quotaId="<?php echo $_smarty_tpl->tpl_vars['quota']->value->Id;?>
-" class="delete pull-right"><span class="fa fa-trash icon remove"></span></a>
-				</div>
-				<?php
-}
-} else {
-?>
-
-				<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'None'),$_smarty_tpl);?>
-
-			<?php
-}
-$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
-?>
-
-		</div>
-	</div>
 
 	<div class="modal fade" id="deleteDialog" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
