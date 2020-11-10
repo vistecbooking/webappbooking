@@ -17,183 +17,144 @@ You should have received a copy of the GNU General Public License
 along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
 *}
 {include file='globalheader.tpl' InlineEdit=true cssFiles='scripts/css/colorpicker.css'}
+{cssfile src='scripts/newcss/users.css'}
 
-<div id="page-manage-users" class="admin-page">
+<div id="page-manage-users">
 
-	<div>
-		<div class="dropdown admin-header-more pull-right">
-			<button class="btn btn-default" type="button" id="moreUserActions" data-toggle="dropdown">
-				<span class="glyphicon glyphicon-option-horizontal"></span>
-				<span class="caret"></span>
-			</button>
-			<ul class="dropdown-menu" role="menu" aria-labelledby="moreUserActions">
-				<li role="presentation">
-					<a role="menuitem" href="#" id="invite-users" class="add-link add-user">{translate key="InviteUsers"}
-						<span class="fa fa-send"></span>
-					</a>
-				</li>
-				<li role="presentation">
-					<a role="menuitem" href="#" id="import-users" class="add-link add-user">{translate key="Import"}
-						<span class="glyphicon glyphicon-import"></span>
-					</a>
-				</li>
-				<li role="presentation">
-					<a role="menuitem" href="{$ExportUrl}" download="{$ExportUrl}" id="export-users" class="add-link add-user"
-					   target="_blank">{translate key="Export"}
-						<span class="glyphicon glyphicon-export"></span>
-					</a>
-				</li>
-			</ul>
+	<div class="container">
+      <div class="box box-lg mb-4">
+        <h2>Users</h2>
+        <div class="box box-bordered">
+          <button class="btn btn-success" role="menuitem" id="add-user">Add new user +</button>
+          <div class="d-inline-block">
+            <a role="menuitem" href="#" id="invite-users">Invite users</a>
+            <span> | </span>
+            <a role="menuitem" href="#" id="import-users">Import</a>
+            <span> | </span>
+            <a role="menuitem" href="{$ExportUrl}" download="{$ExportUrl}" id="export-users" target="_blank">Export</a>
+          </div>
+        </div>
+      </div>
+	  <form id="filterForm" class="" role="form">
+		<div class="box box-lg">
+			<div class="form-group">
+				<div class="row">
+					<div class="col-md-3">
+						<label for="userSearch">{translate key=FindUser}
+						| {html_link href=$smarty.server.SCRIPT_NAME key=AllUsers}</label>
+						<input type="text" id="userSearch" class="form-control" placeholder="Search username"/>
+					</div>
+					<div class="col-md-3">
+						<label for="filterStatusId">{translate key=Status}</label>
+						<select id="filterStatusId" class="form-control">
+							{html_options selected=$FilterStatusId options=$statusDescriptions}
+						</select>
+					</div>
+					<div class="col-md-3">
+						<label for="filterGroupId">{translate key=Groups}</label>
+						<select id="filterGroupId" class="form-control">
+							<option value="0" {if $FilterGroupId == 0 } selected="true" {/if}>{translate key=AllGroups}</option>
+							<option value="99999" {if $FilterGroupId == 99999 } selected="true" {/if}>No Group</option>
+							{object_html_options options=$Groups label=Name key=Id selected=$FilterGroupId}
+						</select>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
 		</div>
-		<div class="pull-right" style="margin-right: 20px; margin-top: 0.5em">
-			<a role="menuitem" href="#" id="add-user" class="add-link add-user">{translate key="AddUser"}
-				<span class="fa fa-plus-circle add icon"></span>
-			</a>
-		</div>
-		<h1>{translate key=ManageUsers}</h1>
+	  </form>
 	</div>
 
-	<form id="filterForm" class="" role="form">
-		<div class="form-group col-xs-4">
-			<label for="userSearch">{translate key=FindUser}
-				| {html_link href=$smarty.server.SCRIPT_NAME key=AllUsers}</label>
-			<input type="text" id="userSearch"
-				   class="form-control"/>
+	<div class="container-fluid">
+		<div class="table-responsive table-shadow">
+			{assign var=colCount value=11}
+			<table class="table table-vistec table-highlight">
+				<thead>
+					<tr>
+					<th>Name</th>
+					<th>Usename</th>
+					<th>Email</th>
+					<th>Phone No.</th>
+					<th>Academic school</th>
+					<th>Position</th>
+					<th>Last login</th>
+					<th>Status</th>
+					<th colspan="3">Reservations</th>
+					</tr>
+				</thead>
+				<tbody>
+				{foreach from=$users item=user}
+					{cycle values='row0,row1' assign=rowCss}
+					{assign var=id value=$user->Id}
+					<tr class="{$rowCss}" data-userId="{$id}">
+						<td>{fullname first=$user->First last=$user->Last ignorePrivacy="true"}</td>
+						<td>{$user->Username}</td>
+						<td><a href="mailto:{$user->Email}">{$user->Email}</a></td>
+						<td>{$user->Phone}</td>
+						<td>{$user->Organization}</td>
+						<td>{$user->PositionName}</td>
+						<td>{format_date date=$user->LastLogin key=short_datetime timezone=$Timezone}</td>
+						<td class="action"><a href="#" class="update changeStatus">{$statusDescriptions[$user->StatusId]}</a><span class="arrow">⇆</span>
+							{indicator id="userStatusIndicator"}
+						</td>
+						{if $CreditsEnabled}
+							<td class="align-right">
+								<span class="propertyValue inlineUpdate changeCredits"
+									data-type="number" data-pk="{$id}" data-value="{$user->CurrentCreditCount}"
+									data-name="{FormKeys::CREDITS}">{$user->CurrentCreditCount}</span>
+							</td>
+						{/if}
+						<td class="action">
+							<a href="#" class="update viewReservations">{translate key='Reservations'}</a>
+						</td>
+						<td>
+							<div class="inline">
+								<a href="#" class="update edit"><span class="custom-icon icon-edit update"></span></a>
+								<a href="#" class="update delete"><span class="custom-icon icon-delete remove"></span></a>
+							</div>
+						</td>
+						<td>
+							<div class="btn-group">
+								<button type="button" class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown">
+									<span style="margin-left: 0;">{translate key=More}</span>
+								</button>
+								<ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="moreActions{$id}">
+									<li role="presentation"><a role="menuitem"
+																href="#"
+																class="update viewimg">{translate key="ProfileImg"}</a>
+									</li>
+									{if $PerUserColors}
+										<li role="presentation">
+											<a role="menuitem" href="#" class="update changeColor">{translate key="Color"}
+												{if !empty($user->ReservationColor)}
+													<span class="user-color update changeColor"
+														style="background-color:#{$user->ReservationColor}">&nbsp;</span>
+												{/if}
+											</a>
+										</li>
+									{/if}
+									<li role="presentation"><a role="menuitem"
+																href="#"
+																class="update changePermissions">{translate key="Permissions"}</a>
+									</li>
+									<li role="presentation"><a role="menuitem"
+																href="#"
+																class="update changeGroups">{translate key="Groups"}</a>
+									</li>
+									<li role="presentation"><a role="menuitem"
+																href="#"
+																class="update resetPassword">{translate key="ChangePassword"}</a>
+									</li>
+								</ul>
+							</div>
+						</td>
+				{/foreach}
+				</tbody>
+			</table>
 		</div>
-		<div class="form-group col-xs-2">
-			<label for="filterStatusId">{translate key=Status}</label>
-			<select id="filterStatusId" class="form-control">
-				{html_options selected=$FilterStatusId options=$statusDescriptions}
-			</select>
-		</div>
-		<div class="form-group col-xs-6">
-			<label for="filterGroupId">{translate key=Groups}</label>
-			<select id="filterGroupId" class="form-control">
-				<option value="0" {if $FilterGroupId == 0 } selected="true" {/if}>{translate key=AllGroups}</option>
-				<option value="99999" {if $FilterGroupId == 99999 } selected="true" {/if}>No Group</option>
-				{object_html_options options=$Groups label=Name key=Id selected=$FilterGroupId}
-			</select>
-		</div>
-		<div class="clearfix"></div>
-	</form>
-
-	{assign var=colCount value=11}
-	<table width="100%" class="table admin-panel" id="userList">
-		<thead>
-		<tr>
-			<th width="10%">{sort_column key=Name field=ColumnNames::LAST_NAME}</th>
-			<th width="10%">{sort_column key=Username field=ColumnNames::USERNAME}</th>
-			<th width="10%">{sort_column key=Email field=ColumnNames::EMAIL}</th>
-			<th width="10%">{sort_column key=Phone field=ColumnNames::PHONE_NUMBER}</th>
-			<th width="10%">{sort_column key=Organization field=ColumnNames::ORGANIZATION}</th>
-			<th width="10%">{sort_column key=Position field=ColumnNames::POSITION}</th>
-			<th width="5%">{sort_column key=LastLogin field=ColumnNames::LAST_LOGIN}</th>
-			<th width="5%" class="action">{sort_column key=Status field=ColumnNames::USER_STATUS}</th>
-			{if $CreditsEnabled}
-				<th width="5%" class="action">{translate key=Credits}</th>
-				{assign var=colCount value=$colCount+1}
-			{/if}
-			<th width="5%" class="action">{translate key='Reservations'}</th>
-			<th width="5%">{translate key='Actions'}</th>
-			<th width="5%">{translate key='Actions'} {translate key='More'}</th>
-			<th class="action-delete">
-				<div class="checkbox checkbox-single">
-					<input type="checkbox" id="delete-all" aria-label="{translate key=All}"/>
-					<label for="delete-all"></label>
-				</div>
-			</th>
-		</tr>
-		</thead>
-		<tbody>
-		{foreach from=$users item=user}
-			{cycle values='row0,row1' assign=rowCss}
-			{assign var=id value=$user->Id}
-			<tr class="{$rowCss}" data-userId="{$id}">
-				<td>{fullname first=$user->First last=$user->Last ignorePrivacy="true"}</td>
-				<td>{$user->Username}</td>
-				<td><a href="mailto:{$user->Email}">{$user->Email}</a></td>
-				<td>{$user->Phone}</td>
-				<td>{$user->Organization}</td>
-				<td>{$user->PositionName}</td>
-				<td>{format_date date=$user->LastLogin key=short_datetime timezone=$Timezone}</td>
-				<td class="action"><a href="#" class="update changeStatus">{$statusDescriptions[$user->StatusId]}</a>
-					{indicator id="userStatusIndicator"}
-				</td>
-				{if $CreditsEnabled}
-					<td class="align-right">
-						<span class="propertyValue inlineUpdate changeCredits"
-							  data-type="number" data-pk="{$id}" data-value="{$user->CurrentCreditCount}"
-							  data-name="{FormKeys::CREDITS}">{$user->CurrentCreditCount}</span>
-					</td>
-				{/if}
-				<td class="action">
-					<a href="#" class="update viewReservations">{translate key='Reservations'}</a>
-				</td>
-				<td>
-					<div class="inline">
-						<a href="#" class="update edit"><span class="fa fa-pencil-square-o icon update"></span></a>
-					</div>
-					|
-					<div class="inline">
-						<a href="#" class="update delete"><span class="fa fa-trash icon remove"></span></a>
-					</div>
-				</td>
-				<td>
-					<div class="btn-group">
-						<button type="button" class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown">
-							<span class="glyphicon glyphicon-option-horizontal"></span>
-							<span class="caret"></span>
-							<span class="sr-only">{translate key=More}</span>
-						</button>
-						<ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="moreActions{$id}">
-							<li role="presentation"><a role="menuitem"
-														href="#"
-														class="update viewimg">{translate key="ProfileImg"}</a>
-							</li>
-							{if $PerUserColors}
-								<li role="presentation">
-									<a role="menuitem" href="#" class="update changeColor">{translate key="Color"}
-										{if !empty($user->ReservationColor)}
-											<span class="user-color update changeColor"
-												style="background-color:#{$user->ReservationColor}">&nbsp;</span>
-										{/if}
-									</a>
-								</li>
-							{/if}
-							<li role="presentation"><a role="menuitem"
-														href="#"
-														class="update changePermissions">{translate key="Permissions"}</a>
-							</li>
-							<li role="presentation"><a role="menuitem"
-														href="#"
-														class="update changeGroups">{translate key="Groups"}</a>
-							</li>
-							<li role="presentation"><a role="menuitem"
-														href="#"
-														class="update resetPassword">{translate key="ChangePassword"}</a>
-							</li>
-						</ul>
-					</div>
-				</td>
-				<td class="action-delete">
-					<div class="checkbox checkbox-single">
-						<input {formname key=USER_ID multi=true}" class="delete-multiple" type="checkbox" id="delete{$id}" value="{$id}"
-						aria-label="{translate key=Delete}"/>
-						<label for="delete{$id}"></label>
-					</div>
-				</td>
-			</tr>
-		{/foreach}
-		</tbody>
-		<tfoot>
-		<tr>
-			<td colspan="{$colCount-1}"></td>
-			<td class="action-delete"><a href="#" id="delete-selected" class="no-show" title="{translate key=Delete}"><span class="fa fa-trash icon remove"></span></a></td>
-		</tr>
-		</tfoot>
-	</table>
-
 	{pagination pageInfo=$PageInfo}
+	</div>
+
 
 	<div id="addUserDialog" class="modal" tabindex="-1" role="dialog" aria-labelledby="addUserModalLabel"
 		 aria-hidden="true">

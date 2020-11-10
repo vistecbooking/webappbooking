@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-11-10 20:26:57
+/* Smarty version 3.1.30, created on 2020-11-10 21:13:26
   from "/var/www/html/booking/tpl/Admin/manage_users.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5faa95210134f6_20223424',
+  'unifunc' => 'content_5faaa006d33ef0_09012684',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6c1972624596d30bbdde725459489bbacc0114be' => 
     array (
       0 => '/var/www/html/booking/tpl/Admin/manage_users.tpl',
-      1 => 1604742064,
+      1 => 1605017599,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:globalfooter.tpl' => 1,
   ),
 ),false)) {
-function content_5faa95210134f6_20223424 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5faaa006d33ef0_09012684 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_function_html_options')) require_once '/var/www/html/booking/lib/external/Smarty/plugins/function.html_options.php';
 if (!is_callable('smarty_function_cycle')) require_once '/var/www/html/booking/lib/external/Smarty/plugins/function.cycle.php';
 ?>
@@ -30,256 +30,191 @@ if (!is_callable('smarty_function_cycle')) require_once '/var/www/html/booking/l
 <?php $_smarty_tpl->_subTemplateRender("file:globalheader.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('InlineEdit'=>true,'cssFiles'=>'scripts/css/colorpicker.css'), 0, false);
 ?>
 
+<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['cssfile'][0][0]->IncludeCssFile(array('src'=>'scripts/newcss/users.css'),$_smarty_tpl);?>
 
-<div id="page-manage-users" class="admin-page">
 
-	<div>
-		<div class="dropdown admin-header-more pull-right">
-			<button class="btn btn-default" type="button" id="moreUserActions" data-toggle="dropdown">
-				<span class="glyphicon glyphicon-option-horizontal"></span>
-				<span class="caret"></span>
-			</button>
-			<ul class="dropdown-menu" role="menu" aria-labelledby="moreUserActions">
-				<li role="presentation">
-					<a role="menuitem" href="#" id="invite-users" class="add-link add-user"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"InviteUsers"),$_smarty_tpl);?>
+<div id="page-manage-users">
 
-						<span class="fa fa-send"></span>
-					</a>
-				</li>
-				<li role="presentation">
-					<a role="menuitem" href="#" id="import-users" class="add-link add-user"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"Import"),$_smarty_tpl);?>
-
-						<span class="glyphicon glyphicon-import"></span>
-					</a>
-				</li>
-				<li role="presentation">
-					<a role="menuitem" href="<?php echo $_smarty_tpl->tpl_vars['ExportUrl']->value;?>
+	<div class="container">
+      <div class="box box-lg mb-4">
+        <h2>Users</h2>
+        <div class="box box-bordered">
+          <button class="btn btn-success" role="menuitem" id="add-user">Add new user +</button>
+          <div class="d-inline-block">
+            <a role="menuitem" href="#" id="invite-users">Invite users</a>
+            <span> | </span>
+            <a role="menuitem" href="#" id="import-users">Import</a>
+            <span> | </span>
+            <a role="menuitem" href="<?php echo $_smarty_tpl->tpl_vars['ExportUrl']->value;?>
 " download="<?php echo $_smarty_tpl->tpl_vars['ExportUrl']->value;?>
-" id="export-users" class="add-link add-user"
-					   target="_blank"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"Export"),$_smarty_tpl);?>
+" id="export-users" target="_blank">Export</a>
+          </div>
+        </div>
+      </div>
+	  <form id="filterForm" class="" role="form">
+		<div class="box box-lg">
+			<div class="form-group">
+				<div class="row">
+					<div class="col-md-3">
+						<label for="userSearch"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'FindUser'),$_smarty_tpl);?>
 
-						<span class="glyphicon glyphicon-export"></span>
-					</a>
-				</li>
-			</ul>
-		</div>
-		<div class="pull-right" style="margin-right: 20px; margin-top: 0.5em">
-			<a role="menuitem" href="#" id="add-user" class="add-link add-user"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"AddUser"),$_smarty_tpl);?>
+						| <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['html_link'][0][0]->PrintLink(array('href'=>$_SERVER['SCRIPT_NAME'],'key'=>'AllUsers'),$_smarty_tpl);?>
+</label>
+						<input type="text" id="userSearch" class="form-control" placeholder="Search username"/>
+					</div>
+					<div class="col-md-3">
+						<label for="filterStatusId"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Status'),$_smarty_tpl);?>
+</label>
+						<select id="filterStatusId" class="form-control">
+							<?php echo smarty_function_html_options(array('selected'=>$_smarty_tpl->tpl_vars['FilterStatusId']->value,'options'=>$_smarty_tpl->tpl_vars['statusDescriptions']->value),$_smarty_tpl);?>
 
-				<span class="fa fa-plus-circle add icon"></span>
-			</a>
+						</select>
+					</div>
+					<div class="col-md-3">
+						<label for="filterGroupId"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Groups'),$_smarty_tpl);?>
+</label>
+						<select id="filterGroupId" class="form-control">
+							<option value="0" <?php if ($_smarty_tpl->tpl_vars['FilterGroupId']->value == 0) {?> selected="true" <?php }?>><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'AllGroups'),$_smarty_tpl);?>
+</option>
+							<option value="99999" <?php if ($_smarty_tpl->tpl_vars['FilterGroupId']->value == 99999) {?> selected="true" <?php }?>>No Group</option>
+							<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['object_html_options'][0][0]->ObjectHtmlOptions(array('options'=>$_smarty_tpl->tpl_vars['Groups']->value,'label'=>'Name','key'=>'Id','selected'=>$_smarty_tpl->tpl_vars['FilterGroupId']->value),$_smarty_tpl);?>
+
+						</select>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
 		</div>
-		<h1><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'ManageUsers'),$_smarty_tpl);?>
-</h1>
+	  </form>
 	</div>
 
-	<form id="filterForm" class="" role="form">
-		<div class="form-group col-xs-4">
-			<label for="userSearch"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'FindUser'),$_smarty_tpl);?>
-
-				| <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['html_link'][0][0]->PrintLink(array('href'=>$_SERVER['SCRIPT_NAME'],'key'=>'AllUsers'),$_smarty_tpl);?>
-</label>
-			<input type="text" id="userSearch"
-				   class="form-control"/>
-		</div>
-		<div class="form-group col-xs-2">
-			<label for="filterStatusId"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Status'),$_smarty_tpl);?>
-</label>
-			<select id="filterStatusId" class="form-control">
-				<?php echo smarty_function_html_options(array('selected'=>$_smarty_tpl->tpl_vars['FilterStatusId']->value,'options'=>$_smarty_tpl->tpl_vars['statusDescriptions']->value),$_smarty_tpl);?>
-
-			</select>
-		</div>
-		<div class="form-group col-xs-6">
-			<label for="filterGroupId"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Groups'),$_smarty_tpl);?>
-</label>
-			<select id="filterGroupId" class="form-control">
-				<option value="0" <?php if ($_smarty_tpl->tpl_vars['FilterGroupId']->value == 0) {?> selected="true" <?php }?>><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'AllGroups'),$_smarty_tpl);?>
-</option>
-				<option value="99999" <?php if ($_smarty_tpl->tpl_vars['FilterGroupId']->value == 99999) {?> selected="true" <?php }?>>No Group</option>
-				<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['object_html_options'][0][0]->ObjectHtmlOptions(array('options'=>$_smarty_tpl->tpl_vars['Groups']->value,'label'=>'Name','key'=>'Id','selected'=>$_smarty_tpl->tpl_vars['FilterGroupId']->value),$_smarty_tpl);?>
-
-			</select>
-		</div>
-		<div class="clearfix"></div>
-	</form>
-
-	<?php $_smarty_tpl->_assignInScope('colCount', 11);
+	<div class="container-fluid">
+		<div class="table-responsive table-shadow">
+			<?php $_smarty_tpl->_assignInScope('colCount', 11);
 ?>
-	<table width="100%" class="table admin-panel" id="userList">
-		<thead>
-		<tr>
-			<th width="10%"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['sort_column'][0][0]->SortColumn(array('key'=>'Name','field'=>ColumnNames::LAST_NAME),$_smarty_tpl);?>
-</th>
-			<th width="10%"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['sort_column'][0][0]->SortColumn(array('key'=>'Username','field'=>ColumnNames::USERNAME),$_smarty_tpl);?>
-</th>
-			<th width="10%"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['sort_column'][0][0]->SortColumn(array('key'=>'Email','field'=>ColumnNames::EMAIL),$_smarty_tpl);?>
-</th>
-			<th width="10%"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['sort_column'][0][0]->SortColumn(array('key'=>'Phone','field'=>ColumnNames::PHONE_NUMBER),$_smarty_tpl);?>
-</th>
-			<th width="10%"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['sort_column'][0][0]->SortColumn(array('key'=>'Organization','field'=>ColumnNames::ORGANIZATION),$_smarty_tpl);?>
-</th>
-			<th width="10%"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['sort_column'][0][0]->SortColumn(array('key'=>'Position','field'=>ColumnNames::POSITION),$_smarty_tpl);?>
-</th>
-			<th width="5%"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['sort_column'][0][0]->SortColumn(array('key'=>'LastLogin','field'=>ColumnNames::LAST_LOGIN),$_smarty_tpl);?>
-</th>
-			<th width="5%" class="action"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['sort_column'][0][0]->SortColumn(array('key'=>'Status','field'=>ColumnNames::USER_STATUS),$_smarty_tpl);?>
-</th>
-			<?php if ($_smarty_tpl->tpl_vars['CreditsEnabled']->value) {?>
-				<th width="5%" class="action"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Credits'),$_smarty_tpl);?>
-</th>
-				<?php $_smarty_tpl->_assignInScope('colCount', $_smarty_tpl->tpl_vars['colCount']->value+1);
-?>
-			<?php }?>
-			<th width="5%" class="action"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Reservations'),$_smarty_tpl);?>
-</th>
-			<th width="5%"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Actions'),$_smarty_tpl);?>
-</th>
-			<th width="5%"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Actions'),$_smarty_tpl);?>
- <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'More'),$_smarty_tpl);?>
-</th>
-			<th class="action-delete">
-				<div class="checkbox checkbox-single">
-					<input type="checkbox" id="delete-all" aria-label="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'All'),$_smarty_tpl);?>
-"/>
-					<label for="delete-all"></label>
-				</div>
-			</th>
-		</tr>
-		</thead>
-		<tbody>
-		<?php
+			<table class="table table-vistec table-highlight">
+				<thead>
+					<tr>
+					<th>Name</th>
+					<th>Usename</th>
+					<th>Email</th>
+					<th>Phone No.</th>
+					<th>Academic school</th>
+					<th>Position</th>
+					<th>Last login</th>
+					<th>Status</th>
+					<th colspan="3">Reservations</th>
+					</tr>
+				</thead>
+				<tbody>
+				<?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['users']->value, 'user');
 if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['user']->value) {
 ?>
-			<?php smarty_function_cycle(array('values'=>'row0,row1','assign'=>'rowCss'),$_smarty_tpl);?>
+					<?php smarty_function_cycle(array('values'=>'row0,row1','assign'=>'rowCss'),$_smarty_tpl);?>
 
-			<?php $_smarty_tpl->_assignInScope('id', $_smarty_tpl->tpl_vars['user']->value->Id);
+					<?php $_smarty_tpl->_assignInScope('id', $_smarty_tpl->tpl_vars['user']->value->Id);
 ?>
-			<tr class="<?php echo $_smarty_tpl->tpl_vars['rowCss']->value;?>
+					<tr class="<?php echo $_smarty_tpl->tpl_vars['rowCss']->value;?>
 " data-userId="<?php echo $_smarty_tpl->tpl_vars['id']->value;?>
 ">
-				<td><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['fullname'][0][0]->DisplayFullName(array('first'=>$_smarty_tpl->tpl_vars['user']->value->First,'last'=>$_smarty_tpl->tpl_vars['user']->value->Last,'ignorePrivacy'=>"true"),$_smarty_tpl);?>
+						<td><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['fullname'][0][0]->DisplayFullName(array('first'=>$_smarty_tpl->tpl_vars['user']->value->First,'last'=>$_smarty_tpl->tpl_vars['user']->value->Last,'ignorePrivacy'=>"true"),$_smarty_tpl);?>
 </td>
-				<td><?php echo $_smarty_tpl->tpl_vars['user']->value->Username;?>
+						<td><?php echo $_smarty_tpl->tpl_vars['user']->value->Username;?>
 </td>
-				<td><a href="mailto:<?php echo $_smarty_tpl->tpl_vars['user']->value->Email;?>
+						<td><a href="mailto:<?php echo $_smarty_tpl->tpl_vars['user']->value->Email;?>
 "><?php echo $_smarty_tpl->tpl_vars['user']->value->Email;?>
 </a></td>
-				<td><?php echo $_smarty_tpl->tpl_vars['user']->value->Phone;?>
+						<td><?php echo $_smarty_tpl->tpl_vars['user']->value->Phone;?>
 </td>
-				<td><?php echo $_smarty_tpl->tpl_vars['user']->value->Organization;?>
+						<td><?php echo $_smarty_tpl->tpl_vars['user']->value->Organization;?>
 </td>
-				<td><?php echo $_smarty_tpl->tpl_vars['user']->value->PositionName;?>
+						<td><?php echo $_smarty_tpl->tpl_vars['user']->value->PositionName;?>
 </td>
-				<td><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['format_date'][0][0]->FormatDate(array('date'=>$_smarty_tpl->tpl_vars['user']->value->LastLogin,'key'=>'short_datetime','timezone'=>$_smarty_tpl->tpl_vars['Timezone']->value),$_smarty_tpl);?>
+						<td><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['format_date'][0][0]->FormatDate(array('date'=>$_smarty_tpl->tpl_vars['user']->value->LastLogin,'key'=>'short_datetime','timezone'=>$_smarty_tpl->tpl_vars['Timezone']->value),$_smarty_tpl);?>
 </td>
-				<td class="action"><a href="#" class="update changeStatus"><?php echo $_smarty_tpl->tpl_vars['statusDescriptions']->value[$_smarty_tpl->tpl_vars['user']->value->StatusId];?>
-</a>
-					<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['indicator'][0][0]->DisplayIndicator(array('id'=>"userStatusIndicator"),$_smarty_tpl);?>
+						<td class="action"><a href="#" class="update changeStatus"><?php echo $_smarty_tpl->tpl_vars['statusDescriptions']->value[$_smarty_tpl->tpl_vars['user']->value->StatusId];?>
+</a><span class="arrow">⇆</span>
+							<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['indicator'][0][0]->DisplayIndicator(array('id'=>"userStatusIndicator"),$_smarty_tpl);?>
 
-				</td>
-				<?php if ($_smarty_tpl->tpl_vars['CreditsEnabled']->value) {?>
-					<td class="align-right">
-						<span class="propertyValue inlineUpdate changeCredits"
-							  data-type="number" data-pk="<?php echo $_smarty_tpl->tpl_vars['id']->value;?>
+						</td>
+						<?php if ($_smarty_tpl->tpl_vars['CreditsEnabled']->value) {?>
+							<td class="align-right">
+								<span class="propertyValue inlineUpdate changeCredits"
+									data-type="number" data-pk="<?php echo $_smarty_tpl->tpl_vars['id']->value;?>
 " data-value="<?php echo $_smarty_tpl->tpl_vars['user']->value->CurrentCreditCount;?>
 "
-							  data-name="<?php echo FormKeys::CREDITS;?>
+									data-name="<?php echo FormKeys::CREDITS;?>
 "><?php echo $_smarty_tpl->tpl_vars['user']->value->CurrentCreditCount;?>
 </span>
-					</td>
-				<?php }?>
-				<td class="action">
-					<a href="#" class="update viewReservations"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Reservations'),$_smarty_tpl);?>
+							</td>
+						<?php }?>
+						<td class="action">
+							<a href="#" class="update viewReservations"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Reservations'),$_smarty_tpl);?>
 </a>
-				</td>
-				<td>
-					<div class="inline">
-						<a href="#" class="update edit"><span class="fa fa-pencil-square-o icon update"></span></a>
-					</div>
-					|
-					<div class="inline">
-						<a href="#" class="update delete"><span class="fa fa-trash icon remove"></span></a>
-					</div>
-				</td>
-				<td>
-					<div class="btn-group">
-						<button type="button" class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown">
-							<span class="glyphicon glyphicon-option-horizontal"></span>
-							<span class="caret"></span>
-							<span class="sr-only"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'More'),$_smarty_tpl);?>
+						</td>
+						<td>
+							<div class="inline">
+								<a href="#" class="update edit"><span class="custom-icon icon-edit update"></span></a>
+								<a href="#" class="update delete"><span class="custom-icon icon-delete remove"></span></a>
+							</div>
+						</td>
+						<td>
+							<div class="btn-group">
+								<button type="button" class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown">
+									<span style="margin-left: 0;"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'More'),$_smarty_tpl);?>
 </span>
-						</button>
-						<ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="moreActions<?php echo $_smarty_tpl->tpl_vars['id']->value;?>
+								</button>
+								<ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="moreActions<?php echo $_smarty_tpl->tpl_vars['id']->value;?>
 ">
-							<li role="presentation"><a role="menuitem"
-														href="#"
-														class="update viewimg"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"ProfileImg"),$_smarty_tpl);?>
+									<li role="presentation"><a role="menuitem"
+																href="#"
+																class="update viewimg"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"ProfileImg"),$_smarty_tpl);?>
 </a>
-							</li>
-							<?php if ($_smarty_tpl->tpl_vars['PerUserColors']->value) {?>
-								<li role="presentation">
-									<a role="menuitem" href="#" class="update changeColor"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"Color"),$_smarty_tpl);?>
+									</li>
+									<?php if ($_smarty_tpl->tpl_vars['PerUserColors']->value) {?>
+										<li role="presentation">
+											<a role="menuitem" href="#" class="update changeColor"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"Color"),$_smarty_tpl);?>
 
-										<?php if (!empty($_smarty_tpl->tpl_vars['user']->value->ReservationColor)) {?>
-											<span class="user-color update changeColor"
-												style="background-color:#<?php echo $_smarty_tpl->tpl_vars['user']->value->ReservationColor;?>
+												<?php if (!empty($_smarty_tpl->tpl_vars['user']->value->ReservationColor)) {?>
+													<span class="user-color update changeColor"
+														style="background-color:#<?php echo $_smarty_tpl->tpl_vars['user']->value->ReservationColor;?>
 ">&nbsp;</span>
-										<?php }?>
-									</a>
-								</li>
-							<?php }?>
-							<li role="presentation"><a role="menuitem"
-														href="#"
-														class="update changePermissions"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"Permissions"),$_smarty_tpl);?>
+												<?php }?>
+											</a>
+										</li>
+									<?php }?>
+									<li role="presentation"><a role="menuitem"
+																href="#"
+																class="update changePermissions"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"Permissions"),$_smarty_tpl);?>
 </a>
-							</li>
-							<li role="presentation"><a role="menuitem"
-														href="#"
-														class="update changeGroups"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"Groups"),$_smarty_tpl);?>
+									</li>
+									<li role="presentation"><a role="menuitem"
+																href="#"
+																class="update changeGroups"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"Groups"),$_smarty_tpl);?>
 </a>
-							</li>
-							<li role="presentation"><a role="menuitem"
-														href="#"
-														class="update resetPassword"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"ChangePassword"),$_smarty_tpl);?>
+									</li>
+									<li role="presentation"><a role="menuitem"
+																href="#"
+																class="update resetPassword"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"ChangePassword"),$_smarty_tpl);?>
 </a>
-							</li>
-						</ul>
-					</div>
-				</td>
-				<td class="action-delete">
-					<div class="checkbox checkbox-single">
-						<input <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'USER_ID','multi'=>true),$_smarty_tpl);?>
-" class="delete-multiple" type="checkbox" id="delete<?php echo $_smarty_tpl->tpl_vars['id']->value;?>
-" value="<?php echo $_smarty_tpl->tpl_vars['id']->value;?>
-"
-						aria-label="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Delete'),$_smarty_tpl);?>
-"/>
-						<label for="delete<?php echo $_smarty_tpl->tpl_vars['id']->value;?>
-"></label>
-					</div>
-				</td>
-			</tr>
-		<?php
+									</li>
+								</ul>
+							</div>
+						</td>
+				<?php
 }
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 ?>
 
-		</tbody>
-		<tfoot>
-		<tr>
-			<td colspan="<?php echo $_smarty_tpl->tpl_vars['colCount']->value-1;?>
-"></td>
-			<td class="action-delete"><a href="#" id="delete-selected" class="no-show" title="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Delete'),$_smarty_tpl);?>
-"><span class="fa fa-trash icon remove"></span></a></td>
-		</tr>
-		</tfoot>
-	</table>
-
+				</tbody>
+			</table>
+		</div>
 	<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['pagination'][0][0]->CreatePagination(array('pageInfo'=>$_smarty_tpl->tpl_vars['PageInfo']->value),$_smarty_tpl);?>
+
+	</div>
 
 
 	<div id="addUserDialog" class="modal" tabindex="-1" role="dialog" aria-labelledby="addUserModalLabel"
