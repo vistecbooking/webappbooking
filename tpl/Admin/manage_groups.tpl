@@ -23,7 +23,7 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
 
 <div class="container">
       <div class="box box-lg mb-4">
-        <h2>Group</h2>
+        <h2>Groups</h2>
 		<form id="addGroupForm" role="form" method="post">
 			<div class="box box-bordered" id="add-group-panel">
 			<h3>Add group</h3>
