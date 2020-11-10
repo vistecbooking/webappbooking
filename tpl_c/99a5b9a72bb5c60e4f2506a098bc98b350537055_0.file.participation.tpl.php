@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-11-09 18:12:16
+/* Smarty version 3.1.30, created on 2020-11-10 09:12:27
   from "/var/www/html/booking/tpl/Reservation/participation.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5fa92410810077_79936169',
+  'unifunc' => 'content_5fa9f70bae30b3_18640665',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '99a5b9a72bb5c60e4f2506a098bc98b350537055' => 
     array (
       0 => '/var/www/html/booking/tpl/Reservation/participation.tpl',
-      1 => 1600849228,
+      1 => 1604974333,
       2 => 'file',
     ),
   ),
@@ -20,41 +20,37 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5fa92410810077_79936169 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fa9f70bae30b3_18640665 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 <div id="reservationParticipation">
-	<div class="row">
-		<label for="participantAutocomplete"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"ParticipantList"),$_smarty_tpl);?>
-</label><br/>
-		<div class="participationText">
-			<span class="hidden-xs"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Add'),$_smarty_tpl);?>
-</span>
-			<input type="text" id="participantAutocomplete" class="form-control inline-block user-search" placeholder="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'NameOrEmail'),$_smarty_tpl);?>
+	<h2><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"ParticipantList"),$_smarty_tpl);?>
+</h2>
+	<div class="row no-gutters">
+		<div class="col-12 col-md-6">
+			<input type="text" id="participantAutocomplete" class="form-control mb-3" placeholder="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'NameOrEmail'),$_smarty_tpl);?>
 "/>
-			<span class="hidden-xs">|</span>
 		</div>
-		<div class="participationButtons">
-			<button id="promptForParticipants" type="button" class="btn inline">
-				<i class="fa fa-user"></i>
+		<div class="col">
+			<button id="promptForParticipants" type="button" class="btn btn-block btn-link mb-3">
 				<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Users'),$_smarty_tpl);?>
 
-			</button>
-			<button id="promptForGroupParticipants" type="button" class="btn inline">
-				<i class="fa fa-users"></i>
-				<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Groups'),$_smarty_tpl);?>
-
+				<i class="fa fa-user"></i>
 			</button>
 		</div>
+		<div class="col">
+			<button id="promptForGroupParticipants" type="button" class="btn btn-block btn-link mb-3">
+				<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Groups'),$_smarty_tpl);?>
 
+				<i class="fa fa-users"></i>
+			</button>
+		</div>
 		<div id="participantList">
 		</div>
 	</div>
 	<div class="row" style="display:none;">
 		<label for="inviteeAutocomplete"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"InvitationList"),$_smarty_tpl);?>
 </label>
-		<br/>
-
 		<div class="participationText">
 			<span class="hidden-xs"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Add'),$_smarty_tpl);?>
 </span>
@@ -81,10 +77,8 @@ function content_5fa92410810077_79936169 (Smarty_Internal_Template $_smarty_tpl)
 				</button>
 			<?php }?>
 		</div>
-
 		<div id="inviteeList">
 		</div>
-
 		<div id="allowParticipation">
 			<div class="checkbox">
 				<input type="checkbox" <?php if ($_smarty_tpl->tpl_vars['AllowParticipantsToJoin']->value) {?>checked="checked"<?php }?> <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'ALLOW_PARTICIPATION'),$_smarty_tpl);?>
@@ -93,6 +87,8 @@ function content_5fa92410810077_79936169 (Smarty_Internal_Template $_smarty_tpl)
 </label>
 			</div>
 		</div>
+
+		
 
 		<div class="modal fade" id="inviteeDialog" tabindex="-1" role="dialog" aria-labelledby="inviteeModalLabel" aria-hidden="true">
 			<div class="modal-dialog">
@@ -157,7 +153,6 @@ function content_5fa92410810077_79936169 (Smarty_Internal_Template $_smarty_tpl)
 				</div>
 			</div>
 		</div>
-
 	</div>
 
 	<div class="modal fade" id="participantDialog" tabindex="-1" role="dialog" aria-labelledby="participantModalLabel" aria-hidden="true">

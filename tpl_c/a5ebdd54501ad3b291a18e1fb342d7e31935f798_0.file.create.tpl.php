@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-11-09 18:12:11
+/* Smarty version 3.1.30, created on 2020-11-10 09:12:23
   from "/var/www/html/booking/tpl/Reservation/create.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5fa9240bdb5719_83846416',
+  'unifunc' => 'content_5fa9f707397470_42165849',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a5ebdd54501ad3b291a18e1fb342d7e31935f798' => 
     array (
       0 => '/var/www/html/booking/tpl/Reservation/create.tpl',
-      1 => 1600849228,
+      1 => 1604973631,
       2 => 'file',
     ),
   ),
@@ -24,13 +24,13 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:globalfooter.tpl' => 1,
   ),
 ),false)) {
-function content_5fa9240bdb5719_83846416 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fa9f707397470_42165849 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->ext->_tplFunction->registerTplFunctions($_smarty_tpl, array (
   'displayResource' => 
   array (
     'compiled_filepath' => '/var/www/html/booking/tpl_c/a5ebdd54501ad3b291a18e1fb342d7e31935f798_0.file.create.tpl.php',
     'uid' => 'a5ebdd54501ad3b291a18e1fb342d7e31935f798',
-    'call_name' => 'smarty_template_function_displayResource_20489772375fa9240b1d5eb6_50799441',
+    'call_name' => 'smarty_template_function_displayResource_20151573825fa9f706899b24_87493983',
   ),
 ));
 $_smarty_tpl->_loadInheritance();
@@ -38,13 +38,15 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_20344059365fa9240b60cb97_08582291', "header");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_3795628585fa9f706c8af46_90589153', "header");
 ?>
 
 
 
 
 <div id="page-reservation">
+<div class="container">
+<section class="box py-4">
 	<div id="reservation-box">
 		<form id="form-reservation" ajaxAction="<?php echo $_smarty_tpl->tpl_vars['ReservationAction']->value;?>
 " method="post" action="<?php echo $_SERVER['SCRIPT_NAME'];?>
@@ -58,428 +60,318 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_20344059365fa9240b
 			data-bv-onsuccess="enableButton"
 			data-bv-live="enabled">
 
-			<div class="row">
-				<div class="col-md-6 col-xs-12 col-top reservationHeader">
-					<h3>
-						<?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_7574500445fa9240b7ed9a3_25689166', 'reservationHeader');
-?>
-
-						<button type="button" style="margin-left: 10px;" class="btn btn-default" onclick="window.location='<?php echo $_smarty_tpl->tpl_vars['ReturnUrl']->value;?>
-'">
-							<span class="hidden-xs"><i class="fa fa-home fa-fw"></i> <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Home'),$_smarty_tpl);?>
+			<header>
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-auto">
+							<span class="h1"><?php echo $_smarty_tpl->tpl_vars['Resource']->value->Name;?>
 </span>
-							<span class="visible-xs"><i class="fa fa-arrow-circle-left"></i></span>
-						</button>
-					</h3>
-				</div>
-
-				<div class="col-md-6 col-xs-12 col-top">
-					<div class="pull-right-sm">
-						<?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_12368093375fa9240b7fa538_35609131', "submitButtons");
-?>
-
-					</div>
-				</div>
-			</div>
-			<br/>
-			<div class="validationSummary alert alert-danger no-show" id="validationErrors">
-				<ul>
-					<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['async_validator'][0][0]->AsyncValidator(array('id'=>"additionalattributes",'key'=>''),$_smarty_tpl);?>
-
-				</ul>
-			</div>
-
-			<div class="row">
-				<?php $_smarty_tpl->_assignInScope('detailsCol', "col-xs-12");
-?>
-				<?php $_smarty_tpl->_assignInScope('participantCol', "col-xs-12");
-?>
-
-				<?php if ($_smarty_tpl->tpl_vars['ShowParticipation']->value && $_smarty_tpl->tpl_vars['AllowParticipation']->value && $_smarty_tpl->tpl_vars['ShowReservationDetails']->value) {?>
-					<?php $_smarty_tpl->_assignInScope('detailsCol', "col-xs-12");
-?>
-					<?php $_smarty_tpl->_assignInScope('participantCol', "col-xs-12");
-?>
-				<?php }?>
-
-				<div id="reservationDetails" class="<?php echo $_smarty_tpl->tpl_vars['detailsCol']->value;?>
- <?php if ($_smarty_tpl->tpl_vars['ShowParticipation']->value && $_smarty_tpl->tpl_vars['AllowParticipation']->value && $_smarty_tpl->tpl_vars['ShowReservationDetails']->value) {?>detailsBorder<?php }?>">
-					<div class="col-xs-12">
-						<div class="form-group">
-							<?php if ($_smarty_tpl->tpl_vars['ShowUserDetails']->value && $_smarty_tpl->tpl_vars['ShowReservationDetails']->value) {?>
-								<a href="#" id="userName" data-userid="<?php echo $_smarty_tpl->tpl_vars['UserId']->value;?>
-"><?php echo $_smarty_tpl->tpl_vars['ReservationUserName']->value;?>
-</a>
-							<?php } else { ?>
-								<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Private'),$_smarty_tpl);?>
-
-							<?php }?>
-							<input id="userId" type="hidden" <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'USER_ID'),$_smarty_tpl);?>
- value="<?php echo $_smarty_tpl->tpl_vars['UserId']->value;?>
-"/>
-							<?php if ($_smarty_tpl->tpl_vars['CanChangeUser']->value) {?>
-								<a href="#" id="showChangeUsers" class="small-action"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Change'),$_smarty_tpl);?>
- <i
-											class="fa fa-user"></i></a>
-								<div class="modal fade" id="changeUserDialog" tabindex="-1" role="dialog"
-									 aria-labelledby="usersModalLabel" aria-hidden="true">
-									<div class="modal-dialog">
-										<div class="modal-content">
-											<div class="modal-header">
-												<button type="button" class="close" data-dismiss="modal"
-														aria-hidden="true">&times;</button>
-												<h4 class="modal-title"
-													id="usersModalLabel"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'ChangeUser'),$_smarty_tpl);?>
-</h4>
-											</div>
-											<div class="modal-body scrollable-modal-content">
-											</div>
-											<div class="modal-footer">
-												<button type="button" class="btn btn-default"
-														data-dismiss="modal"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Cancel'),$_smarty_tpl);?>
-</button>
-												<button type="button"
-														class="btn btn-primary"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Done'),$_smarty_tpl);?>
-</button>
-											</div>
-										</div>
-									</div>
-								</div>
-							<?php }?>
-							<div id="availableCredits" <?php if (!$_smarty_tpl->tpl_vars['CreditsEnabled']->value) {?>style="display:none" }<?php }?>><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'AvailableCredits'),$_smarty_tpl);?>
- <span
-										id="availableCreditsCount"><?php echo $_smarty_tpl->tpl_vars['CurrentUserCredits']->value;?>
-</span></div>
-						</div>
-					</div>
-
-					<div class="col-xs-12" id="changeUsers">
-						<div class="form-group">
-							<input type="text" id="changeUserAutocomplete"
-								   class="form-control inline-block user-search"/>
-							|
-							<button id="promptForChangeUsers" type="button" class="btn inline">
-								<i class="fa fa-users"></i>
-								<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'AllUsers'),$_smarty_tpl);?>
-
-							</button>
-						</div>
-					</div>
-
-					<div class="col-xs-12" id="reservation-resources">
-						<div class="form-group">
-							<div class="pull-left">
-								<div>
-									<label><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"Resources"),$_smarty_tpl);?>
-</label>
-									<?php if ($_smarty_tpl->tpl_vars['ShowAdditionalResources']->value) {?>
-										<a id="btnAddResources" href="#"
-										   class="small-action" data-toggle="modal"
-										   data-target="#dialogResourceGroups"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Change'),$_smarty_tpl);?>
- <span
-													class="fa fa-plus-square"></span></a>
-									<?php }?>
-								</div>
-
-								<div id="primaryResourceContainer" class="inline">
-									<input type="hidden" id="scheduleId" <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'SCHEDULE_ID'),$_smarty_tpl);?>
-
-										   value="<?php echo $_smarty_tpl->tpl_vars['ScheduleId']->value;?>
-"/>
-									<input class="resourceId" type="hidden"
-										   id="primaryResourceId" <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'RESOURCE_ID'),$_smarty_tpl);?>
- value="<?php echo $_smarty_tpl->tpl_vars['ResourceId']->value;?>
-"/>
-									<?php $_smarty_tpl->ext->_tplFunction->callTemplateFunction($_smarty_tpl, 'displayResource', array('resource'=>$_smarty_tpl->tpl_vars['Resource']->value), true);?>
-
-								</div>
-
-								<div id="additionalResources">
-									<?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['AvailableResources']->value, 'resource');
-if ($_from !== null) {
-foreach ($_from as $_smarty_tpl->tpl_vars['resource']->value) {
-?>
-										<?php if (is_array($_smarty_tpl->tpl_vars['AdditionalResourceIds']->value) && in_array($_smarty_tpl->tpl_vars['resource']->value->Id,$_smarty_tpl->tpl_vars['AdditionalResourceIds']->value)) {?>
-											<input class="resourceId" type="hidden"
-												   name="<?php echo FormKeys::ADDITIONAL_RESOURCES;?>
-[]" value="<?php echo $_smarty_tpl->tpl_vars['resource']->value->Id;?>
-"/>
-											<?php $_smarty_tpl->ext->_tplFunction->callTemplateFunction($_smarty_tpl, 'displayResource', array('resource'=>$_smarty_tpl->tpl_vars['resource']->value), true);?>
-
-										<?php }?>
-									<?php
-}
-}
-$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
-?>
-
-								</div>
-							</div>
-							<div class="accessoriesDiv">
-								<?php if ($_smarty_tpl->tpl_vars['ShowReservationDetails']->value && count($_smarty_tpl->tpl_vars['AvailableAccessories']->value) > 0) {?>
-									<label><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"Accessories"),$_smarty_tpl);?>
-</label>
-									<a href="#" id="addAccessoriesPrompt"
-									   class="small-action" data-toggle="modal"
-									   data-target="#dialogAddAccessories"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Add'),$_smarty_tpl);?>
- <span
-												class="fa fa-plus-square"></span></a>
-									<div id="accessories"></div>
-								<?php }?>
-							</div>
-						</div>
-					</div>
-					
-					<?php if (isset($_smarty_tpl->tpl_vars['Mode']->value)) {?>
-						<div class="col-xs-12">
-							<label>Mode</label>
-							<input type="text" class="form-control" name="<?php echo FormKeys::MODE;?>
+							<?php if (isset($_smarty_tpl->tpl_vars['Mode']->value)) {?>
+							<!--
+							<div class="form-group">
+								<label>Mode</label>
+								<input type="text" class="form-control" name="<?php echo FormKeys::MODE;?>
 " value="<?php echo $_smarty_tpl->tpl_vars['Mode']->value;?>
 " readonly />
+							</div>
+							-->
+							<?php }?>
+							<section>
+								<span class="badge badge-edit">Available</span>
+							</section>
 						</div>
-					<?php }?>
+						<div class="col-sm">
+							<p>
+								Maximum time : 24 Hrs. Available in : Monday - Friday<br>
+								Moderator : Mr. Chalantorn New (Chalantorn@gmail.com)
+							</p>
+						</div>
+					</div>
+				</div>
+			</header>
+			<main class="mt-3 pb-1 box box-bordered pd-2">
+				<div class="validationSummary alert alert-danger no-show" id="validationErrors">
+					<ul>
+						<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['async_validator'][0][0]->AsyncValidator(array('id'=>"additionalattributes",'key'=>''),$_smarty_tpl);?>
 
-					<div class="col-xs-12 reservationDates">
-						<div class="col-md-6 no-padding-left">
-							<div class="form-group no-margin-bottom">
-								<label for="BeginDate" class="reservationDate"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'BeginDate'),$_smarty_tpl);?>
-</label>
-								<input type="text" id="BeginDate" class="form-control input-sm inline-block dateinput"
-									   value="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formatdate'][0][0]->FormatDate(array('date'=>$_smarty_tpl->tpl_vars['StartDate']->value),$_smarty_tpl);?>
-" <?php if ($_smarty_tpl->tpl_vars['ReservationAction']->value == "update" && !$_smarty_tpl->tpl_vars['CanEditDateTime']->value) {?> readonly <?php }?> />
-								<input type="hidden" id="formattedBeginDate" <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'BEGIN_DATE'),$_smarty_tpl);?>
+					</ul>
+				</div>
+				<?php 
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_9505703645fa9f706dbdbf8_11391891', 'reservationHeader');
+?>
 
-									   value="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formatdate'][0][0]->FormatDate(array('date'=>$_smarty_tpl->tpl_vars['StartDate']->value,'key'=>'system'),$_smarty_tpl);?>
+				&emsp;
+				<?php if ($_smarty_tpl->tpl_vars['ShowUserDetails']->value && $_smarty_tpl->tpl_vars['ShowReservationDetails']->value) {?>
+					<a href="#" id="userName" data-userid="<?php echo $_smarty_tpl->tpl_vars['UserId']->value;?>
+"><?php echo $_smarty_tpl->tpl_vars['ReservationUserName']->value;?>
+</a>
+				<?php } else { ?>
+					<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Private'),$_smarty_tpl);?>
+
+				<?php }?>
+				<input id="userId" type="hidden" <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'USER_ID'),$_smarty_tpl);?>
+ value="<?php echo $_smarty_tpl->tpl_vars['UserId']->value;?>
 "/>
-								<?php if ($_smarty_tpl->tpl_vars['ReservationAction']->value == "update" && !$_smarty_tpl->tpl_vars['CanEditDateTime']->value) {?>
-									<input type="text" class="form-control input-sm inline-block dateinput"
-										value="<?php echo $_smarty_tpl->tpl_vars['SelectedStart']->value->Label();?>
+				<?php if ($_smarty_tpl->tpl_vars['CanChangeUser']->value) {?>
+					<!--
+					<a href="#" id="showChangeUsers" class="small-action"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Change'),$_smarty_tpl);?>
+</a>
+					<div class="modal fade" id="changeUserDialog" tabindex="-1" role="dialog"
+							aria-labelledby="usersModalLabel" aria-hidden="true">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal"
+										aria-hidden="true">&times;</button>
+									<h4 class="modal-title"
+										id="usersModalLabel"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'ChangeUser'),$_smarty_tpl);?>
+</h4>
+								</div>
+								<div class="modal-body scrollable-modal-content">
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-default"
+										data-dismiss="modal"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Cancel'),$_smarty_tpl);?>
+</button>
+									<button type="button"
+										class="btn btn-primary"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Done'),$_smarty_tpl);?>
+</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					-->
+				<?php }?>
+				<div id="availableCredits" <?php if (!$_smarty_tpl->tpl_vars['CreditsEnabled']->value) {?>style="display:none" }<?php }?>><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'AvailableCredits'),$_smarty_tpl);?>
+ <span
+					id="availableCreditsCount"><?php echo $_smarty_tpl->tpl_vars['CurrentUserCredits']->value;?>
+</span></div>
+				<div class="form-row mt-3">
+					<div class="col-12 col-md-6">
+						<div class="box box-bordered mb-3">
+							<h2>Time</h2>
+							<div class="form-row">
+								<div class="col form-group">
+									<label for="BeginDate" class="reservationDate"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'BeginDate'),$_smarty_tpl);?>
+</label>
+									<input type="text" id="BeginDate" class="form-control"
+											value="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formatdate'][0][0]->FormatDate(array('date'=>$_smarty_tpl->tpl_vars['StartDate']->value),$_smarty_tpl);?>
+" <?php if ($_smarty_tpl->tpl_vars['ReservationAction']->value == "update" && !$_smarty_tpl->tpl_vars['CanEditDateTime']->value) {?> readonly <?php }?> />
+									<input type="hidden" id="formattedBeginDate" <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'BEGIN_DATE'),$_smarty_tpl);?>
+
+											value="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formatdate'][0][0]->FormatDate(array('date'=>$_smarty_tpl->tpl_vars['StartDate']->value,'key'=>'system'),$_smarty_tpl);?>
+"/>
+								</div>
+								<div class="col form-group">
+									<label>&nbsp;</label>
+									<?php if ($_smarty_tpl->tpl_vars['ReservationAction']->value == "update" && !$_smarty_tpl->tpl_vars['CanEditDateTime']->value) {?>
+										<input type="text" class="form-control"
+											value="<?php echo $_smarty_tpl->tpl_vars['SelectedStart']->value->Label();?>
 " readonly <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'BEGIN_PERIOD'),$_smarty_tpl);?>
  />
-								<?php } else { ?>
-									<select id="BeginPeriod" <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'BEGIN_PERIOD'),$_smarty_tpl);?>
+									<?php } else { ?>
+										<select id="BeginPeriod" <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'BEGIN_PERIOD'),$_smarty_tpl);?>
 
-											class="form-control input-sm inline-block timeinput" title="Begin time">
-										<?php
+												class="form-control" title="Begin time">
+											<?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['StartPeriods']->value, 'period');
 if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['period']->value) {
 ?>
-											<?php if ($_smarty_tpl->tpl_vars['period']->value->IsReservable()) {?>
-												<?php $_smarty_tpl->_assignInScope('selected', '');
+												<?php if ($_smarty_tpl->tpl_vars['period']->value->IsReservable()) {?>
+													<?php $_smarty_tpl->_assignInScope('selected', '');
 ?>
-												<?php if ($_smarty_tpl->tpl_vars['period']->value == $_smarty_tpl->tpl_vars['SelectedStart']->value) {?>
-													<?php $_smarty_tpl->_assignInScope('selected', ' selected="selected"');
+													<?php if ($_smarty_tpl->tpl_vars['period']->value == $_smarty_tpl->tpl_vars['SelectedStart']->value) {?>
+														<?php $_smarty_tpl->_assignInScope('selected', ' selected="selected"');
 ?>
-												<?php }?>
-												<option value="<?php echo $_smarty_tpl->tpl_vars['period']->value->Begin();?>
+													<?php }?>
+													<option value="<?php echo $_smarty_tpl->tpl_vars['period']->value->Begin();?>
 "<?php echo $_smarty_tpl->tpl_vars['selected']->value;?>
 ><?php echo $_smarty_tpl->tpl_vars['period']->value->Label();?>
 </option>
-											<?php }?>
-										<?php
+												<?php }?>
+											<?php
 }
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 ?>
 
-									</select>
-								<?php }?>
+										</select>
+									<?php }?>
+								</div>
 							</div>
-						</div>
-					</div>
-					<div class="col-xs-12 reservationDates">
-						<div class="col-md-6 no-padding-left">
-							<div class="form-group no-margin-bottom">
-								<label for="EndDate" class="reservationDate"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'EndDate'),$_smarty_tpl);?>
+							<div class="form-row">
+								<div class="col form-group">
+									<label for="EndDate" class="reservationDate"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'EndDate'),$_smarty_tpl);?>
 </label>
-								<input type="text" id="EndDate" class="form-control input-sm inline-block dateinput"
-										value="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formatdate'][0][0]->FormatDate(array('date'=>$_smarty_tpl->tpl_vars['EndDate']->value),$_smarty_tpl);?>
+									<input type="text" id="EndDate" class="form-control"
+											value="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formatdate'][0][0]->FormatDate(array('date'=>$_smarty_tpl->tpl_vars['EndDate']->value),$_smarty_tpl);?>
 " <?php if ($_smarty_tpl->tpl_vars['ReservationAction']->value == "update" && !$_smarty_tpl->tpl_vars['CanEditDateTime']->value) {?> readonly <?php }?> />
-								<input type="hidden" id="formattedEndDate" <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'END_DATE'),$_smarty_tpl);?>
+									<input type="hidden" id="formattedEndDate" <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'END_DATE'),$_smarty_tpl);?>
 
-										value="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formatdate'][0][0]->FormatDate(array('date'=>$_smarty_tpl->tpl_vars['EndDate']->value,'key'=>'system'),$_smarty_tpl);?>
+											value="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formatdate'][0][0]->FormatDate(array('date'=>$_smarty_tpl->tpl_vars['EndDate']->value,'key'=>'system'),$_smarty_tpl);?>
 "/>
-								<?php if ($_smarty_tpl->tpl_vars['ReservationAction']->value == "update" && !$_smarty_tpl->tpl_vars['CanEditDateTime']->value) {?>
-									<input type="text" class="form-control input-sm inline-block dateinput"
-											value="<?php echo $_smarty_tpl->tpl_vars['SelectedEnd']->value->LabelEnd();?>
+								</div>
+								<div class="col form-group">
+									<label>&nbsp;</label>
+									<?php if ($_smarty_tpl->tpl_vars['ReservationAction']->value == "update" && !$_smarty_tpl->tpl_vars['CanEditDateTime']->value) {?>
+										<input type="text" class="form-control"
+												value="<?php echo $_smarty_tpl->tpl_vars['SelectedEnd']->value->LabelEnd();?>
 " readonly <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'END_PERIOD'),$_smarty_tpl);?>
  />
-								<?php } else { ?>
-									<select id="EndPeriod" <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'END_PERIOD'),$_smarty_tpl);?>
+									<?php } else { ?>
+										<select id="EndPeriod" <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'END_PERIOD'),$_smarty_tpl);?>
 
-											class="form-control  input-sm inline-block timeinput" title="End time">
-										<?php
+												class="form-control" title="End time">
+											<?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['EndPeriods']->value, 'period', false, NULL, 'endPeriods', array (
 ));
 if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['period']->value) {
 ?>
-											<?php if ($_smarty_tpl->tpl_vars['period']->value->IsReservable()) {?>
-												<?php $_smarty_tpl->_assignInScope('selected', '');
+												<?php if ($_smarty_tpl->tpl_vars['period']->value->IsReservable()) {?>
+													<?php $_smarty_tpl->_assignInScope('selected', '');
 ?>
-												<?php if ($_smarty_tpl->tpl_vars['period']->value == $_smarty_tpl->tpl_vars['SelectedEnd']->value) {?>
-													<?php $_smarty_tpl->_assignInScope('selected', ' selected="selected"');
+													<?php if ($_smarty_tpl->tpl_vars['period']->value == $_smarty_tpl->tpl_vars['SelectedEnd']->value) {?>
+														<?php $_smarty_tpl->_assignInScope('selected', ' selected="selected"');
 ?>
-												<?php }?>
-												<option value="<?php echo $_smarty_tpl->tpl_vars['period']->value->End();?>
+													<?php }?>
+													<option value="<?php echo $_smarty_tpl->tpl_vars['period']->value->End();?>
 "<?php echo $_smarty_tpl->tpl_vars['selected']->value;?>
 ><?php echo $_smarty_tpl->tpl_vars['period']->value->LabelEnd();?>
 </option>
-											<?php }?>
-										<?php
+												<?php }?>
+											<?php
 }
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 ?>
 
-									</select>
-								<?php }?>
+										</select>
+									<?php }?>
+								</div>
 							</div>
-						</div>
-					</div>
-					<div class="col-xs-12 reservationLength">
-						<div class="form-group">
-							<span class="like-label"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'ReservationLength'),$_smarty_tpl);?>
-</span>
-							<div class="durationText">
+							<section>
+								<b><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'ReservationLength'),$_smarty_tpl);?>
+:</b>
 								<span id="durationDays">0</span> <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'days'),$_smarty_tpl);?>
 
 								<span id="durationHours">0</span> <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'hours'),$_smarty_tpl);?>
 
 								<span id="durationMinutes">0</span> <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'minutes'),$_smarty_tpl);?>
 
+							</section>
+							<?php if (!$_smarty_tpl->tpl_vars['HideRecurrence']->value) {?>
+							<div>
+								<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['control'][0][0]->DisplayControl(array('type'=>"RecurrenceControl",'RepeatTerminationDate'=>$_smarty_tpl->tpl_vars['RepeatTerminationDate']->value),$_smarty_tpl);?>
+
+							</div>
+							<?php }?>
+							<div id="custom-attributes-placeholder">
 							</div>
 						</div>
 					</div>
-
-					<?php if (!$_smarty_tpl->tpl_vars['HideRecurrence']->value) {?>
-						<div class="col-xs-12">
-							<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['control'][0][0]->DisplayControl(array('type'=>"RecurrenceControl",'RepeatTerminationDate'=>$_smarty_tpl->tpl_vars['RepeatTerminationDate']->value),$_smarty_tpl);?>
-
-						</div>
-					<?php }?>
-
-					<div class="row col-xs-12 same-height">
-						<div id="custom-attributes-placeholder" class="col-xs-12">
-						</div>
-					</div>
-
-					<div class="<?php echo $_smarty_tpl->tpl_vars['participantCol']->value;?>
-">
-						<?php if ($_smarty_tpl->tpl_vars['ShowParticipation']->value && $_smarty_tpl->tpl_vars['AllowParticipation']->value && $_smarty_tpl->tpl_vars['ShowReservationDetails']->value) {?>
-							<?php $_smarty_tpl->_subTemplateRender("file:Reservation/participation.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+					<div class="col-12 col-md-6">
+						<div class="box box-bordered mb-3">
+							<?php if ($_smarty_tpl->tpl_vars['ShowParticipation']->value && $_smarty_tpl->tpl_vars['AllowParticipation']->value && $_smarty_tpl->tpl_vars['ShowReservationDetails']->value) {?>
+								<?php $_smarty_tpl->_subTemplateRender("file:Reservation/participation.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
-						<?php } else { ?>
-							<?php $_smarty_tpl->_subTemplateRender("file:Reservation/private-participation.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+							<?php } else { ?>
+								<?php $_smarty_tpl->_subTemplateRender("file:Reservation/private-participation.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
-						<?php }?>
-					</div>
-
-					<?php if (!empty($_smarty_tpl->tpl_vars['ReferenceNumber']->value)) {?>
-						<div class="col-xs-12">
-							<div class="form-group">
-								<label><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'ReferenceNumber'),$_smarty_tpl);?>
+							<?php }?>
+							<?php if (!empty($_smarty_tpl->tpl_vars['ReferenceNumber']->value)) {?>
+								<hr>
+								<div class="form-group">
+									<label><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'ReferenceNumber'),$_smarty_tpl);?>
 </label>
-								<?php echo $_smarty_tpl->tpl_vars['ReferenceNumber']->value;?>
+									<?php echo $_smarty_tpl->tpl_vars['ReferenceNumber']->value;?>
 
-							</div>
+								</div>
+							<?php }?>
 						</div>
-					<?php }?>
-				</div>
-			</div>
-
-			<?php if ($_smarty_tpl->tpl_vars['UploadsEnabled']->value) {?>
-				<div class="row col-xs-6">
-					<div class="col-xs-12 reservationAttachments">
-
-						<label><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'AttachFile'),$_smarty_tpl);?>
+					</div>
+					<?php if ($_smarty_tpl->tpl_vars['UploadsEnabled']->value) {?>
+						<div class="col-12 col-md-6"><div class="box box-bordered mb-3">
+							<label><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'AttachFile'),$_smarty_tpl);?>
  <span class="note">(<?php echo $_smarty_tpl->tpl_vars['MaxUploadSize']->value;?>
 
-								MB <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Maximum'),$_smarty_tpl);?>
+									MB <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Maximum'),$_smarty_tpl);?>
 )</span>
-						</label>
-
-						<div id="reservationAttachments">
-							<div class="attachment-item">
-								<input type="file" <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'RESERVATION_FILE','multi'=>true),$_smarty_tpl);?>
+							</label>
+							<div id="reservationAttachments">
+								<div class="attachment-item">
+									<input type="file" <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'RESERVATION_FILE','multi'=>true),$_smarty_tpl);?>
  />
-								<a class="add-attachment" href="#"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Add'),$_smarty_tpl);?>
+									<a class="add-attachment" href="#"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Add'),$_smarty_tpl);?>
  <i class="fa fa-plus-square"></i></a>
-								<a class="remove-attachment" href="#"><i class="fa fa-minus-square"></i></a>
+									<a class="remove-attachment" href="#"><i class="fa fa-minus-square"></i></a>
+								</div>
 							</div>
-						</div>
-					</div>
-				</div>
-			<?php }?>
-
-			<?php if ($_smarty_tpl->tpl_vars['RemindersEnabled']->value) {?>
-				<div class="row col-xs-12">
-					<div class="col-xs-12 reservationReminders">
-						<div>
+						</div></div>
+					<?php }?>
+					<?php if ($_smarty_tpl->tpl_vars['RemindersEnabled']->value) {?>
+						<div class="col-12 col-md-6"><div class="box box-bordered">
 							<label for="startReminderEnabled"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'SendReminder'),$_smarty_tpl);?>
 </label>
-						</div>
-						<div id="reminderOptionsStart">
-							<div class="checkbox">
-								<input type="checkbox" id="startReminderEnabled"
-									   class="reminderEnabled" <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'START_REMINDER_ENABLED'),$_smarty_tpl);?>
+							<div id="reminderOptionsStart">
+								<div class="checkbox">
+									<input type="checkbox" id="startReminderEnabled"
+											class="reminderEnabled" <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'START_REMINDER_ENABLED'),$_smarty_tpl);?>
 />
-								<label for="startReminderEnabled">
-									<input type="number" min="0" max="999" size="3" maxlength="3" value="15"
-										   class="reminderTime form-control input-sm inline-block" <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'START_REMINDER_TIME'),$_smarty_tpl);?>
+									<label for="startReminderEnabled">
+										<input type="number" min="0" max="999" size="3" maxlength="3" value="15"
+												class="reminderTime form-control input-sm inline-block" <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'START_REMINDER_TIME'),$_smarty_tpl);?>
 />
-									<select class="reminderInterval form-control input-sm inline-block" <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'START_REMINDER_INTERVAL'),$_smarty_tpl);?>
+										<select class="reminderInterval form-control input-sm inline-block" <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'START_REMINDER_INTERVAL'),$_smarty_tpl);?>
 >
-										<option value="<?php echo ReservationReminderInterval::Minutes;?>
+											<option value="<?php echo ReservationReminderInterval::Minutes;?>
 "><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'minutes'),$_smarty_tpl);?>
 </option>
-										<option value="<?php echo ReservationReminderInterval::Hours;?>
+											<option value="<?php echo ReservationReminderInterval::Hours;?>
 "><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'hours'),$_smarty_tpl);?>
 </option>
-										<option value="<?php echo ReservationReminderInterval::Days;?>
+											<option value="<?php echo ReservationReminderInterval::Days;?>
 "><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'days'),$_smarty_tpl);?>
 </option>
-									</select>
-									<span class="reminderLabel"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'ReminderBeforeStart'),$_smarty_tpl);?>
+										</select>
+										<span class="reminderLabel"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'ReminderBeforeStart'),$_smarty_tpl);?>
 </span></label>
+								</div>
+								<div class="clear">&nbsp;</div>
 							</div>
-						</div>
-						<div id="reminderOptionsEnd">
-							<div class="checkbox">
-								<input type="checkbox" id="endReminderEnabled"
-									   class="reminderEnabled" <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'END_REMINDER_ENABLED'),$_smarty_tpl);?>
+							<div id="reminderOptionsEnd">
+								<div class="checkbox">
+									<input type="checkbox" id="endReminderEnabled"
+											class="reminderEnabled" <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'END_REMINDER_ENABLED'),$_smarty_tpl);?>
 />
-								<label for="endReminderEnabled">
-									<input type="number" min="0" max="999" size="3" maxlength="3" value="15"
-										   class="reminderTime form-control input-sm inline-block" <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'END_REMINDER_TIME'),$_smarty_tpl);?>
+									<label for="endReminderEnabled">
+										<input type="number" min="0" max="999" size="3" maxlength="3" value="15"
+												class="reminderTime form-control input-sm inline-block" <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'END_REMINDER_TIME'),$_smarty_tpl);?>
 />
-									<select class="reminderInterval form-control input-sm inline-block" <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'END_REMINDER_INTERVAL'),$_smarty_tpl);?>
+										<select class="reminderInterval form-control input-sm inline-block" <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'END_REMINDER_INTERVAL'),$_smarty_tpl);?>
 >
-										<option value="<?php echo ReservationReminderInterval::Minutes;?>
+											<option value="<?php echo ReservationReminderInterval::Minutes;?>
 "><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'minutes'),$_smarty_tpl);?>
 </option>
-										<option value="<?php echo ReservationReminderInterval::Hours;?>
+											<option value="<?php echo ReservationReminderInterval::Hours;?>
 "><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'hours'),$_smarty_tpl);?>
 </option>
-										<option value="<?php echo ReservationReminderInterval::Days;?>
+											<option value="<?php echo ReservationReminderInterval::Days;?>
 "><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'days'),$_smarty_tpl);?>
 </option>
-									</select>
-									<span class="reminderLabel"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'ReminderBeforeEnd'),$_smarty_tpl);?>
+										</select>
+										<span class="reminderLabel"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'ReminderBeforeEnd'),$_smarty_tpl);?>
 </span></label>
+								</div>
 							</div>
-
-						</div>
-						<div class="clear">&nbsp;</div>
-					</div>
+							<div class="clear">&nbsp;</div>
+						</div></div>
+					<?php }?>
 				</div>
-			<?php }?>
+			</main>
 
 			<input type="hidden" <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'RESERVATION_ID'),$_smarty_tpl);?>
  value="<?php echo $_smarty_tpl->tpl_vars['ReservationId']->value;?>
@@ -496,23 +388,17 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 				   value="<?php echo SeriesUpdateScope::FullSeries;?>
 "/>
 
-			<div class="row">
-				<div class="reservationButtons col-md-6 col-md-offset-6 col-xs-12">
-					<div class="pull-right-sm">
-						<?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_17272349925fa9240bacb3b3_69291844', "submitButtons");
+			<?php 
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_14989679685fa9f706f247f6_46609494', "submitButtons");
 ?>
 
-					</div>
-				</div>
-			</div>
 
 			<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['csrf_token'][0][0]->CSRFToken(array(),$_smarty_tpl);?>
 
 
 			<?php if ($_smarty_tpl->tpl_vars['UploadsEnabled']->value) {?>
 				<?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_9046624975fa9240bae9389_17472090', 'attachments');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_5962178485fa9f706f3f107_63040390', 'attachments');
 ?>
 
 			<?php }?>
@@ -521,6 +407,10 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_9046624975fa9240ba
 			<div id="retrySubmitParams" class="no-show"></div>
 		</form>
 	</div>
+</section>
+</div>
+
+
 
 	<div class="modal fade" id="dialogResourceGroups" tabindex="-1" role="dialog" aria-labelledby="resourcesModalLabel"
 		 aria-hidden="true">
@@ -628,7 +518,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 		<div id="creatingNotification">
 			<h3 id="createUpdateMessage" class="no-show">
 				<?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_3079384005fa9240bbd7ca4_96449327', "ajaxMessage");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1673387665fa9f707149393_43810180', "ajaxMessage");
 ?>
 
 			</h3>
@@ -894,19 +784,23 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 
 <?php }
 /* {block "header"} */
-class Block_20344059365fa9240b60cb97_08582291 extends Smarty_Internal_Block
+class Block_3795628585fa9f706c8af46_90589153 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->_subTemplateRender("file:globalheader.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('Validator'=>true,'Qtip'=>true,'printCssFiles'=>'css/reservation.print.css'), 0, false);
 ?>
+
+<?php $_smarty_tpl->_subTemplateRender("file:globalheader.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('Validator'=>true,'Qtip'=>true,'printCssFiles'=>'css/reservation.print.css'), 0, false);
+?>
+
+<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['cssfile'][0][0]->IncludeCssFile(array('src'=>"scripts/newcss/booking-table.css",'rel'=>"stylesheet"),$_smarty_tpl);?>
 
 <?php
 }
 }
 /* {/block "header"} */
-/* smarty_template_function_displayResource_20489772375fa9240b1d5eb6_50799441 */
-if (!function_exists('smarty_template_function_displayResource_20489772375fa9240b1d5eb6_50799441')) {
-function smarty_template_function_displayResource_20489772375fa9240b1d5eb6_50799441($_smarty_tpl,$params) {
+/* smarty_template_function_displayResource_20151573825fa9f706899b24_87493983 */
+if (!function_exists('smarty_template_function_displayResource_20151573825fa9f706899b24_87493983')) {
+function smarty_template_function_displayResource_20151573825fa9f706899b24_87493983($_smarty_tpl,$params) {
 foreach ($params as $key => $value) {
 $_smarty_tpl->tpl_vars[$key] = new Smarty_Variable($value, $_smarty_tpl->isRenderingCache);
 }?>
@@ -924,59 +818,47 @@ $_smarty_tpl->tpl_vars[$key] = new Smarty_Variable($value, $_smarty_tpl->isRende
 	</div>
 <?php
 }}
-/*/ smarty_template_function_displayResource_20489772375fa9240b1d5eb6_50799441 */
+/*/ smarty_template_function_displayResource_20151573825fa9f706899b24_87493983 */
 /* {block 'reservationHeader'} */
-class Block_7574500445fa9240b7ed9a3_25689166 extends Smarty_Internal_Block
+class Block_9505703645fa9f706dbdbf8_11391891 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
-echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"CreateReservationHeading"),$_smarty_tpl);
+?>
+
+					<span class="badge badge-edit" style="font-size:1rem"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"CreateReservationHeading"),$_smarty_tpl);?>
+</span>
+				<?php
 }
 }
 /* {/block 'reservationHeader'} */
 /* {block "submitButtons"} */
-class Block_12368093375fa9240b7fa538_35609131 extends Smarty_Internal_Block
+class Block_14989679685fa9f706f247f6_46609494 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
-							<button type="reset" class="btn btn-default"  onclick="window.location='<?php echo $_smarty_tpl->tpl_vars['ReturnUrl']->value;?>
+			<div class="row mt-3">
+				<div class="col-auto">
+					<button type="button" class="btn btn-outline-secondary" onclick="window.location='<?php echo $_smarty_tpl->tpl_vars['ReturnUrl']->value;?>
 '">
-								<span class="hidden-xs"> <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Cancel'),$_smarty_tpl);?>
-</span>
-								<span class="visible-xs"><i class="fa fa-arrow-circle-left"></i></span>
-							</button>
-							<button type="button" class="btn btn-success save create btnCreate">
-								<span class="glyphicon glyphicon-ok-circle"></span>
-								<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Create'),$_smarty_tpl);?>
+						<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Cancel'),$_smarty_tpl);?>
 
-							</button>
-						<?php
-}
-}
-/* {/block "submitButtons"} */
-/* {block "submitButtons"} */
-class Block_17272349925fa9240bacb3b3_69291844 extends Smarty_Internal_Block
-{
-public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
-?>
+					</button>
+				</div>
+				<div class="col"></div>
+				<div class="col-auto">
+					<button type="button" class="btn btn-success save create btnCreate">
+						<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Create'),$_smarty_tpl);?>
 
-							<button type="button" class="btn btn-default" onclick="window.location='<?php echo $_smarty_tpl->tpl_vars['ReturnUrl']->value;?>
-'">
-								<span class="hidden-xs"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Cancel'),$_smarty_tpl);?>
-</span>
-								<span class="visible-xs"><i class="fa fa-arrow-circle-left"></i></span>
-							</button>
-							<button type="button" class="btn btn-success save create btnCreate">
-								<span class="glyphicon glyphicon-ok-circle"></span>
-								<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Create'),$_smarty_tpl);?>
-
-							</button>
-						<?php
+					</button>
+				</div>
+			</div>
+			<?php
 }
 }
 /* {/block "submitButtons"} */
 /* {block 'attachments'} */
-class Block_9046624975fa9240bae9389_17472090 extends Smarty_Internal_Block
+class Block_5962178485fa9f706f3f107_63040390 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -986,7 +868,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'attachments'} */
 /* {block "ajaxMessage"} */
-class Block_3079384005fa9240bbd7ca4_96449327 extends Smarty_Internal_Block
+class Block_1673387665fa9f707149393_43810180 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
