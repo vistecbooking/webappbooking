@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-11-06 00:52:05
+/* Smarty version 3.1.30, created on 2020-11-10 05:30:57
   from "/var/www/html/booking/tpl/Admin/Attributes/attribute-list.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5fa43bc5374133_69731034',
+  'unifunc' => 'content_5fa9c321ebea78_24365554',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1883092535d06333f2d879258c476895e231ece3' => 
     array (
       0 => '/var/www/html/booking/tpl/Admin/Attributes/attribute-list.tpl',
-      1 => 1600849228,
+      1 => 1604961042,
       2 => 'file',
     ),
   ),
@@ -20,15 +20,16 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5fa43bc5374133_69731034 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fa9c321ebea78_24365554 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_function_cycle')) require_once '/var/www/html/booking/lib/external/Smarty/plugins/function.cycle.php';
 ?>
 
-<h3><?php echo count($_smarty_tpl->tpl_vars['Attributes']->value);?>
+<!-- <h3><?php echo count($_smarty_tpl->tpl_vars['Attributes']->value);?>
  <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Attributes'),$_smarty_tpl);?>
-</h3>
+</h3> -->
 <?php if (count($_smarty_tpl->tpl_vars['Attributes']->value) > 0) {?>
-	<table class="table">
+<div class="table-responsive table-shadow mb-3">
+	<table class="table table-md table-vistec table-highlight table-sm">
 		<thead>
 		<tr>
 			<th>ID</th>
@@ -141,6 +142,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 
 		</tbody>
 	</table>
+</div>
 <?php }?>
 
 <?php echo '<script'; ?>

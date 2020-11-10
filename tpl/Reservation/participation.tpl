@@ -17,31 +17,28 @@ You should have received a copy of the GNU General Public License
 along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
 *}
 <div id="reservationParticipation">
-	<div class="row">
-		<label for="participantAutocomplete">{translate key="ParticipantList"}</label><br/>
-		<div class="participationText">
-			<span class="hidden-xs">{translate key=Add}</span>
-			<input type="text" id="participantAutocomplete" class="form-control inline-block user-search" placeholder="{translate key=NameOrEmail}"/>
-			<span class="hidden-xs">|</span>
+	<h2>{translate key="ParticipantList"}</h2>
+	<div class="row no-gutters">
+		<div class="col-12 col-md-6">
+			<input type="text" id="participantAutocomplete" class="form-control mb-3" placeholder="{translate key=NameOrEmail}"/>
 		</div>
-		<div class="participationButtons">
-			<button id="promptForParticipants" type="button" class="btn inline">
-				<i class="fa fa-user"></i>
+		<div class="col">
+			<button id="promptForParticipants" type="button" class="btn btn-block btn-link mb-3">
 				{translate key='Users'}
-			</button>
-			<button id="promptForGroupParticipants" type="button" class="btn inline">
-				<i class="fa fa-users"></i>
-				{translate key='Groups'}
+				<i class="fa fa-user"></i>
 			</button>
 		</div>
-
+		<div class="col">
+			<button id="promptForGroupParticipants" type="button" class="btn btn-block btn-link mb-3">
+				{translate key='Groups'}
+				<i class="fa fa-users"></i>
+			</button>
+		</div>
 		<div id="participantList">
 		</div>
 	</div>
 	<div class="row" style="display:none;">
 		<label for="inviteeAutocomplete">{translate key="InvitationList"}</label>
-		<br/>
-
 		<div class="participationText">
 			<span class="hidden-xs">{translate key=Add}</span>
 			<input type="text" id="inviteeAutocomplete" class="form-control inline-block user-search" placeholder="{translate key=NameOrEmail}"/>
@@ -63,16 +60,25 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
 				</button>
 			{/if}
 		</div>
-
 		<div id="inviteeList">
 		</div>
-
 		<div id="allowParticipation">
 			<div class="checkbox">
 				<input type="checkbox" {if $AllowParticipantsToJoin}checked="checked"{/if} {formname key=ALLOW_PARTICIPATION} id="allowParticipationCheckbox">
 				<label for="allowParticipationCheckbox">{translate key=AllowParticipantsToJoin}</label>
 			</div>
 		</div>
+
+		{*
+
+		███╗   ███╗ ██████╗ ██████╗  █████╗ ██╗     ███████╗
+		████╗ ████║██╔═══██╗██╔══██╗██╔══██╗██║     ██╔════╝
+		██╔████╔██║██║   ██║██║  ██║███████║██║     ███████╗
+		██║╚██╔╝██║██║   ██║██║  ██║██╔══██║██║     ╚════██║
+		██║ ╚═╝ ██║╚██████╔╝██████╔╝██║  ██║███████╗███████║
+		╚═╝     ╚═╝ ╚═════╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝╚══════╝
+
+		*}
 
 		<div class="modal fade" id="inviteeDialog" tabindex="-1" role="dialog" aria-labelledby="inviteeModalLabel" aria-hidden="true">
 			<div class="modal-dialog">
@@ -130,7 +136,6 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
 				</div>
 			</div>
 		</div>
-
 	</div>
 
 	<div class="modal fade" id="participantDialog" tabindex="-1" role="dialog" aria-labelledby="participantModalLabel" aria-hidden="true">

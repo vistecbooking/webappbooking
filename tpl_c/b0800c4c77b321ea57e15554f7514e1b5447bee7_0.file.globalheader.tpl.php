@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-11-09 12:32:52
+/* Smarty version 3.1.30, created on 2020-11-10 07:34:50
   from "/var/www/html/booking/tpl/globalheader.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5fa8d48404fac4_55034052',
+  'unifunc' => 'content_5fa9e02a8eac02_28006037',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b0800c4c77b321ea57e15554f7514e1b5447bee7' => 
     array (
       0 => '/var/www/html/booking/tpl/globalheader.tpl',
-      1 => 1604846656,
+      1 => 1604953123,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5fa8d48404fac4_55034052 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fa9e02a8eac02_28006037 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 
@@ -58,6 +58,7 @@ favicon.ico"/>
 favicon.ico"/>
 
     
+
     
 
     <!-- <?php echo '<script'; ?>
@@ -142,6 +143,9 @@ favicon.ico"/>
         <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['jsfile'][0][0]->IncludeJavascriptFile(array('src'=>"js/wysihtml5/bootstrap3-wysihtml5.all.min.js"),$_smarty_tpl);?>
 
     <?php }?>
+    <?php echo '<script'; ?>
+ src="https://cdn.jsdelivr.net/npm/sweetalert2@10"><?php echo '</script'; ?>
+>
 
     
 
@@ -163,7 +167,7 @@ favicon.ico"/>
 
     <!-- End JavaScript -->
 
-    <!-- CSS -->
+    
     
 
     <!-- <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"
@@ -433,11 +437,11 @@ reports/<?php echo Pages::REPORTS_COMMON;?>
             <ul class="navbar-nav">
                 <?php if ($_smarty_tpl->tpl_vars['LoggedIn']->value) {?>
                     <li class="nav-item dropdown" id="navMyAccountDropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                        <a href="#" class="nav-link dropdown-toggle p-0" data-toggle="dropdown">
                             <?php ob_start();
 echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"MyAccount"),$_smarty_tpl);
-$_prefixVariable1=ob_get_clean();
-echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['html_image'][0][0]->PrintImage(array('src'=>"person.png",'class'=>"img-fluid rounded-circle",'alt'=>$_prefixVariable1,'style'=>"height:40px"),$_smarty_tpl);?>
+$_prefixVariable2=ob_get_clean();
+echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['html_image'][0][0]->PrintImage(array('src'=>"person.png",'class'=>"img-fluid rounded-circle",'alt'=>$_prefixVariable2,'style'=>"height:40px"),$_smarty_tpl);?>
 
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">
