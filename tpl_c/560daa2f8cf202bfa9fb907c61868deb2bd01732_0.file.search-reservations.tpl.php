@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-11-10 20:20:29
+/* Smarty version 3.1.30, created on 2020-11-10 20:26:30
   from "/var/www/html/booking/tpl/Search/search-reservations.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5faa939da81401_11172725',
+  'unifunc' => 'content_5faa95068a1901_60790898',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '560daa2f8cf202bfa9fb907c61868deb2bd01732' => 
     array (
       0 => '/var/www/html/booking/tpl/Search/search-reservations.tpl',
-      1 => 1605014339,
+      1 => 1605014786,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:globalheader.tpl' => 1,
   ),
 ),false)) {
-function content_5faa939da81401_11172725 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5faa95068a1901_60790898 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 
@@ -171,7 +171,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
             </div>
           </div>
         </div>
-        <div class="row">
+        <div class="row mb-3">
             <div class="col-lg-auto">
                 <input type="text" id="beginDate" class="inline dateinput"
                    placeholder="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'BeginDate'),$_smarty_tpl);?>

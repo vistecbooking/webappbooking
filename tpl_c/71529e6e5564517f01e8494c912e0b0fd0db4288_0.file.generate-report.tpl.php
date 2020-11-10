@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-11-09 12:32:42
+/* Smarty version 3.1.30, created on 2020-11-10 20:24:09
   from "/var/www/html/booking/tpl/Reports/generate-report.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5fa8d47a5fb881_03124669',
+  'unifunc' => 'content_5faa9479d77dc9_77576793',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '71529e6e5564517f01e8494c912e0b0fd0db4288' => 
     array (
       0 => '/var/www/html/booking/tpl/Reports/generate-report.tpl',
-      1 => 1604846656,
+      1 => 1605014645,
       2 => 'file',
     ),
   ),
@@ -20,10 +20,9 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
     'file:globalheader.tpl' => 1,
     'file:Reports/chart.tpl' => 1,
-    'file:globalfooter.tpl' => 1,
   ),
 ),false)) {
-function content_5fa8d47a5fb881_03124669 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5faa9479d77dc9_77576793 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 
@@ -317,324 +316,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
     </div>
   </div>
 
-<div id="page-generate-report">
-	<div id="customReportInput-container">
-		<form role="form" id="customReportInput">
-			<div class="panel panel-default" id="report-filter-panel">
-				<div class="panel-heading">
-					<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'GenerateReport'),$_smarty_tpl);?>
- <a href="#"><span class="icon black show-hide glyphicon"></span></a>
-				</div>
-				<div class="panel-body no-padding">
-					<div id="custom-report-input">
-						<div class="input-set" id="selectDiv">
-							<div class="col-md-1"><span><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Select'),$_smarty_tpl);?>
-</span></div>
-							<div class="col-md-11 radio">
-								<div class="col-md-1">
-									<input type="radio" <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'REPORT_RESULTS'),$_smarty_tpl);?>
 
-										   value="<?php echo Report_ResultSelection::FULL_LIST;?>
-"
-										   id="results_list" checked="checked"/>
-									<label for="results_list"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'List'),$_smarty_tpl);?>
-</label>
-								</div>
-								<div class="col-md-1">
-									<input type="radio" <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'REPORT_RESULTS'),$_smarty_tpl);?>
-
-										   value="<?php echo Report_ResultSelection::TIME;?>
-"
-										   id="results_time"/>
-									<label for="results_time"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'TotalTime'),$_smarty_tpl);?>
-</label>
-								</div>
-								<div class="col-md-10">
-									<input type="radio" <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'REPORT_RESULTS'),$_smarty_tpl);?>
-
-										   value="<?php echo Report_ResultSelection::COUNT;?>
-"
-										   id="results_count"/>
-									<label for="results_count"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Count'),$_smarty_tpl);?>
-</label>
-								</div>
-							</div>
-						</div>
-
-						<div class="input-set select-toggle" id="listOfDiv">
-							<div class="col-md-1"><span><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Usage'),$_smarty_tpl);?>
-</span></div>
-							<div class="col-md-11 radio">
-								<div class="col-md-1">
-									<input type="radio" <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'REPORT_USAGE'),$_smarty_tpl);?>
- value="<?php echo Report_Usage::RESOURCES;?>
-"
-										   id="usage_resources"
-										   checked="checked">
-									<label for="usage_resources"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Resources'),$_smarty_tpl);?>
-</label>
-								</div>
-								<div class="col-md-11">
-									<input type="radio" <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'REPORT_USAGE'),$_smarty_tpl);?>
- value="<?php echo Report_Usage::ACCESSORIES;?>
-"
-										   id="usage_accessories">
-									<label for="usage_accessories"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Accessories'),$_smarty_tpl);?>
-</label>
-								</div>
-							</div>
-						</div>
-
-						<div class="input-set select-toggle" id="aggregateDiv" style="display:none;">
-							<div class="col-md-1"><span class=""><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'AggregateBy'),$_smarty_tpl);?>
-</span></div>
-							<div class="col-md-11 radio">
-								<div class="col-md-1">
-									<input type="radio" <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'REPORT_GROUPBY'),$_smarty_tpl);?>
- value="<?php echo Report_GroupBy::NONE;?>
-"
-										   id="groupby_none" checked="checked"/>
-									<label for="groupby_none"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'None'),$_smarty_tpl);?>
-</label>
-								</div>
-								<div class="col-md-1">
-									<input type="radio" <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'REPORT_GROUPBY'),$_smarty_tpl);?>
- value="<?php echo Report_GroupBy::RESOURCE;?>
-"
-										   id="groupby_resource"/>
-									<label for="groupby_resource"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Resource'),$_smarty_tpl);?>
-</label>
-								</div>
-								<div class="col-md-1">
-									<input type="radio" <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'REPORT_GROUPBY'),$_smarty_tpl);?>
- value="<?php echo Report_GroupBy::SCHEDULE;?>
-"
-										   id="groupby_schedule"/>
-									<label for="groupby_schedule"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Schedule'),$_smarty_tpl);?>
-</label>
-								</div>
-								<div class="col-md-1">
-									<input type="radio" <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'REPORT_GROUPBY'),$_smarty_tpl);?>
- value="<?php echo Report_GroupBy::USER;?>
-"
-										   id="groupby_user"/>
-									<label for="groupby_user"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'User'),$_smarty_tpl);?>
-</label>
-								</div>
-								<div class="col-md-8">
-									<input type="radio" <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'REPORT_GROUPBY'),$_smarty_tpl);?>
- value="<?php echo Report_GroupBy::GROUP;?>
-"
-										   id="groupby_group"/>
-									<label for="groupby_group"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Group'),$_smarty_tpl);?>
-</label>
-								</div>
-							</div>
-						</div>
-						<div class="input-set form-group-sm" id="rangeDiv">
-							<div class="col-md-1"><span class=""><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Range'),$_smarty_tpl);?>
-</span></div>
-							<div class="col-md-11 radio">
-								<div class="col-md-1">
-									<input type="radio" <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'REPORT_RANGE'),$_smarty_tpl);?>
- value="<?php echo Report_Range::ALL_TIME;?>
-"
-										   id="range_all"
-										   checked="checked"/>
-									<label for="range_all"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'AllTime'),$_smarty_tpl);?>
-</label>
-								</div>
-								<div class="col-md-2">
-									<input type="radio" <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'REPORT_RANGE'),$_smarty_tpl);?>
-
-										   value="<?php echo Report_Range::CURRENT_MONTH;?>
-" id="current_month"/>
-									<label for="current_month"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'CurrentMonth'),$_smarty_tpl);?>
-</label>
-								</div>
-								<div class="col-md-2">
-									<input type="radio" <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'REPORT_RANGE'),$_smarty_tpl);?>
- value="<?php echo Report_Range::CURRENT_WEEK;?>
-"
-										   id="current_week"/>
-									<label for="current_week"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'CurrentWeek'),$_smarty_tpl);?>
-</label>
-								</div>
-								<div class="col-md-1">
-									<input type="radio" <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'REPORT_RANGE'),$_smarty_tpl);?>
- value="<?php echo Report_Range::TODAY;?>
-"
-										   id="today"/>
-									<label for="today" style="width:auto;"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Today'),$_smarty_tpl);?>
-</label>
-								</div>
-								<div class="col-md-6">
-									<input type="radio" <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'REPORT_RANGE'),$_smarty_tpl);?>
- value="<?php echo Report_Range::DATE_RANGE;?>
-"
-										   id="range_within"/>
-									<label for="range_within" style="width:auto;"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Between'),$_smarty_tpl);?>
-</label>
-									<input type="input" class="form-control dateinput inline" id="startDate"/> -
-									<input type="hidden" id="formattedBeginDate" <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'REPORT_START'),$_smarty_tpl);?>
-/>
-									<input type="input" class="form-control dateinput inline" id="endDate"/>
-									<input type="hidden" id="formattedEndDate" <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'REPORT_END'),$_smarty_tpl);?>
- />
-								</div>
-							</div>
-						</div>
-						<div class="input-set form-group-sm">
-							<div class="col-md-1"><span class=""><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'FilterBy'),$_smarty_tpl);?>
-</span></div>
-							<div class="col-md-11">
-								<div class="form-group no-margin no-padding col-md-2">
-									<select class="form-control" <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'RESOURCE_ID','multi'=>true),$_smarty_tpl);?>
- multiple="multiple" id="resourceId">
-										<?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['Resources']->value, 'resource');
-if ($_from !== null) {
-foreach ($_from as $_smarty_tpl->tpl_vars['resource']->value) {
-?>
-											<option value="<?php echo $_smarty_tpl->tpl_vars['resource']->value->GetId();?>
-"><?php echo $_smarty_tpl->tpl_vars['resource']->value->GetName();?>
-</option>
-										<?php
-}
-}
-$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
-?>
-
-									</select>
-								</div>
-								<div class="form-group no-margin no-padding col-md-2">
-									<select class="form-control" <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'RESOURCE_TYPE_ID','multi'=>true),$_smarty_tpl);?>
- multiple="multiple" id="resourceTypeId">
-										<?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['ResourceTypes']->value, 'resourceType');
-if ($_from !== null) {
-foreach ($_from as $_smarty_tpl->tpl_vars['resourceType']->value) {
-?>
-											<option value="<?php echo $_smarty_tpl->tpl_vars['resourceType']->value->Id();?>
-"><?php echo $_smarty_tpl->tpl_vars['resourceType']->value->Name();?>
-</option>
-										<?php
-}
-}
-$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
-?>
-
-									</select>
-								</div>
-								<div class="form-group no-margin no-padding col-md-2">
-									<select class="form-control" <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'ACCESSORY_ID','multi'=>true),$_smarty_tpl);?>
- multiple="multiple" id="accessoryId">
-										<?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['Accessories']->value, 'accessory');
-if ($_from !== null) {
-foreach ($_from as $_smarty_tpl->tpl_vars['accessory']->value) {
-?>
-											<option value="<?php echo $_smarty_tpl->tpl_vars['accessory']->value->Id;?>
-"><?php echo $_smarty_tpl->tpl_vars['accessory']->value->Name;?>
-</option>
-										<?php
-}
-}
-$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
-?>
-
-									</select>
-								</div>
-								<div class="form-group no-margin no-padding col-md-2">
-									<select class="form-control" <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'SCHEDULE_ID','multi'=>true),$_smarty_tpl);?>
- multiple="multiple" id="scheduleId">
-										<?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['Schedules']->value, 'schedule');
-if ($_from !== null) {
-foreach ($_from as $_smarty_tpl->tpl_vars['schedule']->value) {
-?>
-											<option value="<?php echo $_smarty_tpl->tpl_vars['schedule']->value->GetId();?>
-"><?php echo $_smarty_tpl->tpl_vars['schedule']->value->GetName();?>
-</option>
-										<?php
-}
-}
-$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
-?>
-
-									</select>
-								</div>
-								<div class="form-group no-margin no-padding col-md-2">
-									<select class="form-control" <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'GROUP_ID','multi'=>true),$_smarty_tpl);?>
- multiple="multiple" id="groupId">
-										<?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['Groups']->value, 'group');
-if ($_from !== null) {
-foreach ($_from as $_smarty_tpl->tpl_vars['group']->value) {
-?>
-											<option value="<?php echo $_smarty_tpl->tpl_vars['group']->value->Id;?>
-"><?php echo $_smarty_tpl->tpl_vars['group']->value->Name;?>
-</option>
-										<?php
-}
-}
-$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
-?>
-
-									</select>
-								</div>
-							</div>
-							<div class="col-md-11 col-md-offset-1">
-								<div class="form-group no-margin no-padding col-md-2">
-									<div id="user-filter-div">
-										<div class="">
-											<label class="control-label sr-only"
-												   for="inputSuccess2"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'AllUsers'),$_smarty_tpl);?>
-</label>
-											<input id="user-filter" type="text" class="form-control"
-												   placeholder="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'AllUsers'),$_smarty_tpl);?>
-"/>
-											<input id="user_id" class="filter-id" type="hidden" <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'USER_ID'),$_smarty_tpl);?>
-/>
-										</div>
-									</div>
-								</div>
-								<div class="form-group no-margin no-padding col-md-2">
-									<div id="participant-filter-div">
-										<div class="form-group">
-											<label class="control-label sr-only"
-												   for="inputSuccess2"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'AllParticipants'),$_smarty_tpl);?>
-</label>
-											<input id="participant-filter" type="text" class="form-control"
-												   placeholder="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'AllParticipants'),$_smarty_tpl);?>
-"/>
-											<input id="participant_id" class="filter-id"
-												   type="hidden" <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'PARTICIPANT_ID'),$_smarty_tpl);?>
-/>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="panel-footer">
-				<input type="submit" value="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'GetReport'),$_smarty_tpl);?>
-" class="btn btn-primary btn-sm"
-					   id="btnCustomReport" asyncAction=""/>
-				<div class="checkbox inline-block">
-					<input type="checkbox" id="chkIncludeDeleted" <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['formname'][0][0]->GetFormName(array('key'=>'INCLUDE_DELETED'),$_smarty_tpl);?>
-/>
-					<label for="chkIncludeDeleted"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'IncludeDeleted'),$_smarty_tpl);?>
-</label>
-				</div>
-			</div>
-	</div>
-	<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['csrf_token'][0][0]->CSRFToken(array(),$_smarty_tpl);?>
-
-	</form>
-</div>
 
 <div id="saveMessage" class="alert alert-success no-show">
 	<strong><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'ReportSaved'),$_smarty_tpl);?>
@@ -776,7 +458,5 @@ ajax/autocomplete.php?type=<?php echo AutoCompleteType::Group;?>
 <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['control'][0][0]->DisplayControl(array('type'=>"DatePickerSetupControl",'ControlId'=>"endDate",'AltId'=>"formattedEndDate"),$_smarty_tpl);?>
 
 
-</div>
-<?php $_smarty_tpl->_subTemplateRender("file:globalfooter.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
-}
+</div><?php }
 }

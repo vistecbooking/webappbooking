@@ -119,7 +119,7 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
             </div>
           </div>
         </div>
-        <div class="row">
+        <div class="row mb-3">
             <div class="col-lg-auto">
                 <input type="text" id="beginDate" class="inline dateinput"
                    placeholder="{translate key=BeginDate}"/>

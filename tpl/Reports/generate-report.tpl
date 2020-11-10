@@ -218,6 +218,7 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
     </div>
   </div>
 
+{*
 <div id="page-generate-report">
 	<div id="customReportInput-container">
 		<form role="form" id="customReportInput">
@@ -413,6 +414,7 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
 	{csrf_token}
 	</form>
 </div>
+*}
 
 <div id="saveMessage" class="alert alert-success no-show">
 	<strong>{translate key=ReportSaved}</strong> <a
@@ -509,4 +511,3 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
 {control type="DatePickerSetupControl" ControlId="endDate" AltId="formattedEndDate"}
 
 </div>
-{include file='globalfooter.tpl'}
