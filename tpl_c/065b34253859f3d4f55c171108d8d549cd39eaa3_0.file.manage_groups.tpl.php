@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-11-10 15:52:18
+/* Smarty version 3.1.30, created on 2020-11-10 19:32:10
   from "/var/www/html/booking/tpl/Admin/manage_groups.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5faa54c20ae4d1_73686057',
+  'unifunc' => 'content_5faa884a710140_21253679',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '065b34253859f3d4f55c171108d8d549cd39eaa3' => 
     array (
       0 => '/var/www/html/booking/tpl/Admin/manage_groups.tpl',
-      1 => 1604994321,
+      1 => 1605011511,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:globalheader.tpl' => 1,
   ),
 ),false)) {
-function content_5faa54c20ae4d1_73686057 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5faa884a710140_21253679 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_function_cycle')) require_once '/var/www/html/booking/lib/external/Smarty/plugins/function.cycle.php';
 ?>
 
@@ -35,7 +35,7 @@ if (!is_callable('smarty_function_cycle')) require_once '/var/www/html/booking/l
 
 <div class="container">
       <div class="box box-lg mb-4">
-        <h2>Group</h2>
+        <h2>Groups</h2>
 		<form id="addGroupForm" role="form" method="post">
 			<div class="box box-bordered" id="add-group-panel">
 			<h3>Add group</h3>

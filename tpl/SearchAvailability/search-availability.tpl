@@ -12,7 +12,7 @@
             </div>
         </div> *}
 
-    div class="container">
+    <div class="container">
       <div class="box box-lg mb-4">
         <h2>Find a time</h2>
         <div class="row">
