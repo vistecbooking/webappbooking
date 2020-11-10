@@ -19,7 +19,9 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
 {include file='globalheader.tpl'}
 {cssfile src='scripts/newcss/positions.css'}
 
-<div class="container">
+<div id="page-manage-positions">
+	
+	<div class="container">
       <div class="box box-lg mb-4">
         <h2>Positions</h2>
 		<form id="addPositionForm" role="form" method="post">
@@ -27,34 +29,33 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
 			<h3>Add position</h3>
 			<div class="ml-4">
 				<div class="row">
-				<div class="col-lg">
-					<div class="form-group">
-					<label for="position name"
-						>Position Name
-						<span class="text-danger">*require</span></label
-					>
-					<input
-						type="text"
-						class="form-control"
-						placeholder="position name"
-						{formname key=POSITION_NAME} id="addPositionName" required
-					/>
+					<div class="col-lg">
+						<div class="form-group">
+						<label for="position name"
+							>Position Name
+							<span class="text-danger">*require</span></label
+						>
+						<input
+							type="text"
+							class="form-control"
+							placeholder="position name"
+							{formname key=POSITION_NAME} id="addPositionName" required
+						/>
+						</div>
 					</div>
-				</div>
-				<div class="col-lg"></div>
+					<div class="col-lg"></div>
 				</div>
 				<div class="row">
-				<div class="col-lg-auto">
-					{add_button class="btn-sm"}
-					{reset_button class="btn-sm"}
-					{indicator}
-				</div>
+					<div class="col-lg-auto">
+						{add_button class="btn-sm"}
+						{reset_button class="btn-sm"}
+						{indicator}
+					</div>
 				</div>
 			</div>
 			</div>
 		</form>
       </div>
-	  </div>
       <div class="table-responsive table-shadow mb-5">
         <table id="positionList" class="table table-vistec table-highlight">
           <thead>
@@ -67,60 +68,14 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
 		  {cycle values='row0,row1' assign=rowCss}
 			<tr data-group-id="{$position->Id}">
 				<td>{$position->Name}</td>
-				<td class="action"><a href="#" class="update rename"><span class="custom-icon icon-edit"></a><a href="#" class="update delete"></span
-                ><span class="custom-icon icon-delete"></span</a></td>
+				<td><a href="#" class="update rename"><span class="custom-icon icon-edit icon"></span
+                ></a><a href="#" class="update delete"><span class="custom-icon icon-delete remove"></span></a></td>
 			</tr>
 		{/foreach}
 		</tbody>
-</div>
-
-<div id="page-manage-positions" class="admin-page">
-	<h1>{translate key=ManagePositions}</h1>
-
-	<form id="addPositionForm" class="form-inline" role="form" method="post">
-		<div class="panel panel-default" id="add-position-panel">
-			<div class="panel-heading">{translate key="AddPosition"} {showhide_icon}</div>
-			<div class="panel-body add-contents">
-				<div id="addPositionResults" class="error" style="display:none;"></div>
-				<div class="form-group has-feedback">
-					<label for="addPositionName">{translate key=Name}</label>
-					<input {formname key=POSITION_NAME} type="text" id="addPositionName" required class="form-control required"/>
-					<i class="glyphicon glyphicon-asterisk form-control-feedback" data-bv-icon-for="addPositionName"></i>
-				</div>
-			</div>
-			<div class="panel-footer">
-				{add_button class="btn-sm"}
-				{reset_button class="btn-sm"}
-				{indicator}
-			</div>
-		</div>
-	</form>
-
-	<div id="positionSearchPanel">
-		<label for="positionSearch">{translate key='FindPosition'}</label> |  {html_link href=$smarty.server.SCRIPT_NAME key=AllPositions}
-		<input type="text" id="positionSearch" class="form-control" size="40"/>
+		</table>
 	</div>
-
-	<table class="table" id="positionList">
-		<thead>
-		<tr>
-			<th>{sort_column key=PositionName field=ColumnNames::POSITION_NAME}</th>
-			<th class="action">{translate key='Actions'}</th>
-		</tr>
-		</thead>
-		<tbody>
-		{foreach from=$positions item=position}
-			{cycle values='row0,row1' assign=rowCss}
-			<tr class="{$rowCss}" data-group-id="{$position->Id}">
-				<td>{$position->Name}</td>
-				<td class="action">
-					<a href="#" class="update rename"><span class="fa fa-pencil-square-o icon"></a> |
-					<a href="#" class="update delete"><span class="fa fa-trash icon remove"></span></a>
-				</td>
-			</tr>
-		{/foreach}
-		</tbody>
-	</table>
+</div>
 
 	{pagination pageInfo=$PageInfo}
 
@@ -207,4 +162,3 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
 		});
 	</script>
 </div>
-{include file='globalfooter.tpl'}

@@ -1,2 +1,4 @@
 tpl_c/
 Web/*.log
+Web/admin/c:/temp/*.log
+Web/ajax/c:/temp/*.log
