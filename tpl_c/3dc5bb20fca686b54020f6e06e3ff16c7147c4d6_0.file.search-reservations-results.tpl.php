@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-11-09 19:03:50
+/* Smarty version 3.1.30, created on 2020-11-10 20:20:33
   from "/var/www/html/booking/tpl/Search/search-reservations-results.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5fa93026e7b214_58857736',
+  'unifunc' => 'content_5faa93a12977d2_42914356',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3dc5bb20fca686b54020f6e06e3ff16c7147c4d6' => 
     array (
       0 => '/var/www/html/booking/tpl/Search/search-reservations-results.tpl',
-      1 => 1604742064,
+      1 => 1605014423,
       2 => 'file',
     ),
   ),
@@ -20,12 +20,12 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5fa93026e7b214_58857736 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5faa93a12977d2_42914356 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_function_cycle')) require_once '/var/www/html/booking/lib/external/Smarty/plugins/function.cycle.php';
 ?>
 
 
-<table class="table" id="reservationTable">
+<table class="table table-vistec table-highlight" id="reservationTable">
 	<thead>
 		<tr>
 			<th><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'User'),$_smarty_tpl);?>

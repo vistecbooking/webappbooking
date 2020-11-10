@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-11-10 19:32:21
+/* Smarty version 3.1.30, created on 2020-11-10 20:20:29
   from "/var/www/html/booking/tpl/globalheader.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5faa88554d5876_48959733',
+  'unifunc' => 'content_5faa939dc41784_11703536',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5faa88554d5876_48959733 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5faa939dc41784_11703536 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 
@@ -440,8 +440,8 @@ reports/<?php echo Pages::REPORTS_COMMON;?>
                         <a href="#" class="nav-link dropdown-toggle p-0" data-toggle="dropdown">
                             <?php ob_start();
 echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"MyAccount"),$_smarty_tpl);
-$_prefixVariable2=ob_get_clean();
-echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['html_image'][0][0]->PrintImage(array('src'=>"person.png",'class'=>"img-fluid rounded-circle",'alt'=>$_prefixVariable2,'style'=>"height:40px"),$_smarty_tpl);?>
+$_prefixVariable1=ob_get_clean();
+echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['html_image'][0][0]->PrintImage(array('src'=>"person.png",'class'=>"img-fluid rounded-circle",'alt'=>$_prefixVariable1,'style'=>"height:40px"),$_smarty_tpl);?>
 
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">

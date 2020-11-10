@@ -17,7 +17,7 @@ You should have received a copy of the GNU General Public License
 along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
 *}
 
-<table class="table" id="reservationTable">
+<table class="table table-vistec table-highlight" id="reservationTable">
 	<thead>
 		<tr>
 			<th>{translate key=User}</th>
