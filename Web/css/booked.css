@@ -23,9 +23,6 @@
     top: 0;
     border-width: 0 0 1px;
   }
-  .navbar-collapse.collapse {
-    display: none!important;
-  }
   .navbar-nav {
     float: none!important;
     margin-top: 7.5px;
@@ -1452,13 +1449,10 @@ a.toggle-sidebar {
 .reservationSubmitButtons {
   float: right;
 }
-#reservationParticipation {
-  padding-left: 25px;
-}
 #participantList,
 #inviteeList {
   height: 100px;
-  width: 98%;
+  width: 100%;
   overflow-y: auto;
   border: solid 1px #e9e9e9;
   padding: 2px;

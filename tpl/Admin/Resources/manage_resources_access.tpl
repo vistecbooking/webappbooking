@@ -17,55 +17,55 @@ You should have received a copy of the GNU General Public License
 along with phpScheduleIt.  If not, see <http://www.gnu.org/licenses/>.
 *}
 
-<div class="startNotice"
-	 data-value="{$resource->GetMinNotice()}"
-	 data-days="{$resource->GetMinNotice()->Days()}"
-	 data-hours="{$resource->GetMinNotice()->Hours()}"
-	 data-minutes="{$resource->GetMinNotice()->Minutes()}">
+<li class="startNotice"
+	data-value="{$resource->GetMinNotice()}"
+	data-days="{$resource->GetMinNotice()->Days()}"
+	data-hours="{$resource->GetMinNotice()->Hours()}"
+	data-minutes="{$resource->GetMinNotice()->Minutes()}">
 	{if $resource->HasMinNotice()}
 		{translate key='ResourceMinNotice' args=$resource->GetMinNotice()}
 	{else}
 		{translate key='ResourceMinNoticeNone'}
 	{/if}
-</div>
-<div class="endNotice"
-	 data-value="{$resource->GetMaxNotice()}"
-	 data-days="{$resource->GetMaxNotice()->Days()}"
-	 data-hours="{$resource->GetMaxNotice()->Hours()}"
-	 data-minutes="{$resource->GetMaxNotice()->Minutes()}">
+</li>
+<li class="endNotice"
+	data-value="{$resource->GetMaxNotice()}"
+	data-days="{$resource->GetMaxNotice()->Days()}"
+	data-hours="{$resource->GetMaxNotice()->Hours()}"
+	data-minutes="{$resource->GetMaxNotice()->Minutes()}">
 	{if $resource->HasMaxNotice()}
 		{translate key='ResourceMaxNotice' args=$resource->GetMaxNotice()}
 	{else}
 		{translate key='ResourceMaxNoticeNone'}
 	{/if}
-</div>
-<div class="requiresApproval"
-	 data-value="{$resource->GetRequiresApproval()}">
+</li>
+<li class="requiresApproval"
+	data-value="{$resource->GetRequiresApproval()}">
 	{if $resource->GetRequiresApproval()}
 		{translate key='ResourceRequiresApproval'}
 	{else}
 		{translate key='ResourceRequiresApprovalNone'}
 	{/if}
-</div>
-<div class="autoAssign"
-	 data-value="{$resource->GetAutoAssign()}">
+</li>
+<li class="autoAssign"
+	data-value="{$resource->GetAutoAssign()}">
 	{if $resource->GetAutoAssign()}
 		{translate key='ResourcePermissionAutoGranted'}
 	{else}
 		{translate key='ResourcePermissionNotAutoGranted'}
 	{/if}
-</div>
-<!-- <div class="enableCheckin"
-	 data-value="{$resource->IsCheckInEnabled()}">
+</li>
+<!-- <li class="enableCheckin"
+	data-value="{$resource->IsCheckInEnabled()}">
 	{if $resource->IsCheckInEnabled()}
 		{translate key=RequiresCheckInNotification}
 	{else}
 		{translate key=NoCheckInRequiredNotification}
 	{/if}
-</div> --!>
-<div class="autoRelease"
+</li> --!>
+{if $resource->IsAutoReleased()}
+<li class="autoRelease"
 	 data-value="{$resource->GetAutoReleaseMinutes()}">
-	{if $resource->IsAutoReleased()}
 		{translate key=AutoReleaseNotification args=$resource->GetAutoReleaseMinutes()}
-	{/if}
-</div>
+</li>
+{/if}

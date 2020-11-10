@@ -20,20 +20,40 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
 {include file='globalheader.tpl' cssFiles='css/admin.css'}
 
 <div id="page-manage-attributes" class="admin-page">
-	<h1>{translate key=CustomAttributes}</h1>
-
-	<div id="customAttributeHeader" class="form-group">
-
-		<label>{translate key=Category}:
-			<select id="attributeCategory" class="inline form-control">
-				<option value="{CustomAttributeCategory::RESERVATION}">{translate key=CategoryReservation}</option>
-				<option value="{CustomAttributeCategory::USER}">{translate key=User}</option>
-				<option value="{CustomAttributeCategory::RESOURCE}">{translate key=Resource}</option>
-				<option value="{CustomAttributeCategory::RESOURCE_TYPE}">{translate key=ResourceType}</option>
-			</select>
-		</label>
-
-		<a href="#" id="addAttributeButton"><span class="fa fa-plus-circle icon add"></span> {translate key=AddAttribute}</a>
+	<div class="container">
+		<div class="box box-lg mb-3">
+			<div class="row no-gutters">
+				<div class="col-auto">
+					<h1>{translate key=CustomAttributes}</h1>
+				</div>
+				<div class="col"></div>
+				<div class="col-auto">
+					<a href="#" id="addAttributeButton" class="btn btn-success mb-3 mb-sm-0">
+						{translate key=AddAttribute}
+					</a>
+				</div>
+			</div>
+			<div class="box box-bordered">
+				<form action="#">
+					<div class="form-row">
+						<div class="col-auto">
+							<div class="form-group">
+								<label>{translate key=Category}:</label>
+								<select id="attributeCategory" class="form-control">
+									<option value="{CustomAttributeCategory::RESERVATION}">{translate key=CategoryReservation}</option>
+									<option value="{CustomAttributeCategory::USER}">{translate key=User}</option>
+									<option value="{CustomAttributeCategory::RESOURCE}">{translate key=Resource}</option>
+									<option value="{CustomAttributeCategory::RESOURCE_TYPE}">{translate key=ResourceType}</option>
+								</select>
+							</div>
+						</div>
+						<div class="col d-flex align-items-center">
+							<span class="ml-sm-3 mt-0 mt-sm-3">(30 attributes)</span>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
 	</div>
 
 	<div class="modal fade" id="addAttributeDialog" tabindex="-1" role="dialog" aria-labelledby="addLabel" aria-hidden="true">

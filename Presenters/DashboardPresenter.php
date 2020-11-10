@@ -38,11 +38,11 @@ class DashboardPresenter
 
 	public function Initialize()
 	{
-		$announcement = new AnnouncementsControl(new SmartyPage());
+		// $announcement = new AnnouncementsControl(new SmartyPage());
 		// $upcomingReservations = new UpcomingReservations(new SmartyPage());
 		$availability = new ResourceAvailabilityControl(new SmartyPage());
 
-		$this->_page->AddItem($announcement);
+		// $this->_page->AddItem($announcement);
 		// $this->_page->AddItem($upcomingReservations);
 		$this->_page->AddItem($availability);
 
