@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-11-07 20:41:15
+/* Smarty version 3.1.30, created on 2020-11-10 11:39:32
   from "/var/www/html/booking/tpl/Admin/manage_announcements.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5fa6a3fb0a2451_09007717',
+  'unifunc' => 'content_5faa1984f07268_08575361',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '57b71c23afa0351387ffef69ea433f5676f33601' => 
     array (
       0 => '/var/www/html/booking/tpl/Admin/manage_announcements.tpl',
-      1 => 1604748924,
+      1 => 1604846656,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:globalfooter.tpl' => 1,
   ),
 ),false)) {
-function content_5fa6a3fb0a2451_09007717 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5faa1984f07268_08575361 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_function_cycle')) require_once '/var/www/html/booking/lib/external/Smarty/plugins/function.cycle.php';
 if (!is_callable('smarty_modifier_regex_replace')) require_once '/var/www/html/booking/lib/external/Smarty/plugins/modifier.regex_replace.php';
 ?>

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-11-10 11:33:00
+/* Smarty version 3.1.30, created on 2020-11-10 13:57:38
   from "/var/www/html/booking/tpl/Admin/manage_positions.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5faa17fc44f303_59274264',
+  'unifunc' => 'content_5faa39e2155295_26414873',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '45989f06769048335f7a45174e7c3f75052e52b1' => 
     array (
       0 => '/var/www/html/booking/tpl/Admin/manage_positions.tpl',
-      1 => 1604982776,
+      1 => 1604983308,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:globalheader.tpl' => 1,
   ),
 ),false)) {
-function content_5faa17fc44f303_59274264 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5faa39e2155295_26414873 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_function_cycle')) require_once '/var/www/html/booking/lib/external/Smarty/plugins/function.cycle.php';
 ?>
 
@@ -72,7 +72,7 @@ if (!is_callable('smarty_function_cycle')) require_once '/var/www/html/booking/l
 			</div>
 		</form>
       </div>
-      <div class="table-responsive table-shadow mb-5">
+      <div class="table-responsive table-shadow">
         <table id="positionList" class="table table-vistec table-highlight">
           <thead>
             <tr>
@@ -103,12 +103,10 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 		</tbody>
 		</table>
 	</div>
-</div>
-
 	<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['pagination'][0][0]->CreatePagination(array('pageInfo'=>$_smarty_tpl->tpl_vars['PageInfo']->value),$_smarty_tpl);?>
 
-
 	<input type="hidden" id="activeId"/>
+</div>
 
 	<div class="modal fade" id="deleteDialog" tabindex="-1" role="dialog" aria-labelledby="deleteDialogLabel" aria-hidden="true">
 		<div class="modal-dialog">

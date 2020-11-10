@@ -56,7 +56,7 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
 			</div>
 		</form>
       </div>
-      <div class="table-responsive table-shadow mb-5">
+      <div class="table-responsive table-shadow">
         <table id="positionList" class="table table-vistec table-highlight">
           <thead>
             <tr>
@@ -75,11 +75,9 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
 		</tbody>
 		</table>
 	</div>
-</div>
-
 	{pagination pageInfo=$PageInfo}
-
 	<input type="hidden" id="activeId"/>
+</div>
 
 	<div class="modal fade" id="deleteDialog" tabindex="-1" role="dialog" aria-labelledby="deleteDialogLabel" aria-hidden="true">
 		<div class="modal-dialog">

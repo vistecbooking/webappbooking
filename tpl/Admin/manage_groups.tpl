@@ -17,79 +17,104 @@ You should have received a copy of the GNU General Public License
 along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
 *}
 {include file='globalheader.tpl' cssFiles='scripts/css/colorpicker.css'}
+{cssfile src='scripts/newcss/positions.css'}
 
-<div id="page-manage-groups" class="admin-page">
-	<h1>{translate key=ManageGroups}</h1>
+<div id="page-manage-groups" >
 
-	<form id="addGroupForm" class="form-inline" role="form" method="post">
-		<div class="panel panel-default" id="add-group-panel">
-			<div class="panel-heading">{translate key="AddGroup"} {showhide_icon}</div>
-			<div class="panel-body add-contents">
+<div class="container">
+      <div class="box box-lg mb-4">
+        <h2>Group</h2>
+		<form id="addGroupForm" role="form" method="post">
+			<div class="box box-bordered" id="add-group-panel">
+			<h3>Add group</h3>
+			<div class="row ml-2">
+				<div class="col-md">
 				<div id="addGroupResults" class="error" style="display:none;"></div>
-				<div class="form-group has-feedback">
-					<label for="addGroupName">{translate key=Name}</label>
-					<input {formname key=GROUP_NAME} type="text" id="addGroupName" required class="form-control required"/>
-					<i class="glyphicon glyphicon-asterisk form-control-feedback" data-bv-icon-for="addGroupName"></i>
-				</div>
-				&nbsp;&nbsp;&nbsp;
 				<div class="form-group">
-					<label for="groupColor">{translate key=Color}</label>
-					<div class="input-group">
-						<span class="input-group-addon">#</span>
-						<input type="text" {formname key=GROUP_COLOR} id="groupColor" maxlength="6"
-							class="form-control" placeholder="FFFFFF">
+					<label for="Group name"
+					>Group name <span class="text-danger">*require</span></label
+					>
+					<input
+					type="text"
+					class="form-control"
+					placeholder="group name"
+					{formname key=GROUP_NAME} id="addGroupName" required
+					/>
+				</div>
+				</div>
+				<div class="col-md">
+				<div class="form-group">
+					<label for="Color">Color</label>
+					<div class="input-group mb-3">
+					<div class="input-group-prepend">
+						<span class="input-group-text" id="color-hex">#</span>
+					</div>
+					<input
+						type="text"
+						class="form-control"
+						placeholder="FFFFFF"
+						aria-label="FFFFFF"
+						aria-describedby="color-hex"
+						{formname key=GROUP_COLOR} id="groupColor" maxlength="6"
+					/>
 					</div>
 				</div>
+				</div>
 			</div>
-			<div class="panel-footer">
-				{add_button class="btn-sm"}
-				{reset_button class="btn-sm"}
-				{indicator}
+			<div class="row ml-2">
+				<div class="col-sm-auto">
+					{add_button class="btn-sm"}
+					{reset_button class="btn-sm"}
+					{indicator}
+				</div>
 			</div>
-		</div>
-	</form>
-
-	<div id="groupSearchPanel">
-		<label for="groupSearch">{translate key='FindGroup'}</label> |  {html_link href=$smarty.server.SCRIPT_NAME key=AllGroups}
-		<input type="text" id="groupSearch" class="form-control" size="40"/>
+			</div>
+		</form>
+      </div>
+	  <div class="box box-lg mb-3">
+        <div class="form-group">
+          <div class="row">
+            <div class="col-md-4" id="groupSearchPanel" style="margin-bottom: 0;">
+              	<label for="groupSearch">{translate key='FindGroup'}</label> |  {html_link href=$smarty.server.SCRIPT_NAME key=AllGroups}
+				<input type="text" id="groupSearch" class="form-control" size="40" placeholder="Search group name" />
+            </div>
+          </div>
+        </div>
+      </div>
+	  <div class="table-responsive table-shadow">
+        <table class="table table-vistec table-highlight" id="groupList">
+          <thead>
+            <tr>
+              <th>Group name</th>
+              <th>Group members</th>
+              <th colspan="2">Permissions</th>
+            </tr>
+          </thead>
+		  <tbody>
+		 	{foreach from=$groups item=group}
+				{cycle values='row0,row1' assign=rowCss}
+				<tr class="{$rowCss}" data-group-id="{$group->Id}">
+					<td>{$group->Name}</td>
+					<td><a href="#" class="update members">{translate key='Members'}</a></td>
+					<td><a href="#" class="update permissions">{translate key='Change'}</a></td>
+					{*{if $CanChangeRoles}
+						<td><a href="#" class="update roles">{translate key='Change'}</a></td>
+					{/if}
+					<td><a href="#" class="update groupAdmin">{$group->AdminGroupName|default:$chooseText}</a></td>*}
+					<td>
+						<a href="#" class="update rename"><span class="custom-icon icon-edit icon"></a>
+						<a href="#" class="update delete"><span class="custom-icon icon-delete remove">
+						</span></a>
+					</td>
+				</tr>
+			{/foreach} 
+		  </tbody>
+		</table>
 	</div>
-
-	<table class="table" id="groupList">
-		<thead>
-		<tr>
-			<th>{sort_column key=GroupName field=ColumnNames::GROUP_NAME}</th>
-			<th>{translate key='GroupMembers'}</th>
-			<th>{translate key='Permissions'}</th>
-			{*{if $CanChangeRoles}
-				<th>{translate key='GroupRoles'}</th>
-			{/if}
-			<th>{translate key='GroupAdmin'}</th>*}
-			<th class="action">{translate key='Actions'}</th>
-		</tr>
-		</thead>
-		<tbody>
-		{foreach from=$groups item=group}
-			{cycle values='row0,row1' assign=rowCss}
-			<tr class="{$rowCss}" data-group-id="{$group->Id}">
-				<td>{$group->Name}</td>
-				<td><a href="#" class="update members">{translate key='Members'}</a></td>
-				<td><a href="#" class="update permissions">{translate key='Change'}</a></td>
-				{*{if $CanChangeRoles}
-					<td><a href="#" class="update roles">{translate key='Change'}</a></td>
-				{/if}
-				<td><a href="#" class="update groupAdmin">{$group->AdminGroupName|default:$chooseText}</a></td>*}
-				<td class="action">
-					<a href="#" class="update rename"><span class="fa fa-pencil-square-o icon"></a> |
-					<a href="#" class="update delete"><span class="fa fa-trash icon remove"></span></a>
-				</td>
-			</tr>
-		{/foreach}
-		</tbody>
-	</table>
-
 	{pagination pageInfo=$PageInfo}
 
 	<input type="hidden" id="activeId"/>
+</div>
 
 	<div class="modal fade" id="membersDialog" tabindex="-1" role="dialog" aria-labelledby="membersDialogLabel" aria-hidden="true">
 		<div class="modal-dialog">
@@ -357,4 +382,3 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
 		});
 	</script>
 </div>
-{include file='globalfooter.tpl'}
