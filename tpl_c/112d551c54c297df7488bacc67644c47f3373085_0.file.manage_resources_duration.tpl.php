@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-11-10 07:04:35
+/* Smarty version 3.1.30, created on 2020-11-14 16:55:41
   from "/var/www/html/booking/tpl/Admin/Resources/manage_resources_duration.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5fa9d91362e729_48243141',
+  'unifunc' => 'content_5fafa99dbc7407_86029648',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '112d551c54c297df7488bacc67644c47f3373085' => 
     array (
       0 => '/var/www/html/booking/tpl/Admin/Resources/manage_resources_duration.tpl',
-      1 => 1604966486,
+      1 => 1604978867,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5fa9d91362e729_48243141 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fafa99dbc7407_86029648 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 <li class="minDuration"
