@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-11-10 09:12:23
+/* Smarty version 3.1.30, created on 2020-11-10 21:22:08
   from "/var/www/html/booking/tpl/Reservation/create.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5fa9f707397470_42165849',
+  'unifunc' => 'content_5faaa210324bc7_37192258',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a5ebdd54501ad3b291a18e1fb342d7e31935f798' => 
     array (
       0 => '/var/www/html/booking/tpl/Reservation/create.tpl',
-      1 => 1604973631,
+      1 => 1604978867,
       2 => 'file',
     ),
   ),
@@ -24,13 +24,13 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:globalfooter.tpl' => 1,
   ),
 ),false)) {
-function content_5fa9f707397470_42165849 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5faaa210324bc7_37192258 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->ext->_tplFunction->registerTplFunctions($_smarty_tpl, array (
   'displayResource' => 
   array (
     'compiled_filepath' => '/var/www/html/booking/tpl_c/a5ebdd54501ad3b291a18e1fb342d7e31935f798_0.file.create.tpl.php',
     'uid' => 'a5ebdd54501ad3b291a18e1fb342d7e31935f798',
-    'call_name' => 'smarty_template_function_displayResource_20151573825fa9f706899b24_87493983',
+    'call_name' => 'smarty_template_function_displayResource_15312837605faaa20f9481d4_14457881',
   ),
 ));
 $_smarty_tpl->_loadInheritance();
@@ -38,7 +38,7 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_3795628585fa9f706c8af46_90589153', "header");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_18324962245faaa20fcc4966_58797401', "header");
 ?>
 
 
@@ -97,7 +97,7 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_3795628585fa9f706c
 					</ul>
 				</div>
 				<?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_9505703645fa9f706dbdbf8_11391891', 'reservationHeader');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_17880712765faaa20fdccb50_84182074', 'reservationHeader');
 ?>
 
 				&emsp;
@@ -389,7 +389,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 "/>
 
 			<?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_14989679685fa9f706f247f6_46609494', "submitButtons");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_6823827565faaa21004d653_01248677', "submitButtons");
 ?>
 
 
@@ -398,7 +398,7 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_14989679685fa9f706
 
 			<?php if ($_smarty_tpl->tpl_vars['UploadsEnabled']->value) {?>
 				<?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_5962178485fa9f706f3f107_63040390', 'attachments');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_12291121985faaa21006ba58_50301382', 'attachments');
 ?>
 
 			<?php }?>
@@ -518,7 +518,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 		<div id="creatingNotification">
 			<h3 id="createUpdateMessage" class="no-show">
 				<?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1673387665fa9f707149393_43810180', "ajaxMessage");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_12065377825faaa210183e91_14763533', "ajaxMessage");
 ?>
 
 			</h3>
@@ -784,7 +784,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 
 <?php }
 /* {block "header"} */
-class Block_3795628585fa9f706c8af46_90589153 extends Smarty_Internal_Block
+class Block_18324962245faaa20fcc4966_58797401 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -798,9 +798,9 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 }
 /* {/block "header"} */
-/* smarty_template_function_displayResource_20151573825fa9f706899b24_87493983 */
-if (!function_exists('smarty_template_function_displayResource_20151573825fa9f706899b24_87493983')) {
-function smarty_template_function_displayResource_20151573825fa9f706899b24_87493983($_smarty_tpl,$params) {
+/* smarty_template_function_displayResource_15312837605faaa20f9481d4_14457881 */
+if (!function_exists('smarty_template_function_displayResource_15312837605faaa20f9481d4_14457881')) {
+function smarty_template_function_displayResource_15312837605faaa20f9481d4_14457881($_smarty_tpl,$params) {
 foreach ($params as $key => $value) {
 $_smarty_tpl->tpl_vars[$key] = new Smarty_Variable($value, $_smarty_tpl->isRenderingCache);
 }?>
@@ -818,9 +818,9 @@ $_smarty_tpl->tpl_vars[$key] = new Smarty_Variable($value, $_smarty_tpl->isRende
 	</div>
 <?php
 }}
-/*/ smarty_template_function_displayResource_20151573825fa9f706899b24_87493983 */
+/*/ smarty_template_function_displayResource_15312837605faaa20f9481d4_14457881 */
 /* {block 'reservationHeader'} */
-class Block_9505703645fa9f706dbdbf8_11391891 extends Smarty_Internal_Block
+class Block_17880712765faaa20fdccb50_84182074 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -832,7 +832,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'reservationHeader'} */
 /* {block "submitButtons"} */
-class Block_14989679685fa9f706f247f6_46609494 extends Smarty_Internal_Block
+class Block_6823827565faaa21004d653_01248677 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -858,7 +858,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block "submitButtons"} */
 /* {block 'attachments'} */
-class Block_5962178485fa9f706f3f107_63040390 extends Smarty_Internal_Block
+class Block_12291121985faaa21006ba58_50301382 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -868,7 +868,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'attachments'} */
 /* {block "ajaxMessage"} */
-class Block_1673387665fa9f707149393_43810180 extends Smarty_Internal_Block
+class Block_12065377825faaa210183e91_14763533 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>

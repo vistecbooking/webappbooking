@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-11-10 09:12:27
+/* Smarty version 3.1.30, created on 2020-11-10 21:22:12
   from "/var/www/html/booking/tpl/Reservation/participation.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5fa9f70bae30b3_18640665',
+  'unifunc' => 'content_5faaa214372195_23254457',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '99a5b9a72bb5c60e4f2506a098bc98b350537055' => 
     array (
       0 => '/var/www/html/booking/tpl/Reservation/participation.tpl',
-      1 => 1604974333,
+      1 => 1604978867,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5fa9f70bae30b3_18640665 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5faaa214372195_23254457 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 <div id="reservationParticipation">

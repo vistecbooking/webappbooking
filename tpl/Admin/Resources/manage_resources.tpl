@@ -135,7 +135,7 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
 	<div id="globalError" class="error no-show"></div>
 
 	<div class="table-responsive table-shadow mb-3">
-		<table class="table table-md table-vistec table-equipment">
+		<table class="table table-md table-vistec table-highlight table-equipment">
 			<thead>
 				<tr>
 					<th colspan="2">

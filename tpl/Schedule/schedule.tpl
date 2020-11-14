@@ -232,7 +232,7 @@ function onBookingClick(url, resource_id){
 						class="form-control ui-autocomplete-input"
 						placeholder="Searching for equipment"
 						autocomplete="off"
-						oninput="queryInstrument()">
+						oninput="searchEq_searchbox()">
 				</div>
 				<div class="form-group">
 					<label for="category" style="font-weight:bold">Categories</label>
@@ -375,7 +375,7 @@ function onBookingClick(url, resource_id){
 							</div>
 							<div class="card-body">
 								<div class="card-title">{$resource['name']}</div>
-								<!-- <p>In queue: 8</p> -->
+								<p>In queue: 8</p>
 								{if $resource['status_id'] ==1}
 									{if $resource['resource_id'] == 2}
 										<select name="mode-2" id="mode-2" class="form-control mb-3">
