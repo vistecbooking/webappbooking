@@ -20,7 +20,7 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
 	</div><!-- close main-->
 
 	<footer class="footer navbar">
-		&copy; 2017 Vistec Thailand <br/><a href="http://www.vistec.ac.th">Vistec Page</a>
+		&copy; {date("Y")} Vistec Thailand <br/><a href="http://www.vistec.ac.th">Vistec Page</a>
 	</footer>
 
 	<script type="text/javascript">
