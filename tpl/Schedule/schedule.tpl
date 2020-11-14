@@ -232,7 +232,7 @@ function onBookingClick(url, resource_id){
 						class="form-control ui-autocomplete-input"
 						placeholder="Searching for equipment"
 						autocomplete="off"
-						oninput="queryInstrument()">
+						oninput="searchEq_searchbox()">
 				</div>
 				<div class="form-group">
 					<label for="category" style="font-weight:bold">Categories</label>
