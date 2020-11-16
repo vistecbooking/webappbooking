@@ -26,7 +26,7 @@ function Calendar(opts) {
 
         _fullCalendar = $('#calendar').fullCalendar({
             header: {
-                left: 'prev,next,today',
+                left: 'today,prev,next',
                 center: 'title',
                 right: 'month,agendaWeek,agendaDay'
             },
