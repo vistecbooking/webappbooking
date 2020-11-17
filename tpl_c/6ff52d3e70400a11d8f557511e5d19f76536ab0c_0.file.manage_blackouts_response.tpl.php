@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2019-12-09 12:07:08
+/* Smarty version 3.1.30, created on 2020-11-18 03:02:40
   from "/var/www/html/booking/tpl/Admin/Blackouts/manage_blackouts_response.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5dedd67c48f244_71732964',
+  'unifunc' => 'content_5fb42c607730c3_12680261',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6ff52d3e70400a11d8f557511e5d19f76536ab0c' => 
     array (
       0 => '/var/www/html/booking/tpl/Admin/Blackouts/manage_blackouts_response.tpl',
-      1 => 1551196425,
+      1 => 1600849228,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5dedd67c48f244_71732964 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fb42c607730c3_12680261 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_function_cycle')) require_once '/var/www/html/booking/lib/external/Smarty/plugins/function.cycle.php';
 ?>
 

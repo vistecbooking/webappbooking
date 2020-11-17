@@ -18,10 +18,11 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
 *}
 <style>
 td.fc-today {
-    background: #fcf8e3;
+    background: rgba(134,104,175,.05);
 }
 </style>
 <div class="dashboard dashboard availabilityDashboard" id="availabilityDashboard">
+	<!--
 	<div class="dashboardHeader">
 		<div class="pull-left">My calendar</div>
 		<div class="pull-right">
@@ -31,6 +32,7 @@ td.fc-today {
 		</div>
 		<div class="clearfix"></div>
 	</div>
+	-->
 	<div class="dashboardContents" style="display: block;">
 		{assign var=pageUrl value={Pages::MY_CALENDAR}}
 		{assign var=pageIdSuffix value="calendar"}

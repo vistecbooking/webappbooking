@@ -794,7 +794,7 @@ class SmartyPage extends Smarty
             $type = 'submit';
         }
 
-        echo '<button type="' . $type . '" class="btn btn-success mb-3 mb-sm-0 ' . $class . '" ' . $this->GetButtonAttributes($params) . '><span class="glyphicon glyphicon-ok-circle"></span> ' . Resources::GetInstance()
+        echo '<button type="' . $type . '" class="btn btn-success mb-3 mb-sm-0 save ' . $class . '" ' . $this->GetButtonAttributes($params) . '><span class="glyphicon glyphicon-ok-circle"></span> ' . Resources::GetInstance()
                 ->GetString($key) . '</button>';
     }
 
