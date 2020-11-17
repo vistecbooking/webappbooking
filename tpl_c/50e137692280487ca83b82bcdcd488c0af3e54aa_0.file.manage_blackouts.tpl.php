@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-11-07 20:28:38
+/* Smarty version 3.1.30, created on 2020-11-18 03:04:58
   from "/var/www/html/booking/tpl/Admin/Blackouts/manage_blackouts.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5fa6a1067ca620_61016665',
+  'unifunc' => 'content_5fb42cead3acd3_59388807',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '50e137692280487ca83b82bcdcd488c0af3e54aa' => 
     array (
       0 => '/var/www/html/booking/tpl/Admin/Blackouts/manage_blackouts.tpl',
-      1 => 1604754265,
+      1 => 1605641048,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:globalfooter.tpl' => 1,
   ),
 ),false)) {
-function content_5fa6a1067ca620_61016665 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fb42cead3acd3_59388807 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_function_cycle')) require_once '/var/www/html/booking/lib/external/Smarty/plugins/function.cycle.php';
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
@@ -576,7 +576,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 		<div id="creatingNotification">
 			<h3>
 				<?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_3756189565fa6a1067a7d59_30119496', "ajaxMessage");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_10193125135fb42cead14fd8_53886794', "ajaxMessage");
 ?>
 
 			</h3>
@@ -598,7 +598,7 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_3756189565fa6a1067
 
 <?php }
 /* {block "ajaxMessage"} */
-class Block_3756189565fa6a1067a7d59_30119496 extends Smarty_Internal_Block
+class Block_10193125135fb42cead14fd8_53886794 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>

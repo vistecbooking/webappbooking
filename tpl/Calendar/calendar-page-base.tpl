@@ -19,13 +19,32 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
 {include file='globalheader.tpl' Select2=true Qtip=true Fullcalendar=true cssFiles='scripts/css/jqtree.css'}
 
 <div id="page-{$pageIdSuffix}">
-    {include file='Calendar/calendar.filter.tpl'}
+<div class="container">
+    <div class="box box-lg mb-3">
+        <h1>Calendar</h1>
+        <div class="row">
+            <div class="col-12 col-sm-5 col-md-3">
+                <div class="form-group mb-0">
+                    <label>System</label>
+                    <div class="btn-group d-flex" role="group" aria-label="Basic example">
+                        <button type="button" class="btn btn-outline-success">Booking</button>
+                        <button type="button" class="btn btn-outline-secondary">Queue</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                {include file='Calendar/calendar.filter.tpl'}
+            </div>
+        </div>
+    </div>
 
     <div id="subscriptionContainer">
         {include file="Calendar/{$subscriptionTpl}" IsSubscriptionAllowed=$IsSubscriptionAllowed IsSubscriptionEnabled=$IsSubscriptionEnabled SubscriptionUrl=$SubscriptionUrl}
     </div>
 
-    <div id="calendar"></div>
+    <div class="overflow-h radius-lg table-shadow">
+        <div id="calendar"></div>
+    </div>
 
     <div id="dayDialog" class="default-box-shadow">
         <a href="#" id="dayDialogCreate">{html_image src="tick.png"}{translate key=CreateReservation}</a>
@@ -109,5 +128,6 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
 
         });
     </script>
+</div>
 </div>
 {include file='globalfooter.tpl'}

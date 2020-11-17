@@ -20,7 +20,7 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
 {cssfile src="scripts/newcss/dashboard.css" rel="stylesheet"}
 
 <div id="page-dashboard">
-	<div class="container-fluid">
+	<div class="container-fluid" style="padding-top:0">
 		<div class="row">
 			<main class="col-md-8 order-1 order-md-0">
 				<section class="mb-3">

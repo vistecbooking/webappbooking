@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-10-05 18:46:36
+/* Smarty version 3.1.30, created on 2020-11-16 07:22:49
   from "/var/www/html/booking/tpl/Calendar/calendar-page-base.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f7b079c1e7ab9_93850282',
+  'unifunc' => 'content_5fb1c65976e0c1_47200207',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd1bbacfc789b9345e3dda44af9ac06f747658eaf' => 
     array (
       0 => '/var/www/html/booking/tpl/Calendar/calendar-page-base.tpl',
-      1 => 1600849228,
+      1 => 1605485756,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:globalfooter.tpl' => 1,
   ),
 ),false)) {
-function content_5f7b079c1e7ab9_93850282 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fb1c65976e0c1_47200207 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 <?php $_smarty_tpl->_subTemplateRender("file:globalheader.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('Select2'=>true,'Qtip'=>true,'Fullcalendar'=>true,'cssFiles'=>'scripts/css/jqtree.css'), 0, false);
@@ -32,9 +32,26 @@ function content_5f7b079c1e7ab9_93850282 (Smarty_Internal_Template $_smarty_tpl)
 
 <div id="page-<?php echo $_smarty_tpl->tpl_vars['pageIdSuffix']->value;?>
 ">
-    <?php $_smarty_tpl->_subTemplateRender("file:Calendar/calendar.filter.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+<div class="container">
+    <div class="box box-lg mb-3">
+        <h1>Calendar</h1>
+        <div class="row">
+            <div class="col-12 col-sm-5 col-md-3">
+                <div class="form-group mb-0">
+                    <label>System</label>
+                    <div class="btn-group d-flex" role="group" aria-label="Basic example">
+                        <button type="button" class="btn btn-outline-success">Booking</button>
+                        <button type="button" class="btn btn-outline-secondary">Queue</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <?php $_smarty_tpl->_subTemplateRender("file:Calendar/calendar.filter.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
+            </div>
+        </div>
+    </div>
 
     <div id="subscriptionContainer">
         <?php $_smarty_tpl->_subTemplateRender("Calendar/".((string)$_smarty_tpl->tpl_vars['subscriptionTpl']->value), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('IsSubscriptionAllowed'=>$_smarty_tpl->tpl_vars['IsSubscriptionAllowed']->value,'IsSubscriptionEnabled'=>$_smarty_tpl->tpl_vars['IsSubscriptionEnabled']->value,'SubscriptionUrl'=>$_smarty_tpl->tpl_vars['SubscriptionUrl']->value), 0, true);
@@ -42,7 +59,9 @@ function content_5f7b079c1e7ab9_93850282 (Smarty_Internal_Template $_smarty_tpl)
 
     </div>
 
-    <div id="calendar"></div>
+    <div class="overflow-h radius-lg table-shadow">
+        <div id="calendar"></div>
+    </div>
 
     <div id="dayDialog" class="default-box-shadow">
         <a href="#" id="dayDialogCreate"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['html_image'][0][0]->PrintImage(array('src'=>"tick.png"),$_smarty_tpl);
@@ -195,6 +214,7 @@ ajax/reservation_move.php"
         });
     <?php echo '</script'; ?>
 >
+</div>
 </div>
 <?php $_smarty_tpl->_subTemplateRender("file:globalfooter.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 }
