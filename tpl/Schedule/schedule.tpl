@@ -28,7 +28,7 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
 	{/if}
 	<td {$spantype|default:'col'}span="{$Slot->PeriodSpan()}" class="reserved {$class} {$OwnershipClass} clickres slot"
 		resid="{$Slot->Id()}" {$color} {if $Draggable}draggable="true"{/if} data-resourceId="{$ResourceId}"
-		id="{$Slot->Id()}|{$Slot->Date()->Format('Ymd')}">{$Slot->Label($SlotLabelFactory)|escapequotes}</td>
+		id="{$Slot->Id()}|{$Slot->Date()->Format('Ymd')}">{$Slot->Label($SlotLabelFactory)|escapequotes}&nbsp;</td>
 {/function}
 
 {function name=displayMyReserved}
@@ -45,7 +45,7 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
 
 {function name=displayPastTime}
 	<td {$spantype|default:'col'}span="{$Slot->PeriodSpan()}" ref="{$SlotRef}"
-		class="pasttime slot" Draggable="{$CanViewAdmin}" resid="{$Slot->Id()}" data-resourceId="{$ResourceId}">{$Slot->Label($SlotLabelFactory)|escapequotes}</td>
+		class="pasttime slot" Draggable="{$CanViewAdmin}" resid="{$Slot->Id()}" data-resourceId="{$ResourceId}">{$Slot->Label($SlotLabelFactory)|escapequotes}&nbsp;</td>
 {/function}
 
 {function name=displayReservable}
@@ -60,7 +60,7 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
 
 {function name=displayUnreservable}
 	<td {$spantype|default:'col'}span="{$Slot->PeriodSpan()}"
-		class="unreservable slot">{$Slot->Label($SlotLabelFactory)|escape}</td>
+		class="unreservable slot">{$Slot->Label($SlotLabelFactory)|escape}&nbsp;</td>
 {/function}
 
 {function name=displaySlot}
