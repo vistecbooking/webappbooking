@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-11-15 20:01:10
+/* Smarty version 3.1.30, created on 2020-11-18 11:26:08
   from "/var/www/html/booking/tpl/login.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5fb12696a34529_35731529',
+  'unifunc' => 'content_5fb4a260974da5_88452215',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'fee536aa91c664054f093c79cdef9979d5cfdd1e' => 
     array (
       0 => '/var/www/html/booking/tpl/login.tpl',
-      1 => 1604761644,
+      1 => 1605671582,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:javascript-includes.tpl' => 1,
   ),
 ),false)) {
-function content_5fb12696a34529_35731529 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fb4a260974da5_88452215 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 
@@ -87,7 +87,7 @@ array_pop($_smarty_tpl->smarty->_cache['_tag_stack']);?>
 								class="material-icons" id="login-pwd-icon">visibility_off</i></span>
 					</div>
 					<a href="<?php echo $_smarty_tpl->tpl_vars['ForgotPasswordUrl']->value;?>
-">forget password?</a>
+">forgot password?</a>
 					<button type="submit" name="<?php echo Actions::LOGIN;?>
 " <?php echo $_smarty_tpl->tpl_vars['ForgotPasswordUrlNew']->value;?>
  value="submit">Sign in</button>

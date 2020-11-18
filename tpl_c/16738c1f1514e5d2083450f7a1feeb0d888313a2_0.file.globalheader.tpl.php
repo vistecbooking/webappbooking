@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-11-16 07:22:50
+/* Smarty version 3.1.30, created on 2020-11-18 11:26:14
   from "/var/www/html/booking/tpl/globalheader.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5fb1c65a400932_88736222',
+  'unifunc' => 'content_5fb4a2667f7c46_98017590',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '16738c1f1514e5d2083450f7a1feeb0d888313a2' => 
     array (
       0 => '/var/www/html/booking/tpl/globalheader.tpl',
-      1 => 1604978867,
+      1 => 1605594180,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5fb1c65a400932_88736222 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fb4a2667f7c46_98017590 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 
@@ -440,8 +440,8 @@ reports/<?php echo Pages::REPORTS_COMMON;?>
                         <a href="#" class="nav-link dropdown-toggle p-0" data-toggle="dropdown">
                             <?php ob_start();
 echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>"MyAccount"),$_smarty_tpl);
-$_prefixVariable6=ob_get_clean();
-echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['html_image'][0][0]->PrintImage(array('src'=>"person.png",'class'=>"img-fluid rounded-circle",'alt'=>$_prefixVariable6,'style'=>"height:40px"),$_smarty_tpl);?>
+$_prefixVariable1=ob_get_clean();
+echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['html_image'][0][0]->PrintImage(array('src'=>"person.png",'class'=>"img-fluid rounded-circle",'alt'=>$_prefixVariable1,'style'=>"height:40px"),$_smarty_tpl);?>
 
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">
