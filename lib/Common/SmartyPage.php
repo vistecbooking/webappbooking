@@ -272,8 +272,12 @@ class SmartyPage extends Smarty
         $key = 'general_date';
         if (isset($params['key'])) {
             $key = $params['key'];
+            $format = $this->Resources->GetDateFormat($key);
+        } elseif (isset($params['format'])){
+            $format = $params['format'];
+        } else {
+            $format = 'd/m/Y';
         }
-        $format = $this->Resources->GetDateFormat($key);
 
         $formatted = $date->Format($format);
 

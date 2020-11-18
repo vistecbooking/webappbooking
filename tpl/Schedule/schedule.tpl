@@ -28,7 +28,7 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
 	{/if}
 	<td {$spantype|default:'col'}span="{$Slot->PeriodSpan()}" class="reserved {$class} {$OwnershipClass} clickres slot"
 		resid="{$Slot->Id()}" {$color} {if $Draggable}draggable="true"{/if} data-resourceId="{$ResourceId}"
-		id="{$Slot->Id()}|{$Slot->Date()->Format('Ymd')}">{$Slot->Label($SlotLabelFactory)|escapequotes}</td>
+		id="{$Slot->Id()}|{$Slot->Date()->Format('Ymd')}">{$Slot->Label($SlotLabelFactory)|escapequotes}&nbsp;</td>
 {/function}
 
 {function name=displayMyReserved}
@@ -45,7 +45,7 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
 
 {function name=displayPastTime}
 	<td {$spantype|default:'col'}span="{$Slot->PeriodSpan()}" ref="{$SlotRef}"
-		class="pasttime slot" Draggable="{$CanViewAdmin}" resid="{$Slot->Id()}" data-resourceId="{$ResourceId}">{$Slot->Label($SlotLabelFactory)|escapequotes}</td>
+		class="pasttime slot" Draggable="{$CanViewAdmin}" resid="{$Slot->Id()}" data-resourceId="{$ResourceId}">{$Slot->Label($SlotLabelFactory)|escapequotes}&nbsp;</td>
 {/function}
 
 {function name=displayReservable}
@@ -60,7 +60,7 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
 
 {function name=displayUnreservable}
 	<td {$spantype|default:'col'}span="{$Slot->PeriodSpan()}"
-		class="unreservable slot">{$Slot->Label($SlotLabelFactory)|escape}</td>
+		class="unreservable slot">{$Slot->Label($SlotLabelFactory)|escape}&nbsp;</td>
 {/function}
 
 {function name=displaySlot}
@@ -364,7 +364,11 @@ function onBookingClick(url, resource_id){
 					{$i = $i+1}
 					<div class="col">
 						<div class="eq-card">
-							<img class="card-image" src="../Web/uploads/images/{$resource['image_name']}" alt="{$resource['name']}" resourceId="{$resource['resource_id']}"/>
+							{if $resource['status_id'] ==1}
+								<img class="card-image" src="../Web/uploads/images/{$resource['image_name']}" alt="{$resource['name']}" resourceId="{$resource['resource_id']}" onclick="onBookingClick('../Web/schedule.php?id={$resource['resource_id']}&sid={$resource['schedule_id']}', {$resource['resource_id']})"/>
+							{else}
+								<img class="card-image" src="../Web/uploads/images/{$resource['image_name']}" alt="{$resource['name']}" resourceId="{$resource['resource_id']}" onclick='location.href="../Web/schedule.php?id={$resource['resource_id']}&sid={$resource['schedule_id']}&unavailable=true"'/>
+							{/if}
 							<div class="card-tag">
 								{if $resource['status_id'] ==1}
 									<div class="badge badge-danger">Queue</div>

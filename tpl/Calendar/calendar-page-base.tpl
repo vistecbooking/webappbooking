@@ -27,8 +27,8 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
                 <div class="form-group mb-0">
                     <label>System</label>
                     <div class="btn-group d-flex" role="group" aria-label="Basic example">
-                        <button type="button" class="btn btn-outline-success">Booking</button>
-                        <button type="button" class="btn btn-outline-secondary">Queue</button>
+                        <button type="button" class="btn btn-outline-success" onclick="displayCalendar()">Booking</button>
+                        <button type="button" class="btn btn-outline-secondary" onclick="displayQueue()">Queue</button>
                     </div>
                 </div>
             </div>
@@ -42,7 +42,7 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
         {include file="Calendar/{$subscriptionTpl}" IsSubscriptionAllowed=$IsSubscriptionAllowed IsSubscriptionEnabled=$IsSubscriptionEnabled SubscriptionUrl=$SubscriptionUrl}
     </div>
 
-    <div class="overflow-h radius-lg table-shadow">
+    <div id="calendarContainer" class="overflow-h radius-lg table-shadow">
         <div id="calendar"></div>
     </div>
 
@@ -50,6 +50,97 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
         <a href="#" id="dayDialogCreate">{html_image src="tick.png"}{translate key=CreateReservation}</a>
         <a href="#" id="dayDialogView">{html_image src="search.png"}{translate key=ViewDay}</a>
         <a href="#" id="dayDialogCancel">{html_image src="slash.png"}{translate key=Cancel}</a>
+    </div>
+
+    <div
+        class="table-responsive table-shadow mb-5"
+        id="table-queue"
+        style="display: none"
+      >
+        <table class="table table-vistec table-highlight">
+            <thead>
+            <tr>
+                <th colspan="4">QUEUE</th>
+                <th class="text-right">
+                <select>
+                    <option>Sort by number of queue</option>
+                </select>
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td class="withdot">ATR-FTIR</td>
+                <td>In queue: 8</td>
+                <td>
+                <span class="mr-2">In use : Chalantorn N.</span
+                ><a href="#">view queue list</a>
+                </td>
+                <td>Limit time : 12 Hours</td>
+                <td class="text-right"><a href="#">view detail</a></td>
+            </tr>
+            <tr>
+                <td class="withdot">ATR-FTIR</td>
+                <td>In queue: 8</td>
+                <td>
+                <span class="mr-2">In use : Chalantorn N.</span
+                ><a href="#">view queue list</a>
+                </td>
+                <td>Limit time : 12 Hours</td>
+                <td class="text-right"><a href="#">view detail</a></td>
+            </tr>
+            <tr>
+                <td class="withdot">ATR-FTIR</td>
+                <td>In queue: 8</td>
+                <td>
+                <span class="mr-2">In use : Chalantorn N.</span
+                ><a href="#">view queue list</a>
+                </td>
+                <td>Limit time : 12 Hours</td>
+                <td class="text-right"><a href="#">view detail</a></td>
+            </tr>
+            <tr>
+                <td class="withdot">ATR-FTIR</td>
+                <td>In queue: 8</td>
+                <td>
+                <span class="mr-2">In use : Chalantorn N.</span
+                ><a href="#">view queue list</a>
+                </td>
+                <td>Limit time : 12 Hours</td>
+                <td class="text-right"><a href="#">view detail</a></td>
+            </tr>
+            <tr>
+                <td class="withdot">ATR-FTIR</td>
+                <td>In queue: 8</td>
+                <td>
+                <span class="mr-2">In use : Chalantorn N.</span
+                ><a href="#">view queue list</a>
+                </td>
+                <td>Limit time : 12 Hours</td>
+                <td class="text-right"><a href="#">view detail</a></td>
+            </tr>
+            <tr>
+                <td class="withdot">ATR-FTIR</td>
+                <td>In queue: 8</td>
+                <td>
+                <span class="mr-2">In use : Chalantorn N.</span
+                ><a href="#">view queue list</a>
+                </td>
+                <td>Limit time : 12 Hours</td>
+                <td class="text-right"><a href="#">view detail</a></td>
+            </tr>
+            <tr>
+                <td class="withdot">ATR-FTIR</td>
+                <td>In queue: 8</td>
+                <td>
+                <span class="mr-2">In use : Chalantorn N.</span
+                ><a href="#">view queue list</a>
+                </td>
+                <td>Limit time : 12 Hours</td>
+                <td class="text-right"><a href="#">view detail</a></td>
+            </tr>
+            </tbody>
+        </table>
     </div>
 
     {csrf_token}
@@ -127,6 +218,22 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
             calendar.bindResourceGroups({$ResourceGroupsAsJson}, {$SelectedGroupNode|default:0});
 
         });
+    </script>
+
+    <script>
+        function displayCalendar(){
+            $("#subscriptionContainer").show()
+            $("#calendarContainer").show()
+            $("#dayDialog").show()
+            $("#table-queue").hide()
+        }
+
+        function displayQueue(){
+            $("#subscriptionContainer").hide()
+            $("#calendarContainer").hide()
+            $("#dayDialog").hide()
+            $("#table-queue").show()
+        }
     </script>
 </div>
 </div>

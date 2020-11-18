@@ -68,7 +68,7 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
 	<div class="container-fluid">
 		<div class="table-responsive table-shadow">
 			{assign var=colCount value=11}
-			<table class="table table-vistec table-highlight">
+			<table class="table table-vistec table-highlight" id="userList">
 				<thead>
 					<tr>
 					<th>Name</th>
