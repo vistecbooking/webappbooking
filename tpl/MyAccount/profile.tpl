@@ -81,7 +81,7 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
 						{else}
 							<span>{$FirstName}</span>
 							<input type="hidden" {formname key=FIRST_NAME} value="{$FirstName}"/>
-						{/if}	
+						{/if}
 				</div>
 				<div class="col-sm form-group">
 					<label class="reg" for="lname">{translate key="LastName"}</label>
@@ -251,7 +251,7 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
                   class="form-control"
                   id="new-pwd"
                   placeholder="Enter your new password"
-                  oninput="validation(document.getElementById('new-pwd'))" />
+                  oninput="validation(this)" />
                 <span
                   class="input-icon"
                   onclick="togglePasswordVisibility_new()"><i class="material-icons"
@@ -375,16 +375,23 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
       }
     }
     // function to check password validation
-
-    function validation(pwd) {
-      if (pwd.value.match(char)) {
+    function validation(pwd_element) {
+      var pwd = pwd_element.value;
+      // Check if password length is between 6 - 30 characters
+      if (pwd.length >= 6) {
         $("#check-char").prop("disabled", false);
         $("#check-char").prop("checked", true);
       } else {
         $("#check-char").prop("disabled", true);
         $("#check-char").prop("checked", false);
       }
-      if (pwd.value.match(num_alp)) {
+      var character_validation = 0;
+      // Check if password contain a number
+      if(/\d/.test(pwd)) character_validation++;
+      // Check if password contain a characters
+      if(/[A-Za-zก-๛]/.test(pwd)) character_validation++;
+      // Display if password character is sufficient
+      if (character_validation === 2) {
         $("#check-num").prop("disabled", false);
         $("#check-num").prop("checked", true);
       } else {
