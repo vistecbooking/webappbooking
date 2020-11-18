@@ -38,7 +38,7 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
 					<input type="text" name="EMAIL" placeholder="Your registered email address" id="email" size="20" tabindex="10" required>
 					<br>
 					<a href="#" onclick="onCancelClicked()">Back to Sign in</a>
-					<button type="submit" name="{Actions::RESET}" value="{Actions::RESET}">Send</button>
+					<button type="submit" name="{Actions::RESET}" value="{Actions::RESET}" style="background-color: #b30931;">Send</button>
 				</div>
 			</form>
 		</div>

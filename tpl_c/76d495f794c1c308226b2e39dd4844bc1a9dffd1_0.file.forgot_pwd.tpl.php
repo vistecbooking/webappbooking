@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-11-18 11:25:25
+/* Smarty version 3.1.30, created on 2020-11-18 19:25:59
   from "/var/www/html/booking/tpl/forgot_pwd.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5fb4a235b71886_88731991',
+  'unifunc' => 'content_5fb512d7992f58_26419814',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '76d495f794c1c308226b2e39dd4844bc1a9dffd1' => 
     array (
       0 => '/var/www/html/booking/tpl/forgot_pwd.tpl',
-      1 => 1605673510,
+      1 => 1605702352,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5fb4a235b71886_88731991 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fb512d7992f58_26419814 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 <title>Forgot Password</title>
@@ -52,7 +52,7 @@ favicon.ico"/>
 					<a href="#" onclick="onCancelClicked()">Back to Sign in</a>
 					<button type="submit" name="<?php echo Actions::RESET;?>
 " value="<?php echo Actions::RESET;?>
-">Send</button>
+" style="background-color: #b30931;">Send</button>
 				</div>
 			</form>
 		</div>
