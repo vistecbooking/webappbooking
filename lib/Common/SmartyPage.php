@@ -274,6 +274,7 @@ class SmartyPage extends Smarty
             $key = $params['key'];
         }
         $format = $this->Resources->GetDateFormat($key);
+        $format = 'd/m/Y';
 
         $formatted = $date->Format($format);
 
