@@ -364,7 +364,11 @@ function onBookingClick(url, resource_id){
 					{$i = $i+1}
 					<div class="col">
 						<div class="eq-card">
-							<img class="card-image" src="../Web/uploads/images/{$resource['image_name']}" alt="{$resource['name']}" resourceId="{$resource['resource_id']}"/>
+							{if $resource['status_id'] ==1}
+								<img class="card-image" src="../Web/uploads/images/{$resource['image_name']}" alt="{$resource['name']}" resourceId="{$resource['resource_id']}" onclick="onBookingClick('../Web/schedule.php?id={$resource['resource_id']}&sid={$resource['schedule_id']}', {$resource['resource_id']})"/>
+							{else}
+								<img class="card-image" src="../Web/uploads/images/{$resource['image_name']}" alt="{$resource['name']}" resourceId="{$resource['resource_id']}" onclick='location.href="../Web/schedule.php?id={$resource['resource_id']}&sid={$resource['schedule_id']}&unavailable=true"'/>
+							{/if}
 							<div class="card-tag">
 								{if $resource['status_id'] ==1}
 									<div class="badge badge-danger">Queue</div>
