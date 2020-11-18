@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-11-10 20:22:55
+/* Smarty version 3.1.30, created on 2020-11-18 18:12:38
   from "/var/www/html/booking/tpl/globalfooter.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5faa942f4c41b7_18959853',
+  'unifunc' => 'content_5fb501a6373891_10883983',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '58a802df03080b1a065bba91487ad3dc6b074cd8' => 
     array (
       0 => '/var/www/html/booking/tpl/globalfooter.tpl',
-      1 => 1604742064,
+      1 => 1605594180,
       2 => 'file',
     ),
   ),
@@ -20,14 +20,15 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5faa942f4c41b7_18959853 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fb501a6373891_10883983 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 
 	</div><!-- close main-->
 
 	<footer class="footer navbar">
-		&copy; 2017 Vistec Thailand <br/><a href="http://www.vistec.ac.th">Vistec Page</a>
+		&copy; <?php echo date("Y");?>
+ Vistec Thailand <br/><a href="http://www.vistec.ac.th">Vistec Page</a>
 	</footer>
 
 	<?php echo '<script'; ?>

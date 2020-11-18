@@ -1,27 +1,28 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-11-16 06:30:22
+/* Smarty version 3.1.30, created on 2020-11-18 12:35:11
   from "/var/www/html/booking/tpl/MyAccount/profile.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5fb1ba0e9b76b7_39385261',
+  'unifunc' => 'content_5fb4b28f59be42_78557068',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f36269a7e2290d3d569d31c1fb3950ae691be7ee' => 
     array (
       0 => '/var/www/html/booking/tpl/MyAccount/profile.tpl',
-      1 => 1604978903,
+      1 => 1605677622,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
     'file:globalheader.tpl' => 1,
+    'file:globalfooter.tpl' => 1,
   ),
 ),false)) {
-function content_5fb1ba0e9b76b7_39385261 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fb4b28f59be42_78557068 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_function_html_options')) require_once '/var/www/html/booking/lib/external/Smarty/plugins/function.html_options.php';
 ?>
 
@@ -375,7 +376,7 @@ echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['textbox'
             <div class="col-sm form-group"></div>
           </div>
           <div class="text-right">
-            <button type="button" class="btn btn-success">
+            <button type="button" class="btn btn-success" onclick="hello()">
               Save new password
             </button>
           </div>
@@ -432,7 +433,7 @@ echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['textbox'
     </div>
   </div>
   <?php echo '<script'; ?>
->
+ type="text/javascript">
     // function to see old password
     function togglePasswordVisibility_old() {
       if ($("#old-pwd").attr("type") === "password") {
@@ -454,7 +455,8 @@ echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['textbox'
       }
     }
     // function to check password validation
-
+    
+    var num_alp = /(?=.*\d)(?=.*[a-zA-Z])/
     function validation(pwd) {
       if (pwd.value.match(char)) {
         $("#check-char").prop("disabled", false);
@@ -553,5 +555,7 @@ echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['textbox'
 
 	</div>
 
-</div><?php }
+</div>
+<?php $_smarty_tpl->_subTemplateRender("file:globalfooter.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+}
 }
