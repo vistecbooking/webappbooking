@@ -55,7 +55,7 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
 							onclick="togglePasswordVisibility()"><i
 								class="material-icons" id="login-pwd-icon">visibility_off</i></span>
 					</div>
-					<a href="{$ForgotPasswordUrl}">forget password?</a>
+					<a href="{$ForgotPasswordUrl}">forgot password?</a>
 					<button type="submit" name="{Actions::LOGIN}" {$ForgotPasswordUrlNew} value="submit">Sign in</button>
 				</div>
 			</form>

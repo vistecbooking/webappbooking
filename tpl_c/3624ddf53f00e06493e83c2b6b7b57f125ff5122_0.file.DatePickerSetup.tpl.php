@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-11-18 03:05:03
+/* Smarty version 3.1.30, created on 2020-11-18 11:28:00
   from "/var/www/html/booking/tpl/Controls/DatePickerSetup.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5fb42cef6e2ec9_51042153',
+  'unifunc' => 'content_5fb4a2d0c1ab44_30223130',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3624ddf53f00e06493e83c2b6b7b57f125ff5122' => 
     array (
       0 => '/var/www/html/booking/tpl/Controls/DatePickerSetup.tpl',
-      1 => 1600849228,
+      1 => 1604742064,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5fb42cef6e2ec9_51042153 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fb4a2d0c1ab44_30223130 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 <?php echo '<script'; ?>
@@ -52,8 +52,8 @@ $(function(){
 ,
 		 currentText: "<?php ob_start();
 echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['translate'][0][0]->SmartyTranslate(array('key'=>'Today'),$_smarty_tpl);
-$_prefixVariable8=ob_get_clean();
-echo strtr($_prefixVariable8, array("\\" => "\\\\", "'" => "\\'", "\"" => "\\\"", "\r" => "\\r", "\n" => "\\n", "</" => "<\/" ));?>
+$_prefixVariable5=ob_get_clean();
+echo strtr($_prefixVariable5, array("\\" => "\\\\", "'" => "\\'", "\"" => "\\\"", "\r" => "\\r", "\n" => "\\n", "</" => "<\/" ));?>
 ",
 		 timeFormat: "<?php echo $_smarty_tpl->tpl_vars['TimeFormat']->value;?>
 ",
