@@ -1012,7 +1012,6 @@ tr.today td.reslabel {
 }
 .slot {
   min-width: 1px;
-  max-width: 1px;
   overflow: hidden;
 }
 td.reslabel {

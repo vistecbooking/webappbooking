@@ -334,8 +334,8 @@ along with Booked Scheduler.  If not, see <http://www.gnu.org/licenses/>.
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">
                             <a class="dropdown-item" href="{$Path}{Pages::PROFILE}">{translate key="Profile"}</a>
-                            <a class="dropdown-item" href="{$Path}{Pages::PASSWORD}">{translate key="ChangePassword"}</a>
-                            <a class="dropdown-item" href="{$Path}{Pages::NOTIFICATION_PREFERENCES}">{translate key="NotificationPreferences"}</a>
+                            <!-- <a class="dropdown-item" href="{$Path}{Pages::PASSWORD}">{translate key="ChangePassword"}</a> -->
+                            <!-- <a class="dropdown-item" href="{$Path}{Pages::NOTIFICATION_PREFERENCES}">{translate key="NotificationPreferences"}</a> -->
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="{$Path}logout.php">{translate key="SignOut"}</a>
                         </div>
