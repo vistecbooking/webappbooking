@@ -374,7 +374,7 @@ class en_us extends Language
 		$strings['AddAnnouncement'] = 'Add Announcement';
 		$strings['Announcement'] = 'Announcement';
 		$strings['Priority'] = 'Priority';
-		$strings['Reservable'] = 'Open';
+		$strings['Reservable'] = 'Available';
 		$strings['Unreservable'] = 'Blocked';
 		$strings['Reserved'] = 'Reserved';
 		$strings['MyReservation'] = 'My Reservation';
