@@ -94,9 +94,9 @@ $conf['settings']['uploads']['reservation.attachment.extensions'] = 'txt,jpg,gif
 
 $conf['settings']['database']['type'] = 'mysql';
 $conf['settings']['database']['user'] = 'root';
-$conf['settings']['database']['password'] = 'YFAeGHac123as3!';
-$conf['settings']['database']['hostspec'] = '159.89.203.192';
-$conf['settings']['database']['name'] = 'dev';
+$conf['settings']['database']['password'] = 'MjqvWYxPQU8PnA5C';
+$conf['settings']['database']['hostspec'] = '3.1.196.158:3001';
+$conf['settings']['database']['name'] = 'frcbooking-1';
 
 $conf['settings']['phpmailer']['mailer'] = 'smtp';
 $conf['settings']['phpmailer']['smtp.host'] = 'smtp.office365.com';
